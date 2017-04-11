@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2166,         74]
-NotebookOptionsPosition[      1911,         60]
-NotebookOutlinePosition[      2268,         76]
-CellTagsIndexPosition[      2225,         73]
+NotebookDataLength[      7807,        259]
+NotebookOptionsPosition[      6859,        222]
+NotebookOutlinePosition[      7205,        237]
+CellTagsIndexPosition[      7162,        234]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -56,12 +56,173 @@ Cell[BoxData[
    "]"}]}]], "Input",
  CellChangeTimes->{{3.7008210706267414`*^9, 3.700821076603035*^9}, {
   3.700821172903081*^9, 3.7008211831909266`*^9}, {3.700821280790736*^9, 
-  3.70082144091087*^9}}]
+  3.70082144091087*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MovingAverage1", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}], ",", "1"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.700857696034277*^9, 3.700857719590711*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["3", "2"], ",", 
+   FractionBox["5", "2"], ",", 
+   FractionBox["7", "2"], ",", 
+   FractionBox["9", "2"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7008577080490437`*^9, 3.700857719774849*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MovingAverage2", "[", 
+   RowBox[{"z_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Plus", "@@", 
+    RowBox[{"Partition", "[", 
+     RowBox[{"z", ",", 
+      RowBox[{
+       RowBox[{"Length", "[", "z", "]"}], "-", "k"}], ",", "1"}], "]"}]}], 
+   "/", 
+   RowBox[{"(", 
+    RowBox[{"k", "+", "1"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.700857964457321*^9, 3.7008580244648533`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nums", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"1.", ",", "1000.", ",", "1."}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.700858103077343*^9, 3.700858117361023*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{
+   RowBox[{"MovingAverage1", "[", 
+    RowBox[{"nums", ",", "100"}], "]"}], ";"}], "]"}]], "Input",
+ CellChangeTimes->{{3.700858120925488*^9, 3.700858163558661*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.12`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7008581531763153`*^9, 3.700858164275806*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{
+   RowBox[{"MovingAverage2", "[", 
+    RowBox[{"nums", ",", "100"}], "]"}], ";"}], "]"}]], "Input",
+ CellChangeTimes->{{3.700858183139394*^9, 3.700858198451705*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.004`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.700858198938389*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MovingAverage3", "=", 
+   RowBox[{"Compile", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"z", ",", "_Real", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "_Integer"}], "}"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"zav", "=", 
+          RowBox[{"{", "0.", "}"}]}], ",", 
+         RowBox[{"i", "=", "0"}], ",", 
+         RowBox[{"j", "=", "0"}], ",", "temp"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"temp", "=", "0."}], ";", 
+           RowBox[{"Do", "[", 
+            RowBox[{
+             RowBox[{"temp", "+=", 
+              RowBox[{"z", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", "+", "j"}], "]"}], "]"}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", "0", ",", "k"}], "}"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"zav", ",", 
+             RowBox[{"temp", "/", 
+              RowBox[{"(", 
+               RowBox[{"k", "+", "1"}], ")"}]}]}], "]"}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", "1", ",", 
+            RowBox[{
+             RowBox[{"Length", "[", "z", "]"}], "-", "k"}]}], "}"}]}], "]"}], 
+        ";", "\[IndentingNewLine]", "zav"}]}], "]"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7008582364198923`*^9, 3.700858416046666*^9}, 
+   3.700858510860866*^9, {3.700858751370892*^9, 3.700858755452486*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{
+   RowBox[{"MovingAverage3", "[", 
+    RowBox[{"nums", ",", "100"}], "]"}], ";"}], "]"}]], "Input",
+ CellChangeTimes->{{3.700858515676076*^9, 3.700858530415997*^9}, {
+  3.700858760733131*^9, 3.700858781806649*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.012`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.700858530824658*^9, {3.700858761522793*^9, 3.7008587824216423`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"link", "=", 
+  RowBox[{"Install", "[", "\"\<Moving Average\>\"", "]"}], 
+  RowBox[{"(*", "\:8fd8\:5728\:5b66\:4e60\:4e2d", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.700858959568736*^9, 3.700859006620743*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LinkOpen", "::", "linke"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"Could not find \
+MathLink executable\\\\\\\"\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/LinkOpen/linke\\\", ButtonNote -> \
+\\\"LinkOpen::linke\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.700858973322702*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.700858973325654*^9}]
+}, Open  ]]
 },
-WindowSize->{708, 282},
-WindowMargins->{{-1, Automatic}, {-12, Automatic}},
-FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (2015\:5e7411\:67084\
-\:65e5)",
+WindowSize->{708, 477},
+WindowMargins->{{Automatic, 93}, {16, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -75,7 +236,31 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1349, 38, 186, "Input"]
+Cell[558, 20, 1349, 38, 200, "Input"],
+Cell[CellGroupData[{
+Cell[1932, 62, 238, 6, 32, "Input"],
+Cell[2173, 70, 249, 7, 54, "Output"]
+}, Open  ]],
+Cell[2437, 80, 428, 13, 50, "Input"],
+Cell[2868, 95, 210, 5, 50, "Input"],
+Cell[CellGroupData[{
+Cell[3103, 104, 215, 5, 50, "Input"],
+Cell[3321, 111, 148, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3506, 119, 215, 5, 50, "Input"],
+Cell[3724, 126, 123, 3, 32, "Output"]
+}, Open  ]],
+Cell[3862, 132, 1675, 47, 197, "Input"],
+Cell[CellGroupData[{
+Cell[5562, 183, 264, 6, 50, "Input"],
+Cell[5829, 191, 174, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6040, 200, 232, 4, 50, "Input"],
+Cell[6275, 206, 489, 10, 23, "Message"],
+Cell[6767, 218, 76, 1, 32, "Output"]
+}, Open  ]]
 }
 ]
 *)
