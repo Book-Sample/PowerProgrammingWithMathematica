@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6083,        206]
-NotebookOptionsPosition[      5285,        174]
-NotebookOutlinePosition[      5633,        189]
-CellTagsIndexPosition[      5590,        186]
+NotebookDataLength[      7602,        257]
+NotebookOptionsPosition[      6584,        217]
+NotebookOutlinePosition[      6931,        232]
+CellTagsIndexPosition[      6888,        229]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -168,12 +168,55 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[BoxData[
+ RowBox[{
+  RowBox[{"sortedOrderQ", "[", 
+   RowBox[{"a_", ",", "b_", ",", "c_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"a", "\[GreaterEqual]", "b"}], "&&", 
+         RowBox[{"b", "\[GreaterEqual]", "c"}]}], ")"}], "||", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"a", "\[LessEqual]", "b"}], "&&", 
+         RowBox[{"b", "\[LessEqual]", "c"}]}], ")"}]}], ",", "True", ",", 
+      "False"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.701118334186817*^9, 3.701118345742077*^9}, {
+  3.701225755069922*^9, 3.701225785094*^9}, {3.701225859586203*^9, 
+  3.701225886998308*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
  RowBox[{"sortedOrderQ", "[", 
-  RowBox[{"a_", ",", "b_", ",", "c_"}], "]"}]], "Input",
- CellChangeTimes->{{3.701118334186817*^9, 3.701118345742077*^9}}]
+  RowBox[{"2", ",", "1", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7012257866813993`*^9, 3.701225791701475*^9}, {
+  3.7012258940940638`*^9, 3.701225896222192*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.7012257924706993`*^9, {3.701225890459639*^9, 3.701225896885147*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sortedOrderQ", "[", 
+  RowBox[{"3", ",", "2", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701225794448207*^9, 3.701225807702169*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.701225801616171*^9, 3.7012258084837*^9}, 
+   3.701225891617839*^9}]
+}, Open  ]]
 },
 WindowSize->{808, 653},
-WindowMargins->{{Automatic, 112}, {Automatic, 106}},
+WindowMargins->{{Automatic, -14}, {20, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -207,7 +250,15 @@ Cell[CellGroupData[{
 Cell[4561, 148, 263, 7, 35, "Input"],
 Cell[4827, 157, 272, 9, 54, "Output"]
 }, Open  ]],
-Cell[5114, 169, 167, 3, 32, "Input"]
+Cell[5114, 169, 759, 21, 72, "Input"],
+Cell[CellGroupData[{
+Cell[5898, 194, 217, 4, 32, "Input"],
+Cell[6118, 200, 125, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6280, 207, 164, 3, 32, "Input"],
+Cell[6447, 212, 121, 2, 65, "Output"]
+}, Open  ]]
 }
 ]
 *)

@@ -1,0 +1,71 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1715,         62]
+NotebookOptionsPosition[      1399,         47]
+NotebookOutlinePosition[      1748,         62]
+CellTagsIndexPosition[      1705,         59]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+1. Define a function of two integers, n and r, that computes the binomial \
+coefficient n!/(r!(n-r)!).\
+\>", "Text",
+ CellChangeTimes->{{3.7012563052162437`*^9, 3.701256363866415*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"coefficient", "[", 
+   RowBox[{"n_Integer", ",", "r_Integer"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"n", "!"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"r", "!"}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "-", "r"}], ")"}], "!"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.701256397261649*^9, 3.701256437170533*^9}}],
+
+Cell["\<\
+2. The built-in factorial function is extended in this sense.
+\:4ec0\:4e48\:610f\:601d\:5b8c\:5168\:770b\:4e0d\:61c2\:554a\
+\>", "Text",
+ CellChangeTimes->{{3.701256455242251*^9, 3.701256472274235*^9}, {
+  3.70125654568233*^9, 3.701256560074651*^9}}]
+},
+WindowSize->{810, 679},
+WindowMargins->{{Automatic, 122}, {-213, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 194, 4, 33, "Text"],
+Cell[755, 26, 377, 12, 50, "Input"],
+Cell[1135, 40, 260, 5, 55, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
