@@ -1,0 +1,50 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1116,         41]
+NotebookOptionsPosition[       873,         28]
+NotebookOutlinePosition[      1222,         43]
+CellTagsIndexPosition[      1179,         40]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+The curvature K(t) of the parametric arc s(t)=(x(t),y(t),z(t)) is defined as \
+K(t)=|T\[CloseCurlyQuote](t)/|v(t)|| where v(t)=s\[CloseCurlyQuote](t) and \
+T(t)=v(t)/|v(t)|.\
+\>", "Text",
+ CellChangeTimes->{{3.70132326630186*^9, 3.701323304590179*^9}, {
+  3.701323368789811*^9, 3.701323471318185*^9}}]
+},
+WindowSize->{1916, 954},
+WindowMargins->{{561, Automatic}, {Automatic, 512}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 311, 6, 33, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)

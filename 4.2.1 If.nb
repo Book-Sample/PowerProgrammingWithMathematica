@@ -1,0 +1,312 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9255,        303]
+NotebookOptionsPosition[      7946,        254]
+NotebookOutlinePosition[      8295,        269]
+CellTagsIndexPosition[      8252,        266]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+2. Write a function that takes three numbers a, b, and c and returns True if \
+the three numbers could represent the lengths of the sides of a right \
+triangle, False otherwise.\
+\>", "Text",
+ CellChangeTimes->{{3.701334658994032*^9, 3.701334714233924*^9}}],
+
+Cell["\:7248\:672c0\:ff1a", "Text",
+ CellChangeTimes->{{3.7013372353778477`*^9, 3.70133724439578*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"canTriangle", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a_Integer", "|", "a_Rational", "|", "a_Real"}], "/;", 
+     RowBox[{"a", ">", "0"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"b_Integer", "|", "b_Rational", "|", "b_Real"}], "/;", 
+     RowBox[{"b", ">", "0"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"c_Integer", "|", "c_Rational", "|", "c_Real"}], "/;", 
+     RowBox[{"c", ">", "0"}]}]}], "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sort", "=", 
+      RowBox[{"Sort", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", "GreaterEqual"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "+", 
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "3", "]"}], "]"}]}], ">", 
+        RowBox[{"sort", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "&&", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "-", 
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "3", "]"}], "]"}]}], "<", 
+        RowBox[{"sort", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}]}], ",", "True", ",", "False"}], 
+     "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7013347207214727`*^9, 3.7013347886102543`*^9}, {
+   3.7013349752262*^9, 3.701334993730348*^9}, {3.701336535082533*^9, 
+   3.701336540681953*^9}, {3.701336603770228*^9, 3.701336632997908*^9}, {
+   3.701336663458172*^9, 3.7013367042823467`*^9}, {3.70133682917839*^9, 
+   3.701336890258091*^9}, 3.701337018547023*^9}],
+
+Cell["\:7248\:672c1(\:4f7f\:7528?NumberQ\:4ee3\:66ffa_Integer|b_Rational|c_\
+Real)\:ff1a", "Text",
+ CellChangeTimes->{{3.701337253642084*^9, 3.701337254889658*^9}, {
+  3.7013373646656303`*^9, 3.701337371921423*^9}, {3.701337410413744*^9, 
+  3.701337437297455*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"canTriangle1", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a_", "?", "NumberQ"}], "/;", 
+     RowBox[{"a", ">", "0"}]}], ",", 
+    RowBox[{
+     RowBox[{"b_", "?", "NumberQ"}], "/;", 
+     RowBox[{"b", ">", "0"}]}], ",", 
+    RowBox[{
+     RowBox[{"c_", "?", "NumberQ"}], "/;", 
+     RowBox[{"c", ">", "0"}]}]}], "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sort", "=", 
+      RowBox[{"Sort", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", "GreaterEqual"}], 
+       "]"}]}], "}"}], ",", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "+", 
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "3", "]"}], "]"}]}], ">", 
+        RowBox[{"sort", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "&&", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "-", 
+         RowBox[{"sort", "[", 
+          RowBox[{"[", "3", "]"}], "]"}]}], "<", 
+        RowBox[{"sort", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}]}], ",", "True", ",", "False"}], 
+     "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7013372663852386`*^9, 3.701337403081834*^9}}],
+
+Cell["\<\
+\:601d\:8def\:ff1a\:5148\:7ed9\:4e09\:4e2a\:6570\:6392\:4e2a\:5e8f\:ff0c\:7136\
+\:540e\:6839\:636e\:4e09\:89d2\:5f62\:6784\:6210\:5b9a\:7406\:ff08\:4efb\:610f\
+\:4e24\:8fb9\:4e4b\:548c\:5927\:4e8e\:7b2c\:4e09\:8fb9\:ff0c\:4efb\:610f\:4e24\
+\:8fb9\:4e4b\:5dee\:5c0f\:4e8e\:7b2c\:4e09\:8fb9\:ff09\:5224\:65ad
+\:4e0b\:9762\:6d4b\:8bd5\:4e0b\
+\>", "Text",
+ CellChangeTimes->{{3.701336724153386*^9, 3.701336794066504*^9}, {
+  3.70133704303342*^9, 3.7013370941943398`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"canTriangle", "[", 
+  RowBox[{"1.", ",", "2", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701336806449276*^9, 3.701336822769401*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.7013369192612123`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"canTriangle", "[", 
+  RowBox[{"3", ",", "4", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701336928882277*^9, 3.701336933945449*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.701336934895053*^9, 3.701337024104341*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"canTriangle", "[", 
+  RowBox[{
+   RowBox[{"-", "1."}], ",", "3", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701337477817101*^9, 3.7013374841854467`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"canTriangle", "[", 
+  RowBox[{
+   RowBox[{"-", "1.`"}], ",", "3", ",", "5"}], "]"}]], "Output",
+ CellChangeTimes->{3.701337485089061*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"canTriangle1", "[", 
+  RowBox[{"1.", ",", "2", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701337455868178*^9, 3.701337462729313*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.701337463502407*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"canTriangle1", "[", 
+  RowBox[{"3", ",", "4", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701337464647251*^9, 3.7013374717772913`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.701337472704783*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"canTriangle1", "[", 
+  RowBox[{
+   RowBox[{"-", "1."}], ",", "3", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701337488996875*^9, 3.701337497936996*^9}}],
+
+Cell[BoxData[
+ RowBox[{"canTriangle1", "[", 
+  RowBox[{
+   RowBox[{"-", "1.`"}], ",", "3", ",", "5"}], "]"}]], "Output",
+ CellChangeTimes->{3.701337498408257*^9}]
+}, Open  ]],
+
+Cell["\<\
+3. Write a function that takes three numerical parameters and returns true if \
+they are in sorted order, false otherwise.\
+\>", "Text",
+ CellChangeTimes->{{3.7013371144413023`*^9, 3.701337157320147*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"orderQ", "[", 
+   RowBox[{
+    RowBox[{"a_", "?", "NumberQ"}], ",", 
+    RowBox[{"b_", "?", "NumberQ"}], ",", 
+    RowBox[{"c_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"Or", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"OrderedQ", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", "#"}], "]"}], "&"}], "/@", 
+     RowBox[{"{", 
+      RowBox[{"LessEqual", ",", "GreaterEqual"}], "}"}]}], ")"}]}]}]], "Input",\
+
+ CellChangeTimes->{{3.7013375179634542`*^9, 3.7013376034816027`*^9}, {
+  3.701337862266246*^9, 3.701338028185266*^9}}],
+
+Cell["\:6d4b\:8bd5\:4e0b", "Text",
+ CellChangeTimes->{{3.701337607066168*^9, 3.701337618889873*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"orderQ", "[", 
+  RowBox[{"3", ",", "2", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7013376327448053`*^9, 3.701337649521106*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.7013376387740107`*^9, 3.701337649910832*^9}, 
+   3.701338032895013*^9}]
+}, Open  ]]
+},
+WindowSize->{862, 776},
+WindowMargins->{{Automatic, 156}, {-242, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 267, 5, 55, "Text"],
+Cell[828, 27, 102, 1, 33, "Text"],
+Cell[933, 30, 1727, 46, 217, "Input"],
+Cell[2663, 78, 264, 4, 33, "Text"],
+Cell[2930, 84, 1338, 42, 132, "Input"],
+Cell[4271, 128, 477, 8, 77, "Text"],
+Cell[CellGroupData[{
+Cell[4773, 140, 164, 3, 32, "Input"],
+Cell[4940, 145, 76, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5053, 151, 163, 3, 32, "Input"],
+Cell[5219, 156, 95, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5351, 162, 185, 4, 32, "Input"],
+Cell[5539, 168, 161, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5737, 177, 165, 3, 32, "Input"],
+Cell[5905, 182, 74, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6016, 188, 166, 3, 32, "Input"],
+Cell[6185, 193, 73, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6295, 199, 184, 4, 32, "Input"],
+Cell[6482, 205, 162, 4, 32, "Output"]
+}, Open  ]],
+Cell[6659, 212, 214, 4, 55, "Text"],
+Cell[6876, 218, 638, 19, 91, "Input"],
+Cell[7517, 239, 100, 1, 33, "Text"],
+Cell[CellGroupData[{
+Cell[7642, 244, 160, 3, 32, "Input"],
+Cell[7805, 249, 125, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
