@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20469,        718]
-NotebookOptionsPosition[     16657,        576]
-NotebookOutlinePosition[     17072,        592]
-CellTagsIndexPosition[     17029,        589]
+NotebookDataLength[     34320,        973]
+NotebookOptionsPosition[     30117,        817]
+NotebookOutlinePosition[     30529,        833]
+CellTagsIndexPosition[     30486,        830]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -571,11 +571,252 @@ Cell[BoxData[
   3.701944431685132*^9, {3.7019446787364473`*^9, 3.701944689634509*^9}, {
    3.70194517072803*^9, 3.701945174469738*^9}, 3.701945324385221*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+3. Extract the names of the listable symbols from the list of all \
+system-defined symbol names by using Select with an appropriate pure function.\
+\>", "Subsection",
+ CellChangeTimes->{{3.702067558413965*^9, 3.702067618690456*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["all the system symbols:", "Subsubsection",
+ CellChangeTimes->{{3.702067558413965*^9, 3.702067651481916*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"names", "=", 
+   RowBox[{"Names", "[", "\"\<System`*\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7020676560521383`*^9, 3.702067672852047*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+use Select function to extract the name which satisfied the condition \
+MemberQ[Attributes[\[OpenCurlyDoubleQuote]name\[CloseCurlyDoubleQuote]],\
+Listable]\
+\>", "Subsubsection",
+ CellChangeTimes->{3.702067919291156*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{"names", ",", 
+   RowBox[{
+    RowBox[{"MemberQ", "[", 
+     RowBox[{
+      RowBox[{"Attributes", "[", "#", "]"}], ",", "Listable"}], "]"}], 
+    "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.702067925473893*^9, 3.702067954308134*^9}, {
+  3.702068000972458*^9, 3.702068006627013*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Abs\"\>", ",", "\<\"AbsArg\"\>", ",", "\<\"AiryAi\"\>", 
+   ",", "\<\"AiryAiPrime\"\>", ",", "\<\"AiryAiZero\"\>", 
+   ",", "\<\"AiryBi\"\>", ",", "\<\"AiryBiPrime\"\>", 
+   ",", "\<\"AiryBiZero\"\>", ",", "\<\"AlgebraicIntegerQ\"\>", 
+   ",", "\<\"AlgebraicNumberDenominator\"\>", 
+   ",", "\<\"AlgebraicNumberNorm\"\>", ",", "\<\"AlgebraicNumberTrace\"\>", 
+   ",", "\<\"AlgebraicUnitQ\"\>", ",", "\<\"AlternatingFactorial\"\>", 
+   ",", "\<\"AngerJ\"\>", ",", "\<\"Apart\"\>", ",", "\<\"ArcCos\"\>", 
+   ",", "\<\"ArcCosh\"\>", ",", "\<\"ArcCot\"\>", ",", "\<\"ArcCoth\"\>", 
+   ",", "\<\"ArcCsc\"\>", ",", "\<\"ArcCsch\"\>", ",", "\<\"ArcSec\"\>", 
+   ",", "\<\"ArcSech\"\>", ",", "\<\"ArcSin\"\>", ",", "\<\"ArcSinh\"\>", 
+   ",", "\<\"ArcTan\"\>", ",", "\<\"ArcTanh\"\>", ",", "\<\"Arg\"\>", 
+   ",", "\<\"ArithmeticGeometricMean\"\>", ",", "\<\"Attributes\"\>", 
+   ",", "\<\"BarnesG\"\>", ",", "\<\"BartlettHannWindow\"\>", 
+   ",", "\<\"BartlettWindow\"\>", ",", "\<\"BellB\"\>", 
+   ",", "\<\"BernoulliB\"\>", ",", "\<\"BernsteinBasis\"\>", 
+   ",", "\<\"BesselI\"\>", ",", "\<\"BesselJ\"\>", ",", "\<\"BesselJZero\"\>",
+    ",", "\<\"BesselK\"\>", ",", "\<\"BesselY\"\>", 
+   ",", "\<\"BesselYZero\"\>", ",", "\<\"Beta\"\>", 
+   ",", "\<\"BetaRegularized\"\>", ",", "\<\"Binomial\"\>", 
+   ",", "\<\"BitAnd\"\>", ",", "\<\"BitClear\"\>", ",", "\<\"BitGet\"\>", 
+   ",", "\<\"BitLength\"\>", ",", "\<\"BitNot\"\>", ",", "\<\"BitOr\"\>", 
+   ",", "\<\"BitSet\"\>", ",", "\<\"BitShiftLeft\"\>", 
+   ",", "\<\"BitShiftRight\"\>", ",", "\<\"BitXor\"\>", 
+   ",", "\<\"BlackmanHarrisWindow\"\>", ",", "\<\"BlackmanNuttallWindow\"\>", 
+   ",", "\<\"BlackmanWindow\"\>", ",", "\<\"BohmanWindow\"\>", 
+   ",", "\<\"Boole\"\>", ",", "\<\"BooleanConvert\"\>", 
+   ",", "\<\"BooleanMinimize\"\>", ",", "\<\"BoundedRegionQ\"\>", 
+   ",", "\<\"Cancel\"\>", ",", "\<\"CardinalBSplineBasis\"\>", 
+   ",", "\<\"CarmichaelLambda\"\>", ",", "\<\"CatalanNumber\"\>", 
+   ",", "\<\"CauchyWindow\"\>", ",", "\<\"Ceiling\"\>", 
+   ",", "\<\"ChampernowneNumber\"\>", ",", "\<\"Characters\"\>", 
+   ",", "\<\"ChebyshevT\"\>", ",", "\<\"ChebyshevU\"\>", 
+   ",", "\<\"Coefficient\"\>", ",", "\<\"CompositeQ\"\>", 
+   ",", "\<\"Conjugate\"\>", ",", "\<\"ConnesWindow\"\>", 
+   ",", "\<\"ConstantRegionQ\"\>", ",", "\<\"ContinuedFraction\"\>", 
+   ",", "\<\"CoprimeQ\"\>", ",", "\<\"Cos\"\>", ",", "\<\"Cosh\"\>", 
+   ",", "\<\"CoshIntegral\"\>", ",", "\<\"CosineWindow\"\>", 
+   ",", "\<\"CosIntegral\"\>", ",", "\<\"Cot\"\>", ",", "\<\"Coth\"\>", 
+   ",", "\<\"CreateDirectory\"\>", ",", "\<\"Csc\"\>", ",", "\<\"Csch\"\>", 
+   ",", "\<\"CubeRoot\"\>", ",", "\<\"Cyclotomic\"\>", ",", "\<\"DawsonF\"\>",
+    ",", "\<\"Decompose\"\>", ",", "\<\"DedekindEta\"\>", 
+   ",", "\<\"Denominator\"\>", ",", "\<\"DiracComb\"\>", 
+   ",", "\<\"DiracDelta\"\>", ",", "\<\"DirectedInfinity\"\>", 
+   ",", "\<\"DirichletBeta\"\>", ",", "\<\"DirichletCharacter\"\>", 
+   ",", "\<\"DirichletEta\"\>", ",", "\<\"DirichletL\"\>", 
+   ",", "\<\"DirichletLambda\"\>", ",", "\<\"DirichletWindow\"\>", 
+   ",", "\<\"Discriminant\"\>", ",", "\<\"Divide\"\>", 
+   ",", "\<\"Divisible\"\>", ",", "\<\"Divisors\"\>", 
+   ",", "\<\"DivisorSigma\"\>", ",", "\<\"EllipticE\"\>", 
+   ",", "\<\"EllipticF\"\>", ",", "\<\"EllipticK\"\>", 
+   ",", "\<\"EllipticNomeQ\"\>", ",", "\<\"EllipticPi\"\>", 
+   ",", "\<\"EllipticTheta\"\>", ",", "\<\"EllipticThetaPrime\"\>", 
+   ",", "\<\"Erf\"\>", ",", "\<\"Erfc\"\>", ",", "\<\"Erfi\"\>", 
+   ",", "\<\"ErlangB\"\>", ",", "\<\"ErlangC\"\>", ",", "\<\"EulerE\"\>", 
+   ",", "\<\"EulerPhi\"\>", ",", "\<\"EvenQ\"\>", 
+   ",", "\<\"ExactBlackmanWindow\"\>", ",", "\<\"Exp\"\>", 
+   ",", "\<\"ExpIntegralE\"\>", ",", "\<\"ExpIntegralEi\"\>", 
+   ",", "\<\"Exponent\"\>", ",", "\<\"ExpToTrig\"\>", 
+   ",", "\<\"ExtendedGCD\"\>", ",", "\<\"Factor\"\>", 
+   ",", "\<\"Factorial\"\>", ",", "\<\"Factorial2\"\>", 
+   ",", "\<\"FactorialPower\"\>", ",", "\<\"FactorInteger\"\>", 
+   ",", "\<\"FactorSquareFree\"\>", ",", "\<\"Fibonacci\"\>", 
+   ",", "\<\"Fibonorial\"\>", ",", "\<\"FiniteAbelianGroupCount\"\>", 
+   ",", "\<\"FiniteGroupCount\"\>", ",", "\<\"FlatTopWindow\"\>", 
+   ",", "\<\"Floor\"\>", ",", "\<\"FractionalPart\"\>", 
+   ",", "\<\"FresnelC\"\>", ",", "\<\"FresnelF\"\>", ",", "\<\"FresnelG\"\>", 
+   ",", "\<\"FresnelS\"\>", ",", "\<\"Gamma\"\>", 
+   ",", "\<\"GammaRegularized\"\>", ",", "\<\"GaussianWindow\"\>", 
+   ",", "\<\"GCD\"\>", ",", "\<\"GegenbauerC\"\>", 
+   ",", "\<\"Gudermannian\"\>", ",", "\<\"HammingWindow\"\>", 
+   ",", "\<\"HankelH1\"\>", ",", "\<\"HankelH2\"\>", 
+   ",", "\<\"HannPoissonWindow\"\>", ",", "\<\"HannWindow\"\>", 
+   ",", "\<\"HarmonicNumber\"\>", ",", "\<\"Haversine\"\>", 
+   ",", "\<\"HeavisideLambda\"\>", ",", "\<\"HeavisidePi\"\>", 
+   ",", "\<\"HeavisideTheta\"\>", ",", "\<\"HermiteH\"\>", 
+   ",", "\<\"HurwitzLerchPhi\"\>", ",", "\<\"HurwitzZeta\"\>", 
+   ",", "\<\"Hyperfactorial\"\>", ",", "\<\"Hypergeometric0F1\"\>", 
+   ",", "\<\"Hypergeometric0F1Regularized\"\>", 
+   ",", "\<\"Hypergeometric1F1\"\>", 
+   ",", "\<\"Hypergeometric1F1Regularized\"\>", 
+   ",", "\<\"Hypergeometric2F1\"\>", 
+   ",", "\<\"Hypergeometric2F1Regularized\"\>", 
+   ",", "\<\"HypergeometricU\"\>", ",", "\<\"Im\"\>", ",", "\<\"In\"\>", 
+   ",", "\<\"InString\"\>", ",", "\<\"IntegerDigits\"\>", 
+   ",", "\<\"IntegerExponent\"\>", ",", "\<\"IntegerLength\"\>", 
+   ",", "\<\"IntegerPart\"\>", ",", "\<\"IntegerString\"\>", 
+   ",", "\<\"IntervalMemberQ\"\>", ",", "\<\"InverseBetaRegularized\"\>", 
+   ",", "\<\"InverseEllipticNomeQ\"\>", ",", "\<\"InverseErf\"\>", 
+   ",", "\<\"InverseErfc\"\>", ",", "\<\"InverseGammaRegularized\"\>", 
+   ",", "\<\"InverseGudermannian\"\>", ",", "\<\"InverseHaversine\"\>", 
+   ",", "\<\"InverseJacobiCD\"\>", ",", "\<\"InverseJacobiCN\"\>", 
+   ",", "\<\"InverseJacobiCS\"\>", ",", "\<\"InverseJacobiDC\"\>", 
+   ",", "\<\"InverseJacobiDN\"\>", ",", "\<\"InverseJacobiDS\"\>", 
+   ",", "\<\"InverseJacobiNC\"\>", ",", "\<\"InverseJacobiND\"\>", 
+   ",", "\<\"InverseJacobiNS\"\>", ",", "\<\"InverseJacobiSC\"\>", 
+   ",", "\<\"InverseJacobiSD\"\>", ",", "\<\"InverseJacobiSN\"\>", 
+   ",", "\<\"IrreduciblePolynomialQ\"\>", ",", "\<\"JacobiAmplitude\"\>", 
+   ",", "\<\"JacobiCD\"\>", ",", "\<\"JacobiCN\"\>", ",", "\<\"JacobiCS\"\>", 
+   ",", "\<\"JacobiDC\"\>", ",", "\<\"JacobiDN\"\>", ",", "\<\"JacobiDS\"\>", 
+   ",", "\<\"JacobiNC\"\>", ",", "\<\"JacobiND\"\>", ",", "\<\"JacobiNS\"\>", 
+   ",", "\<\"JacobiP\"\>", ",", "\<\"JacobiSC\"\>", ",", "\<\"JacobiSD\"\>", 
+   ",", "\<\"JacobiSN\"\>", ",", "\<\"JacobiSymbol\"\>", 
+   ",", "\<\"JacobiZeta\"\>", ",", "\<\"KaiserBesselWindow\"\>", 
+   ",", "\<\"KaiserWindow\"\>", ",", "\<\"KelvinBei\"\>", 
+   ",", "\<\"KelvinBer\"\>", ",", "\<\"KelvinKei\"\>", 
+   ",", "\<\"KelvinKer\"\>", ",", "\<\"KleinInvariantJ\"\>", 
+   ",", "\<\"KroneckerSymbol\"\>", ",", "\<\"LaguerreL\"\>", 
+   ",", "\<\"LambertW\"\>", ",", "\<\"LanczosWindow\"\>", ",", "\<\"LCM\"\>", 
+   ",", "\<\"LegendreP\"\>", ",", "\<\"LegendreQ\"\>", 
+   ",", "\<\"LerchPhi\"\>", ",", "\<\"Limit\"\>", 
+   ",", "\<\"LiouvilleLambda\"\>", ",", "\<\"Log\"\>", ",", "\<\"Log10\"\>", 
+   ",", "\<\"Log2\"\>", ",", "\<\"LogBarnesG\"\>", ",", "\<\"LogGamma\"\>", 
+   ",", "\<\"LogIntegral\"\>", ",", "\<\"LogisticSigmoid\"\>", 
+   ",", "\<\"LucasL\"\>", ",", "\<\"MakeExpression\"\>", 
+   ",", "\<\"MangoldtLambda\"\>", ",", "\<\"MantissaExponent\"\>", 
+   ",", "\<\"MarcumQ\"\>", ",", "\<\"MathieuC\"\>", 
+   ",", "\<\"MathieuCharacteristicA\"\>", 
+   ",", "\<\"MathieuCharacteristicB\"\>", 
+   ",", "\<\"MathieuCharacteristicExponent\"\>", ",", "\<\"MathieuCPrime\"\>",
+    ",", "\<\"MathieuS\"\>", ",", "\<\"MathieuSPrime\"\>", 
+   ",", "\<\"MessageList\"\>", ",", "\<\"MinimalPolynomial\"\>", 
+   ",", "\<\"Minus\"\>", ",", "\<\"Mod\"\>", ",", "\<\"ModularLambda\"\>", 
+   ",", "\<\"MoebiusMu\"\>", ",", "\<\"Multinomial\"\>", 
+   ",", "\<\"Negative\"\>", ",", "\<\"NevilleThetaC\"\>", 
+   ",", "\<\"NevilleThetaD\"\>", ",", "\<\"NevilleThetaN\"\>", 
+   ",", "\<\"NevilleThetaS\"\>", ",", "\<\"NonNegative\"\>", 
+   ",", "\<\"NonPositive\"\>", ",", "\<\"NorlundB\"\>", 
+   ",", "\<\"NumberFieldClassNumber\"\>", 
+   ",", "\<\"NumberFieldDiscriminant\"\>", 
+   ",", "\<\"NumberFieldFundamentalUnits\"\>", 
+   ",", "\<\"NumberFieldIntegralBasis\"\>", 
+   ",", "\<\"NumberFieldNormRepresentatives\"\>", 
+   ",", "\<\"NumberFieldRegulator\"\>", 
+   ",", "\<\"NumberFieldRootsOfUnity\"\>", 
+   ",", "\<\"NumberFieldSignature\"\>", ",", "\<\"Numerator\"\>", 
+   ",", "\<\"NuttallWindow\"\>", ",", "\<\"OddQ\"\>", ",", "\<\"Out\"\>", 
+   ",", "\<\"OwenT\"\>", ",", "\<\"ParabolicCylinderD\"\>", 
+   ",", "\<\"PartitionsP\"\>", ",", "\<\"PartitionsQ\"\>", 
+   ",", "\<\"ParzenWindow\"\>", ",", "\<\"Plus\"\>", 
+   ",", "\<\"Pochhammer\"\>", ",", "\<\"PoissonWindow\"\>", 
+   ",", "\<\"PolyGamma\"\>", ",", "\<\"PolyLog\"\>", 
+   ",", "\<\"PolynomialGCD\"\>", ",", "\<\"PolynomialLCM\"\>", 
+   ",", "\<\"Positive\"\>", ",", "\<\"PossibleZeroQ\"\>", 
+   ",", "\<\"Power\"\>", ",", "\<\"PowerMod\"\>", ",", "\<\"Prime\"\>", 
+   ",", "\<\"PrimeNu\"\>", ",", "\<\"PrimeOmega\"\>", ",", "\<\"PrimePi\"\>", 
+   ",", "\<\"PrimePowerQ\"\>", ",", "\<\"PrimeQ\"\>", 
+   ",", "\<\"PrimeZetaP\"\>", ",", "\<\"PrimitiveRoot\"\>", 
+   ",", "\<\"PrimitiveRootList\"\>", ",", "\<\"ProductLog\"\>", 
+   ",", "\<\"QBinomial\"\>", ",", "\<\"QFactorial\"\>", ",", "\<\"QGamma\"\>",
+    ",", "\<\"QPochhammer\"\>", ",", "\<\"QPolyGamma\"\>", 
+   ",", "\<\"QuadraticIrrationalQ\"\>", ",", "\<\"Quotient\"\>", 
+   ",", "\<\"QuotientRemainder\"\>", ",", "\<\"RamanujanTau\"\>", 
+   ",", "\<\"RamanujanTauL\"\>", ",", "\<\"RamanujanTauTheta\"\>", 
+   ",", "\<\"RamanujanTauZ\"\>", ",", "\<\"Range\"\>", ",", "\<\"Re\"\>", 
+   ",", "\<\"RealDigits\"\>", ",", "\<\"RealExponent\"\>", 
+   ",", "\<\"RegionBoundary\"\>", ",", "\<\"RegionCentroid\"\>", 
+   ",", "\<\"RegionDimension\"\>", ",", "\<\"RegionEmbeddingDimension\"\>", 
+   ",", "\<\"RegionMeasure\"\>", ",", "\<\"ReIm\"\>", 
+   ",", "\<\"RemoveScheduledTask\"\>", ",", "\<\"Resultant\"\>", 
+   ",", "\<\"RiemannR\"\>", ",", "\<\"RiemannSiegelTheta\"\>", 
+   ",", "\<\"RiemannSiegelZ\"\>", ",", "\<\"RiemannXi\"\>", 
+   ",", "\<\"RootApproximant\"\>", ",", "\<\"RootOfUnityQ\"\>", 
+   ",", "\<\"Round\"\>", ",", "\<\"Sec\"\>", ",", "\<\"Sech\"\>", 
+   ",", "\<\"Sign\"\>", ",", "\<\"Sin\"\>", ",", "\<\"Sinc\"\>", 
+   ",", "\<\"Sinh\"\>", ",", "\<\"SinhIntegral\"\>", 
+   ",", "\<\"SinIntegral\"\>", ",", "\<\"SphericalBesselJ\"\>", 
+   ",", "\<\"SphericalBesselY\"\>", ",", "\<\"SphericalHankelH1\"\>", 
+   ",", "\<\"SphericalHankelH2\"\>", ",", "\<\"SphericalHarmonicY\"\>", 
+   ",", "\<\"SpheroidalEigenvalue\"\>", 
+   ",", "\<\"SpheroidalJoiningFactor\"\>", ",", "\<\"SpheroidalPS\"\>", 
+   ",", "\<\"SpheroidalPSPrime\"\>", ",", "\<\"SpheroidalQS\"\>", 
+   ",", "\<\"SpheroidalQSPrime\"\>", ",", "\<\"SpheroidalRadialFactor\"\>", 
+   ",", "\<\"SpheroidalS1\"\>", ",", "\<\"SpheroidalS1Prime\"\>", 
+   ",", "\<\"SpheroidalS2\"\>", ",", "\<\"SpheroidalS2Prime\"\>", 
+   ",", "\<\"Sqrt\"\>", ",", "\<\"SquaresR\"\>", 
+   ",", "\<\"StieltjesGamma\"\>", ",", "\<\"StirlingS1\"\>", 
+   ",", "\<\"StirlingS2\"\>", ",", "\<\"StopScheduledTask\"\>", 
+   ",", "\<\"StringByteCount\"\>", ",", "\<\"StringLength\"\>", 
+   ",", "\<\"StringReverse\"\>", ",", "\<\"StruveH\"\>", 
+   ",", "\<\"StruveL\"\>", ",", "\<\"Subfactorial\"\>", 
+   ",", "\<\"Subtract\"\>", ",", "\<\"Surd\"\>", ",", "\<\"Tan\"\>", 
+   ",", "\<\"Tanh\"\>", ",", "\<\"Times\"\>", ",", "\<\"ToExpression\"\>", 
+   ",", "\<\"Together\"\>", ",", "\<\"ToHeldExpression\"\>", 
+   ",", "\<\"ToLowerCase\"\>", ",", "\<\"ToUpperCase\"\>", 
+   ",", "\<\"TrigFactor\"\>", ",", "\<\"TrigToExp\"\>", 
+   ",", "\<\"TukeyWindow\"\>", ",", "\<\"UnitBox\"\>", ",", "\<\"Unitize\"\>",
+    ",", "\<\"UnitStep\"\>", ",", "\<\"UnitTriangle\"\>", 
+   ",", "\<\"WeberE\"\>", ",", "\<\"WelchWindow\"\>", 
+   ",", "\<\"WhittakerM\"\>", ",", "\<\"WhittakerW\"\>", 
+   ",", "\<\"ZernikeR\"\>", ",", "\<\"Zeta\"\>", ",", "\<\"ZetaZero\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.702068030342833*^9}]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{808, 780},
-WindowMargins->{{Automatic, 528}, {-184, Automatic}},
+WindowSize->{808, 694},
+WindowMargins->{{259, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
   CharacterEncoding -> "UTF-8"]
@@ -717,6 +958,20 @@ Cell[15887, 550, 72, 1, 30, "Output"]
 Cell[CellGroupData[{
 Cell[15996, 556, 381, 8, 47, "Input"],
 Cell[16380, 566, 237, 5, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16666, 577, 242, 4, 59, "Subsection"],
+Cell[CellGroupData[{
+Cell[16933, 585, 114, 1, 29, "Subsubsection"],
+Cell[17050, 588, 187, 4, 47, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17274, 597, 230, 5, 28, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[17529, 606, 335, 9, 47, "Input"],
+Cell[17867, 617, 12198, 194, 1323, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
