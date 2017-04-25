@@ -1,0 +1,124 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3174,        115]
+NotebookOptionsPosition[      2461,         86]
+NotebookOutlinePosition[      2872,        102]
+CellTagsIndexPosition[      2829,         99]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+the trick is  to give the function one of Hold-attributes and to specify that \
+the arguments to be modified be symbols rather than arbitrary expressions.\
+\>", "Subsection",
+ CellChangeTimes->{{3.701770096093071*^9, 3.701770195049923*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["define the function \[OpenCurlyDoubleQuote]newswap\
+\[CloseCurlyDoubleQuote]", "Subsubsection",
+ CellChangeTimes->{{3.701770201914201*^9, 3.701770222457777*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"newswap", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"newswap", "[", 
+   RowBox[{"a_Symbol", ",", "b_Symbol"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "temp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"temp", "=", "a"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"a", "=", "b"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"b", "=", "temp"}], ";"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.701770344011682*^9, 3.701770400618061*^9}, 
+   3.7017704519092293`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"p", ",", "q"}], "}"}], "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.701770410986843*^9, 3.701770426882077*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.7017704274665623`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"newswap", "[", 
+  RowBox[{"p", ",", "q"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701770429001862*^9, 3.70177043717006*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"p", ",", "q"}], "}"}]], "Input",
+ CellChangeTimes->{{3.701770463133807*^9, 3.701770468313712*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.701770468918393*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 807},
+WindowMargins->{{Automatic, 49}, {-20, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Monograph.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 250, 4, 59, "Subsection"],
+Cell[CellGroupData[{
+Cell[855, 30, 167, 2, 29, "Subsubsection"],
+Cell[1025, 34, 598, 14, 143, "Input"],
+Cell[CellGroupData[{
+Cell[1648, 52, 209, 6, 30, "Input"],
+Cell[1860, 60, 117, 3, 30, "Output"]
+}, Open  ]],
+Cell[1992, 66, 148, 3, 30, "Input"],
+Cell[CellGroupData[{
+Cell[2165, 73, 138, 3, 30, "Input"],
+Cell[2306, 78, 115, 3, 87, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

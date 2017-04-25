@@ -1,0 +1,121 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3011,        112]
+NotebookOptionsPosition[      2376,         85]
+NotebookOutlinePosition[      2790,        101]
+CellTagsIndexPosition[      2747,         98]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["1. Write an ApplyAt function. It should behave as follows: ", "Section",
+ CellChangeTimes->{{3.7019233729425793`*^9, 3.701923373862424*^9}, {
+  3.701923420389679*^9, 3.701923448566049*^9}, {3.7019234887498913`*^9, 
+  3.701923489662137*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["a list:", "Subsection",
+ CellChangeTimes->{{3.701923517229959*^9, 3.701923521565946*^9}, {
+  3.701923565854162*^9, 3.701923566506217*^9}, {3.7019236091256104`*^9, 
+  3.701923612173914*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["alist"], "Input",
+ CellChangeTimes->{{3.701923615165942*^9, 3.701923615981845*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", 
+     RowBox[{"{", 
+      RowBox[{"d", ",", "e"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7019236164852324`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MapAt", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "@@", "#"}], "&"}], ",", "alist", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "1", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "2"}], "}"}]}], "}"}]}], "]"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.7019236236625767`*^9, 3.701923644454866*^9}, {
+  3.701923678327561*^9, 3.701923751030106*^9}, {3.701923800406268*^9, 
+  3.701923809470015*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a", ",", "b"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", 
+     RowBox[{"f", "[", 
+      RowBox[{"d", ",", "e"}], "]"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.70192364748317*^9, {3.701923684922101*^9, 3.701923753979308*^9}, {
+   3.701923803436512*^9, 3.7019238100457687`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 807},
+WindowMargins->{{Automatic, 93}, {-217, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 246, 3, 73, "Section"],
+Cell[CellGroupData[{
+Cell[851, 29, 195, 3, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[1071, 36, 97, 1, 30, "Input"],
+Cell[1171, 39, 268, 9, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1476, 53, 481, 14, 68, "Input"],
+Cell[1960, 69, 376, 11, 87, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

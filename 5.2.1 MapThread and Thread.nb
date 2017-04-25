@@ -1,0 +1,727 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20469,        718]
+NotebookOptionsPosition[     16657,        576]
+NotebookOutlinePosition[     17072,        592]
+CellTagsIndexPosition[     17029,        589]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["a matrix", "Subsection",
+ CellChangeTimes->{{3.701924430502006*^9, 3.701924460110127*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a1", ",", "a2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"b1", ",", "b2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"c1", ",", "c2"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.701924470518177*^9, 3.701924486686103*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a1", ",", "a2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"b1", ",", "b2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c1", ",", "c2"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.701924494150182*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["use MapThread", "Subsection",
+ CellChangeTimes->{{3.701924506757819*^9, 3.7019245317578373`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MapThread", "[", 
+  RowBox[{"f", ",", "m"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701924535750186*^9, 3.701924565558463*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a1", ",", "b1", ",", "c1"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"a2", ",", "b2", ",", "c2"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7019245664792433`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["use Transpose and Apply", "Subsection",
+ CellChangeTimes->{{3.7019245721099253`*^9, 3.7019245815897303`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Apply", "[", 
+  RowBox[{"f", ",", 
+   RowBox[{"Transpose", "[", "m", "]"}], ",", 
+   RowBox[{"{", "1", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701924587460462*^9, 3.701924610461927*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a1", ",", "b1", ",", "c1"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"a2", ",", "b2", ",", "c2"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7019246108656282`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["but MapThread is more efficient.", "Subsection",
+ CellChangeTimes->{{3.701924620549877*^9, 3.701924630702042*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["use Thread", "Subsection",
+ CellChangeTimes->{{3.701924833021961*^9, 3.7019248361658983`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Thread", "[", 
+  RowBox[{"f", "@@", "m"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701924840509819*^9, 3.701924850894354*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a1", ",", "b1", ",", "c1"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"a2", ",", "b2", ",", "c2"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.701924852344118*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["scalar parameters", "Subsection",
+ CellChangeTimes->{{3.701924909162436*^9, 3.70192492125389*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Thread", "[", 
+  RowBox[{"f", "@@", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a1", ",", "a2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b1", ",", "b2"}], "}"}], ",", "c"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701924942837901*^9, 3.701924961430121*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a1", ",", "b1", ",", "c"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"a2", ",", "b2", ",", "c"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.701924962195256*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["What is the \
+LinearSolve?\:4e00\:4e2a\:89e3\:7ebf\:6027\:65b9\:7a0b\:7684\:51fd\:6570", \
+"Subsection",
+ CellChangeTimes->{{3.7019254625367737`*^9, 3.7019254946377983`*^9}, {
+  3.701925646193367*^9, 3.701925657286373*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Random", "[", "]"}], ",", 
+     RowBox[{"{", "3", "}"}], ",", 
+     RowBox[{"{", "3", "}"}]}], "]"}], ",", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Random", "[", "]"}], ",", 
+     RowBox[{"{", "3", "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701925683783861*^9, 3.701925709189789*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"12.27975944384137`", ",", 
+   RowBox[{"-", "6.86273955400971`"}], ",", 
+   RowBox[{"-", "0.7931156086592996`"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.701925711636889*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["use Thead to construct a rule list.", "Subsection",
+ CellChangeTimes->{{3.7019258204535522`*^9, 3.70192583812571*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Thread", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], "\[Rule]", "%31"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.701925841802011*^9, 3.7019258694458027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"x1", "\[Rule]", "12.27975944384137`"}], ",", 
+   RowBox[{"x2", "\[Rule]", 
+    RowBox[{"-", "6.86273955400971`"}]}], ",", 
+   RowBox[{"x3", "\[Rule]", 
+    RowBox[{"-", "0.7931156086592996`"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.701925871784521*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["use Equal to compare to list", "Subsection",
+ CellChangeTimes->{{3.7019261632938557`*^9, 3.7019261696855383`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Equal", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701926174054103*^9, 3.7019261842298317`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.70192618456831*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thread Equal directly", "Subsection",
+ CellChangeTimes->{{3.7019266861411324`*^9, 3.701926694613236*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Thread", "[", 
+  RowBox[{"Equal", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7019266990682364`*^9, 3.7019267025122013`*^9}, {
+  3.701926732525375*^9, 3.701926747429451*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.7019267481872597`*^9}]
+}, Open  ]],
+
+Cell["\<\
+it is not what we want. Equal has evaluated before Thread take effects.\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.7019268939174557`*^9, 3.701926962712914*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MapThread Equal directly", "Subsection",
+ CellChangeTimes->{{3.70192680600487*^9, 3.701926823149032*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MapThread", "[", 
+  RowBox[{"Equal", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701926840331683*^9, 3.701926863917378*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"True", ",", "True", ",", "False"}], "}"}]], "Output",
+ CellChangeTimes->{3.701926864534906*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["see the attributes of thread, whether HoldAll is in it.", "Subsection",
+ CellChangeTimes->{{3.701926985108779*^9, 3.701927009813486*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Attributes", "[", "Thread", "]"}]], "Input",
+ CellChangeTimes->{{3.7019270151649427`*^9, 3.701927017205194*^9}, {
+  3.701927051221259*^9, 3.701927062981557*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "Protected", "}"}]], "Output",
+ CellChangeTimes->{3.701927063287407*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+use HoldAll instead of Unevaluated. (do not use it before you master it)\
+\>", "Subsection",
+ CellChangeTimes->{{3.7019270650761833`*^9, 3.701927106911601*^9}, {
+  3.7019428647993317`*^9, 3.7019429035353003`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"Thread", ",", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"Attributes", "[", "Thread", "]"}], ",", 
+     RowBox[{"{", "HoldAll", "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.701927114205318*^9, 3.701927131309284*^9}, {
+  3.701927187253379*^9, 3.7019272170133543`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["see the Attributes of Thead.", "Subsection",
+ CellChangeTimes->{{3.701927239780981*^9, 3.701927250956881*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Attributes", "[", "Thread", "]"}]], "Input",
+ CellChangeTimes->{{3.701927255748892*^9, 3.7019272603489113`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"HoldAll", ",", "Protected"}], "}"}]], "Output",
+ CellChangeTimes->{3.701927260613838*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Thread on Equal", "Subsection",
+ CellChangeTimes->{{3.701927277244876*^9, 3.701927289333391*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Thread", "[", 
+   RowBox[{"Equal", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "]"}], "]"}], "//", 
+  "Trace"}]], "Input",
+ CellChangeTimes->{{3.701927353708766*^9, 3.7019273961733*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"Thread", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2", ",", "3"}], "}"}], "\[Equal]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "2", ",", "4"}], "}"}]}], "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[Equal]", "1"}], ",", 
+      RowBox[{"2", "\[Equal]", "2"}], ",", 
+      RowBox[{"3", "\[Equal]", "4"}]}], "}"}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"1", "\[Equal]", "1"}],
+      HoldForm], ",", 
+     TagBox["True",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"2", "\[Equal]", "2"}],
+      HoldForm], ",", 
+     TagBox["True",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"3", "\[Equal]", "4"}],
+      HoldForm], ",", 
+     TagBox["False",
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"{", 
+     RowBox[{"True", ",", "True", ",", "False"}], "}"}],
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{{3.701927378992334*^9, 3.70192739662901*^9}}]
+}, Open  ]],
+
+Cell["it works using HoldAll attributes", "Subsubsection",
+ CellChangeTimes->{{3.7019274840848007`*^9, 3.70192749840523*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["recovery the Thread", "Subsection",
+ CellChangeTimes->{{3.701927503692712*^9, 3.701927509204698*^9}}],
+
+Cell[BoxData[
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"Thread", ",", 
+   RowBox[{"{", "Protected", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7019275131730013`*^9, 3.701927526965507*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Attributes", "[", "Thread", "]"}]], "Input",
+ CellChangeTimes->{{3.701927535059108*^9, 3.701927544693536*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "Protected", "}"}]], "Output",
+ CellChangeTimes->{3.701927544980925*^9, 3.701942855217301*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["How about if the first parameter of Thread is a scalar?", "Subsection",
+ CellChangeTimes->{{3.701942952066085*^9, 3.701942996615142*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Thread", "[", 
+  RowBox[{"f", "[", 
+   RowBox[{"3", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", "4"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7019430028471937`*^9, 3.701943017911368*^9}, {
+  3.70194334864109*^9, 3.701943358577149*^9}, {3.701943514991598*^9, 
+  3.70194351541537*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"3", ",", "1", ",", "4"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"3", ",", "2", ",", "4"}], "]"}], ",", 
+   RowBox[{"f", "[", 
+    RowBox[{"3", ",", "3", ",", "4"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7019430192716312`*^9, 3.7019433525911694`*^9, 
+  3.701943516187503*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+1. Use Thread and Apply to write a function called myMapThread that works \
+even if some of the elements in the second argument to MapThread are scalars, \
+i.e., myMapThread[Power,{{a,b,c},3}]\
+\>", "Section",
+ CellChangeTimes->{{3.701943067839448*^9, 3.701943144815576*^9}}],
+
+Cell["\<\
+First, the MapThread has two parameters. The first one is a function, the \
+second is a List.\
+\>", "Subsection",
+ CellChangeTimes->{{3.7019431727352247`*^9, 3.701943271231167*^9}, 
+   3.701943317055011*^9}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+If elements of second parameter are List and the length of these lists are \
+equal, just use MapThread to evaluate. If elements  contains scalar and List, \
+We should generate the scalar to List whose length is equal to other lists.\
+\>", "Subsection",
+ CellChangeTimes->{{3.701943364505159*^9, 3.701943551943218*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "myMapThread", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"myMapThread", "[", 
+   RowBox[{"f_Expression", ",", "p_List"}], "]"}], ":=", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"lengths", "=", 
+      RowBox[{"Length", "/@", "p"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Cases", "[", 
+        RowBox[{"lengths", ",", "0"}], "]"}], "\[Equal]", "0"}], ",", 
+      RowBox[{"(*", 
+       RowBox[{"hava", " ", "no", " ", "scalar"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Union", "[", "lengths", "]"}], "//", 
+         RowBox[{"Length", "\[Equal]", "1"}]}], ",", 
+        RowBox[{"(*", 
+         RowBox[{
+         "all", " ", "the", " ", "lists", " ", "hava", " ", "the", " ", 
+          "same", " ", "length"}], "*)"}], "\[IndentingNewLine]", 
+        RowBox[{"MapThread", "[", 
+         RowBox[{"f", ",", "p"}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Print", "[", "\"\<all the lists must have the same length\>\"", 
+         "]"}]}], "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"Cases", "[", 
+           RowBox[{"lengths", ",", 
+            RowBox[{"Except", "[", "0", "]"}]}], "]"}], "//", "Union"}], "//", 
+         RowBox[{"Length", "\[Equal]", "1"}]}], ",", "\"\<\>\""}], "]"}]}], 
+     "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7019435886232777`*^9, 3.701943621815054*^9}, {
+  3.701943697866331*^9, 3.701943703279477*^9}, {3.7019438659107933`*^9, 
+  3.701943961135298*^9}, {3.701944039087298*^9, 3.70194405751816*^9}, {
+  3.701944097303049*^9, 3.701944176463049*^9}, {3.701944210482031*^9, 
+  3.7019442567588873`*^9}, {3.7019442882086563`*^9, 3.7019442917270107`*^9}, {
+  3.7019450423508167`*^9, 3.701945143551046*^9}, {3.7019451800068398`*^9, 
+  3.7019452474307632`*^9}, {3.701945294513371*^9, 3.7019452978705587`*^9}, {
+  3.701945455214819*^9, 3.7019458338389874`*^9}, {3.7019460099463787`*^9, 
+  3.701946024327229*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.701944389198082*^9, 3.701944394054717*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.7019443945654078`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "/@", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", "3"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7019443786299133`*^9, 3.701944430934786*^9}, {
+  3.7019446657727137`*^9, 3.701944688754603*^9}, {3.7019451486079082`*^9, 
+  3.701945173954176*^9}, {3.701945309280045*^9, 3.7019453238545647`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.701944431685132*^9, {3.7019446787364473`*^9, 3.701944689634509*^9}, {
+   3.70194517072803*^9, 3.701945174469738*^9}, 3.701945324385221*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 780},
+WindowMargins->{{Automatic, 528}, {-184, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 96, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[701, 27, 331, 10, 30, "Input"],
+Cell[1035, 39, 278, 9, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1362, 54, 103, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[1490, 59, 151, 3, 47, "Input"],
+Cell[1644, 64, 251, 7, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1944, 77, 115, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[2084, 82, 218, 5, 47, "Input"],
+Cell[2305, 89, 251, 7, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[2583, 100, 120, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[2728, 105, 100, 1, 31, "Subsection"],
+Cell[CellGroupData[{
+Cell[2853, 110, 149, 3, 47, "Input"],
+Cell[3005, 115, 249, 7, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3303, 128, 104, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[3432, 133, 318, 9, 47, "Input"],
+Cell[3753, 144, 247, 7, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4049, 157, 229, 4, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[4303, 165, 419, 12, 47, "Input"],
+Cell[4725, 179, 214, 5, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4988, 190, 124, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[5137, 195, 223, 6, 47, "Input"],
+Cell[5363, 203, 309, 8, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5721, 217, 120, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[5866, 222, 267, 7, 47, "Input"],
+Cell[6136, 231, 73, 1, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6258, 238, 111, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[6394, 243, 356, 9, 47, "Input"],
+Cell[6753, 254, 76, 1, 30, "Output"]
+}, Open  ]],
+Cell[6844, 258, 172, 3, 29, "Subsubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7053, 266, 111, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[7189, 271, 330, 9, 47, "Input"],
+Cell[7522, 282, 135, 3, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7706, 291, 143, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[7874, 296, 185, 3, 47, "Input"],
+Cell[8062, 301, 100, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8211, 309, 223, 4, 39, "Subsection"],
+Cell[8437, 315, 345, 8, 47, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8819, 328, 116, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[8960, 333, 136, 2, 47, "Input"],
+Cell[9099, 337, 129, 3, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9277, 346, 103, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[9405, 351, 338, 10, 47, "Input"],
+Cell[9746, 363, 1127, 43, 50, "Output"]
+}, Open  ]],
+Cell[10888, 409, 125, 1, 29, "Subsubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11050, 415, 107, 1, 39, "Subsection"],
+Cell[11160, 418, 194, 4, 47, "Input"],
+Cell[CellGroupData[{
+Cell[11379, 426, 134, 2, 47, "Input"],
+Cell[11516, 430, 122, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11687, 438, 143, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[11855, 443, 349, 9, 47, "Input"],
+Cell[12207, 454, 368, 10, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12624, 470, 285, 5, 131, "Section"],
+Cell[12912, 477, 217, 5, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[13154, 486, 328, 5, 71, "Subsection"],
+Cell[13485, 493, 2249, 49, 365, "Input"],
+Cell[CellGroupData[{
+Cell[15759, 546, 125, 2, 47, "Input"],
+Cell[15887, 550, 72, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15996, 556, 381, 8, 47, "Input"],
+Cell[16380, 566, 237, 5, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

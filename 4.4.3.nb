@@ -1,0 +1,1308 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36968,       1299]
+NotebookOptionsPosition[     33410,       1173]
+NotebookOutlinePosition[     33860,       1190]
+CellTagsIndexPosition[     33817,       1187]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[StyleBox["1. Explain why functions such as Set and Clear have \
+to hold their first argument.", "Section"]], "Text",
+ CellChangeTimes->{{3.701682756846778*^9, 3.701682923502708*^9}, {
+  3.701683736805835*^9, 3.701683738101783*^9}}],
+
+Cell[TextData[StyleBox["    If Set do not hold their first argument, suppose \
+i=3 first, and then evaluate i=5, we will get 3=5, thus cause an error.", \
+"Subsection"]], "Text",
+ CellChangeTimes->{{3.701684024013702*^9, 3.7016840266698008`*^9}}],
+
+Cell[TextData[StyleBox["2. Fix mysum so that the global loop index variable \
+is not modified by the execution of the function.", "Section"]], "Text",
+ CellChangeTimes->{{3.701682935358356*^9, 3.701682967350326*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["the early version:", "Subsection"]], "Subsubsection",
+ CellChangeTimes->{{3.701684225441628*^9, 3.701684311277555*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"mysum", ",", " ", "HoldAll"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"mysum", "[", 
+   RowBox[{"f_", ",", " ", "v_", ",", " ", "l_", ",", " ", "h_"}], "]"}], " ",
+   ":=", "\n", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sum", " ", "=", " ", "0"}], "}"}], ",", "\n", "  ", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"v", " ", "=", " ", "l"}], ",", " ", 
+       RowBox[{"v", " ", "<=", " ", "h"}], ",", " ", 
+       RowBox[{"v", "++"}], ",", " ", 
+       RowBox[{"sum", " ", "+=", " ", "f"}]}], "]"}], ";", "\n", "  ", 
+     "sum"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.701683055295309*^9, 3.70168305529583*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["the fixed version:(use a local variable)", \
+"Subsection"]], "Subsubsection",
+ CellChangeTimes->{{3.7016830763902893`*^9, 3.701683124606387*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"mysum1", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mysum1", "[", 
+   RowBox[{"f_", ",", "v_", ",", "l_", ",", "h_"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"sum", "=", "0"}], ",", 
+      RowBox[{"x", "=", "v"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"x", "=", "l"}], ",", 
+       RowBox[{"x", "\[LessEqual]", "h"}], ",", 
+       RowBox[{"x", "++"}], ",", 
+       RowBox[{"sum", "+=", "f"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "sum"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.7016831274418993`*^9, 3.701683225942686*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["now test the two version:", "Subsection"]], \
+"Subsubsection",
+ CellChangeTimes->{{3.7016832385262327`*^9, 3.70168324823032*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"i", "=", "0"}], ";", 
+  RowBox[{"mysum", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "i", "]"}], ",", "i", ",", "1", ",", "5"}], "]"}], 
+  ";", "i"}]], "Input",
+ CellChangeTimes->{{3.701683253447131*^9, 3.7016832764626513`*^9}}],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{{3.701683277584897*^9, 3.7016832863683023`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"j", "=", "0"}], ";", 
+  RowBox[{"mysum1", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "j", "]"}], ",", "j", ",", "1", ",", "5"}], "]"}], 
+  ";", "j"}]], "Input",
+ CellChangeTimes->{{3.701683292034614*^9, 3.7016833046625347`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.701683306103547*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[StyleBox["from result, the fixed version did work.", \
+"Subsection"]], "Subsubsection",
+ CellChangeTimes->{{3.70168331189445*^9, 3.701683334238398*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+3. What happens if you call mysum[Sin[j],j,1,inc[p]]?Fix this.\
+\>", "Section",
+ CellChangeTimes->{{3.7016843990214863`*^9, 3.701684401221753*^9}, {
+  3.7016844339895353`*^9, 3.701684484725368*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["the inc function:", "Subsection",
+ CellChangeTimes->{{3.7016845797709703`*^9, 3.701684601733445*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"inc", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"inc", "[", "x_", "]"}], ":=", 
+  RowBox[{"x", "=", 
+   RowBox[{"x", "+", "1"}]}]}]}], "Input",
+ CellChangeTimes->{{3.701684636972725*^9, 3.701684663886236*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["call mysum:", "Subsection",
+ CellChangeTimes->{{3.701684811597725*^9, 3.7016848185978193`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "=", "8"}], ";", 
+  RowBox[{"j", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mysum", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "j", "]"}], ",", "j", ",", "1", ",", 
+    RowBox[{"inc", "[", "p", "]"}]}], "]"}], "//", "Trace"}]}], "Input",
+ CellChangeTimes->{{3.701684825549905*^9, 3.7016848627904673`*^9}, {
+  3.701685021024857*^9, 3.701685022366025*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.701684893820437*^9, 3.701685029361376*^9}]
+}, Open  ]],
+
+Cell["\<\
+the evaluation can not be finished, for it goes to a dead loop.  (j can  not \
+reach p)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.701684907341745*^9, 3.701684948357593*^9}, {
+  3.701685112766368*^9, 3.7016851253417377`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["use mysum1 to try ", "Subsubsection",
+ CellChangeTimes->{{3.701685170062191*^9, 3.701685180533629*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "=", "8"}], ";", 
+  RowBox[{"j", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mysum1", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "j", "]"}], ",", "j", ",", "1", ",", 
+    RowBox[{"inc", "[", "p", "]"}]}], "]"}], "//", "Trace"}]}], "Input",
+ CellChangeTimes->{{3.701685186662204*^9, 3.701685198527545*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.701685196768224*^9, 3.701685209773183*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["last evaluation with the same problem.", "Subsubsection",
+ CellChangeTimes->{{3.701685216973752*^9, 3.701685233229809*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+now use local variable to fix it(change all the arguments that call by name \
+to local variables).\
+\>", "Subsection",
+ CellChangeTimes->{{3.701685272637548*^9, 3.701685284021768*^9}, {
+  3.701685788502232*^9, 3.701685846893519*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"mysum2", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mysum2", "[", 
+   RowBox[{"f_", ",", "v_", ",", "l_", ",", "h_"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"sum", "=", "0"}], ",", 
+      RowBox[{"x", "=", "v"}], ",", 
+      RowBox[{"low", "=", "l"}], ",", 
+      RowBox[{"high", "=", "h"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"x", "=", "low"}], ",", 
+       RowBox[{"x", "\[LessEqual]", "high"}], ",", 
+       RowBox[{"x", "++"}], ",", 
+       RowBox[{"sum", "+=", "f"}]}], "]"}], ";", "\[IndentingNewLine]", 
+     "sum"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.701685354951272*^9, 3.701685429798142*^9}, {
+  3.701685584896247*^9, 3.701685604309608*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["test the fix version:", "Subsubsection",
+ CellChangeTimes->{{3.701685677325493*^9, 3.701685686389485*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"p", "=", "8"}], ";", 
+  RowBox[{"j", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mysum2", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "j", "]"}], ",", "j", ",", "1", ",", 
+    RowBox[{"inc", "[", "p", "]"}]}], "]"}], "//", "Trace"}]}], "Input",
+ CellChangeTimes->{{3.701685689661656*^9, 3.701685717984497*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"mysum2", "[", 
+     RowBox[{
+      RowBox[{"Sin", "[", "j", "]"}], ",", "j", ",", "1", ",", 
+      RowBox[{"inc", "[", "p", "]"}]}], "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"sum$", "=", "0"}], ",", 
+        RowBox[{"x$", "=", "j"}], ",", 
+        RowBox[{"low$", "=", "1"}], ",", 
+        RowBox[{"high$", "=", 
+         RowBox[{"inc", "[", "p", "]"}]}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"x$", "=", "low$"}], ",", 
+         RowBox[{"x$", "\[LessEqual]", "high$"}], ",", 
+         RowBox[{"x$", "++"}], ",", 
+         RowBox[{"sum$", "+=", 
+          RowBox[{"Sin", "[", "j", "]"}]}]}], "]"}], ";", "sum$"}]}], "]"}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"sum$3810", "=", "0"}],
+      HoldForm], ",", 
+     TagBox["0",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox["j",
+      HoldForm], ",", 
+     TagBox["0",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"x$3810", "=", "0"}],
+      HoldForm], ",", 
+     TagBox["0",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"low$3810", "=", "1"}],
+      HoldForm], ",", 
+     TagBox["1",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"inc", "[", "p", "]"}],
+      HoldForm], ",", 
+     TagBox[
+      RowBox[{"p", "=", 
+       RowBox[{"p", "+", "1"}]}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         TagBox["p",
+          HoldForm], ",", 
+         TagBox["8",
+          HoldForm]}], "}"}], ",", 
+       TagBox[
+        RowBox[{"8", "+", "1"}],
+        HoldForm], ",", 
+       TagBox["9",
+        HoldForm]}], "}"}], ",", 
+     TagBox[
+      RowBox[{"p", "=", "9"}],
+      HoldForm], ",", 
+     TagBox["9",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"high$3810", "=", "9"}],
+      HoldForm], ",", 
+     TagBox["9",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"x$3810", "=", "low$3810"}], ",", 
+         RowBox[{"x$3810", "\[LessEqual]", "high$3810"}], ",", 
+         RowBox[{"x$3810", "++"}], ",", 
+         RowBox[{"sum$3810", "+=", 
+          RowBox[{"Sin", "[", "j", "]"}]}]}], "]"}], ";", "sum$3810"}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"x$3810", "=", "low$3810"}], ",", 
+          RowBox[{"x$3810", "\[LessEqual]", "high$3810"}], ",", 
+          RowBox[{"x$3810", "++"}], ",", 
+          RowBox[{"sum$3810", "+=", 
+           RowBox[{"Sin", "[", "j", "]"}]}]}], "]"}],
+        HoldForm], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["low$3810",
+            HoldForm], ",", 
+           TagBox["1",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"x$3810", "=", "1"}],
+          HoldForm], ",", 
+         TagBox["1",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["1",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"1", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["1",
+            HoldForm]}], "}"}], ",", 
+         TagBox["1",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["2",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"2", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["2",
+            HoldForm]}], "}"}], ",", 
+         TagBox["2",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["3",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"3", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["3",
+            HoldForm]}], "}"}], ",", 
+         TagBox["3",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["4",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"4", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["4",
+            HoldForm]}], "}"}], ",", 
+         TagBox["4",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["5",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"5", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["5",
+            HoldForm]}], "}"}], ",", 
+         TagBox["5",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["6",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"6", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["6",
+            HoldForm]}], "}"}], ",", 
+         TagBox["6",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["7",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"7", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["7",
+            HoldForm]}], "}"}], ",", 
+         TagBox["7",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["8",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"8", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["8",
+            HoldForm]}], "}"}], ",", 
+         TagBox["8",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"9", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             TagBox["j",
+              HoldForm], ",", 
+             TagBox["0",
+              HoldForm]}], "}"}], ",", 
+           TagBox[
+            RowBox[{"Sin", "[", "0", "]"}],
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"sum$3810", "+=", "0"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["sum$3810",
+            HoldForm], ",", 
+           TagBox["0",
+            HoldForm]}], "}"}], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"x$3810", "++"}],
+          HoldForm], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox["9",
+          HoldForm]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["x$3810",
+            HoldForm], ",", 
+           TagBox["10",
+            HoldForm]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           TagBox["high$3810",
+            HoldForm], ",", 
+           TagBox["9",
+            HoldForm]}], "}"}], ",", 
+         TagBox[
+          RowBox[{"10", "\[LessEqual]", "9"}],
+          HoldForm], ",", 
+         TagBox["False",
+          HoldForm]}], "}"}], ",", 
+       TagBox["Null",
+        HoldForm]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       TagBox["sum$3810",
+        HoldForm], ",", 
+       TagBox["0",
+        HoldForm]}], "}"}], ",", 
+     TagBox["0",
+      HoldForm]}], "}"}], ",", 
+   TagBox["0",
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{3.701685720021987*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+and it works. (the reason is that Set evaluates the argument that call by \
+name)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.701685772613742*^9, 3.701685776533414*^9}, {
+  3.701685883048777*^9, 3.7016859279974337`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. What happens if you call swap[3,4]?", "Section",
+ CellChangeTimes->{{3.701685953405862*^9, 3.701685969453453*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["the defination of the swap function is:", "Subsection",
+ CellChangeTimes->{{3.701686010581449*^9, 3.701686031525873*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"swap", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"swap", "[", 
+   RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "temp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"temp", "=", "a"}], ";", 
+     RowBox[{"a", "=", "b"}], ";", 
+     RowBox[{"b", "=", "temp"}], ";"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.701686063325471*^9, 3.701686153597807*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["it is no doubt that we get the following error:", "Subsection",
+ CellChangeTimes->{{3.701685973477392*^9, 3.701685995357382*^9}, {
+  3.701686191301695*^9, 3.701686193837449*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"swap", "[", 
+  RowBox[{"3", ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.701686164613368*^9, 3.701686168381522*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "setraw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot assign to raw object \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"3\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Set/setraw\\\", ButtonNote -> \
+\\\"Set::setraw\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.701686168834506*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Set", "::", "setraw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot assign to raw object \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"4\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Set/setraw\\\", ButtonNote -> \
+\\\"Set::setraw\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.701686168849773*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "5. Write a function that takes the same arguments as While but mimics the \
+semantics of the ",
+ StyleBox["do...while", "Subsubsubsection"],
+ " construct of C (or the ",
+ StyleBox["repeat...until", "Subsubsubsection"],
+ " construct of Pascal). That is, the body of the loop should always execute \
+at least once, You will need to give the function the attribute \
+HoldAll(why?)"
+}], "Section",
+ CellChangeTimes->{{3.701686227981292*^9, 3.7016863820937157`*^9}, 
+   3.70168643651897*^9}],
+
+Cell[CellGroupData[{
+
+Cell["define the function doWhile:", "Subsection",
+ CellChangeTimes->{{3.701686807333477*^9, 3.701686823685227*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"doWhile", ",", "HoldAll"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"doWhile", "[", 
+   RowBox[{"body_", ",", "test_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"body", ";", 
+     RowBox[{"While", "[", 
+      RowBox[{"test", ",", "body"}], "]"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.701686826045217*^9, 3.701686873429523*^9}, {
+  3.701686914437722*^9, 3.7016869341494217`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["test doWhile: n=1;While[n<1,Print[n];n++]", "Subsection",
+ CellChangeTimes->{{3.701686944781105*^9, 3.701686951445724*^9}, {
+  3.701686981501432*^9, 3.701686983325409*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"n", "=", "1"}], ";", 
+  RowBox[{"doWhile", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Print", "[", "n", "]"}], ";", 
+     RowBox[{"n", "++"}]}], ",", 
+    RowBox[{"n", "<", "4"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.701686962855644*^9, 3.701687029897892*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{{3.70168701368377*^9, 3.701687030330288*^9}}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{{3.70168701368377*^9, 3.7016870303322897`*^9}}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{{3.70168701368377*^9, 3.701687030332841*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["define doWhile1 without HoldAll", "Subsection",
+ CellChangeTimes->{{3.701687117092958*^9, 3.701687128973195*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"doWhile1", "[", 
+   RowBox[{"body_", ",", "test_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"body", ";", 
+     RowBox[{"While", "[", 
+      RowBox[{"test", ",", "body"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.701687134157151*^9, 3.701687149445809*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["test doWhile1:", "Subsection",
+ CellChangeTimes->{{3.70168715674935*^9, 3.701687161132947*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{"n", " ", "=", " ", "1"}], ";", " ", 
+   RowBox[{"doWhile1", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Print", "[", "n", "]"}], ";", " ", 
+      RowBox[{"n", "++"}]}], ",", " ", 
+     RowBox[{"n", " ", "<", " ", "3"}]}], "]"}]}], "Input"]], "Input",
+ CellChangeTimes->{
+  3.7016871933851147`*^9, {3.701687588568756*^9, 3.701687605099051*^9}}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{
+  3.701687195431052*^9, {3.701687590695715*^9, 3.701687605933936*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.7016876313765297`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["it is no doubt to get a dead loop.", "Subsection",
+ CellChangeTimes->{{3.701687246556946*^9, 3.701687263381184*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "++"}]], "Input",
+ CellChangeTimes->{{3.7016872992121143`*^9, 3.701687305621148*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Increment", "::", "rvalue"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] is not \
+a variable with a value, so its value cannot be changed. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/rvalue\\\", \
+ButtonNote -> \\\"Increment::rvalue\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7016873063812723`*^9}],
+
+Cell[BoxData[
+ RowBox[{"1", "++"}]], "Output",
+ CellChangeTimes->{3.701687306382071*^9}]
+}, Open  ]],
+
+Cell["\<\
+for the above reason(1 cannot be changed), test(n<4) will always be true.\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.701687474292742*^9, 3.701687580652772*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 700},
+WindowMargins->{{Automatic, 537}, {-72, Automatic}},
+TaggingRules->{"$testsRun" -> False},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Book"}, "Monograph.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 245, 3, 58, "Text"],
+Cell[806, 25, 246, 3, 43, "Text"],
+Cell[1055, 30, 216, 2, 58, "Text"],
+Cell[CellGroupData[{
+Cell[1296, 36, 143, 1, 31, "Subsubsection"],
+Cell[1442, 39, 733, 19, 161, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2212, 63, 169, 2, 31, "Subsubsection"],
+Cell[2384, 67, 773, 21, 161, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3194, 93, 153, 2, 31, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[3372, 99, 261, 7, 47, "Input"],
+Cell[3636, 108, 96, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3769, 114, 262, 7, 47, "Input"],
+Cell[4034, 123, 70, 1, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[4131, 128, 166, 2, 31, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[4322, 134, 208, 4, 44, "Section"],
+Cell[CellGroupData[{
+Cell[4555, 142, 107, 1, 39, "Subsection"],
+Cell[4665, 145, 294, 7, 68, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4996, 157, 101, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[5122, 162, 414, 10, 66, "Input"],
+Cell[5539, 174, 99, 1, 30, "Output"]
+}, Open  ]],
+Cell[5653, 178, 237, 5, 29, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[5915, 187, 109, 1, 23, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[6049, 192, 364, 9, 66, "Input"],
+Cell[6416, 203, 101, 1, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[6544, 208, 129, 1, 29, "Subsubsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6710, 214, 243, 5, 39, "Subsection"],
+Cell[6956, 221, 904, 24, 161, "Input"],
+Cell[CellGroupData[{
+Cell[7885, 249, 112, 1, 28, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[8022, 254, 364, 9, 66, "Input"],
+Cell[8389, 265, 18122, 678, 430, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[26538, 947, 231, 5, 29, "Subsubsection"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26818, 958, 123, 1, 74, "Section"],
+Cell[CellGroupData[{
+Cell[26966, 963, 127, 1, 39, "Subsection"],
+Cell[27096, 966, 506, 13, 143, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27639, 984, 184, 2, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[27848, 990, 146, 3, 30, "Input"],
+Cell[27997, 995, 456, 10, 23, "Message"],
+Cell[28456, 1007, 456, 10, 23, "Message"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28973, 1024, 504, 11, 190, "Section"],
+Cell[CellGroupData[{
+Cell[29502, 1039, 116, 1, 39, "Subsection"],
+Cell[29621, 1042, 510, 13, 121, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30168, 1060, 178, 2, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[30371, 1066, 303, 9, 47, "Input"],
+Cell[CellGroupData[{
+Cell[30699, 1079, 92, 1, 23, "Print"],
+Cell[30794, 1082, 94, 1, 23, "Print"],
+Cell[30891, 1085, 92, 1, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31044, 1093, 119, 1, 39, "Subsection"],
+Cell[31166, 1096, 356, 10, 47, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31559, 1111, 101, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[31685, 1116, 395, 11, 47, "Input"],
+Cell[32083, 1129, 118, 2, 23, "Print"],
+Cell[32204, 1133, 79, 1, 63, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32332, 1140, 122, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[32479, 1145, 113, 2, 30, "Input"],
+Cell[32595, 1149, 509, 10, 23, "Message"],
+Cell[33107, 1161, 88, 2, 30, "Output"]
+}, Open  ]],
+Cell[33210, 1166, 172, 3, 29, "Subsubsection"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
