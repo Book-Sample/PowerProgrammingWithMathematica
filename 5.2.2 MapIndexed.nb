@@ -10,19 +10,167 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       770,         33]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       910,         36]
-CellTagsIndexPosition[       867,         33]
+NotebookDataLength[      6097,        210]
+NotebookOptionsPosition[      5035,        168]
+NotebookOutlinePosition[      5448,        184]
+CellTagsIndexPosition[      5405,        181]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+1. Use MapIndexed to write a function that takes a matrix and a scalar value \
+as arguments, and returns a new matrix that is identical to the original one \
+except that all of its diagonal elements are set to the given scalar, e.g., \
+setdiag[{{a,b,c},{d,e,f},{g,h,i}},0]={{0,b,c},{d,0,f},{g,h,0}}\
+\>", "Subsection",
+ CellChangeTimes->{{3.702116876581471*^9, 3.702117033246539*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["the two parameters are a matrix and a scalar.", "Subsubsection",
+ CellChangeTimes->{{3.702117051757263*^9, 3.702117053397386*^9}, {
+  3.70211710683738*^9, 3.702117119317326*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"setdiag", "[", 
+   RowBox[{
+    RowBox[{"m_", "?", "MatrixQ"}], ",", 
+    RowBox[{"n_", "?", "NumberQ"}]}], "]"}], ":=", 
+  RowBox[{"MapIndexed", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"Equal", "@@", "#2"}], ",", 
+       RowBox[{"#1", "/.", 
+        RowBox[{"#1", "->", "n"}]}], ",", "#1"}], "]"}], "&"}], ",", "m", ",", 
+    RowBox[{"{", "2", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7021171304213123`*^9, 3.702117224142227*^9}, {
+  3.702117315206398*^9, 3.702117343566127*^9}, {3.702117399341929*^9, 
+  3.70211741886948*^9}, {3.702117555994018*^9, 3.702117556957748*^9}, {
+  3.702117661808484*^9, 3.70211766789353*^9}, {3.702117705725822*^9, 
+  3.7021177168940697`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["now test function setdiag", "Subsubsection",
+ CellChangeTimes->{{3.702117230485285*^9, 3.702117241005608*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"setdiag", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", "8", ",", "9"}], "}"}]}], "}"}], ",", "3"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7021172451011963`*^9, 3.702117274845292*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "3", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "8", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7021172759907007`*^9, 3.702117352390723*^9, 
+  3.7021175632477293`*^9, 3.702117671201157*^9, 3.702117720856464*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+2. Use MapIndexed to write predicates called TriDiagonalQ, LowerTriangularQ, \
+and UpperTriangularQ that test a matrix for the corresponding properties.\
+\>", "Subsection",
+ CellChangeTimes->{{3.702117767421095*^9, 3.702117812324994*^9}, {
+  3.7021178453811607`*^9, 3.70211786954132*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What is TriDiagonal? TriDiagonal means LowerTriangular is same as \
+UpperTriangular.\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.702117949685275*^9, 3.702117983196793*^9}, {
+  3.7021180228796997`*^9, 3.702118087850045*^9}}],
+
+Cell[BoxData["LowerTriangularize"], "Input",
+ CellChangeTimes->{{3.7021181336210737`*^9, 3.702118139968307*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "8", ",", "9"}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.7021181893969812`*^9, 3.7021182051489487`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", "8", ",", "9"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.702118206150311*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UpperTriangularize", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "5", ",", "6"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"7", ",", "8", ",", "9"}], "}"}]}], "}"}], "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "5", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "9"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.702118254186698*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{808, 653},
-WindowMargins->{{Automatic, 266}, {-269, Automatic}},
+WindowSize->{862, 776},
+WindowMargins->{{Automatic, 294}, {41, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
-StyleDefinitions->"Default.nb"
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
 ]
 (* End of Notebook Content *)
 
@@ -35,9 +183,37 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 394, 6, 79, "Subsection"],
+Cell[CellGroupData[{
+Cell[999, 32, 184, 2, 29, "Subsubsection"],
+Cell[1186, 36, 763, 19, 47, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1986, 60, 116, 1, 29, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[2127, 65, 402, 12, 30, "Input"],
+Cell[2532, 79, 397, 10, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2990, 96, 298, 5, 59, "Subsection"],
+Cell[CellGroupData[{
+Cell[3313, 105, 234, 5, 29, "Subsubsection"],
+Cell[3550, 112, 112, 1, 47, "Input"],
+Cell[CellGroupData[{
+Cell[3687, 117, 329, 9, 30, "Input"],
+Cell[4019, 128, 302, 9, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4358, 142, 332, 10, 47, "Input"],
+Cell[4693, 154, 302, 9, 87, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
