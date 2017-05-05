@@ -1,0 +1,1161 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     36272,       1152]
+NotebookOptionsPosition[     34564,       1093]
+NotebookOutlinePosition[     35290,       1117]
+CellTagsIndexPosition[     35185,       1112]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "diff", "]"}], "\[IndentingNewLine]", 
+  RowBox[{
+  "(*", "\:79ef\:5206\:7684\:8fd0\:7b97\:89c4\:5219", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"diff", "[", 
+      RowBox[{"c_", ",", "x_"}], "]"}], "/;", 
+     RowBox[{"FreeQ", "[", 
+      RowBox[{"c", ",", "x"}], "]"}]}], ":=", "0"}], ";"}], 
+  RowBox[{"(*", "\:5e38\:6570", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"diff", "[", 
+     RowBox[{"x_", ",", "x_"}], "]"}], ":=", "1"}], ";"}], 
+  RowBox[{
+  "(*", "\:5bf9\:81ea\:5df1\:7684\:79ef\:5206", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"diff", "[", 
+      RowBox[{
+       RowBox[{"c_", "*", "f_"}], ",", "x_"}], "]"}], "/;", 
+     RowBox[{"FreeQ", "[", 
+      RowBox[{"c", ",", "x"}], "]"}]}], ":=", 
+    RowBox[{"c", "*", 
+     RowBox[{"diff", "[", 
+      RowBox[{"f", ",", "x"}], "]"}]}]}], ";"}], 
+  RowBox[{
+  "(*", "\:5e38\:6570\:4e0e\:8868\:8fbe\:5f0f\:76f8\:4e58", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"diff", "[", 
+     RowBox[{
+      RowBox[{"f_", "+", "g_"}], ",", "x_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"diff", "[", 
+      RowBox[{"f", ",", "x"}], "]"}], "+", 
+     RowBox[{"diff", "[", 
+      RowBox[{"g", ",", "x"}], "]"}]}]}], ";", 
+   RowBox[{"(*", "\:8868\:8fbe\:5f0f\:76f8\:52a0", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"diff", "[", 
+      RowBox[{
+       RowBox[{"x_", "^", "n_."}], ",", "x_"}], "]"}], "/;", 
+     RowBox[{"FreeQ", "[", 
+      RowBox[{"n", ",", "x"}], "]"}]}], ":=", 
+    RowBox[{"n", " ", 
+     RowBox[{"Power", "[", 
+      RowBox[{"x", ",", 
+       RowBox[{"n", "-", "1"}]}], "]"}]}]}], ";", 
+   RowBox[{"(*", "\:6307\:6570", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"diff", "[", 
+      RowBox[{
+       RowBox[{"fx_", "^", "n_"}], ",", "x_"}], "]"}], "/;", 
+     RowBox[{
+      RowBox[{"FreeQ", "[", 
+       RowBox[{"n", ",", "x"}], "]"}], "&&", 
+      RowBox[{"!", 
+       RowBox[{"FreeQ", "[", 
+        RowBox[{"fx", ",", "x"}], "]"}]}]}]}], ":=", 
+    RowBox[{"n", "*", 
+     RowBox[{"Power", "[", 
+      RowBox[{"fx", ",", 
+       RowBox[{"n", "-", "1"}]}], "]"}], "*", 
+     RowBox[{"diff", "[", 
+      RowBox[{"fx", ",", "x"}], "]"}]}]}]}], 
+  RowBox[{
+  "(*", "\:94fe\:5f0f\:6cd5\:5219", "*)"}]}], "\[IndentingNewLine]"}], "Input",\
+
+ CellChangeTimes->{{3.702930586677443*^9, 3.702930679731353*^9}, {
+   3.702930736944686*^9, 3.702930887337864*^9}, {3.7029309329349937`*^9, 
+   3.702930997487191*^9}, {3.7029312105022984`*^9, 3.7029312729441566`*^9}, {
+   3.702931383886445*^9, 3.702931432924169*^9}, {3.7029316745485573`*^9, 
+   3.702931825226884*^9}, {3.7029318840091352`*^9, 3.7029319094640427`*^9}, 
+   3.702932347435747*^9, 3.702932504484549*^9, {3.702932747534923*^9, 
+   3.702932762398415*^9}, 3.7029328306351147`*^9, {3.702932997274474*^9, 
+   3.7029330159548798`*^9}, {3.702933065661416*^9, 3.7029330912162027`*^9}, {
+   3.702933132761838*^9, 3.7029331695119467`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["now test the diff function", "Subsection",
+ CellChangeTimes->{{3.702931032977605*^9, 3.7029310551527357`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"diff", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", " ", 
+     RowBox[{"x", "^", "2"}]}], "-", 
+    RowBox[{"2", "x"}], "+", "1"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7029310638423634`*^9, 3.702931094376739*^9}, {
+  3.702931563856834*^9, 3.7029315659005737`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "2"}], "+", 
+  RowBox[{"6", " ", "x"}]}]], "Output",
+ CellChangeTimes->{{3.702931083052528*^9, 3.702931094894724*^9}, 
+   3.702931566524756*^9, 3.7029322873232613`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "diff"}]], "Input",
+ CellChangeTimes->{{3.702931289497199*^9, 3.702931296367222*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`diff", "Print", "PrintUsage",
+ CellChangeTimes->{3.702932289788109*^9},
+ CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"diff", "[", 
+           RowBox[{"c_", ",", "x_"}], "]"}], "/;", 
+          RowBox[{"FreeQ", "[", 
+           RowBox[{"c", ",", "x"}], "]"}]}], ":=", "0"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"diff", "[", 
+          RowBox[{"x_", ",", "x_"}], "]"}], ":=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"diff", "[", 
+           RowBox[{
+            RowBox[{"c_", " ", "f_"}], ",", "x_"}], "]"}], "/;", 
+          RowBox[{"FreeQ", "[", 
+           RowBox[{"c", ",", "x"}], "]"}]}], ":=", 
+         RowBox[{"c", " ", 
+          RowBox[{"diff", "[", 
+           RowBox[{"f", ",", "x"}], "]"}]}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"diff", "[", 
+          RowBox[{
+           RowBox[{"f_", "+", "g_"}], ",", "x_"}], "]"}], ":=", 
+         RowBox[{
+          RowBox[{"diff", "[", 
+           RowBox[{"f", ",", "x"}], "]"}], "+", 
+          RowBox[{"diff", "[", 
+           RowBox[{"g", ",", "x"}], "]"}]}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"diff", "[", 
+           RowBox[{
+            SuperscriptBox["x_", "n_."], ",", "x"}], "]"}], "/;", 
+          RowBox[{"FreeQ", "[", 
+           RowBox[{"n", ",", "x"}], "]"}]}], ":=", 
+         RowBox[{"n", " ", 
+          SuperscriptBox["x", 
+           RowBox[{"n", "-", "1"}]]}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"diff", "[", 
+           RowBox[{
+            SuperscriptBox["fx_", "n_"], ",", "x_"}], "]"}], "/;", 
+          RowBox[{
+           RowBox[{"FreeQ", "[", 
+            RowBox[{"n", ",", "x"}], "]"}], "&&", 
+           RowBox[{"!", 
+            RowBox[{"FreeQ", "[", 
+             RowBox[{"fx", ",", "x"}], "]"}]}]}]}], ":=", 
+         RowBox[{"n", " ", 
+          SuperscriptBox["fx", 
+           RowBox[{"n", "-", "1"}]], " ", 
+          RowBox[{"diff", "[", 
+           RowBox[{"fx", ",", "x"}], "]"}]}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`diff],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.702932289823371*^9},
+ CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"diff", "[", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"x", "^", "2"}], "+", 
+      RowBox[{"2", "x"}], "+", "1"}], ")"}], "3"], ",", "x"}], "]"}]], "Input",\
+
+ CellChangeTimes->{
+  3.702931288781166*^9, {3.702931475876484*^9, 3.702931500557262*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3", " ", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     RowBox[{"2", " ", "x"}], "+", 
+     SuperscriptBox["x", "2"]}], ")"}], "2"]}]], "Output",
+ CellChangeTimes->{
+  3.702931501157557*^9, 3.7029321865362864`*^9, 3.702932292106934*^9, {
+   3.702932323214458*^9, 3.702932325140691*^9}, 3.702932365187743*^9, 
+   3.7029325248787813`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"diff", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", 
+       RowBox[{"2", "x"}], "+", "1"}], ")"}], "^", "3"}], ",", "x"}], "]"}], "//",
+   "Trace"}]], "Input",
+ CellChangeTimes->{{3.702932018182303*^9, 3.70293204466224*^9}, {
+  3.7029321884048634`*^9, 3.702932190900441*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{
+         SuperscriptBox["x", "2"], "+", 
+         RowBox[{"2", " ", "x"}], "+", "1"}],
+        HoldForm], ",", 
+       TagBox[
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}],
+        HoldForm]}], "}"}], ",", 
+     TagBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}], ")"}], "3"],
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"diff", "[", 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}], ")"}], "3"], ",", "x"}], "]"}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"FreeQ", "[", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{"2", " ", "x"}], "+", 
+           SuperscriptBox["x", "2"]}], ")"}], "3"], ",", "x"}], "]"}],
+      HoldForm], ",", 
+     TagBox["False",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"FreeQ", "[", 
+       RowBox[{"3", ",", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}]}], "]"}],
+      HoldForm], ",", 
+     TagBox["True",
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"3", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"2", " ", "x"}], "+", 
+        SuperscriptBox["x", "2"]}], ")"}], 
+      RowBox[{"3", "-", "1"}]]}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{"3", "-", "1"}],
+        HoldForm], ",", 
+       TagBox["2",
+        HoldForm]}], "}"}], ",", 
+     TagBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}], ")"}], "2"],
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"3", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"2", " ", "x"}], "+", 
+        SuperscriptBox["x", "2"]}], ")"}], "2"]}],
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.70293204581071*^9, 3.7029320786708527`*^9, {3.70293217905163*^9, 
+   3.7029321913400383`*^9}, 3.702932293740638*^9, 3.702932329162799*^9, 
+   3.702932370763875*^9, 3.702932536209004*^9, 3.702932767220031*^9, 
+   3.702932836620164*^9, 3.702933031156084*^9, {3.7029330959034357`*^9, 
+   3.702933125549371*^9}, 3.702933164788539*^9}]
+}, Open  ]],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.702932181928803*^9, 3.702932183906871*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"diff", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "+", "1"}], ")"}], "^", "2"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7029321083591967`*^9, 3.702932121068089*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  RowBox[{"(", 
+   RowBox[{"1", "+", "x"}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.702932121969449*^9, {3.702932298084041*^9, 3.702932320901301*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FreeQ", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "2"}], "+", 
+    RowBox[{"2", "x"}], "+", "1"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.70293213652489*^9, 3.70293215230968*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.702932152753825*^9, {3.702932296509791*^9, 3.702932319730843*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", "%69", "]"}]], "Input",
+ CellChangeTimes->{{3.702932386657762*^9, 3.702932394944805*^9}, {
+   3.7029324300723047`*^9, 3.702932431477995*^9}, {3.7029325289689283`*^9, 
+   3.7029325404632673`*^9}, {3.7029326020958147`*^9, 3.702932652261875*^9}, {
+   3.702932696450492*^9, 3.702932698001691*^9}, {3.702932771320022*^9, 
+   3.7029327720330048`*^9}, {3.702932841616095*^9, 3.7029328422269287`*^9}, {
+   3.7029330503512907`*^9, 3.702933050557716*^9}, 3.702933107139943*^9}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        TagBox[
+         RowBox[{
+          SuperscriptBox["x", "2"], "+", 
+          RowBox[{"2", " ", "x"}], "+", "1"}],
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"1", "+", 
+          RowBox[{"2", " ", "x"}], "+", 
+          SuperscriptBox["x", "2"]}],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}], ")"}], "3"],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"diff", "[", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{"2", " ", "x"}], "+", 
+           SuperscriptBox["x", "2"]}], ")"}], "3"], ",", "x"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"FreeQ", "[", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{"2", " ", "x"}], "+", 
+           SuperscriptBox["x", "2"]}], ")"}], "3"], ",", "x"}], "]"}],
+      HoldForm], 
+     TagBox["False",
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{
+       RowBox[{"FreeQ", "[", 
+        RowBox[{"3", ",", "x"}], "]"}], "&&", 
+       RowBox[{"!", 
+        RowBox[{"FreeQ", "[", 
+         RowBox[{
+          RowBox[{"1", "+", 
+           RowBox[{"2", " ", "x"}], "+", 
+           SuperscriptBox["x", "2"]}], ",", "x"}], "]"}]}]}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"FreeQ", "[", 
+          RowBox[{"3", ",", "x"}], "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        TagBox[
+         RowBox[{"FreeQ", "[", 
+          RowBox[{
+           RowBox[{"1", "+", 
+            RowBox[{"2", " ", "x"}], "+", 
+            SuperscriptBox["x", "2"]}], ",", "x"}], "]"}],
+         HoldForm], 
+        TagBox["False",
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"!", "False"}],
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox["True",
+         HoldForm], "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox["True",
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"3", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"2", " ", "x"}], "+", 
+          SuperscriptBox["x", "2"]}], ")"}], 
+        RowBox[{"3", "-", "1"}]], " ", 
+       RowBox[{"diff", "[", 
+        RowBox[{
+         RowBox[{"1", "+", 
+          RowBox[{"2", " ", "x"}], "+", 
+          SuperscriptBox["x", "2"]}], ",", "x"}], "]"}]}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {GridBox[{
+       {
+        TagBox[
+         RowBox[{"3", "-", "1"}],
+         HoldForm]},
+       {
+        TagBox["2",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}], ")"}], "2"],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"diff", "[", 
+       RowBox[{
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "x"}], "+", 
+         SuperscriptBox["x", "2"]}], ",", "x"}], "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"FreeQ", "[", 
+          RowBox[{
+           RowBox[{"1", "+", 
+            RowBox[{"2", " ", "x"}], "+", 
+            SuperscriptBox["x", "2"]}], ",", "x"}], "]"}],
+         HoldForm]},
+       {
+        TagBox["False",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{
+       RowBox[{"diff", "[", 
+        RowBox[{"1", ",", "x"}], "]"}], "+", 
+       RowBox[{"diff", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", " ", "x"}], "+", 
+          SuperscriptBox["x", "2"]}], ",", "x"}], "]"}]}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"diff", "[", 
+          RowBox[{"1", ",", "x"}], "]"}],
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{"FreeQ", "[", 
+          RowBox[{"1", ",", "x"}], "]"}],
+         HoldForm], 
+        TagBox["True",
+         HoldForm]},
+       {
+        TagBox["0",
+         HoldForm], "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        TagBox[
+         RowBox[{"diff", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"2", " ", "x"}], "+", 
+            SuperscriptBox["x", "2"]}], ",", "x"}], "]"}],
+         HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{"FreeQ", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"2", " ", "x"}], "+", 
+            SuperscriptBox["x", "2"]}], ",", "x"}], "]"}],
+         HoldForm], 
+        TagBox["False",
+         HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{
+          RowBox[{"diff", "[", 
+           RowBox[{
+            RowBox[{"2", " ", "x"}], ",", "x"}], "]"}], "+", 
+          RowBox[{"diff", "[", 
+           RowBox[{
+            SuperscriptBox["x", "2"], ",", "x"}], "]"}]}],
+         HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{"diff", "[", 
+          RowBox[{
+           RowBox[{"2", " ", "x"}], ",", "x"}], "]"}],
+         HoldForm], GridBox[{
+          {
+           TagBox[
+            RowBox[{"FreeQ", "[", 
+             RowBox[{
+              RowBox[{"2", " ", "x"}], ",", "x"}], "]"}],
+            HoldForm]},
+          {
+           TagBox["False",
+            HoldForm]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+          {
+           TagBox[
+            RowBox[{"FreeQ", "[", 
+             RowBox[{"2", ",", "x"}], "]"}],
+            HoldForm]},
+          {
+           TagBox["True",
+            HoldForm]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], 
+        TagBox[
+         RowBox[{"2", " ", 
+          RowBox[{"diff", "[", 
+           RowBox[{"x", ",", "x"}], "]"}]}],
+         HoldForm], GridBox[{
+          {
+           TagBox[
+            RowBox[{"diff", "[", 
+             RowBox[{"x", ",", "x"}], "]"}],
+            HoldForm], "\<\"\"\>"},
+          {
+           TagBox[
+            RowBox[{"FreeQ", "[", 
+             RowBox[{"x", ",", "x"}], "]"}],
+            HoldForm], 
+           TagBox["False",
+            HoldForm]},
+          {
+           TagBox["1",
+            HoldForm], "\<\"\"\>"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], 
+        TagBox[
+         RowBox[{"2", " ", "1"}],
+         HoldForm], 
+        TagBox["2",
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{"diff", "[", 
+          RowBox[{
+           SuperscriptBox["x", "2"], ",", "x"}], "]"}],
+         HoldForm], GridBox[{
+          {
+           TagBox[
+            RowBox[{"FreeQ", "[", 
+             RowBox[{
+              SuperscriptBox["x", "2"], ",", "x"}], "]"}],
+            HoldForm]},
+          {
+           TagBox["False",
+            HoldForm]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+          {
+           TagBox[
+            RowBox[{
+             RowBox[{"FreeQ", "[", 
+              RowBox[{"2", ",", "x"}], "]"}], "&&", 
+             RowBox[{"!", 
+              RowBox[{"FreeQ", "[", 
+               RowBox[{"x", ",", "x"}], "]"}]}]}],
+            HoldForm], "\<\"\"\>", "\<\"\"\>"},
+          {
+           TagBox[
+            RowBox[{"FreeQ", "[", 
+             RowBox[{"2", ",", "x"}], "]"}],
+            HoldForm], 
+           TagBox["True",
+            HoldForm], "\<\"\"\>"},
+          {GridBox[{
+             {
+              TagBox[
+               RowBox[{"FreeQ", "[", 
+                RowBox[{"x", ",", "x"}], "]"}],
+               HoldForm]},
+             {
+              TagBox["False",
+               HoldForm]}
+            },
+            
+            GridBoxAlignment->{
+             "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+              "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.7]}, 
+                Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[0.1]}, 
+                Offset[0.2]}, "RowsIndexed" -> {}}], 
+           TagBox[
+            RowBox[{"!", "False"}],
+            HoldForm], 
+           TagBox["True",
+            HoldForm]},
+          {
+           TagBox["True",
+            HoldForm], "\<\"\"\>", "\<\"\"\>"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], 
+        TagBox[
+         RowBox[{"2", " ", 
+          SuperscriptBox["x", 
+           RowBox[{"2", "-", "1"}]], " ", 
+          RowBox[{"diff", "[", 
+           RowBox[{"x", ",", "x"}], "]"}]}],
+         HoldForm], GridBox[{
+          {
+           TagBox[
+            RowBox[{"2", "-", "1"}],
+            HoldForm], 
+           TagBox["1",
+            HoldForm]},
+          {
+           TagBox[
+            SuperscriptBox["x", "1"],
+            HoldForm], "\<\"\"\>"},
+          {
+           TagBox["x",
+            HoldForm], "\<\"\"\>"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+          {
+           TagBox[
+            RowBox[{"diff", "[", 
+             RowBox[{"x", ",", "x"}], "]"}],
+            HoldForm], "\<\"\"\>"},
+          {
+           TagBox[
+            RowBox[{"FreeQ", "[", 
+             RowBox[{"x", ",", "x"}], "]"}],
+            HoldForm], 
+           TagBox["False",
+            HoldForm]},
+          {
+           TagBox["1",
+            HoldForm], "\<\"\"\>"}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], 
+        TagBox[
+         RowBox[{"2", " ", "x"}],
+         HoldForm], 
+        TagBox[
+         RowBox[{"2", " ", "x"}],
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"2", "+", 
+          RowBox[{"2", " ", "x"}]}],
+         HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>", "\<\"\"\>", "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"0", "+", 
+       RowBox[{"(", 
+        RowBox[{"2", "+", 
+         RowBox[{"2", " ", "x"}]}], ")"}]}],
+      HoldForm], 
+     TagBox[
+      RowBox[{"2", "+", 
+       RowBox[{"2", " ", "x"}]}],
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"3", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"2", " ", "x"}], "+", 
+          SuperscriptBox["x", "2"]}], ")"}], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{"2", "+", 
+         RowBox[{"2", " ", "x"}]}], ")"}]}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"3", " ", 
+       RowBox[{"(", 
+        RowBox[{"2", "+", 
+         RowBox[{"2", " ", "x"}]}], ")"}], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{"2", " ", "x"}], "+", 
+          SuperscriptBox["x", "2"]}], ")"}], "2"]}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{{
+      HoldForm[$CellContext`x^2 + 2 $CellContext`x + 1], 
+      HoldForm[1 + 2 $CellContext`x + $CellContext`x^2]}, 
+     HoldForm[(1 + 2 $CellContext`x + $CellContext`x^2)^3]}, 
+    HoldForm[
+     $CellContext`diff[(1 + 
+       2 $CellContext`x + $CellContext`x^2)^3, $CellContext`x]], {
+     HoldForm[
+      FreeQ[(1 + 2 $CellContext`x + $CellContext`x^2)^3, $CellContext`x]], 
+     HoldForm[False]}, {
+     HoldForm[
+      And[
+       FreeQ[3, $CellContext`x], 
+       Not[
+        FreeQ[1 + 2 $CellContext`x + $CellContext`x^2, $CellContext`x]]]], {
+      HoldForm[
+       FreeQ[3, $CellContext`x]], 
+      HoldForm[True]}, {{
+       HoldForm[
+        FreeQ[1 + 2 $CellContext`x + $CellContext`x^2, $CellContext`x]], 
+       HoldForm[False]}, 
+      HoldForm[
+       Not[False]], 
+      HoldForm[True]}, 
+     HoldForm[True]}, 
+    HoldForm[
+    3 (1 + 2 $CellContext`x + $CellContext`x^2)^(3 - 1) $CellContext`diff[
+      1 + 2 $CellContext`x + $CellContext`x^2, $CellContext`x]], {{
+      HoldForm[3 - 1], 
+      HoldForm[2]}, 
+     HoldForm[(1 + 2 $CellContext`x + $CellContext`x^2)^2]}, {
+     HoldForm[
+      $CellContext`diff[
+      1 + 2 $CellContext`x + $CellContext`x^2, $CellContext`x]], {
+      HoldForm[
+       FreeQ[1 + 2 $CellContext`x + $CellContext`x^2, $CellContext`x]], 
+      HoldForm[False]}, 
+     HoldForm[$CellContext`diff[1, $CellContext`x] + $CellContext`diff[
+       2 $CellContext`x + $CellContext`x^2, $CellContext`x]], {
+      HoldForm[
+       $CellContext`diff[1, $CellContext`x]], {
+       HoldForm[
+        FreeQ[1, $CellContext`x]], 
+       HoldForm[True]}, 
+      HoldForm[0]}, {
+      HoldForm[
+       $CellContext`diff[
+       2 $CellContext`x + $CellContext`x^2, $CellContext`x]], {
+       HoldForm[
+        FreeQ[2 $CellContext`x + $CellContext`x^2, $CellContext`x]], 
+       HoldForm[False]}, 
+      HoldForm[$CellContext`diff[
+        2 $CellContext`x, $CellContext`x] + \
+$CellContext`diff[$CellContext`x^2, $CellContext`x]], {
+       HoldForm[
+        $CellContext`diff[2 $CellContext`x, $CellContext`x]], {
+        HoldForm[
+         FreeQ[2 $CellContext`x, $CellContext`x]], 
+        HoldForm[False]}, {
+        HoldForm[
+         FreeQ[2, $CellContext`x]], 
+        HoldForm[True]}, 
+       HoldForm[2 $CellContext`diff[$CellContext`x, $CellContext`x]], {
+        HoldForm[
+         $CellContext`diff[$CellContext`x, $CellContext`x]], {
+         HoldForm[
+          FreeQ[$CellContext`x, $CellContext`x]], 
+         HoldForm[False]}, 
+        HoldForm[1]}, 
+       HoldForm[2 1], 
+       HoldForm[2]}, {
+       HoldForm[
+        $CellContext`diff[$CellContext`x^2, $CellContext`x]], {
+        HoldForm[
+         FreeQ[$CellContext`x^2, $CellContext`x]], 
+        HoldForm[False]}, {
+        HoldForm[
+         And[
+          FreeQ[2, $CellContext`x], 
+          Not[
+           FreeQ[$CellContext`x, $CellContext`x]]]], {
+         HoldForm[
+          FreeQ[2, $CellContext`x]], 
+         HoldForm[True]}, {{
+          HoldForm[
+           FreeQ[$CellContext`x, $CellContext`x]], 
+          HoldForm[False]}, 
+         HoldForm[
+          Not[False]], 
+         HoldForm[True]}, 
+        HoldForm[True]}, 
+       HoldForm[
+       2 $CellContext`x^(2 - 
+          1) $CellContext`diff[$CellContext`x, $CellContext`x]], {{
+         HoldForm[2 - 1], 
+         HoldForm[1]}, 
+        HoldForm[$CellContext`x^1], 
+        HoldForm[$CellContext`x]}, {
+        HoldForm[
+         $CellContext`diff[$CellContext`x, $CellContext`x]], {
+         HoldForm[
+          FreeQ[$CellContext`x, $CellContext`x]], 
+         HoldForm[False]}, 
+        HoldForm[1]}, 
+       HoldForm[2 $CellContext`x 1], 
+       HoldForm[2 $CellContext`x]}, 
+      HoldForm[2 + 2 $CellContext`x]}, 
+     HoldForm[0 + (2 + 2 $CellContext`x)], 
+     HoldForm[2 + 2 $CellContext`x]}, 
+    HoldForm[
+    3 (1 + 2 $CellContext`x + $CellContext`x^2)^2 (2 + 2 $CellContext`x)], 
+    HoldForm[
+    3 (2 + 2 $CellContext`x) (1 + 
+       2 $CellContext`x + $CellContext`x^2)^2]}]]], "Output",
+ CellChangeTimes->{
+  3.702932432631403*^9, {3.702932529745775*^9, 3.7029325409206333`*^9}, {
+   3.702932618183889*^9, 3.7029326530711823`*^9}, 3.70293269863351*^9, 
+   3.702932772476326*^9, 3.7029328436811333`*^9, 3.7029330510830803`*^9, 
+   3.702933107787938*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 192}, {-109, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-4e37cd07-df8a-415c-894a-408fb416eab7"->{
+  Cell[4558, 146, 140, 2, 42, "Print",
+   CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"],
+  Cell[4701, 150, 2721, 84, 188, "Print",
+   CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-4e37cd07-df8a-415c-894a-408fb416eab7", 34962, 1104}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3145, 91, 292, "Input"],
+Cell[CellGroupData[{
+Cell[3728, 115, 116, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[3869, 120, 304, 8, 30, "Input"],
+Cell[4176, 130, 207, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4420, 140, 113, 2, 30, "Input"],
+Cell[CellGroupData[{
+Cell[4558, 146, 140, 2, 42, "Print",
+ CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"],
+Cell[4701, 150, 2721, 84, 188, "Print",
+ CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7471, 240, 308, 10, 34, "Input"],
+Cell[7782, 252, 377, 10, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8196, 267, 367, 11, 47, "Input"],
+Cell[8566, 280, 2710, 95, 84, "Output"]
+}, Open  ]],
+Cell[11291, 378, 82, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[11398, 383, 223, 6, 30, "Input"],
+Cell[11624, 391, 188, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11849, 401, 224, 6, 47, "Input"],
+Cell[12076, 409, 123, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12236, 416, 508, 7, 47, "Input"],
+Cell[12747, 425, 21789, 664, 383, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
