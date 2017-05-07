@@ -1,0 +1,152 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3995,        143]
+NotebookOptionsPosition[      3208,        112]
+NotebookOutlinePosition[      3623,        128]
+CellTagsIndexPosition[      3580,        125]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "fact", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fact", "[", "0", "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fact", "[", "n_Integer", "]"}], ":=", 
+  RowBox[{"n", "*", 
+   RowBox[{"fact", "[", 
+    RowBox[{"n", "-", "1"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.7027861451986628`*^9, 3.70278617626088*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "fact", "]"}]], "Input",
+ CellChangeTimes->{{3.702786179278316*^9, 3.702786184948496*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"fact", "[", "0", "]"}], "]"}], "\[RuleDelayed]", "1"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"fact", "[", "n_Integer", "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"n", " ", 
+     RowBox[{"fact", "[", 
+      RowBox[{"n", "-", "1"}], "]"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.702786185674382*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fact", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.702786195103675*^9, 3.702786197740839*^9}}],
+
+Cell[BoxData["120"], "Output",
+ CellChangeTimes->{3.702786198289003*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Clear the definition of fact and redefine it, but this time specify the rule \
+for fact[0] last.\
+\>", "Subsection",
+ CellChangeTimes->{{3.702786226700431*^9, 3.7027862525886173`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "fact", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fact", "[", "n_Integer", "]"}], ":=", 
+   RowBox[{"n", "*", 
+    RowBox[{"fact", "[", 
+     RowBox[{"n", "-", "1"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fact", "[", "0", "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DownValues", "[", "fact", "]"}]}], "Input",
+ CellChangeTimes->{{3.7027862604361887`*^9, 3.702786295509569*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"fact", "[", "0", "]"}], "]"}], "\[RuleDelayed]", "1"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"fact", "[", "n_Integer", "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"n", " ", 
+     RowBox[{"fact", "[", 
+      RowBox[{"n", "-", "1"}], "]"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7027862966959953`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.702786650235169*^9, 3.702786659651449*^9}, 
+   3.702786889496749*^9}],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.7027862888047457`*^9, 3.702786293148616*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 807},
+WindowMargins->{{Automatic, 140}, {-218, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 403, 11, 103, "Input"],
+Cell[CellGroupData[{
+Cell[986, 35, 132, 2, 47, "Input"],
+Cell[1121, 39, 431, 12, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1589, 56, 123, 2, 30, "Input"],
+Cell[1715, 60, 72, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1824, 66, 194, 4, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[2043, 74, 493, 13, 140, "Input"],
+Cell[2539, 89, 433, 12, 30, "Output"]
+}, Open  ]],
+Cell[2987, 104, 118, 2, 30, "Input"],
+Cell[3108, 108, 84, 1, 29, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,3495 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    121179,       3486]
+NotebookOptionsPosition[    120462,       3457]
+NotebookOutlinePosition[    120873,       3473]
+CellTagsIndexPosition[    120830,       3470]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["A fact function", "Subsection",
+ CellChangeTimes->{{3.702613022239229*^9, 3.702613028550159*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fact", "[", "n_Integer", "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"n", "\[Equal]", "0"}], ",", "1", ",", 
+    RowBox[{"n", " ", 
+     RowBox[{"fact", "[", 
+      RowBox[{"n", "-", "1"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7026130361422653`*^9, 3.702613064425531*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Array", "[", 
+  RowBox[{"fact", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.702613073919574*^9, 3.7026130789027233`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "6", ",", "24", ",", "120"}], "}"}]], "Output",
+ CellChangeTimes->{3.702613079404076*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fact", "[", "2", "]"}], "//", "Trace"}]], "Input",
+ CellChangeTimes->{{3.7026130970144463`*^9, 3.702613110640792*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"fact", "[", "2", "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"2", "\[Equal]", "0"}], ",", "1", ",", 
+      RowBox[{"2", " ", 
+       RowBox[{"fact", "[", 
+        RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"2", "\[Equal]", "0"}],
+      HoldForm], ",", 
+     TagBox["False",
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"If", "[", 
+     RowBox[{"False", ",", "1", ",", 
+      RowBox[{"2", " ", 
+       RowBox[{"fact", "[", 
+        RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"2", " ", 
+     RowBox[{"fact", "[", 
+      RowBox[{"2", "-", "1"}], "]"}]}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{"2", "-", "1"}],
+        HoldForm], ",", 
+       TagBox["1",
+        HoldForm]}], "}"}], ",", 
+     TagBox[
+      RowBox[{"fact", "[", "1", "]"}],
+      HoldForm], ",", 
+     TagBox[
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"1", "\[Equal]", "0"}], ",", "1", ",", 
+        RowBox[{"1", " ", 
+         RowBox[{"fact", "[", 
+          RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{"1", "\[Equal]", "0"}],
+        HoldForm], ",", 
+       TagBox["False",
+        HoldForm]}], "}"}], ",", 
+     TagBox[
+      RowBox[{"If", "[", 
+       RowBox[{"False", ",", "1", ",", 
+        RowBox[{"1", " ", 
+         RowBox[{"fact", "[", 
+          RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}],
+      HoldForm], ",", 
+     TagBox[
+      RowBox[{"1", " ", 
+       RowBox[{"fact", "[", 
+        RowBox[{"1", "-", "1"}], "]"}]}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"1", "-", "1"}],
+          HoldForm], ",", 
+         TagBox["0",
+          HoldForm]}], "}"}], ",", 
+       TagBox[
+        RowBox[{"fact", "[", "0", "]"}],
+        HoldForm], ",", 
+       TagBox[
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"0", "\[Equal]", "0"}], ",", "1", ",", 
+          RowBox[{"0", " ", 
+           RowBox[{"fact", "[", 
+            RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}],
+        HoldForm], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         TagBox[
+          RowBox[{"0", "\[Equal]", "0"}],
+          HoldForm], ",", 
+         TagBox["True",
+          HoldForm]}], "}"}], ",", 
+       TagBox[
+        RowBox[{"If", "[", 
+         RowBox[{"True", ",", "1", ",", 
+          RowBox[{"0", " ", 
+           RowBox[{"fact", "[", 
+            RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}],
+        HoldForm], ",", 
+       TagBox["1",
+        HoldForm]}], "}"}], ",", 
+     TagBox[
+      RowBox[{"1", " ", "1"}],
+      HoldForm], ",", 
+     TagBox["1",
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"2", " ", "1"}],
+    HoldForm], ",", 
+   TagBox["2",
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{{3.702613106324164*^9, 3.70261311127686*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TreeForm", "[", "%145", "]"}]], "Input",
+ CellChangeTimes->{{3.7026131188891783`*^9, 3.7026131281671886`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsComplexBox[CompressedData["
+1:eJx1lUtIVFEcxm+aTeroOOo4zsNXLsSgMEJdRM0oWS6EHu5GhrISQqyBKNGo
+XEgggotxU4tAKZHCx6qMmIUgLbobE4VLChIM40JSbAYKJ6ypPPf7hnMvCnL5
+zf2+853H/39u1Y3Q1a4MRVFG/v3/f35b+x7Rmuz+ZE/kacKV9Cn6XyCVWf/2
+5w9yJNwWe7CSIDe2Hq8JXd/xCd+qD3ow9IJVn6z/oD83dd0yGX7oxfsoWTy/
+Ui9yN0wMH567+rjQgcX645y/nJsw5O74nq/d0+rObnEc+OX1JExPef1Jw34l
+qTPOA+/l/D2yWu2cDU/9Yv7t8OKfz4u/TYx9gH9X2ucUeTC1UGPpV/yYB1he
+R4r5Yv2H/EZGvuyP+trnyi9P5mSQJ+3b3W2jDuYlqrXx2Iks5g23vrY6ug5z
+fDDGr77zsK/lRSbHk/1RfT+z6AfDXzt3Ldg+ZGEeGHow9GK/c6gHy+eVTX04
+PBI/duUo59PZuulaiGaT4YdenI+VXJc639x5P5d6ZW68WzmSZ2KcH/y7et+J
+888jL9mng2PFBYbztPnlOrcxf6lnb3TsWT7zZH9UP98C+sHwi/MuZB5Yrhe7
+SS/3U5otE/Xu/FAh80MDN2fXG4tMjP2AH+sX9VJE1gLh5hmlmPMDY37QI1/U
+X7GJkQ8/8s81zGuP1DTvTOeqwX438/K33SlPR4mhPh1++T5zmPoF48EPXlg7
+pQ7Ol9APhl/Us9NQ305DPzipF7+7DPXtMtR3KfXrr3prIltOzqdlYCIy/K7U
+L9+/LkM/pHkmsHwp8MRFvaNBidVedB/AKv34Lol+cpNjWx1W9YuH8xf95DH0
+l4f5j+0n+5I2D/Pgl/vLa+hXL/2i38qYB4Ze9GuZSc/+2u+3crJ3YONT4+ly
+5g8GioKWvYNYpV/+TleQ8R7zA/N7Vt8U1z5WsD7B8v1Qkb4f9u+DSvKboffN
+Kxcq6QfTv70av7teyfseDH2wd9F6Ziqtt9/a0F7aqgz3RRX9YPj/AkTGTsw=
+
+    "], {
+     {RGBColor[0.55, 0.45, 0.45], 
+      LineBox[{{1, 2}, {1, 5}, {1, 17}, {1, 24}, {1, 34}, {1, 41}, {1, 136}, {
+       1, 140}, {2, 3}, {3, 4}, {5, 6}, {6, 7}, {6, 10}, {6, 11}, {7, 8}, {7, 
+       9}, {11, 12}, {11, 13}, {13, 14}, {14, 15}, {14, 16}, {17, 18}, {17, 
+       22}, {18, 19}, {19, 20}, {19, 21}, {22, 23}, {24, 25}, {25, 26}, {25, 
+       27}, {25, 28}, {28, 29}, {28, 30}, {30, 31}, {31, 32}, {31, 33}, {34, 
+       35}, {35, 36}, {35, 37}, {37, 38}, {38, 39}, {38, 40}, {41, 42}, {41, 
+       49}, {41, 52}, {41, 64}, {41, 71}, {41, 81}, {41, 88}, {41, 130}, {41, 
+       134}, {42, 43}, {42, 47}, {43, 44}, {44, 45}, {44, 46}, {47, 48}, {49, 
+       50}, {50, 51}, {52, 53}, {53, 54}, {53, 57}, {53, 58}, {54, 55}, {54, 
+       56}, {58, 59}, {58, 60}, {60, 61}, {61, 62}, {61, 63}, {64, 65}, {64, 
+       69}, {65, 66}, {66, 67}, {66, 68}, {69, 70}, {71, 72}, {72, 73}, {72, 
+       74}, {72, 75}, {75, 76}, {75, 77}, {77, 78}, {78, 79}, {78, 80}, {81, 
+       82}, {82, 83}, {82, 84}, {84, 85}, {85, 86}, {85, 87}, {88, 89}, {88, 
+       96}, {88, 99}, {88, 111}, {88, 118}, {88, 128}, {89, 90}, {89, 94}, {
+       90, 91}, {91, 92}, {91, 93}, {94, 95}, {96, 97}, {97, 98}, {99, 100}, {
+       100, 101}, {100, 104}, {100, 105}, {101, 102}, {101, 103}, {105, 
+       106}, {105, 107}, {107, 108}, {108, 109}, {108, 110}, {111, 112}, {111,
+        116}, {112, 113}, {113, 114}, {113, 115}, {116, 117}, {118, 119}, {
+       119, 120}, {119, 121}, {119, 122}, {122, 123}, {122, 124}, {124, 
+       125}, {125, 126}, {125, 127}, {128, 129}, {130, 131}, {131, 132}, {131,
+        133}, {134, 135}, {136, 137}, {137, 138}, {137, 139}, {140, 141}}]}, {
+      
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 1],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             TagBox[
+              RowBox[{"fact", "[", "2", "]"}], HoldForm], ",", 
+             TagBox[
+              RowBox[{"If", "[", 
+                RowBox[{
+                  RowBox[{"2", "\[Equal]", "0"}], ",", "1", ",", 
+                  RowBox[{"2", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+             RowBox[{"{", 
+               RowBox[{
+                 TagBox[
+                  RowBox[{"2", "\[Equal]", "0"}], HoldForm], ",", 
+                 TagBox["False", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"If", "[", 
+                RowBox[{"False", ",", "1", ",", 
+                  RowBox[{"2", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+             TagBox[
+              RowBox[{"2", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"2", "-", "1"}], "]"}]}], HoldForm], ",", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{
+                    TagBox[
+                    RowBox[{"2", "-", "1"}], HoldForm], ",", 
+                    TagBox["1", HoldForm]}], "}"}], ",", 
+                 TagBox[
+                  RowBox[{"fact", "[", "1", "]"}], HoldForm], ",", 
+                 TagBox[
+                  RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"1", "\[Equal]", "0"}], ",", "1", ",", 
+                    RowBox[{"1", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+                 RowBox[{"{", 
+                   RowBox[{
+                    TagBox[
+                    RowBox[{"1", "\[Equal]", "0"}], HoldForm], ",", 
+                    TagBox["False", HoldForm]}], "}"}], ",", 
+                 TagBox[
+                  RowBox[{"If", "[", 
+                    RowBox[{"False", ",", "1", ",", 
+                    RowBox[{"1", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+                 TagBox[
+                  RowBox[{"1", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"1", "-", "1"}], "]"}]}], HoldForm], ",", 
+                 RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"1", "-", "1"}], HoldForm], ",", 
+                    TagBox["0", HoldForm]}], "}"}], ",", 
+                    TagBox[
+                    RowBox[{"fact", "[", "0", "]"}], HoldForm], ",", 
+                    TagBox[
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"0", "\[Equal]", "0"}], ",", "1", ",", 
+                    RowBox[{"0", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    TagBox[
+                    RowBox[{"0", "\[Equal]", "0"}], HoldForm], ",", 
+                    TagBox["True", HoldForm]}], "}"}], ",", 
+                    TagBox[
+                    RowBox[{"If", "[", 
+                    RowBox[{"True", ",", "1", ",", 
+                    RowBox[{"0", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+                    TagBox["1", HoldForm]}], "}"}], ",", 
+                 TagBox[
+                  RowBox[{"1", " ", "1"}], HoldForm], ",", 
+                 TagBox["1", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"2", " ", "1"}], HoldForm], ",", 
+             TagBox["2", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{
+          HoldForm[
+           $CellContext`fact[2]], 
+          HoldForm[
+           If[2 == 0, 1, 2 $CellContext`fact[2 - 1]]], {
+           HoldForm[2 == 0], 
+           HoldForm[False]}, 
+          HoldForm[
+           If[False, 1, 2 $CellContext`fact[2 - 1]]], 
+          HoldForm[2 $CellContext`fact[2 - 1]], {{
+            HoldForm[2 - 1], 
+            HoldForm[1]}, 
+           HoldForm[
+            $CellContext`fact[1]], 
+           HoldForm[
+            If[1 == 0, 1, 1 $CellContext`fact[1 - 1]]], {
+            HoldForm[1 == 0], 
+            HoldForm[False]}, 
+           HoldForm[
+            If[False, 1, 1 $CellContext`fact[1 - 1]]], 
+           HoldForm[1 $CellContext`fact[1 - 1]], {{
+             HoldForm[1 - 1], 
+             HoldForm[0]}, 
+            HoldForm[
+             $CellContext`fact[0]], 
+            HoldForm[
+             If[0 == 0, 1, 0 $CellContext`fact[0 - 1]]], {
+             HoldForm[0 == 0], 
+             HoldForm[True]}, 
+            HoldForm[
+             If[True, 1, 0 $CellContext`fact[0 - 1]]], 
+            HoldForm[1]}, 
+           HoldForm[1 1], 
+           HoldForm[1]}, 
+          HoldForm[2 1], 
+          HoldForm[2]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 2],
+        TagBox[
+         TagBox[
+          RowBox[{"fact", "[", "2", "]"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          $CellContext`fact[2]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 3],
+        TagBox[
+         RowBox[{"fact", "[", "2", "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[2]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 4],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 5],
+        TagBox[
+         TagBox[
+          RowBox[{"If", "[", 
+            RowBox[{
+              RowBox[{"2", "\[Equal]", "0"}], ",", "1", ",", 
+              RowBox[{"2", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}], HoldForm], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          If[2 == 0, 1, 2 $CellContext`fact[2 - 1]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["If", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 6],
+        TagBox[
+         RowBox[{"If", "[", 
+           RowBox[{
+             RowBox[{"2", "\[Equal]", "0"}], ",", "1", ",", 
+             RowBox[{"2", " ", 
+               RowBox[{"fact", "[", 
+                 RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         If[2 == 0, 1, 2 $CellContext`fact[2 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Equal", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 7],
+        TagBox[
+         RowBox[{"2", "\[Equal]", "0"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 == 0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 8],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 9],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 10],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 11],
+        TagBox[
+         RowBox[{"2", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"2", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 $CellContext`fact[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 12],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 13],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"2", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 14],
+        TagBox[
+         RowBox[{"2", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 15],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 16],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 17],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             TagBox[
+              RowBox[{"2", "\[Equal]", "0"}], HoldForm], ",", 
+             TagBox["False", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{
+          HoldForm[2 == 0], 
+          HoldForm[False]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 18],
+        TagBox[
+         TagBox[
+          RowBox[{"2", "\[Equal]", "0"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[2 == 0]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Equal", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 19],
+        TagBox[
+         RowBox[{"2", "\[Equal]", "0"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 == 0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 20],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 21],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 22],
+        TagBox[
+         TagBox["False", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[False]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["False",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 23],
+        TagBox["False", HoldForm]],
+       Annotation[#, 
+        HoldForm[False], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 24],
+        TagBox[
+         TagBox[
+          RowBox[{"If", "[", 
+            RowBox[{"False", ",", "1", ",", 
+              RowBox[{"2", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}], HoldForm], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          If[False, 1, 2 $CellContext`fact[2 - 1]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["If", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 25],
+        TagBox[
+         RowBox[{"If", "[", 
+           RowBox[{"False", ",", "1", ",", 
+             RowBox[{"2", " ", 
+               RowBox[{"fact", "[", 
+                 RowBox[{"2", "-", "1"}], "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         If[False, 1, 2 $CellContext`fact[2 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["False",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 26],
+        TagBox["False", HoldForm]],
+       Annotation[#, 
+        HoldForm[False], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 27],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 28],
+        TagBox[
+         RowBox[{"2", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"2", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 $CellContext`fact[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 29],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 30],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"2", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 31],
+        TagBox[
+         RowBox[{"2", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 32],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 33],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 34],
+        TagBox[
+         TagBox[
+          RowBox[{"2", " ", 
+            RowBox[{"fact", "[", 
+              RowBox[{"2", "-", "1"}], "]"}]}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[2 $CellContext`fact[2 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 35],
+        TagBox[
+         RowBox[{"2", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"2", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 $CellContext`fact[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 36],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 37],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"2", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 38],
+        TagBox[
+         RowBox[{"2", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 39],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 40],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 41],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             RowBox[{"{", 
+               RowBox[{
+                 TagBox[
+                  RowBox[{"2", "-", "1"}], HoldForm], ",", 
+                 TagBox["1", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"fact", "[", "1", "]"}], HoldForm], ",", 
+             TagBox[
+              RowBox[{"If", "[", 
+                RowBox[{
+                  RowBox[{"1", "\[Equal]", "0"}], ",", "1", ",", 
+                  RowBox[{"1", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+             RowBox[{"{", 
+               RowBox[{
+                 TagBox[
+                  RowBox[{"1", "\[Equal]", "0"}], HoldForm], ",", 
+                 TagBox["False", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"If", "[", 
+                RowBox[{"False", ",", "1", ",", 
+                  RowBox[{"1", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+             TagBox[
+              RowBox[{"1", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"1", "-", "1"}], "]"}]}], HoldForm], ",", 
+             RowBox[{"{", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{
+                    TagBox[
+                    RowBox[{"1", "-", "1"}], HoldForm], ",", 
+                    TagBox["0", HoldForm]}], "}"}], ",", 
+                 TagBox[
+                  RowBox[{"fact", "[", "0", "]"}], HoldForm], ",", 
+                 TagBox[
+                  RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"0", "\[Equal]", "0"}], ",", "1", ",", 
+                    RowBox[{"0", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+                 RowBox[{"{", 
+                   RowBox[{
+                    TagBox[
+                    RowBox[{"0", "\[Equal]", "0"}], HoldForm], ",", 
+                    TagBox["True", HoldForm]}], "}"}], ",", 
+                 TagBox[
+                  RowBox[{"If", "[", 
+                    RowBox[{"True", ",", "1", ",", 
+                    RowBox[{"0", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+                 TagBox["1", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"1", " ", "1"}], HoldForm], ",", 
+             TagBox["1", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{{
+           HoldForm[2 - 1], 
+           HoldForm[1]}, 
+          HoldForm[
+           $CellContext`fact[1]], 
+          HoldForm[
+           If[1 == 0, 1, 1 $CellContext`fact[1 - 1]]], {
+           HoldForm[1 == 0], 
+           HoldForm[False]}, 
+          HoldForm[
+           If[False, 1, 1 $CellContext`fact[1 - 1]]], 
+          HoldForm[1 $CellContext`fact[1 - 1]], {{
+            HoldForm[1 - 1], 
+            HoldForm[0]}, 
+           HoldForm[
+            $CellContext`fact[0]], 
+           HoldForm[
+            If[0 == 0, 1, 0 $CellContext`fact[0 - 1]]], {
+            HoldForm[0 == 0], 
+            HoldForm[True]}, 
+           HoldForm[
+            If[True, 1, 0 $CellContext`fact[0 - 1]]], 
+           HoldForm[1]}, 
+          HoldForm[1 1], 
+          HoldForm[1]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 42],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             TagBox[
+              RowBox[{"2", "-", "1"}], HoldForm], ",", 
+             TagBox["1", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{
+          HoldForm[2 - 1], 
+          HoldForm[1]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 43],
+        TagBox[
+         TagBox[
+          RowBox[{"2", "-", "1"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[2 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 44],
+        TagBox[
+         RowBox[{"2", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 45],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 46],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 47],
+        TagBox[
+         TagBox["1", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 48],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 49],
+        TagBox[
+         TagBox[
+          RowBox[{"fact", "[", "1", "]"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          $CellContext`fact[1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 50],
+        TagBox[
+         RowBox[{"fact", "[", "1", "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 51],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 52],
+        TagBox[
+         TagBox[
+          RowBox[{"If", "[", 
+            RowBox[{
+              RowBox[{"1", "\[Equal]", "0"}], ",", "1", ",", 
+              RowBox[{"1", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          If[1 == 0, 1, 1 $CellContext`fact[1 - 1]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["If", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 53],
+        TagBox[
+         RowBox[{"If", "[", 
+           RowBox[{
+             RowBox[{"1", "\[Equal]", "0"}], ",", "1", ",", 
+             RowBox[{"1", " ", 
+               RowBox[{"fact", "[", 
+                 RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         If[1 == 0, 1, 1 $CellContext`fact[1 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Equal", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 54],
+        TagBox[
+         RowBox[{"1", "\[Equal]", "0"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 == 0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 55],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 56],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 57],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 58],
+        TagBox[
+         RowBox[{"1", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"1", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 $CellContext`fact[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 59],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 60],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"1", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 61],
+        TagBox[
+         RowBox[{"1", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 62],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 63],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 64],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             TagBox[
+              RowBox[{"1", "\[Equal]", "0"}], HoldForm], ",", 
+             TagBox["False", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{
+          HoldForm[1 == 0], 
+          HoldForm[False]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 65],
+        TagBox[
+         TagBox[
+          RowBox[{"1", "\[Equal]", "0"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1 == 0]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Equal", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 66],
+        TagBox[
+         RowBox[{"1", "\[Equal]", "0"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 == 0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 67],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 68],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 69],
+        TagBox[
+         TagBox["False", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[False]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["False",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 70],
+        TagBox["False", HoldForm]],
+       Annotation[#, 
+        HoldForm[False], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 71],
+        TagBox[
+         TagBox[
+          RowBox[{"If", "[", 
+            RowBox[{"False", ",", "1", ",", 
+              RowBox[{"1", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          If[False, 1, 1 $CellContext`fact[1 - 1]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["If", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 72],
+        TagBox[
+         RowBox[{"If", "[", 
+           RowBox[{"False", ",", "1", ",", 
+             RowBox[{"1", " ", 
+               RowBox[{"fact", "[", 
+                 RowBox[{"1", "-", "1"}], "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         If[False, 1, 1 $CellContext`fact[1 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["False",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 73],
+        TagBox["False", HoldForm]],
+       Annotation[#, 
+        HoldForm[False], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 74],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 75],
+        TagBox[
+         RowBox[{"1", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"1", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 $CellContext`fact[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 76],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 77],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"1", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 78],
+        TagBox[
+         RowBox[{"1", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 79],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 80],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 81],
+        TagBox[
+         TagBox[
+          RowBox[{"1", " ", 
+            RowBox[{"fact", "[", 
+              RowBox[{"1", "-", "1"}], "]"}]}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1 $CellContext`fact[1 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 82],
+        TagBox[
+         RowBox[{"1", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"1", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 $CellContext`fact[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 83],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 84],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"1", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 85],
+        TagBox[
+         RowBox[{"1", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 86],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 87],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 88],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             RowBox[{"{", 
+               RowBox[{
+                 TagBox[
+                  RowBox[{"1", "-", "1"}], HoldForm], ",", 
+                 TagBox["0", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"fact", "[", "0", "]"}], HoldForm], ",", 
+             TagBox[
+              RowBox[{"If", "[", 
+                RowBox[{
+                  RowBox[{"0", "\[Equal]", "0"}], ",", "1", ",", 
+                  RowBox[{"0", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+             RowBox[{"{", 
+               RowBox[{
+                 TagBox[
+                  RowBox[{"0", "\[Equal]", "0"}], HoldForm], ",", 
+                 TagBox["True", HoldForm]}], "}"}], ",", 
+             TagBox[
+              RowBox[{"If", "[", 
+                RowBox[{"True", ",", "1", ",", 
+                  RowBox[{"0", " ", 
+                    RowBox[{"fact", "[", 
+                    RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], ",", 
+             TagBox["1", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{{
+           HoldForm[1 - 1], 
+           HoldForm[0]}, 
+          HoldForm[
+           $CellContext`fact[0]], 
+          HoldForm[
+           If[0 == 0, 1, 0 $CellContext`fact[0 - 1]]], {
+           HoldForm[0 == 0], 
+           HoldForm[True]}, 
+          HoldForm[
+           If[True, 1, 0 $CellContext`fact[0 - 1]]], 
+          HoldForm[1]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 89],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             TagBox[
+              RowBox[{"1", "-", "1"}], HoldForm], ",", 
+             TagBox["0", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{
+          HoldForm[1 - 1], 
+          HoldForm[0]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 90],
+        TagBox[
+         TagBox[
+          RowBox[{"1", "-", "1"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 91],
+        TagBox[
+         RowBox[{"1", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 92],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 93],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 94],
+        TagBox[
+         TagBox["0", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[0]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 95],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 96],
+        TagBox[
+         TagBox[
+          RowBox[{"fact", "[", "0", "]"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          $CellContext`fact[0]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 97],
+        TagBox[
+         RowBox[{"fact", "[", "0", "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[0]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 98],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 99],
+        TagBox[
+         TagBox[
+          RowBox[{"If", "[", 
+            RowBox[{
+              RowBox[{"0", "\[Equal]", "0"}], ",", "1", ",", 
+              RowBox[{"0", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          If[0 == 0, 1, 0 $CellContext`fact[0 - 1]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["If", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 100],
+        TagBox[
+         RowBox[{"If", "[", 
+           RowBox[{
+             RowBox[{"0", "\[Equal]", "0"}], ",", "1", ",", 
+             RowBox[{"0", " ", 
+               RowBox[{"fact", "[", 
+                 RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         If[0 == 0, 1, 0 $CellContext`fact[0 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Equal", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 101],
+        TagBox[
+         RowBox[{"0", "\[Equal]", "0"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[0 == 0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 102],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 103],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 104],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 105],
+        TagBox[
+         RowBox[{"0", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"0", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[0 $CellContext`fact[0 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 106],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 107],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"0", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[0 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 108],
+        TagBox[
+         RowBox[{"0", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[0 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 109],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 110],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 111],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{
+             TagBox[
+              RowBox[{"0", "\[Equal]", "0"}], HoldForm], ",", 
+             TagBox["True", HoldForm]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{
+          HoldForm[0 == 0], 
+          HoldForm[True]}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 112],
+        TagBox[
+         TagBox[
+          RowBox[{"0", "\[Equal]", "0"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[0 == 0]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Equal", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 113],
+        TagBox[
+         RowBox[{"0", "\[Equal]", "0"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[0 == 0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 114],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 115],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 116],
+        TagBox[
+         TagBox["True", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[True]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["True",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 117],
+        TagBox["True", HoldForm]],
+       Annotation[#, 
+        HoldForm[True], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 118],
+        TagBox[
+         TagBox[
+          RowBox[{"If", "[", 
+            RowBox[{"True", ",", "1", ",", 
+              RowBox[{"0", " ", 
+                RowBox[{"fact", "[", 
+                  RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[
+          If[True, 1, 0 $CellContext`fact[0 - 1]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["If", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 119],
+        TagBox[
+         RowBox[{"If", "[", 
+           RowBox[{"True", ",", "1", ",", 
+             RowBox[{"0", " ", 
+               RowBox[{"fact", "[", 
+                 RowBox[{"0", "-", "1"}], "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         If[True, 1, 0 $CellContext`fact[0 - 1]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["True",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 120],
+        TagBox["True", HoldForm]],
+       Annotation[#, 
+        HoldForm[True], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 121],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 122],
+        TagBox[
+         RowBox[{"0", " ", 
+           RowBox[{"fact", "[", 
+             RowBox[{"0", "-", "1"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[0 $CellContext`fact[0 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 123],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["fact", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 124],
+        TagBox[
+         RowBox[{"fact", "[", 
+           RowBox[{"0", "-", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         $CellContext`fact[0 - 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Plus", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 125],
+        TagBox[
+         RowBox[{"0", "-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[0 - 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["0",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 126],
+        TagBox["0", HoldForm]],
+       Annotation[#, 
+        HoldForm[0], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"-", "1"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 127],
+        TagBox[
+         RowBox[{"-", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[-1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 128],
+        TagBox[
+         TagBox["1", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 129],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 130],
+        TagBox[
+         TagBox[
+          RowBox[{"1", " ", "1"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 131],
+        TagBox[
+         RowBox[{"1", " ", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[1 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 132],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 133],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 134],
+        TagBox[
+         TagBox["1", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 135],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 136],
+        TagBox[
+         TagBox[
+          RowBox[{"2", " ", "1"}], HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[2 1]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Times", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 137],
+        TagBox[
+         RowBox[{"2", " ", "1"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[2 1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 138],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 139],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldForm", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 140],
+        TagBox[
+         TagBox["2", HoldForm], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldForm[2]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["2",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameMargins->0.7633587786259541,
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 141],
+        TagBox["2", HoldForm]],
+       Annotation[#, 
+        HoldForm[2], "Tooltip"]& ]}}],
+   Annotation[#, VertexCoordinateRules -> CompressedData["
+1:eJx1lUtIVFEcxm+aTeroOOo4zsNXLsSgMEJdRM0oWS6EHu5GhrISQqyBKNGo
+XEgggotxU4tAKZHCx6qMmIUgLbobE4VLChIM40JSbAYKJ6ypPPf7hnMvCnL5
+zf2+853H/39u1Y3Q1a4MRVFG/v3/f35b+x7Rmuz+ZE/kacKV9Cn6XyCVWf/2
+5w9yJNwWe7CSIDe2Hq8JXd/xCd+qD3ow9IJVn6z/oD83dd0yGX7oxfsoWTy/
+Ui9yN0wMH567+rjQgcX645y/nJsw5O74nq/d0+rObnEc+OX1JExPef1Jw34l
+qTPOA+/l/D2yWu2cDU/9Yv7t8OKfz4u/TYx9gH9X2ucUeTC1UGPpV/yYB1he
+R4r5Yv2H/EZGvuyP+trnyi9P5mSQJ+3b3W2jDuYlqrXx2Iks5g23vrY6ug5z
+fDDGr77zsK/lRSbHk/1RfT+z6AfDXzt3Ldg+ZGEeGHow9GK/c6gHy+eVTX04
+PBI/duUo59PZuulaiGaT4YdenI+VXJc639x5P5d6ZW68WzmSZ2KcH/y7et+J
+888jL9mng2PFBYbztPnlOrcxf6lnb3TsWT7zZH9UP98C+sHwi/MuZB5Yrhe7
+SS/3U5otE/Xu/FAh80MDN2fXG4tMjP2AH+sX9VJE1gLh5hmlmPMDY37QI1/U
+X7GJkQ8/8s81zGuP1DTvTOeqwX438/K33SlPR4mhPh1++T5zmPoF48EPXlg7
+pQ7Ol9APhl/Us9NQ305DPzipF7+7DPXtMtR3KfXrr3prIltOzqdlYCIy/K7U
+L9+/LkM/pHkmsHwp8MRFvaNBidVedB/AKv34Lol+cpNjWx1W9YuH8xf95DH0
+l4f5j+0n+5I2D/Pgl/vLa+hXL/2i38qYB4Ze9GuZSc/+2u+3crJ3YONT4+ly
+5g8GioKWvYNYpV/+TleQ8R7zA/N7Vt8U1z5WsD7B8v1Qkb4f9u+DSvKboffN
+Kxcq6QfTv70av7teyfseDH2wd9F6Ziqtt9/a0F7aqgz3RRX9YPj/AkTGTsw=
+
+     "]]& ],
+  AspectRatio->NCache[3 Rational[2, 131]^Rational[1, 2], 0.3706812379291293],
+  FormatType:>StandardForm,
+  FrameTicks->Automatic,
+  ImageSize->{1623., Automatic},
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellChangeTimes->{3.702613128800096*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 807},
+WindowMargins->{{Automatic, 0}, {Automatic, 39}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 103, 1, 39, "Subsection"],
+Cell[686, 25, 338, 9, 47, "Input"],
+Cell[CellGroupData[{
+Cell[1049, 38, 152, 3, 47, "Input"],
+Cell[1204, 43, 148, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1389, 51, 153, 3, 47, "Input"],
+Cell[1545, 56, 3146, 118, 107, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4728, 179, 134, 2, 47, "Input"],
+Cell[4865, 183, 115569, 3270, 631, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

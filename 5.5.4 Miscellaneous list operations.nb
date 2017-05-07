@@ -1,0 +1,184 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4903,        175]
+NotebookOptionsPosition[      3933,        136]
+NotebookOutlinePosition[      4347,        152]
+CellTagsIndexPosition[      4304,        149]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+as long as it makes sense to do so from a structural point of view.\
+\>", "Subsection",
+ CellChangeTimes->{{3.7026869451754427`*^9, 3.702686962415535*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{
+   RowBox[{"a", "*", "b"}], ",", 
+   RowBox[{"c", "*", "d"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.702687007111505*^9, 3.7026870131279993`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", " ", "b", " ", "c", " ", "d"}]], "Output",
+ CellChangeTimes->{3.702687013791823*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Explain what is going on here.", "Subsection",
+ CellChangeTimes->{{3.7026870218588*^9, 3.702687081503952*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Partition", "[", 
+  RowBox[{
+   RowBox[{"a", "+", "b", "+", "c", "+", "d"}], ",", "2", ",", "1"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.702687086127612*^9, 3.702687097976076*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", "+", 
+  RowBox[{"2", " ", "b"}], "+", 
+  RowBox[{"2", " ", "c"}], "+", "d"}]], "Output",
+ CellChangeTimes->{3.70268709880492*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["we can use a list", "Subsection",
+ CellChangeTimes->{{3.702687106519367*^9, 3.702687110431706*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Partition", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}], ",", "2", ",", "1"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.702687117311696*^9, 3.702687155024561*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"b", ",", "c"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"c", ",", "d"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.702687141605897*^9, 3.702687155718309*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Apply", "[", 
+  RowBox[{"Plus", ",", "%220", ",", 
+   RowBox[{"{", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.702687362295783*^9, 3.702687419071982*^9}, {
+  3.7026874544205503`*^9, 3.70268745726292*^9}, {3.7026878247698717`*^9, 
+  3.70268785769409*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Apply", "::", "level"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Level specification \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", \\\"0\\\", \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", \\\"1\\\", \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \\\"2\\\", \
+\\\"}\\\"}]}], \\\"}\\\"}]\\)\[NoBreak] is not of the form n, {n}, or {m, n}. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/level\\\", \
+ButtonNote -> \\\"Apply::level\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.702687837762698*^9}],
+
+Cell[BoxData[
+ RowBox[{"Apply", "[", 
+  RowBox[{"Plus", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", "c"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", "d"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "2", "}"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.702687394214467*^9, 3.702687419547079*^9}, 
+   3.702687458128579*^9, 3.702687837766724*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{862, 776},
+WindowMargins->{{Automatic, 68}, {-252, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 165, 3, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[770, 29, 196, 5, 47, "Input"],
+Cell[969, 36, 112, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1130, 44, 116, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[1271, 49, 208, 5, 47, "Input"],
+Cell[1482, 56, 157, 4, 30, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1688, 66, 105, 1, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[1818, 71, 233, 6, 47, "Input"],
+Cell[2054, 79, 296, 9, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2387, 93, 282, 6, 47, "Input"],
+Cell[2672, 101, 666, 12, 23, "Message"],
+Cell[3341, 115, 564, 17, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

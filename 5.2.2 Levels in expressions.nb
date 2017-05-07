@@ -1,0 +1,205 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6335,        196]
+NotebookOptionsPosition[      5767,        172]
+NotebookOutlinePosition[      6182,        188]
+CellTagsIndexPosition[      6139,        185]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["What is the function of Function Level?", "Subsection",
+ CellChangeTimes->{{3.702671636035211*^9, 3.702671655899458*^9}, {
+  3.7026717313477793`*^9, 3.702671735891725*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Level", "[", 
+  RowBox[{
+   RowBox[{"a", "/", "b"}], ",", 
+   RowBox[{"{", "1", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.702671740643386*^9, 3.702671741215618*^9}, {
+  3.7026718400602217`*^9, 3.7026718802484617`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", 
+   FractionBox["1", "b"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.702671852666299*^9, 3.7026718817802963`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"expr", "=", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"0", ",", "1"}], "]"}], "[", 
+    RowBox[{"g", "[", 
+     RowBox[{"x", ",", "y"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Level", "[", 
+    RowBox[{"expr", ",", 
+     RowBox[{"{", "2", "}"}], ",", 
+     RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}], ",", 
+   RowBox[{"TreeForm", "[", "expr", "]"}]}], "}"}]}], "Input",
+ CellChangeTimes->{{3.702672071296617*^9, 3.702672077956274*^9}, {
+  3.7026721213900347`*^9, 3.702672135612755*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"f", ",", "0", ",", "1", ",", "g", ",", "x", ",", "y"}], "}"}], 
+   ",", 
+   GraphicsBox[
+    TagBox[
+     GraphicsComplexBox[{{0.4629100498862757, 1.8516401995451028`}, {
+      0.4629100498862757, 0.9258200997725514}, {0., 0.}, {0.9258200997725514, 
+      0.}}, {
+       {RGBColor[0.55, 0.45, 0.45], LineBox[{{1, 2}, {2, 3}, {2, 4}}]}, {
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             RowBox[{"f", "[", 
+              RowBox[{"0", ",", "1"}], "]"}], "StandardForm", "Output",
+             StripOnInput->False,
+             LineColor->GrayLevel[0],
+             FrontFaceColor->GrayLevel[0],
+             BackFaceColor->GrayLevel[0],
+             GraphicsColor->GrayLevel[0],
+             FontSize->Scaled[0.05],
+             FontColor->GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 1],
+          TagBox[
+           RowBox[{
+             RowBox[{"f", "[", 
+               RowBox[{"0", ",", "1"}], "]"}], "[", 
+             RowBox[{"g", "[", 
+               RowBox[{"x", ",", "y"}], "]"}], "]"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           $CellContext`f[0, 1][
+            $CellContext`g[$CellContext`x, $CellContext`y]]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox["g", "StandardForm", "Output",
+             StripOnInput->False,
+             LineColor->GrayLevel[0],
+             FrontFaceColor->GrayLevel[0],
+             BackFaceColor->GrayLevel[0],
+             GraphicsColor->GrayLevel[0],
+             FontSize->Scaled[0.05],
+             FontColor->GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 2],
+          TagBox[
+           RowBox[{"g", "[", 
+             RowBox[{"x", ",", "y"}], "]"}], HoldForm]],
+         Annotation[#, 
+          HoldForm[
+           $CellContext`g[$CellContext`x, $CellContext`y]], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["x",
+              HoldForm], "StandardForm", "Output",
+             StripOnInput->False,
+             LineColor->GrayLevel[0],
+             FrontFaceColor->GrayLevel[0],
+             BackFaceColor->GrayLevel[0],
+             GraphicsColor->GrayLevel[0],
+             FontSize->Scaled[0.05],
+             FontColor->GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 3],
+          TagBox["x", HoldForm]],
+         Annotation[#, 
+          HoldForm[$CellContext`x], "Tooltip"]& ], 
+        TagBox[
+         TooltipBox[InsetBox[
+           FrameBox[
+            StyleBox[
+             TagBox["y",
+              HoldForm], "StandardForm", "Output",
+             StripOnInput->False,
+             LineColor->GrayLevel[0],
+             FrontFaceColor->GrayLevel[0],
+             BackFaceColor->GrayLevel[0],
+             GraphicsColor->GrayLevel[0],
+             FontSize->Scaled[0.05],
+             FontColor->GrayLevel[0]],
+            Background->RGBColor[1., 1., 0.871],
+            FrameStyle->GrayLevel[0.5],
+            StripOnInput->False], 4],
+          TagBox["y", HoldForm]],
+         Annotation[#, 
+          HoldForm[$CellContext`y], "Tooltip"]& ]}}],
+     Annotation[#, 
+      VertexCoordinateRules -> {{0.4629100498862757, 1.8516401995451028`}, {
+       0.4629100498862757, 0.9258200997725514}, {0., 0.}, {0.9258200997725514,
+        0.}}]& ],
+    AspectRatio->NCache[Rational[6, 7]^Rational[1, 2], 0.9258200997725514],
+    FormatType:>StandardForm,
+    FrameTicks->Automatic,
+    PlotRange->All,
+    PlotRangePadding->Scaled[0.1]]}], "}"}]], "Output",
+ CellChangeTimes->{3.70267213639959*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{862, 776},
+WindowMargins->{{Automatic, 182}, {-261, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 178, 2, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[783, 28, 248, 6, 47, "Input"],
+Cell[1034, 36, 163, 4, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1234, 45, 578, 16, 66, "Input"],
+Cell[1815, 63, 3924, 105, 185, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

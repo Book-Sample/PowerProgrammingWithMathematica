@@ -1,0 +1,177 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4757,        168]
+NotebookOptionsPosition[      3794,        130]
+NotebookOutlinePosition[      4208,        146]
+CellTagsIndexPosition[      4165,        143]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["1. Use a rule to numerically evaluate.", "Subsection",
+ CellChangeTimes->{{3.702758939925149*^9, 3.7027589439338427`*^9}, {
+  3.702759063536865*^9, 3.702759084234912*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Log", "[", "3", "]"}], "+", 
+   RowBox[{"Sin", "[", "3", "]"}]}], "/.", 
+  RowBox[{
+   RowBox[{"Log", "[", "x_", "]"}], "->", 
+   RowBox[{"N", "[", 
+    RowBox[{"Log", "[", "x", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.70275908841873*^9, 3.7027591101870737`*^9}, {
+  3.702759142355997*^9, 3.702759148485488*^9}, {3.702759245036271*^9, 
+  3.7027592574995947`*^9}, {3.702785275166978*^9, 3.702785284277622*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Log", "[", "3", "]"}], "+", 
+  RowBox[{"Sin", "[", "3", "]"}]}]], "Output",
+ CellChangeTimes->{
+  3.7027591491332483`*^9, {3.702759245954537*^9, 3.702759261146064*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Log", "[", "3", "]"}], "+", 
+   RowBox[{"Sin", "[", "3", "]"}]}], "/.", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Log", "[", "x_", "]"}], "+", "y_"}], "\[RuleDelayed]", 
+   RowBox[{
+    RowBox[{"N", "@@", 
+     RowBox[{"Log", "[", "x", "]"}]}], "+", 
+    RowBox[{"HoldForm", "[", "y", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.702759165509656*^9, 3.7027592032759953`*^9}, {
+  3.702759286754987*^9, 3.702759359155014*^9}, {3.702759591391968*^9, 
+  3.702759594154685*^9}, {3.702785286845306*^9, 3.70278530247752*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3.`", "\[VeryThinSpace]", "+", 
+  TagBox[
+   RowBox[{"Sin", "[", "3", "]"}],
+   HoldForm]}]], "Output",
+ CellChangeTimes->{
+  3.702759210703718*^9, {3.7027592937783422`*^9, 3.702759324421327*^9}, 
+   3.702759361058363*^9, 3.7027595958036833`*^9, 3.7027853043300667`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Position", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Log", "[", "3", "]"}], "+", 
+    RowBox[{"Sin", "[", "3", "]"}]}], ",", 
+   RowBox[{"Log", "[", "_", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7027594791896973`*^9, 3.7027595358347673`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", "1", "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.702759521616747*^9, 3.702759536511776*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sin", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.702759612866783*^9, 3.702759617866507*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Sin", "[", "3", "]"}]], "Output",
+ CellChangeTimes->{3.70275961882553*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"HoldForm", "[", 
+   RowBox[{"Sin", "[", "3", "]"}], "]"}], "+", "1."}]], "Input",
+ CellChangeTimes->{{3.702772962763035*^9, 3.702772977461074*^9}, {
+  3.702773059646793*^9, 3.7027730632032423`*^9}, {3.7027732121311398`*^9, 
+  3.702773217570827*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.`", "\[VeryThinSpace]", "+", 
+  TagBox[
+   RowBox[{"Sin", "[", "3", "]"}],
+   HoldForm]}]], "Output",
+ CellChangeTimes->{{3.7027729731337433`*^9, 3.702772978036662*^9}, {
+   3.702773060489339*^9, 3.7027730638677607`*^9}, 3.702773218243786*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.702786107262432*^9, 3.702786109221159*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 928},
+WindowMargins->{{Automatic, 175}, {Automatic, 495}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 177, 2, 39, "Subsection"],
+Cell[CellGroupData[{
+Cell[782, 28, 465, 11, 47, "Input"],
+Cell[1250, 41, 203, 5, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1490, 51, 560, 14, 47, "Input"],
+Cell[2053, 67, 294, 7, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2384, 79, 273, 7, 47, "Input"],
+Cell[2660, 88, 139, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2836, 96, 122, 2, 47, "Input"],
+Cell[2961, 100, 98, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3096, 107, 284, 6, 47, "Input"],
+Cell[3383, 115, 269, 6, 30, "Output"]
+}, Open  ]],
+Cell[3667, 124, 26, 0, 30, "Input"],
+Cell[3696, 126, 82, 1, 29, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
