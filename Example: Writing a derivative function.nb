@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     36272,       1152]
-NotebookOptionsPosition[     34564,       1093]
-NotebookOutlinePosition[     35290,       1117]
-CellTagsIndexPosition[     35185,       1112]
+NotebookDataLength[     36273,       1121]
+NotebookOptionsPosition[     34443,       1058]
+NotebookOutlinePosition[     35168,       1082]
+CellTagsIndexPosition[     35063,       1077]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -32,75 +32,56 @@ Cell[BoxData[{
       RowBox[{"c_", ",", "x_"}], "]"}], "/;", 
      RowBox[{"FreeQ", "[", 
       RowBox[{"c", ",", "x"}], "]"}]}], ":=", "0"}], ";"}], 
-  RowBox[{"(*", "\:5e38\:6570", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"diff", "[", 
-     RowBox[{"x_", ",", "x_"}], "]"}], ":=", "1"}], ";"}], 
-  RowBox[{
-  "(*", "\:5bf9\:81ea\:5df1\:7684\:79ef\:5206", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{
-     RowBox[{"diff", "[", 
-      RowBox[{
-       RowBox[{"c_", "*", "f_"}], ",", "x_"}], "]"}], "/;", 
-     RowBox[{"FreeQ", "[", 
-      RowBox[{"c", ",", "x"}], "]"}]}], ":=", 
-    RowBox[{"c", "*", 
-     RowBox[{"diff", "[", 
-      RowBox[{"f", ",", "x"}], "]"}]}]}], ";"}], 
-  RowBox[{
-  "(*", "\:5e38\:6570\:4e0e\:8868\:8fbe\:5f0f\:76f8\:4e58", 
-   "*)"}]}], "\[IndentingNewLine]", 
+  RowBox[{"(*", "\:5e38\:6570", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"diff", "[", 
      RowBox[{
-      RowBox[{"f_", "+", "g_"}], ",", "x_"}], "]"}], ":=", 
+      RowBox[{"c_", "*", "f_"}], ",", "x_"}], "]"}], "/;", 
+    RowBox[{"FreeQ", "[", 
+     RowBox[{"c", ",", "x"}], "]"}]}], ":=", 
+   RowBox[{"c", "*", 
+    RowBox[{"diff", "[", 
+     RowBox[{"f", ",", "x"}], "]"}]}]}], ";", 
+  RowBox[{"(*", "\:5e38\:6570\:4e0e\:8868\:8fbe\:5f0f\:76f8\:4e58", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"diff", "[", 
     RowBox[{
-     RowBox[{"diff", "[", 
-      RowBox[{"f", ",", "x"}], "]"}], "+", 
-     RowBox[{"diff", "[", 
-      RowBox[{"g", ",", "x"}], "]"}]}]}], ";", 
-   RowBox[{"(*", "\:8868\:8fbe\:5f0f\:76f8\:52a0", "*)"}], 
-   "\[IndentingNewLine]", 
+     RowBox[{"f_", "+", "g_"}], ",", "x_"}], "]"}], ":=", 
    RowBox[{
-    RowBox[{
-     RowBox[{"diff", "[", 
-      RowBox[{
-       RowBox[{"x_", "^", "n_."}], ",", "x_"}], "]"}], "/;", 
-     RowBox[{"FreeQ", "[", 
-      RowBox[{"n", ",", "x"}], "]"}]}], ":=", 
-    RowBox[{"n", " ", 
-     RowBox[{"Power", "[", 
-      RowBox[{"x", ",", 
-       RowBox[{"n", "-", "1"}]}], "]"}]}]}], ";", 
-   RowBox[{"(*", "\:6307\:6570", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"diff", "[", 
+     RowBox[{"f", ",", "x"}], "]"}], "+", 
+    RowBox[{"diff", "[", 
+     RowBox[{"g", ",", "x"}], "]"}]}]}], ";", 
+  RowBox[{"(*", "\:8868\:8fbe\:5f0f\:76f8\:52a0", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
    RowBox[{
-    RowBox[{
-     RowBox[{"diff", "[", 
-      RowBox[{
-       RowBox[{"fx_", "^", "n_"}], ",", "x_"}], "]"}], "/;", 
+    RowBox[{"diff", "[", 
      RowBox[{
+      RowBox[{"fx_", "^", "n_"}], ",", "x_"}], "]"}], "/;", 
+    RowBox[{
+     RowBox[{"FreeQ", "[", 
+      RowBox[{"n", ",", "x"}], "]"}], "&&", 
+     RowBox[{"!", 
       RowBox[{"FreeQ", "[", 
-       RowBox[{"n", ",", "x"}], "]"}], "&&", 
-      RowBox[{"!", 
-       RowBox[{"FreeQ", "[", 
-        RowBox[{"fx", ",", "x"}], "]"}]}]}]}], ":=", 
-    RowBox[{"n", "*", 
-     RowBox[{"Power", "[", 
-      RowBox[{"fx", ",", 
-       RowBox[{"n", "-", "1"}]}], "]"}], "*", 
-     RowBox[{"diff", "[", 
-      RowBox[{"fx", ",", "x"}], "]"}]}]}]}], 
+       RowBox[{"fx", ",", "x"}], "]"}]}]}]}], ":=", 
+   RowBox[{"n", "*", 
+    RowBox[{"Power", "[", 
+     RowBox[{"fx", ",", 
+      RowBox[{"n", "-", "1"}]}], "]"}], "*", 
+    RowBox[{"diff", "[", 
+     RowBox[{"fx", ",", "x"}], "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-  "(*", "\:94fe\:5f0f\:6cd5\:5219", "*)"}]}], "\[IndentingNewLine]"}], "Input",\
-
+   RowBox[{"diff", "[", 
+    RowBox[{"x_", ",", "x_"}], "]"}], ":=", "1"}], ";", 
+  RowBox[{"(*", "\:5bf9\:81ea\:5df1\:7684\:79ef\:5206", "*)"}], 
+  RowBox[{"(*", "\:94fe\:5f0f\:6cd5\:5219", "*)"}], 
+  "\[IndentingNewLine]"}]}], "Input",
  CellChangeTimes->{{3.702930586677443*^9, 3.702930679731353*^9}, {
    3.702930736944686*^9, 3.702930887337864*^9}, {3.7029309329349937`*^9, 
    3.702930997487191*^9}, {3.7029312105022984`*^9, 3.7029312729441566`*^9}, {
@@ -109,7 +90,10 @@ Cell[BoxData[{
    3.702932347435747*^9, 3.702932504484549*^9, {3.702932747534923*^9, 
    3.702932762398415*^9}, 3.7029328306351147`*^9, {3.702932997274474*^9, 
    3.7029330159548798`*^9}, {3.702933065661416*^9, 3.7029330912162027`*^9}, {
-   3.702933132761838*^9, 3.7029331695119467`*^9}}],
+   3.702933132761838*^9, 3.7029331695119467`*^9}, {3.703018440863173*^9, 
+   3.703018445404974*^9}, 3.7030186258200283`*^9, {3.703018904275176*^9, 
+   3.703018905584239*^9}, 3.703018946830611*^9, {3.7030190448850117`*^9, 
+   3.7030190456097183`*^9}, {3.7030194488083572`*^9, 3.703019469220392*^9}}],
 
 Cell[CellGroupData[{
 
@@ -145,8 +129,8 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["Global`diff", "Print", "PrintUsage",
- CellChangeTimes->{3.702932289788109*^9},
- CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"],
+ CellChangeTimes->{3.703019458768919*^9},
+ CellTags->"Info-266fae90-e59e-4b54-804d-b71cd1740658"],
 
 Cell[BoxData[
  InterpretationBox[GridBox[{
@@ -158,11 +142,6 @@ Cell[BoxData[
            RowBox[{"c_", ",", "x_"}], "]"}], "/;", 
           RowBox[{"FreeQ", "[", 
            RowBox[{"c", ",", "x"}], "]"}]}], ":=", "0"}]},
-       {" "},
-       {
-        RowBox[{
-         RowBox[{"diff", "[", 
-          RowBox[{"x_", ",", "x_"}], "]"}], ":=", "1"}]},
        {" "},
        {
         RowBox[{
@@ -192,19 +171,7 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"diff", "[", 
            RowBox[{
-            SuperscriptBox["x_", "n_."], ",", "x"}], "]"}], "/;", 
-          RowBox[{"FreeQ", "[", 
-           RowBox[{"n", ",", "x"}], "]"}]}], ":=", 
-         RowBox[{"n", " ", 
-          SuperscriptBox["x", 
-           RowBox[{"n", "-", "1"}]]}]}]},
-       {" "},
-       {
-        RowBox[{
-         RowBox[{
-          RowBox[{"diff", "[", 
-           RowBox[{
-            SuperscriptBox["fx_", "n_"], ",", "x_"}], "]"}], "/;", 
+            SuperscriptBox["fx_", "n_."], ",", "x_"}], "]"}], "/;", 
           RowBox[{
            RowBox[{"FreeQ", "[", 
             RowBox[{"n", ",", "x"}], "]"}], "&&", 
@@ -215,7 +182,12 @@ Cell[BoxData[
           SuperscriptBox["fx", 
            RowBox[{"n", "-", "1"}]], " ", 
           RowBox[{"diff", "[", 
-           RowBox[{"fx", ",", "x"}], "]"}]}]}]}
+           RowBox[{"fx", ",", "x"}], "]"}]}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"diff", "[", 
+          RowBox[{"x_", ",", "x_"}], "]"}], ":=", "1"}]}
       },
       BaselinePosition->{Baseline, {1, 1}},
       GridBoxAlignment->{
@@ -231,8 +203,8 @@ Cell[BoxData[
      "RowsIndexed" -> {}}],
   Definition[$CellContext`diff],
   Editable->False]], "Print",
- CellChangeTimes->{3.702932289823371*^9},
- CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"]
+ CellChangeTimes->{3.703019458808992*^9},
+ CellTags->"Info-266fae90-e59e-4b54-804d-b71cd1740658"]
 }, Open  ]]
 }, Open  ]],
 
@@ -241,26 +213,18 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"diff", "[", 
   RowBox[{
-   SuperscriptBox[
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"x", "^", "2"}], "+", 
-      RowBox[{"2", "x"}], "+", "1"}], ")"}], "3"], ",", "x"}], "]"}]], "Input",\
-
+   RowBox[{"x", "+", "1"}], ",", "x"}], "]"}]], "Input",
  CellChangeTimes->{
-  3.702931288781166*^9, {3.702931475876484*^9, 3.702931500557262*^9}}],
+  3.702931288781166*^9, {3.702931475876484*^9, 3.702931500557262*^9}, {
+   3.703019363570698*^9, 3.70301936508357*^9}}],
 
-Cell[BoxData[
- RowBox[{"3", " ", 
-  SuperscriptBox[
-   RowBox[{"(", 
-    RowBox[{"1", "+", 
-     RowBox[{"2", " ", "x"}], "+", 
-     SuperscriptBox["x", "2"]}], ")"}], "2"]}]], "Output",
+Cell[BoxData["1"], "Output",
  CellChangeTimes->{
   3.702931501157557*^9, 3.7029321865362864`*^9, 3.702932292106934*^9, {
    3.702932323214458*^9, 3.702932325140691*^9}, 3.702932365187743*^9, 
-   3.7029325248787813`*^9}]
+   3.7029325248787813`*^9, 3.703018459365738*^9, {3.7030186293708277`*^9, 
+   3.703018630960814*^9}, 3.703018925475502*^9, 3.70301895640408*^9, 
+   3.703019051474936*^9, 3.703019366526026*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -269,111 +233,89 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"diff", "[", 
    RowBox[{
-    RowBox[{
-     RowBox[{"(", 
-      RowBox[{
-       RowBox[{"x", "^", "2"}], "+", 
-       RowBox[{"2", "x"}], "+", "1"}], ")"}], "^", "3"}], ",", "x"}], "]"}], "//",
-   "Trace"}]], "Input",
+    RowBox[{"x", "+", "1"}], ",", "x"}], "]"}], "//", "Trace"}]], "Input",
  CellChangeTimes->{{3.702932018182303*^9, 3.70293204466224*^9}, {
-  3.7029321884048634`*^9, 3.702932190900441*^9}}],
+   3.7029321884048634`*^9, 3.702932190900441*^9}, {3.7030191072502832`*^9, 
+   3.703019113627681*^9}, 3.703019286055519*^9, {3.703019373787073*^9, 
+   3.7030193754548407`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       TagBox[
-        RowBox[{
-         SuperscriptBox["x", "2"], "+", 
-         RowBox[{"2", " ", "x"}], "+", "1"}],
-        HoldForm], ",", 
-       TagBox[
-        RowBox[{"1", "+", 
-         RowBox[{"2", " ", "x"}], "+", 
-         SuperscriptBox["x", "2"]}],
-        HoldForm]}], "}"}], ",", 
      TagBox[
-      SuperscriptBox[
-       RowBox[{"(", 
-        RowBox[{"1", "+", 
-         RowBox[{"2", " ", "x"}], "+", 
-         SuperscriptBox["x", "2"]}], ")"}], "3"],
+      RowBox[{"x", "+", "1"}],
+      HoldForm], ",", 
+     TagBox[
+      RowBox[{"1", "+", "x"}],
       HoldForm]}], "}"}], ",", 
    TagBox[
     RowBox[{"diff", "[", 
      RowBox[{
-      SuperscriptBox[
-       RowBox[{"(", 
-        RowBox[{"1", "+", 
-         RowBox[{"2", " ", "x"}], "+", 
-         SuperscriptBox["x", "2"]}], ")"}], "3"], ",", "x"}], "]"}],
+      RowBox[{"1", "+", "x"}], ",", "x"}], "]"}],
     HoldForm], ",", 
    RowBox[{"{", 
     RowBox[{
      TagBox[
       RowBox[{"FreeQ", "[", 
        RowBox[{
-        SuperscriptBox[
-         RowBox[{"(", 
-          RowBox[{"1", "+", 
-           RowBox[{"2", " ", "x"}], "+", 
-           SuperscriptBox["x", "2"]}], ")"}], "3"], ",", "x"}], "]"}],
+        RowBox[{"1", "+", "x"}], ",", "x"}], "]"}],
       HoldForm], ",", 
      TagBox["False",
       HoldForm]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     TagBox[
-      RowBox[{"FreeQ", "[", 
-       RowBox[{"3", ",", 
-        RowBox[{"1", "+", 
-         RowBox[{"2", " ", "x"}], "+", 
-         SuperscriptBox["x", "2"]}]}], "]"}],
-      HoldForm], ",", 
-     TagBox["True",
-      HoldForm]}], "}"}], ",", 
    TagBox[
-    RowBox[{"3", " ", 
-     SuperscriptBox[
-      RowBox[{"(", 
-       RowBox[{"1", "+", 
-        RowBox[{"2", " ", "x"}], "+", 
-        SuperscriptBox["x", "2"]}], ")"}], 
-      RowBox[{"3", "-", "1"}]]}],
+    RowBox[{
+     RowBox[{"diff", "[", 
+      RowBox[{"1", ",", "x"}], "]"}], "+", 
+     RowBox[{"diff", "[", 
+      RowBox[{"x", ",", "x"}], "]"}]}],
     HoldForm], ",", 
    RowBox[{"{", 
     RowBox[{
+     TagBox[
+      RowBox[{"diff", "[", 
+       RowBox[{"1", ",", "x"}], "]"}],
+      HoldForm], ",", 
      RowBox[{"{", 
       RowBox[{
        TagBox[
-        RowBox[{"3", "-", "1"}],
+        RowBox[{"FreeQ", "[", 
+         RowBox[{"1", ",", "x"}], "]"}],
         HoldForm], ",", 
-       TagBox["2",
+       TagBox["True",
         HoldForm]}], "}"}], ",", 
+     TagBox["0",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
      TagBox[
-      SuperscriptBox[
-       RowBox[{"(", 
-        RowBox[{"1", "+", 
-         RowBox[{"2", " ", "x"}], "+", 
-         SuperscriptBox["x", "2"]}], ")"}], "2"],
+      RowBox[{"diff", "[", 
+       RowBox[{"x", ",", "x"}], "]"}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{"FreeQ", "[", 
+         RowBox[{"x", ",", "x"}], "]"}],
+        HoldForm], ",", 
+       TagBox["False",
+        HoldForm]}], "}"}], ",", 
+     TagBox["1",
       HoldForm]}], "}"}], ",", 
    TagBox[
-    RowBox[{"3", " ", 
-     SuperscriptBox[
-      RowBox[{"(", 
-       RowBox[{"1", "+", 
-        RowBox[{"2", " ", "x"}], "+", 
-        SuperscriptBox["x", "2"]}], ")"}], "2"]}],
+    RowBox[{"0", "+", "1"}],
+    HoldForm], ",", 
+   TagBox["1",
     HoldForm]}], "}"}]], "Output",
  CellChangeTimes->{
   3.70293204581071*^9, 3.7029320786708527`*^9, {3.70293217905163*^9, 
    3.7029321913400383`*^9}, 3.702932293740638*^9, 3.702932329162799*^9, 
    3.702932370763875*^9, 3.702932536209004*^9, 3.702932767220031*^9, 
    3.702932836620164*^9, 3.702933031156084*^9, {3.7029330959034357`*^9, 
-   3.702933125549371*^9}, 3.702933164788539*^9}]
+   3.702933125549371*^9}, 3.702933164788539*^9, 3.703018476752364*^9, 
+   3.703019053839685*^9, 3.703019114331046*^9, 3.703019286853705*^9, 
+   3.703019376254244*^9, {3.703019479988687*^9, 3.703019498015821*^9}}]
 }, Open  ]],
 
 Cell["", "Text",
@@ -1089,10 +1031,33 @@ $CellContext`diff[$CellContext`x^2, $CellContext`x]], {
    3.702932772476326*^9, 3.7029328436811333`*^9, 3.7029330510830803`*^9, 
    3.702933107787938*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+1. To fix the lack of a rule for diff[x,x], why didn\[CloseCurlyQuote]t we \
+just modify the first parameter for the chain rule so that its exponent was \
+of the form \[OpenCurlyDoubleQuote]n_.\[CloseCurlyDoubleQuote]?\
+\>", "Subsection",
+ CellChangeTimes->{{3.7030178981405487`*^9, 3.7030180010108643`*^9}}],
+
+Cell["\<\
+diff[x,x]=1 Power[x,0]*diff[x,x]=diff[x,x] , we get an recursion,  it does \
+not help at all. And also, Despite the existence of rule diff[x, x]:=1, we \
+can not modify the first parameter for chain rule so that its exponent was of \
+the form \[OpenCurlyDoubleQuote]n_.\[CloseCurlyDoubleQuote], for if the \
+diff[x,x]:=1 was define after the chain rule, excution will match the chain \
+rule thus causing a recursion.\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.703018092473168*^9, 3.703018399007401*^9}, {
+   3.703018596795599*^9, 3.703018600126594*^9}, {3.703018972978878*^9, 
+   3.703018999137381*^9}, 3.703019542937049*^9, {3.703019618151594*^9, 
+   3.703019637341638*^9}, {3.7030196776376333`*^9, 3.703019850067752*^9}}]
 }, Open  ]]
 },
 WindowSize->{808, 653},
-WindowMargins->{{Automatic, 192}, {-109, Automatic}},
+WindowMargins->{{386, Automatic}, {-19, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb", 
   CharacterEncoding -> "UTF-8"]
@@ -1102,57 +1067,61 @@ StyleDefinitions->FrontEnd`FileName[{"Article"}, "Preprint.nb",
 (* Internal cache information *)
 (*CellTagsOutline
 CellTagsIndex->{
- "Info-4e37cd07-df8a-415c-894a-408fb416eab7"->{
-  Cell[4558, 146, 140, 2, 42, "Print",
-   CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"],
-  Cell[4701, 150, 2721, 84, 188, "Print",
-   CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"]}
+ "Info-266fae90-e59e-4b54-804d-b71cd1740658"->{
+  Cell[4331, 130, 140, 2, 42, "Print",
+   CellTags->"Info-266fae90-e59e-4b54-804d-b71cd1740658"],
+  Cell[4474, 134, 2359, 72, 154, "Print",
+   CellTags->"Info-266fae90-e59e-4b54-804d-b71cd1740658"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info-4e37cd07-df8a-415c-894a-408fb416eab7", 34962, 1104}
+ {"Info-266fae90-e59e-4b54-804d-b71cd1740658", 34840, 1069}
  }
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 3145, 91, 292, "Input"],
+Cell[558, 20, 2918, 75, 255, "Input"],
 Cell[CellGroupData[{
-Cell[3728, 115, 116, 1, 39, "Subsection"],
+Cell[3501, 99, 116, 1, 39, "Subsection"],
 Cell[CellGroupData[{
-Cell[3869, 120, 304, 8, 30, "Input"],
-Cell[4176, 130, 207, 5, 30, "Output"]
+Cell[3642, 104, 304, 8, 30, "Input"],
+Cell[3949, 114, 207, 5, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4420, 140, 113, 2, 30, "Input"],
+Cell[4193, 124, 113, 2, 30, "Input"],
 Cell[CellGroupData[{
-Cell[4558, 146, 140, 2, 42, "Print",
- CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"],
-Cell[4701, 150, 2721, 84, 188, "Print",
- CellTags->"Info-4e37cd07-df8a-415c-894a-408fb416eab7"]
+Cell[4331, 130, 140, 2, 42, "Print",
+ CellTags->"Info-266fae90-e59e-4b54-804d-b71cd1740658"],
+Cell[4474, 134, 2359, 72, 154, "Print",
+ CellTags->"Info-266fae90-e59e-4b54-804d-b71cd1740658"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7471, 240, 308, 10, 34, "Input"],
-Cell[7782, 252, 377, 10, 36, "Output"]
+Cell[6882, 212, 244, 6, 30, "Input"],
+Cell[7129, 220, 384, 6, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8196, 267, 367, 11, 47, "Input"],
-Cell[8566, 280, 2710, 95, 84, "Output"]
+Cell[7550, 231, 377, 8, 47, "Input"],
+Cell[7930, 241, 2132, 76, 50, "Output"]
 }, Open  ]],
-Cell[11291, 378, 82, 1, 29, "Text"],
+Cell[10077, 320, 82, 1, 29, "Text"],
 Cell[CellGroupData[{
-Cell[11398, 383, 223, 6, 30, "Input"],
-Cell[11624, 391, 188, 5, 30, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[11849, 401, 224, 6, 47, "Input"],
-Cell[12076, 409, 123, 2, 30, "Output"]
+Cell[10184, 325, 223, 6, 30, "Input"],
+Cell[10410, 333, 188, 5, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12236, 416, 508, 7, 47, "Input"],
-Cell[12747, 425, 21789, 664, 383, "Output"]
+Cell[10635, 343, 224, 6, 47, "Input"],
+Cell[10862, 351, 123, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11022, 358, 508, 7, 47, "Input"],
+Cell[11533, 367, 21789, 664, 369, "Output"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33371, 1037, 318, 5, 59, "Subsection"],
+Cell[33692, 1044, 735, 11, 83, "Subsubsection"]
 }, Open  ]]
 }
 ]
