@@ -1,0 +1,327 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9769,        318]
+NotebookOptionsPosition[      8998,        288]
+NotebookOutlinePosition[      9346,        303]
+CellTagsIndexPosition[      9303,        300]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "merge", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"a1_", ",", "arest___"}], "}"}], ",", 
+       RowBox[{"b", ":", 
+        RowBox[{"{", 
+         RowBox[{"b1_", ",", "___"}], "}"}]}]}], "]"}], "/;", 
+     RowBox[{"a1", "\[LessEqual]", "b1"}]}], ":=", 
+    RowBox[{"Prepend", "[", 
+     RowBox[{
+      RowBox[{"merge", "[", 
+       RowBox[{
+        RowBox[{"{", "arest", "}"}], ",", "b"}], "]"}], ",", "a1"}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"no", " ", "comparison", " ", "for", " ", "a1"}], ">", 
+    RowBox[{
+    "b1", " ", "is", " ", "necessary", " ", "in", " ", "the", " ", "second", 
+     " ", "rule", " ", "because", " ", "that", " ", "rule", " ", 
+     RowBox[{"isn", "'"}], "t", " ", "checked", " ", "until", " ", "after", 
+     " ", "the", " ", "first", " ", "rule", " ", "fails", " ", "to", " ", 
+     RowBox[{"match", "."}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{
+     RowBox[{"a", ":", 
+      RowBox[{"{", "__", "}"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b1_", ",", "brest___"}], "}"}]}], "]"}], ":=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{"a", ",", 
+       RowBox[{"{", "brest", "}"}]}], "]"}], ",", "b1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{"a_List", ",", 
+     RowBox[{"{", "}"}]}], "]"}], ":=", "a"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "b_List"}], "]"}], ":=", "b"}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.703277544476232*^9, 3.703277669739456*^9}, {
+  3.7032777259720488`*^9, 3.703277776920144*^9}, {3.703277909068061*^9, 
+  3.703277932844453*^9}, {3.703278317547633*^9, 3.703278385725069*^9}}],
+
+Cell["test the merge function:", "Text",
+ CellChangeTimes->{{3.7032781287337*^9, 3.70327813330995*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"merge", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "7"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7032781352531548`*^9, 3.7032781480547*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "2", ",", "3", ",", "3", ",", "7"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.703278149259379*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$RecursionLimit", "=", "600"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Timing", "[", 
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{
+       RowBox[{"{", "}"}], ",", 
+       RowBox[{"Range", "[", "i", "]"}]}], "]"}], ";"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "100", ",", "500", ",", "100"}], "}"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.7032789154358807`*^9, 3.703278981995247*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.703278993290967*^9}]
+}, Open  ]],
+
+Cell["\<\
+1. Compare the speed of the following implementation of merge with the once \
+given in this section:
+Do you understand why this implementation is slower than the first one?
+because the the pattern \[OpenCurlyDoubleQuote]a_, {b1_,brest___}\
+\[CloseCurlyDoubleQuote] matches \[OpenCurlyDoubleQuote]{}, Range[n]\
+\[CloseCurlyDoubleQuote], but the pattern \
+\[OpenCurlyDoubleQuote]a:{__},{b1_,brest___}\[CloseCurlyDoubleQuote] do not \
+matches \[OpenCurlyDoubleQuote]{}, Range[n]\[CloseCurlyDoubleQuote], thus \
+causing less recursion.\
+\>", "Text",
+ CellChangeTimes->{{3.703278537019034*^9, 3.703278567594829*^9}, {
+  3.7032791719001513`*^9, 3.70327933544044*^9}, {3.7032793832551403`*^9, 
+  3.703279444404539*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "merge", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"merge", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a1_", ",", "arest___"}], "}"}], ",", 
+      RowBox[{"b", ":", 
+       RowBox[{"{", 
+        RowBox[{"b1_", ",", "___"}], "}"}]}]}], "]"}], "/;", 
+    RowBox[{"a1", "\[LessEqual]", "b1"}]}], ":=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{
+       RowBox[{"{", "arest", "}"}], ",", "b"}], "]"}], ",", "a1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{"a_", ",", 
+     RowBox[{"{", 
+      RowBox[{"b1_", ",", "brest___"}], "}"}]}], "]"}], ":=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{"a", ",", 
+       RowBox[{"{", "brest", "}"}]}], "]"}], ",", "b1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{"a_List", ",", 
+     RowBox[{"{", "}"}]}], "]"}], ":=", "a"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "b_List"}], "]"}], ":=", "b"}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.703278597335792*^9, 3.703278726785137*^9}, {
+  3.703278761263239*^9, 3.703278783126254*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$RecursionLimit", "=", "600"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Timing", "[", 
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{
+       RowBox[{"{", "}"}], ",", 
+       RowBox[{"Range", "[", "i", "]"}]}], "]"}], ";"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "100", ",", "500", ",", "100"}], "}"}]}], 
+  "]"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.004`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.012`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.036`", ",", "Null"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "Null"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.703279012255591*^9}]
+}, Open  ]],
+
+Cell["\<\
+2. Rewrite merge to use ReplaceRepeated instead of recursion.\
+\>", "Text",
+ CellChangeTimes->{{3.703279493851116*^9, 3.7032795408194857`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "merge", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"a1_", ",", "arest___"}], "}"}], ",", 
+       RowBox[{"b", ":", 
+        RowBox[{"{", 
+         RowBox[{"b1_", ",", "___"}], "}"}]}]}], "]"}], "/;", 
+     RowBox[{"a1", "\[LessEqual]", "b1"}]}], ":=", 
+    RowBox[{"Prepend", "[", 
+     RowBox[{
+      RowBox[{"merge", "[", 
+       RowBox[{
+        RowBox[{"{", "arest", "}"}], ",", "b"}], "]"}], ",", "a1"}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"no", " ", "comparison", " ", "for", " ", "a1"}], ">", 
+    RowBox[{
+    "b1", " ", "is", " ", "necessary", " ", "in", " ", "the", " ", "second", 
+     " ", "rule", " ", "because", " ", "that", " ", "rule", " ", 
+     RowBox[{"isn", "'"}], "t", " ", "checked", " ", "until", " ", "after", 
+     " ", "the", " ", "first", " ", "rule", " ", "fails", " ", "to", " ", 
+     RowBox[{"match", "."}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{
+     RowBox[{"a", ":", 
+      RowBox[{"{", "__", "}"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b1_", ",", "brest___"}], "}"}]}], "]"}], ":=", 
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"merge", "[", 
+      RowBox[{"a", ",", 
+       RowBox[{"{", "brest", "}"}]}], "]"}], ",", "b1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{"a_List", ",", 
+     RowBox[{"{", "}"}]}], "]"}], ":=", "a"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"merge", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "b_List"}], "]"}], ":=", "b"}], ";"}]}], "Input"]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 330}, {-34, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2005, 57, 244, "Input"],
+Cell[2566, 79, 103, 1, 33, "Text"],
+Cell[CellGroupData[{
+Cell[2694, 84, 265, 7, 32, "Input"],
+Cell[2962, 93, 158, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3157, 102, 489, 14, 91, "Input"],
+Cell[3649, 118, 415, 13, 32, "Output"]
+}, Open  ]],
+Cell[4079, 134, 722, 13, 99, "Text"],
+Cell[4804, 149, 1355, 44, 200, "Input"],
+Cell[CellGroupData[{
+Cell[6184, 197, 421, 13, 91, "Input"],
+Cell[6608, 212, 424, 13, 32, "Output"]
+}, Open  ]],
+Cell[7047, 228, 153, 3, 33, "Text"],
+Cell[7203, 233, 1791, 53, 244, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

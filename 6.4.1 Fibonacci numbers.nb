@@ -1,0 +1,2143 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     74422,       2134]
+NotebookOptionsPosition[     70658,       2016]
+NotebookOutlinePosition[     71949,       2051]
+CellTagsIndexPosition[     71722,       2044]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"fib", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"fib", "[", 
+     RowBox[{"n", "-", "1"}], "]"}], "+", 
+    RowBox[{"fib", "[", 
+     RowBox[{"n", "-", "2"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fib", "[", "1", "]"}], "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fib", "[", "0", "]"}], "=", "1"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703364272388679*^9, 3.703364292712631*^9}, {
+  3.703364397786439*^9, 3.703364413921702*^9}, {3.703365868153729*^9, 
+  3.703365876466838*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Array", "[", 
+  RowBox[{"fib", ",", "8"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7033644219487143`*^9, 3.70336442629904*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", "21", ",", 
+   "34"}], "}"}]], "Output",
+ CellChangeTimes->{3.703364426997394*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"21", "/", "34"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.703364677186296*^9, 3.703364695996076*^9}}],
+
+Cell[BoxData["0.6176470588235294`"], "Output",
+ CellChangeTimes->{{3.703364683026661*^9, 3.703364697778927*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"t", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Timing", "[", 
+      RowBox[{"fib", "[", "n", "]"}], "]"}], "[", 
+     RowBox[{"[", "1", "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "30"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7033647690061483`*^9, 3.703364803474392*^9}, {
+  3.703364847813241*^9, 3.7033648482209873`*^9}, {3.7033649575659437`*^9, 
+  3.703364958074161*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
+   "0.`", ",", "0.`", ",", "0.004`", ",", "0.004`", ",", "0.004`", ",", 
+   "0.008`", ",", "0.016`", ",", "0.024`", ",", "0.02`", ",", "0.036`", ",", 
+   "0.052`", ",", "0.092`", ",", "0.148`", ",", "0.24`", ",", "0.384`", ",", 
+   "0.608`", ",", "1.008`", ",", "1.632`"}], "}"}]], "Output",
+ CellChangeTimes->{3.703364804654889*^9, 3.70336485050443*^9, 
+  3.70336496372721*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"t", ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Timings for fib[n]\>\""}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<n\>\"", ",", "\"\<Seconds\>\""}], "}"}]}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", "30", ",", "2"}], "]"}], ",", "Automatic"}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.703364859011077*^9, 3.703364944970439*^9}, {
+  3.703364975783239*^9, 3.7033649760473337`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQA2IQDQEf7BlQgQMqlwONL4DGF0HjS6DxZdD4Cmh8JTS+
+ChpfDY2vgcbXQuProPH1HP6s/HjJN6kA6k8DNL4hGt8Iym+A8o2h/AlQvonD
+r7qsPSWTZ0D5pg7VIuvcH1ZNgfLNHKzv+/dOz1sE5Zs7WG45UbZv/ioo38Ih
+KgWkYjuUb+nQnfP898qPh6B8K4cdcq2vA3ecg/KtofbdgPJtHG7/BAk8hvJt
+HUIeL519RAEWj3YOL9UMOdbI/LIHAGDZVqw=
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox["\"Seconds\"", TraditionalForm], None}, {
+     FormBox["\"n\"", TraditionalForm], None}},
+  FrameTicks->{{Automatic, Automatic}, {{{0, 
+       FormBox["0", TraditionalForm]}, {2, 
+       FormBox["2", TraditionalForm]}, {4, 
+       FormBox["4", TraditionalForm]}, {6, 
+       FormBox["6", TraditionalForm]}, {8, 
+       FormBox["8", TraditionalForm]}, {10, 
+       FormBox["10", TraditionalForm]}, {12, 
+       FormBox["12", TraditionalForm]}, {14, 
+       FormBox["14", TraditionalForm]}, {16, 
+       FormBox["16", TraditionalForm]}, {18, 
+       FormBox["18", TraditionalForm]}, {20, 
+       FormBox["20", TraditionalForm]}, {22, 
+       FormBox["22", TraditionalForm]}, {24, 
+       FormBox["24", TraditionalForm]}, {26, 
+       FormBox["26", TraditionalForm]}, {28, 
+       FormBox["28", TraditionalForm]}, {30, 
+       FormBox["30", TraditionalForm]}}, {{0, 
+       FormBox["0", TraditionalForm]}, {2, 
+       FormBox["2", TraditionalForm]}, {4, 
+       FormBox["4", TraditionalForm]}, {6, 
+       FormBox["6", TraditionalForm]}, {8, 
+       FormBox["8", TraditionalForm]}, {10, 
+       FormBox["10", TraditionalForm]}, {12, 
+       FormBox["12", TraditionalForm]}, {14, 
+       FormBox["14", TraditionalForm]}, {16, 
+       FormBox["16", TraditionalForm]}, {18, 
+       FormBox["18", TraditionalForm]}, {20, 
+       FormBox["20", TraditionalForm]}, {22, 
+       FormBox["22", TraditionalForm]}, {24, 
+       FormBox["24", TraditionalForm]}, {26, 
+       FormBox["26", TraditionalForm]}, {28, 
+       FormBox["28", TraditionalForm]}, {30, 
+       FormBox["30", TraditionalForm]}}}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotLabel->FormBox["\"Timings for fib[n]\"", TraditionalForm],
+  PlotRange->{{0., 30.}, {0, 0.37}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.703364946679035*^9, 3.703364976779351*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Trace", "[", 
+  RowBox[{
+   RowBox[{"fib", "[", "4", "]"}], ",", 
+   RowBox[{"fib", "[", "_", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.703365125560669*^9, 3.703365138415045*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"fib", "[", "4", "]"}],
+    HoldForm], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"fib", "[", "3", "]"}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       TagBox[
+        RowBox[{"fib", "[", "2", "]"}],
+        HoldForm], ",", 
+       RowBox[{"{", 
+        TagBox[
+         RowBox[{"fib", "[", "1", "]"}],
+         HoldForm], "}"}], ",", 
+       RowBox[{"{", 
+        TagBox[
+         RowBox[{"fib", "[", "0", "]"}],
+         HoldForm], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      TagBox[
+       RowBox[{"fib", "[", "1", "]"}],
+       HoldForm], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox[
+      RowBox[{"fib", "[", "2", "]"}],
+      HoldForm], ",", 
+     RowBox[{"{", 
+      TagBox[
+       RowBox[{"fib", "[", "1", "]"}],
+       HoldForm], "}"}], ",", 
+     RowBox[{"{", 
+      TagBox[
+       RowBox[{"fib", "[", "0", "]"}],
+       HoldForm], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7033651391786613`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Trace", "[", 
+   RowBox[{"fib", "[", "4", "]"}], "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.7033654779795856`*^9, 3.703365490053689*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     TagBox[
+      RowBox[{"fib", "[", "4", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{
+       RowBox[{"fib", "[", 
+        RowBox[{"4", "-", "1"}], "]"}], "+", 
+       RowBox[{"fib", "[", 
+        RowBox[{"4", "-", "2"}], "]"}]}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {GridBox[{
+       {
+        TagBox[
+         RowBox[{"4", "-", "1"}],
+         HoldForm]},
+       {
+        TagBox["3",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"fib", "[", "3", "]"}],
+      HoldForm], 
+     TagBox[
+      RowBox[{
+       RowBox[{"fib", "[", 
+        RowBox[{"3", "-", "1"}], "]"}], "+", 
+       RowBox[{"fib", "[", 
+        RowBox[{"3", "-", "2"}], "]"}]}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"3", "-", "1"}],
+         HoldForm], 
+        TagBox["2",
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{"fib", "[", "2", "]"}],
+         HoldForm], "\<\"\"\>", "\<\"\"\>"},
+       {
+        TagBox[
+         RowBox[{
+          RowBox[{"fib", "[", 
+           RowBox[{"2", "-", "1"}], "]"}], "+", 
+          RowBox[{"fib", "[", 
+           RowBox[{"2", "-", "2"}], "]"}]}],
+         HoldForm], "\<\"\"\>", "\<\"\"\>"},
+       {GridBox[{
+          {
+           TagBox[
+            RowBox[{"2", "-", "1"}],
+            HoldForm]},
+          {
+           TagBox["1",
+            HoldForm]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], 
+        TagBox[
+         RowBox[{"fib", "[", "1", "]"}],
+         HoldForm], 
+        TagBox["1",
+         HoldForm]},
+       {GridBox[{
+          {
+           TagBox[
+            RowBox[{"2", "-", "2"}],
+            HoldForm]},
+          {
+           TagBox["0",
+            HoldForm]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.7]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.1]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}}], 
+        TagBox[
+         RowBox[{"fib", "[", "0", "]"}],
+         HoldForm], 
+        TagBox["1",
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"1", "+", "1"}],
+         HoldForm], "\<\"\"\>", "\<\"\"\>"},
+       {
+        TagBox["2",
+         HoldForm], "\<\"\"\>", "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        TagBox[
+         RowBox[{"3", "-", "2"}],
+         HoldForm], 
+        TagBox["1",
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"fib", "[", "1", "]"}],
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox["1",
+         HoldForm], "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"2", "+", "1"}],
+      HoldForm], 
+     TagBox["3",
+      HoldForm]},
+    {GridBox[{
+       {
+        TagBox[
+         RowBox[{"4", "-", "2"}],
+         HoldForm]},
+       {
+        TagBox["2",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"fib", "[", "2", "]"}],
+      HoldForm], 
+     TagBox[
+      RowBox[{
+       RowBox[{"fib", "[", 
+        RowBox[{"2", "-", "1"}], "]"}], "+", 
+       RowBox[{"fib", "[", 
+        RowBox[{"2", "-", "2"}], "]"}]}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"2", "-", "1"}],
+         HoldForm], 
+        TagBox["1",
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"fib", "[", "1", "]"}],
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox["1",
+         HoldForm], "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        TagBox[
+         RowBox[{"2", "-", "2"}],
+         HoldForm], 
+        TagBox["0",
+         HoldForm]},
+       {
+        TagBox[
+         RowBox[{"fib", "[", "0", "]"}],
+         HoldForm], "\<\"\"\>"},
+       {
+        TagBox["1",
+         HoldForm], "\<\"\"\>"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"1", "+", "1"}],
+      HoldForm], 
+     TagBox["2",
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"3", "+", "2"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox["5",
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{
+    HoldForm[
+     $CellContext`fib[4]], 
+    HoldForm[$CellContext`fib[4 - 1] + $CellContext`fib[4 - 2]], {{
+      HoldForm[4 - 1], 
+      HoldForm[3]}, 
+     HoldForm[
+      $CellContext`fib[3]], 
+     HoldForm[$CellContext`fib[3 - 1] + $CellContext`fib[3 - 2]], {{
+       HoldForm[3 - 1], 
+       HoldForm[2]}, 
+      HoldForm[
+       $CellContext`fib[2]], 
+      HoldForm[$CellContext`fib[2 - 1] + $CellContext`fib[2 - 2]], {{
+        HoldForm[2 - 1], 
+        HoldForm[1]}, 
+       HoldForm[
+        $CellContext`fib[1]], 
+       HoldForm[1]}, {{
+        HoldForm[2 - 2], 
+        HoldForm[0]}, 
+       HoldForm[
+        $CellContext`fib[0]], 
+       HoldForm[1]}, 
+      HoldForm[1 + 1], 
+      HoldForm[2]}, {{
+       HoldForm[3 - 2], 
+       HoldForm[1]}, 
+      HoldForm[
+       $CellContext`fib[1]], 
+      HoldForm[1]}, 
+     HoldForm[2 + 1], 
+     HoldForm[3]}, {{
+      HoldForm[4 - 2], 
+      HoldForm[2]}, 
+     HoldForm[
+      $CellContext`fib[2]], 
+     HoldForm[$CellContext`fib[2 - 1] + $CellContext`fib[2 - 2]], {{
+       HoldForm[2 - 1], 
+       HoldForm[1]}, 
+      HoldForm[
+       $CellContext`fib[1]], 
+      HoldForm[1]}, {{
+       HoldForm[2 - 2], 
+       HoldForm[0]}, 
+      HoldForm[
+       $CellContext`fib[0]], 
+      HoldForm[1]}, 
+     HoldForm[1 + 1], 
+     HoldForm[2]}, 
+    HoldForm[3 + 2], 
+    HoldForm[5]}]]], "Output",
+ CellChangeTimes->{3.70336549062639*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Count", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", 
+      RowBox[{"Trace", "[", 
+       RowBox[{
+        RowBox[{"fib", "[", "i", "]"}], ",", 
+        RowBox[{"fib", "[", "_", "]"}]}], "]"}], "]"}], ",", 
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"fib", "[", "1", "]"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1", ",", "12"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.703365652863451*^9, 3.7033658172431993`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", "21",
+    ",", "34", ",", "55", ",", "89", ",", "144"}], "}"}]], "Output",
+ CellChangeTimes->{{3.703365693953734*^9, 3.703365722899887*^9}, 
+   3.703365818832962*^9, {3.7033658847450123`*^9, 3.7033658875456333`*^9}}]
+}, Open  ]],
+
+Cell[TextData[StyleBox["One way to solve this problem efficiently is to \
+perform the computation \[OpenCurlyDoubleQuote]bottom up\
+\[CloseCurlyDoubleQuote]", "Subsubsection"]], "Text",
+ CellChangeTimes->{{3.703366906499606*^9, 3.703366942235208*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"bufib", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Nest", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], ",", 
+         RowBox[{"Plus", "@@", "#"}]}], "}"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1"}], "}"}], ",", "n"}], "]"}], "[", 
+    RowBox[{"[", "2", "]"}], "]"}]}], ";", 
+  RowBox[{
+  "(*", "\:4fdd\:5b58\:4e86\:4e0a\:6b21\:7684\:6700\:7ec8\:7ed3\:679c", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.703366973163927*^9, 3.7033670343955812`*^9}, 
+   3.7033671056111803`*^9, {3.703367560473783*^9, 3.703367579874535*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"bufib", "[", "n", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "0", ",", "11"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.703367109581415*^9, 3.7033671388474216`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", "21",
+    ",", "34", ",", "55", ",", "89", ",", "144"}], "}"}]], "Output",
+ CellChangeTimes->{3.703367139614883*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Timing", "[", 
+       RowBox[{"bufib", "[", "n", "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "300"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"t", ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Timings for fib[n]\>\""}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<n\>\"", ",", "\"\<Seconds\>\""}], "}"}]}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", "300", ",", "2"}], "]"}], ",", "Automatic"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.703367432478258*^9, 3.7033674381018476`*^9}, {
+  3.703367474807652*^9, 3.703367475969551*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.007333333333333334], 
+     AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxd1EuOVVUUBuClLZrVoGHDxtUQYgwhpaKAD9igIk8tXj5QYVNQAiJwYQRr
+CDWE3aVXQ1hDIIxgD6Hs2zCGhjnf6Zx8+fPnv+dxz3vbz67tvB0RR96K+O/8
+5tg/HcujLXkAb+CD+B38Ll7h9/EhfBh/gD/ER/BRvIk/wh/jT/Ax/Cn+DB/H
+J/BJ/Dn+An+Jv8Kn8Gnclk4cZ8hxnCXH8TU5jm/IcXxLjuMcOY7vyHGcJ8dx
+gRzHxfbPy79fX9lev/nf5EXyS/RxXCbHcYUcx/fkOH4gx7G1dMOJC8dV+jhx
+4bhGHycuHNfp48R1ffm84gZ9nLhw3KSPExeOH+njxIXjJ/o4ceH4mT5OXDh+
+oY8TF45b9HHiusXz+5U+Tlw4fqOPExeO3+njxIXjNn2cuHDcoY8TF46+9Ao3
+3DvfO/KBC08cd9nHDXeceODCE8c2+7jhjhMPXHjiuLe8n6t77OOOEw9ceOK4
+v/QKN9xx4oELTxw77OOG+w7vH/nAhSeOP9jHDXeceODCE8cD9nHDHeeD5f0Y
+5IUnjofs44Y7Tjxw4YnjEfu44f6I508+cOGJ40/2ccMdJx648MTxmH3cHi+v
+t5MnHrjwxPEX+7jhjhMPXHjieML37wn7uOPEAxeeOJ4uvcINd5x44Hq6vL5J
+Hs/Yxw13nHjgwhPHeukNvMKbuK2X17dF3vEaJ97FA+/hwq/wxPs4ni+98Zz3
+kXwTN7yFO17jxLt44D1c+BW/f5Lv43ix9AZe4U3c8BbueP2C7zf5Lh54D9f/
+/hc4LGzN
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox["\"Seconds\"", TraditionalForm], None}, {
+     FormBox["\"n\"", TraditionalForm], None}},
+  FrameTicks->{{Automatic, Automatic}, {{{0, 
+       FormBox["0", TraditionalForm]}, {2, 
+       FormBox["2", TraditionalForm]}, {4, 
+       FormBox["4", TraditionalForm]}, {6, 
+       FormBox["6", TraditionalForm]}, {8, 
+       FormBox["8", TraditionalForm]}, {10, 
+       FormBox["10", TraditionalForm]}, {12, 
+       FormBox["12", TraditionalForm]}, {14, 
+       FormBox["14", TraditionalForm]}, {16, 
+       FormBox["16", TraditionalForm]}, {18, 
+       FormBox["18", TraditionalForm]}, {20, 
+       FormBox["20", TraditionalForm]}, {22, 
+       FormBox["22", TraditionalForm]}, {24, 
+       FormBox["24", TraditionalForm]}, {26, 
+       FormBox["26", TraditionalForm]}, {28, 
+       FormBox["28", TraditionalForm]}, {30, 
+       FormBox["30", TraditionalForm]}, {32, 
+       FormBox["32", TraditionalForm]}, {34, 
+       FormBox["34", TraditionalForm]}, {36, 
+       FormBox["36", TraditionalForm]}, {38, 
+       FormBox["38", TraditionalForm]}, {40, 
+       FormBox["40", TraditionalForm]}, {42, 
+       FormBox["42", TraditionalForm]}, {44, 
+       FormBox["44", TraditionalForm]}, {46, 
+       FormBox["46", TraditionalForm]}, {48, 
+       FormBox["48", TraditionalForm]}, {50, 
+       FormBox["50", TraditionalForm]}, {52, 
+       FormBox["52", TraditionalForm]}, {54, 
+       FormBox["54", TraditionalForm]}, {56, 
+       FormBox["56", TraditionalForm]}, {58, 
+       FormBox["58", TraditionalForm]}, {60, 
+       FormBox["60", TraditionalForm]}, {62, 
+       FormBox["62", TraditionalForm]}, {64, 
+       FormBox["64", TraditionalForm]}, {66, 
+       FormBox["66", TraditionalForm]}, {68, 
+       FormBox["68", TraditionalForm]}, {70, 
+       FormBox["70", TraditionalForm]}, {72, 
+       FormBox["72", TraditionalForm]}, {74, 
+       FormBox["74", TraditionalForm]}, {76, 
+       FormBox["76", TraditionalForm]}, {78, 
+       FormBox["78", TraditionalForm]}, {80, 
+       FormBox["80", TraditionalForm]}, {82, 
+       FormBox["82", TraditionalForm]}, {84, 
+       FormBox["84", TraditionalForm]}, {86, 
+       FormBox["86", TraditionalForm]}, {88, 
+       FormBox["88", TraditionalForm]}, {90, 
+       FormBox["90", TraditionalForm]}, {92, 
+       FormBox["92", TraditionalForm]}, {94, 
+       FormBox["94", TraditionalForm]}, {96, 
+       FormBox["96", TraditionalForm]}, {98, 
+       FormBox["98", TraditionalForm]}, {100, 
+       FormBox["100", TraditionalForm]}, {102, 
+       FormBox["102", TraditionalForm]}, {104, 
+       FormBox["104", TraditionalForm]}, {106, 
+       FormBox["106", TraditionalForm]}, {108, 
+       FormBox["108", TraditionalForm]}, {110, 
+       FormBox["110", TraditionalForm]}, {112, 
+       FormBox["112", TraditionalForm]}, {114, 
+       FormBox["114", TraditionalForm]}, {116, 
+       FormBox["116", TraditionalForm]}, {118, 
+       FormBox["118", TraditionalForm]}, {120, 
+       FormBox["120", TraditionalForm]}, {122, 
+       FormBox["122", TraditionalForm]}, {124, 
+       FormBox["124", TraditionalForm]}, {126, 
+       FormBox["126", TraditionalForm]}, {128, 
+       FormBox["128", TraditionalForm]}, {130, 
+       FormBox["130", TraditionalForm]}, {132, 
+       FormBox["132", TraditionalForm]}, {134, 
+       FormBox["134", TraditionalForm]}, {136, 
+       FormBox["136", TraditionalForm]}, {138, 
+       FormBox["138", TraditionalForm]}, {140, 
+       FormBox["140", TraditionalForm]}, {142, 
+       FormBox["142", TraditionalForm]}, {144, 
+       FormBox["144", TraditionalForm]}, {146, 
+       FormBox["146", TraditionalForm]}, {148, 
+       FormBox["148", TraditionalForm]}, {150, 
+       FormBox["150", TraditionalForm]}, {152, 
+       FormBox["152", TraditionalForm]}, {154, 
+       FormBox["154", TraditionalForm]}, {156, 
+       FormBox["156", TraditionalForm]}, {158, 
+       FormBox["158", TraditionalForm]}, {160, 
+       FormBox["160", TraditionalForm]}, {162, 
+       FormBox["162", TraditionalForm]}, {164, 
+       FormBox["164", TraditionalForm]}, {166, 
+       FormBox["166", TraditionalForm]}, {168, 
+       FormBox["168", TraditionalForm]}, {170, 
+       FormBox["170", TraditionalForm]}, {172, 
+       FormBox["172", TraditionalForm]}, {174, 
+       FormBox["174", TraditionalForm]}, {176, 
+       FormBox["176", TraditionalForm]}, {178, 
+       FormBox["178", TraditionalForm]}, {180, 
+       FormBox["180", TraditionalForm]}, {182, 
+       FormBox["182", TraditionalForm]}, {184, 
+       FormBox["184", TraditionalForm]}, {186, 
+       FormBox["186", TraditionalForm]}, {188, 
+       FormBox["188", TraditionalForm]}, {190, 
+       FormBox["190", TraditionalForm]}, {192, 
+       FormBox["192", TraditionalForm]}, {194, 
+       FormBox["194", TraditionalForm]}, {196, 
+       FormBox["196", TraditionalForm]}, {198, 
+       FormBox["198", TraditionalForm]}, {200, 
+       FormBox["200", TraditionalForm]}, {202, 
+       FormBox["202", TraditionalForm]}, {204, 
+       FormBox["204", TraditionalForm]}, {206, 
+       FormBox["206", TraditionalForm]}, {208, 
+       FormBox["208", TraditionalForm]}, {210, 
+       FormBox["210", TraditionalForm]}, {212, 
+       FormBox["212", TraditionalForm]}, {214, 
+       FormBox["214", TraditionalForm]}, {216, 
+       FormBox["216", TraditionalForm]}, {218, 
+       FormBox["218", TraditionalForm]}, {220, 
+       FormBox["220", TraditionalForm]}, {222, 
+       FormBox["222", TraditionalForm]}, {224, 
+       FormBox["224", TraditionalForm]}, {226, 
+       FormBox["226", TraditionalForm]}, {228, 
+       FormBox["228", TraditionalForm]}, {230, 
+       FormBox["230", TraditionalForm]}, {232, 
+       FormBox["232", TraditionalForm]}, {234, 
+       FormBox["234", TraditionalForm]}, {236, 
+       FormBox["236", TraditionalForm]}, {238, 
+       FormBox["238", TraditionalForm]}, {240, 
+       FormBox["240", TraditionalForm]}, {242, 
+       FormBox["242", TraditionalForm]}, {244, 
+       FormBox["244", TraditionalForm]}, {246, 
+       FormBox["246", TraditionalForm]}, {248, 
+       FormBox["248", TraditionalForm]}, {250, 
+       FormBox["250", TraditionalForm]}, {252, 
+       FormBox["252", TraditionalForm]}, {254, 
+       FormBox["254", TraditionalForm]}, {256, 
+       FormBox["256", TraditionalForm]}, {258, 
+       FormBox["258", TraditionalForm]}, {260, 
+       FormBox["260", TraditionalForm]}, {262, 
+       FormBox["262", TraditionalForm]}, {264, 
+       FormBox["264", TraditionalForm]}, {266, 
+       FormBox["266", TraditionalForm]}, {268, 
+       FormBox["268", TraditionalForm]}, {270, 
+       FormBox["270", TraditionalForm]}, {272, 
+       FormBox["272", TraditionalForm]}, {274, 
+       FormBox["274", TraditionalForm]}, {276, 
+       FormBox["276", TraditionalForm]}, {278, 
+       FormBox["278", TraditionalForm]}, {280, 
+       FormBox["280", TraditionalForm]}, {282, 
+       FormBox["282", TraditionalForm]}, {284, 
+       FormBox["284", TraditionalForm]}, {286, 
+       FormBox["286", TraditionalForm]}, {288, 
+       FormBox["288", TraditionalForm]}, {290, 
+       FormBox["290", TraditionalForm]}, {292, 
+       FormBox["292", TraditionalForm]}, {294, 
+       FormBox["294", TraditionalForm]}, {296, 
+       FormBox["296", TraditionalForm]}, {298, 
+       FormBox["298", TraditionalForm]}, {300, 
+       FormBox["300", TraditionalForm]}}, {{0, 
+       FormBox["0", TraditionalForm]}, {2, 
+       FormBox["2", TraditionalForm]}, {4, 
+       FormBox["4", TraditionalForm]}, {6, 
+       FormBox["6", TraditionalForm]}, {8, 
+       FormBox["8", TraditionalForm]}, {10, 
+       FormBox["10", TraditionalForm]}, {12, 
+       FormBox["12", TraditionalForm]}, {14, 
+       FormBox["14", TraditionalForm]}, {16, 
+       FormBox["16", TraditionalForm]}, {18, 
+       FormBox["18", TraditionalForm]}, {20, 
+       FormBox["20", TraditionalForm]}, {22, 
+       FormBox["22", TraditionalForm]}, {24, 
+       FormBox["24", TraditionalForm]}, {26, 
+       FormBox["26", TraditionalForm]}, {28, 
+       FormBox["28", TraditionalForm]}, {30, 
+       FormBox["30", TraditionalForm]}, {32, 
+       FormBox["32", TraditionalForm]}, {34, 
+       FormBox["34", TraditionalForm]}, {36, 
+       FormBox["36", TraditionalForm]}, {38, 
+       FormBox["38", TraditionalForm]}, {40, 
+       FormBox["40", TraditionalForm]}, {42, 
+       FormBox["42", TraditionalForm]}, {44, 
+       FormBox["44", TraditionalForm]}, {46, 
+       FormBox["46", TraditionalForm]}, {48, 
+       FormBox["48", TraditionalForm]}, {50, 
+       FormBox["50", TraditionalForm]}, {52, 
+       FormBox["52", TraditionalForm]}, {54, 
+       FormBox["54", TraditionalForm]}, {56, 
+       FormBox["56", TraditionalForm]}, {58, 
+       FormBox["58", TraditionalForm]}, {60, 
+       FormBox["60", TraditionalForm]}, {62, 
+       FormBox["62", TraditionalForm]}, {64, 
+       FormBox["64", TraditionalForm]}, {66, 
+       FormBox["66", TraditionalForm]}, {68, 
+       FormBox["68", TraditionalForm]}, {70, 
+       FormBox["70", TraditionalForm]}, {72, 
+       FormBox["72", TraditionalForm]}, {74, 
+       FormBox["74", TraditionalForm]}, {76, 
+       FormBox["76", TraditionalForm]}, {78, 
+       FormBox["78", TraditionalForm]}, {80, 
+       FormBox["80", TraditionalForm]}, {82, 
+       FormBox["82", TraditionalForm]}, {84, 
+       FormBox["84", TraditionalForm]}, {86, 
+       FormBox["86", TraditionalForm]}, {88, 
+       FormBox["88", TraditionalForm]}, {90, 
+       FormBox["90", TraditionalForm]}, {92, 
+       FormBox["92", TraditionalForm]}, {94, 
+       FormBox["94", TraditionalForm]}, {96, 
+       FormBox["96", TraditionalForm]}, {98, 
+       FormBox["98", TraditionalForm]}, {100, 
+       FormBox["100", TraditionalForm]}, {102, 
+       FormBox["102", TraditionalForm]}, {104, 
+       FormBox["104", TraditionalForm]}, {106, 
+       FormBox["106", TraditionalForm]}, {108, 
+       FormBox["108", TraditionalForm]}, {110, 
+       FormBox["110", TraditionalForm]}, {112, 
+       FormBox["112", TraditionalForm]}, {114, 
+       FormBox["114", TraditionalForm]}, {116, 
+       FormBox["116", TraditionalForm]}, {118, 
+       FormBox["118", TraditionalForm]}, {120, 
+       FormBox["120", TraditionalForm]}, {122, 
+       FormBox["122", TraditionalForm]}, {124, 
+       FormBox["124", TraditionalForm]}, {126, 
+       FormBox["126", TraditionalForm]}, {128, 
+       FormBox["128", TraditionalForm]}, {130, 
+       FormBox["130", TraditionalForm]}, {132, 
+       FormBox["132", TraditionalForm]}, {134, 
+       FormBox["134", TraditionalForm]}, {136, 
+       FormBox["136", TraditionalForm]}, {138, 
+       FormBox["138", TraditionalForm]}, {140, 
+       FormBox["140", TraditionalForm]}, {142, 
+       FormBox["142", TraditionalForm]}, {144, 
+       FormBox["144", TraditionalForm]}, {146, 
+       FormBox["146", TraditionalForm]}, {148, 
+       FormBox["148", TraditionalForm]}, {150, 
+       FormBox["150", TraditionalForm]}, {152, 
+       FormBox["152", TraditionalForm]}, {154, 
+       FormBox["154", TraditionalForm]}, {156, 
+       FormBox["156", TraditionalForm]}, {158, 
+       FormBox["158", TraditionalForm]}, {160, 
+       FormBox["160", TraditionalForm]}, {162, 
+       FormBox["162", TraditionalForm]}, {164, 
+       FormBox["164", TraditionalForm]}, {166, 
+       FormBox["166", TraditionalForm]}, {168, 
+       FormBox["168", TraditionalForm]}, {170, 
+       FormBox["170", TraditionalForm]}, {172, 
+       FormBox["172", TraditionalForm]}, {174, 
+       FormBox["174", TraditionalForm]}, {176, 
+       FormBox["176", TraditionalForm]}, {178, 
+       FormBox["178", TraditionalForm]}, {180, 
+       FormBox["180", TraditionalForm]}, {182, 
+       FormBox["182", TraditionalForm]}, {184, 
+       FormBox["184", TraditionalForm]}, {186, 
+       FormBox["186", TraditionalForm]}, {188, 
+       FormBox["188", TraditionalForm]}, {190, 
+       FormBox["190", TraditionalForm]}, {192, 
+       FormBox["192", TraditionalForm]}, {194, 
+       FormBox["194", TraditionalForm]}, {196, 
+       FormBox["196", TraditionalForm]}, {198, 
+       FormBox["198", TraditionalForm]}, {200, 
+       FormBox["200", TraditionalForm]}, {202, 
+       FormBox["202", TraditionalForm]}, {204, 
+       FormBox["204", TraditionalForm]}, {206, 
+       FormBox["206", TraditionalForm]}, {208, 
+       FormBox["208", TraditionalForm]}, {210, 
+       FormBox["210", TraditionalForm]}, {212, 
+       FormBox["212", TraditionalForm]}, {214, 
+       FormBox["214", TraditionalForm]}, {216, 
+       FormBox["216", TraditionalForm]}, {218, 
+       FormBox["218", TraditionalForm]}, {220, 
+       FormBox["220", TraditionalForm]}, {222, 
+       FormBox["222", TraditionalForm]}, {224, 
+       FormBox["224", TraditionalForm]}, {226, 
+       FormBox["226", TraditionalForm]}, {228, 
+       FormBox["228", TraditionalForm]}, {230, 
+       FormBox["230", TraditionalForm]}, {232, 
+       FormBox["232", TraditionalForm]}, {234, 
+       FormBox["234", TraditionalForm]}, {236, 
+       FormBox["236", TraditionalForm]}, {238, 
+       FormBox["238", TraditionalForm]}, {240, 
+       FormBox["240", TraditionalForm]}, {242, 
+       FormBox["242", TraditionalForm]}, {244, 
+       FormBox["244", TraditionalForm]}, {246, 
+       FormBox["246", TraditionalForm]}, {248, 
+       FormBox["248", TraditionalForm]}, {250, 
+       FormBox["250", TraditionalForm]}, {252, 
+       FormBox["252", TraditionalForm]}, {254, 
+       FormBox["254", TraditionalForm]}, {256, 
+       FormBox["256", TraditionalForm]}, {258, 
+       FormBox["258", TraditionalForm]}, {260, 
+       FormBox["260", TraditionalForm]}, {262, 
+       FormBox["262", TraditionalForm]}, {264, 
+       FormBox["264", TraditionalForm]}, {266, 
+       FormBox["266", TraditionalForm]}, {268, 
+       FormBox["268", TraditionalForm]}, {270, 
+       FormBox["270", TraditionalForm]}, {272, 
+       FormBox["272", TraditionalForm]}, {274, 
+       FormBox["274", TraditionalForm]}, {276, 
+       FormBox["276", TraditionalForm]}, {278, 
+       FormBox["278", TraditionalForm]}, {280, 
+       FormBox["280", TraditionalForm]}, {282, 
+       FormBox["282", TraditionalForm]}, {284, 
+       FormBox["284", TraditionalForm]}, {286, 
+       FormBox["286", TraditionalForm]}, {288, 
+       FormBox["288", TraditionalForm]}, {290, 
+       FormBox["290", TraditionalForm]}, {292, 
+       FormBox["292", TraditionalForm]}, {294, 
+       FormBox["294", TraditionalForm]}, {296, 
+       FormBox["296", TraditionalForm]}, {298, 
+       FormBox["298", TraditionalForm]}, {300, 
+       FormBox["300", TraditionalForm]}}}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{1087., Automatic},
+  Method->{},
+  PlotLabel->FormBox["\"Timings for fib[n]\"", TraditionalForm],
+  PlotRange->{{0., 300.}, {0, 0.004}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.703367443398922*^9, 3.703367477574889*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A more general and elegant solution, which is the topic of the present \
+section, is to cache the results of earlier computations.\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.703367701902217*^9, 3.703367739756727*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "fib", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fib", "[", "n_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"fib", "[", "n", "]"}], "=", 
+    RowBox[{
+     RowBox[{"fib", "[", 
+      RowBox[{"n", "-", "1"}], "]"}], "+", 
+     RowBox[{"fib", "[", 
+      RowBox[{"n", "-", "2"}], "]"}]}]}]}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+   "the", " ", "defination", " ", "of", " ", "the", " ", "function", " ", 
+    "is", " ", 
+    RowBox[{"dynamic", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"fib", "[", "0", "]"}], "=", 
+   RowBox[{
+    RowBox[{"fib", "[", "1", "]"}], "=", "1"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703367697425584*^9, 3.7033676984301558`*^9}, {
+  3.703367797980937*^9, 3.703367845554508*^9}, {3.70336821078351*^9, 
+  3.7033682349904127`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "fib"}]], "Input",
+ CellChangeTimes->{{3.703367876729827*^9, 3.703367877459544*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`fib", "Print", "PrintUsage",
+ CellChangeTimes->{3.703367878956992*^9},
+ CellTags->"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "0", "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "1", "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "n_", "]"}], ":=", 
+         RowBox[{
+          RowBox[{"fib", "[", "n", "]"}], "=", 
+          RowBox[{
+           RowBox[{"fib", "[", 
+            RowBox[{"n", "-", "1"}], "]"}], "+", 
+           RowBox[{"fib", "[", 
+            RowBox[{"n", "-", "2"}], "]"}]}]}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`fib],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7033678789724407`*^9},
+ CellTags->"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fib", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.7033678840960903`*^9, 3.703367885755392*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.7033678873521*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "fib"}]], "Input",
+ CellChangeTimes->{{3.70336788917236*^9, 3.703367890213565*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`fib", "Print", "PrintUsage",
+ CellChangeTimes->{3.703367891127555*^9},
+ CellTags->"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "0", "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "1", "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "2", "]"}], "=", "2"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "3", "]"}], "=", "3"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "n_", "]"}], ":=", 
+         RowBox[{
+          RowBox[{"fib", "[", "n", "]"}], "=", 
+          RowBox[{
+           RowBox[{"fib", "[", 
+            RowBox[{"n", "-", "1"}], "]"}], "+", 
+           RowBox[{"fib", "[", 
+            RowBox[{"n", "-", "2"}], "]"}]}]}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`fib],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.703367891155533*^9},
+ CellTags->"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{"fib", "[", "16", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7033682545096397`*^9, 3.7033682617635937`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.`", ",", "1597"}], "}"}]], "Output",
+ CellChangeTimes->{3.7033682622691317`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{"fib", "[", "100", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.703368267678856*^9, 3.703368273859603*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.`", ",", "573147844013817084101"}], "}"}]], "Output",
+ CellChangeTimes->{3.7033682746078987`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "fib"}]], "Input",
+ CellChangeTimes->{{3.703368280712328*^9, 3.703368281879451*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`fib", "Print", "PrintUsage",
+ CellChangeTimes->{3.7033682823713217`*^9},
+ CellTags->"Info-f102ac93-fe53-40bf-a351-80142162ef3e"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "0", "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "1", "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "2", "]"}], "=", "2"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "3", "]"}], "=", "3"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "4", "]"}], "=", "5"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "5", "]"}], "=", "8"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "6", "]"}], "=", "13"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "7", "]"}], "=", "21"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "8", "]"}], "=", "34"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "9", "]"}], "=", "55"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "10", "]"}], "=", "89"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "11", "]"}], "=", "144"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "12", "]"}], "=", "233"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "13", "]"}], "=", "377"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "14", "]"}], "=", "610"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "15", "]"}], "=", "987"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "16", "]"}], "=", "1597"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "17", "]"}], "=", "2584"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "18", "]"}], "=", "4181"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "19", "]"}], "=", "6765"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "20", "]"}], "=", "10946"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "21", "]"}], "=", "17711"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "22", "]"}], "=", "28657"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "23", "]"}], "=", "46368"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "24", "]"}], "=", "75025"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "25", "]"}], "=", "121393"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "26", "]"}], "=", "196418"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "27", "]"}], "=", "317811"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "28", "]"}], "=", "514229"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "29", "]"}], "=", "832040"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "30", "]"}], "=", "1346269"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "31", "]"}], "=", "2178309"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "32", "]"}], "=", "3524578"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "33", "]"}], "=", "5702887"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "34", "]"}], "=", "9227465"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "35", "]"}], "=", "14930352"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "36", "]"}], "=", "24157817"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "37", "]"}], "=", "39088169"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "38", "]"}], "=", "63245986"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "39", "]"}], "=", "102334155"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "40", "]"}], "=", "165580141"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "41", "]"}], "=", "267914296"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "42", "]"}], "=", "433494437"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "43", "]"}], "=", "701408733"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "44", "]"}], "=", "1134903170"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "45", "]"}], "=", "1836311903"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "46", "]"}], "=", "2971215073"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "47", "]"}], "=", "4807526976"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "48", "]"}], "=", "7778742049"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "49", "]"}], "=", "12586269025"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "50", "]"}], "=", "20365011074"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "51", "]"}], "=", "32951280099"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "52", "]"}], "=", "53316291173"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "53", "]"}], "=", "86267571272"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "54", "]"}], "=", "139583862445"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "55", "]"}], "=", "225851433717"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "56", "]"}], "=", "365435296162"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "57", "]"}], "=", "591286729879"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "58", "]"}], "=", "956722026041"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "59", "]"}], "=", "1548008755920"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "60", "]"}], "=", "2504730781961"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "61", "]"}], "=", "4052739537881"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "62", "]"}], "=", "6557470319842"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "63", "]"}], "=", "10610209857723"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "64", "]"}], "=", "17167680177565"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "65", "]"}], "=", "27777890035288"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "66", "]"}], "=", "44945570212853"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "67", "]"}], "=", "72723460248141"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "68", "]"}], "=", "117669030460994"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "69", "]"}], "=", "190392490709135"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "70", "]"}], "=", "308061521170129"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "71", "]"}], "=", "498454011879264"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "72", "]"}], "=", "806515533049393"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "73", "]"}], "=", "1304969544928657"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "74", "]"}], "=", "2111485077978050"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "75", "]"}], "=", "3416454622906707"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "76", "]"}], "=", "5527939700884757"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "77", "]"}], "=", "8944394323791464"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "78", "]"}], "=", "14472334024676221"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "79", "]"}], "=", "23416728348467685"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "80", "]"}], "=", "37889062373143906"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "81", "]"}], "=", "61305790721611591"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "82", "]"}], "=", "99194853094755497"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "83", "]"}], "=", "160500643816367088"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "84", "]"}], "=", "259695496911122585"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "85", "]"}], "=", "420196140727489673"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "86", "]"}], "=", "679891637638612258"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "87", "]"}], "=", "1100087778366101931"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "88", "]"}], "=", "1779979416004714189"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "89", "]"}], "=", "2880067194370816120"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "90", "]"}], "=", "4660046610375530309"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "91", "]"}], "=", "7540113804746346429"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "92", "]"}], "=", "12200160415121876738"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "93", "]"}], "=", "19740274219868223167"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "94", "]"}], "=", "31940434634990099905"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "95", "]"}], "=", "51680708854858323072"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "96", "]"}], "=", "83621143489848422977"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "97", "]"}], "=", "135301852344706746049"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "98", "]"}], "=", "218922995834555169026"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "99", "]"}], "=", "354224848179261915075"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "100", "]"}], "=", "573147844013817084101"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"fib", "[", "n_", "]"}], ":=", 
+         RowBox[{
+          RowBox[{"fib", "[", "n", "]"}], "=", 
+          RowBox[{
+           RowBox[{"fib", "[", 
+            RowBox[{"n", "-", "1"}], "]"}], "+", 
+           RowBox[{"fib", "[", 
+            RowBox[{"n", "-", "2"}], "]"}]}]}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`fib],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.703368282451049*^9},
+ CellTags->"Info-f102ac93-fe53-40bf-a351-80142162ef3e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"t", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Timing", "[", 
+       RowBox[{"fib", "[", "n", "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "300"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"t", ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "\"\<Timings for fib[n]\>\""}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<n\>\"", ",", "\"\<Seconds\>\""}], "}"}]}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", "300", ",", "2"}], "]"}], ",", "Automatic"}], 
+     "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.703368319093899*^9, 3.703368319221794*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.007333333333333334], 
+     AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxd1kuOFUQUBuADI4Y9cMCAwYUYQwghjSiigBSo4KuhQVTeFs3bV19ZwVlC
+L6GmznoJZwnEFdQS2jkDQhiQ+51J5cufP/+0Dm9t33iyPyKO74t4+767vQux
+em2VB/Aa/gAfxIfwAh/BH+KP8FF8DB/HJ/A6Pok/xqfwJ/hTfBp/hs/gz/EX
++Cw+h8/jL/EF3FadOC6S47hEjuMrchxfk+P4hhzHZXIcV8hxfEuO4ztyHN+T
+4/iBHMeP5Dg2yHFcJcdxjRzH5qobTlw4rtPHiQvHDfo4ceH4iT5OXDhu0seJ
+C8fP9HHiwvELfZy4cPxKHycuHLfo48SF4zZ9nLhw3KGPExeOu/Rx4sJxjz5O
+XDju08eJC8cD+jhx4fiNPk5cOPqqF7jhjhMPXHjieMg+brjjxAMXnji22McN
+d5x44MITxyP2ccMdJx648MTxmH3ccMeJBy48cTxhHzfcceKBC08cT9nHDXec
+eOB62l7/+/9/G1vLd//qSR7P2McNd5x44MITx3P2ccMdJx648MTxgn3ccMeJ
+By48cfzOPm6448QDF544/mAfN9xx4oELTxx/so8b7jjxwIUnjr/Yxw13nHjg
+whPH3+zjhjtOPHDhiWObfdxwx4kHLjxxLFe9hhd4HTe8iTte4sQ7eOBdXPgV
+nngPxz+rXsMLvI4b3sQdL3HiHTzwLi78Ck+8h+PlqtfwAq/jhjdxx0uceAcP
+vIvrvd8ALzop+Q==
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{
+     FormBox["\"Seconds\"", TraditionalForm], None}, {
+     FormBox["\"n\"", TraditionalForm], None}},
+  FrameTicks->{{Automatic, Automatic}, {{{0, 
+       FormBox["0", TraditionalForm]}, {2, 
+       FormBox["2", TraditionalForm]}, {4, 
+       FormBox["4", TraditionalForm]}, {6, 
+       FormBox["6", TraditionalForm]}, {8, 
+       FormBox["8", TraditionalForm]}, {10, 
+       FormBox["10", TraditionalForm]}, {12, 
+       FormBox["12", TraditionalForm]}, {14, 
+       FormBox["14", TraditionalForm]}, {16, 
+       FormBox["16", TraditionalForm]}, {18, 
+       FormBox["18", TraditionalForm]}, {20, 
+       FormBox["20", TraditionalForm]}, {22, 
+       FormBox["22", TraditionalForm]}, {24, 
+       FormBox["24", TraditionalForm]}, {26, 
+       FormBox["26", TraditionalForm]}, {28, 
+       FormBox["28", TraditionalForm]}, {30, 
+       FormBox["30", TraditionalForm]}, {32, 
+       FormBox["32", TraditionalForm]}, {34, 
+       FormBox["34", TraditionalForm]}, {36, 
+       FormBox["36", TraditionalForm]}, {38, 
+       FormBox["38", TraditionalForm]}, {40, 
+       FormBox["40", TraditionalForm]}, {42, 
+       FormBox["42", TraditionalForm]}, {44, 
+       FormBox["44", TraditionalForm]}, {46, 
+       FormBox["46", TraditionalForm]}, {48, 
+       FormBox["48", TraditionalForm]}, {50, 
+       FormBox["50", TraditionalForm]}, {52, 
+       FormBox["52", TraditionalForm]}, {54, 
+       FormBox["54", TraditionalForm]}, {56, 
+       FormBox["56", TraditionalForm]}, {58, 
+       FormBox["58", TraditionalForm]}, {60, 
+       FormBox["60", TraditionalForm]}, {62, 
+       FormBox["62", TraditionalForm]}, {64, 
+       FormBox["64", TraditionalForm]}, {66, 
+       FormBox["66", TraditionalForm]}, {68, 
+       FormBox["68", TraditionalForm]}, {70, 
+       FormBox["70", TraditionalForm]}, {72, 
+       FormBox["72", TraditionalForm]}, {74, 
+       FormBox["74", TraditionalForm]}, {76, 
+       FormBox["76", TraditionalForm]}, {78, 
+       FormBox["78", TraditionalForm]}, {80, 
+       FormBox["80", TraditionalForm]}, {82, 
+       FormBox["82", TraditionalForm]}, {84, 
+       FormBox["84", TraditionalForm]}, {86, 
+       FormBox["86", TraditionalForm]}, {88, 
+       FormBox["88", TraditionalForm]}, {90, 
+       FormBox["90", TraditionalForm]}, {92, 
+       FormBox["92", TraditionalForm]}, {94, 
+       FormBox["94", TraditionalForm]}, {96, 
+       FormBox["96", TraditionalForm]}, {98, 
+       FormBox["98", TraditionalForm]}, {100, 
+       FormBox["100", TraditionalForm]}, {102, 
+       FormBox["102", TraditionalForm]}, {104, 
+       FormBox["104", TraditionalForm]}, {106, 
+       FormBox["106", TraditionalForm]}, {108, 
+       FormBox["108", TraditionalForm]}, {110, 
+       FormBox["110", TraditionalForm]}, {112, 
+       FormBox["112", TraditionalForm]}, {114, 
+       FormBox["114", TraditionalForm]}, {116, 
+       FormBox["116", TraditionalForm]}, {118, 
+       FormBox["118", TraditionalForm]}, {120, 
+       FormBox["120", TraditionalForm]}, {122, 
+       FormBox["122", TraditionalForm]}, {124, 
+       FormBox["124", TraditionalForm]}, {126, 
+       FormBox["126", TraditionalForm]}, {128, 
+       FormBox["128", TraditionalForm]}, {130, 
+       FormBox["130", TraditionalForm]}, {132, 
+       FormBox["132", TraditionalForm]}, {134, 
+       FormBox["134", TraditionalForm]}, {136, 
+       FormBox["136", TraditionalForm]}, {138, 
+       FormBox["138", TraditionalForm]}, {140, 
+       FormBox["140", TraditionalForm]}, {142, 
+       FormBox["142", TraditionalForm]}, {144, 
+       FormBox["144", TraditionalForm]}, {146, 
+       FormBox["146", TraditionalForm]}, {148, 
+       FormBox["148", TraditionalForm]}, {150, 
+       FormBox["150", TraditionalForm]}, {152, 
+       FormBox["152", TraditionalForm]}, {154, 
+       FormBox["154", TraditionalForm]}, {156, 
+       FormBox["156", TraditionalForm]}, {158, 
+       FormBox["158", TraditionalForm]}, {160, 
+       FormBox["160", TraditionalForm]}, {162, 
+       FormBox["162", TraditionalForm]}, {164, 
+       FormBox["164", TraditionalForm]}, {166, 
+       FormBox["166", TraditionalForm]}, {168, 
+       FormBox["168", TraditionalForm]}, {170, 
+       FormBox["170", TraditionalForm]}, {172, 
+       FormBox["172", TraditionalForm]}, {174, 
+       FormBox["174", TraditionalForm]}, {176, 
+       FormBox["176", TraditionalForm]}, {178, 
+       FormBox["178", TraditionalForm]}, {180, 
+       FormBox["180", TraditionalForm]}, {182, 
+       FormBox["182", TraditionalForm]}, {184, 
+       FormBox["184", TraditionalForm]}, {186, 
+       FormBox["186", TraditionalForm]}, {188, 
+       FormBox["188", TraditionalForm]}, {190, 
+       FormBox["190", TraditionalForm]}, {192, 
+       FormBox["192", TraditionalForm]}, {194, 
+       FormBox["194", TraditionalForm]}, {196, 
+       FormBox["196", TraditionalForm]}, {198, 
+       FormBox["198", TraditionalForm]}, {200, 
+       FormBox["200", TraditionalForm]}, {202, 
+       FormBox["202", TraditionalForm]}, {204, 
+       FormBox["204", TraditionalForm]}, {206, 
+       FormBox["206", TraditionalForm]}, {208, 
+       FormBox["208", TraditionalForm]}, {210, 
+       FormBox["210", TraditionalForm]}, {212, 
+       FormBox["212", TraditionalForm]}, {214, 
+       FormBox["214", TraditionalForm]}, {216, 
+       FormBox["216", TraditionalForm]}, {218, 
+       FormBox["218", TraditionalForm]}, {220, 
+       FormBox["220", TraditionalForm]}, {222, 
+       FormBox["222", TraditionalForm]}, {224, 
+       FormBox["224", TraditionalForm]}, {226, 
+       FormBox["226", TraditionalForm]}, {228, 
+       FormBox["228", TraditionalForm]}, {230, 
+       FormBox["230", TraditionalForm]}, {232, 
+       FormBox["232", TraditionalForm]}, {234, 
+       FormBox["234", TraditionalForm]}, {236, 
+       FormBox["236", TraditionalForm]}, {238, 
+       FormBox["238", TraditionalForm]}, {240, 
+       FormBox["240", TraditionalForm]}, {242, 
+       FormBox["242", TraditionalForm]}, {244, 
+       FormBox["244", TraditionalForm]}, {246, 
+       FormBox["246", TraditionalForm]}, {248, 
+       FormBox["248", TraditionalForm]}, {250, 
+       FormBox["250", TraditionalForm]}, {252, 
+       FormBox["252", TraditionalForm]}, {254, 
+       FormBox["254", TraditionalForm]}, {256, 
+       FormBox["256", TraditionalForm]}, {258, 
+       FormBox["258", TraditionalForm]}, {260, 
+       FormBox["260", TraditionalForm]}, {262, 
+       FormBox["262", TraditionalForm]}, {264, 
+       FormBox["264", TraditionalForm]}, {266, 
+       FormBox["266", TraditionalForm]}, {268, 
+       FormBox["268", TraditionalForm]}, {270, 
+       FormBox["270", TraditionalForm]}, {272, 
+       FormBox["272", TraditionalForm]}, {274, 
+       FormBox["274", TraditionalForm]}, {276, 
+       FormBox["276", TraditionalForm]}, {278, 
+       FormBox["278", TraditionalForm]}, {280, 
+       FormBox["280", TraditionalForm]}, {282, 
+       FormBox["282", TraditionalForm]}, {284, 
+       FormBox["284", TraditionalForm]}, {286, 
+       FormBox["286", TraditionalForm]}, {288, 
+       FormBox["288", TraditionalForm]}, {290, 
+       FormBox["290", TraditionalForm]}, {292, 
+       FormBox["292", TraditionalForm]}, {294, 
+       FormBox["294", TraditionalForm]}, {296, 
+       FormBox["296", TraditionalForm]}, {298, 
+       FormBox["298", TraditionalForm]}, {300, 
+       FormBox["300", TraditionalForm]}}, {{0, 
+       FormBox["0", TraditionalForm]}, {2, 
+       FormBox["2", TraditionalForm]}, {4, 
+       FormBox["4", TraditionalForm]}, {6, 
+       FormBox["6", TraditionalForm]}, {8, 
+       FormBox["8", TraditionalForm]}, {10, 
+       FormBox["10", TraditionalForm]}, {12, 
+       FormBox["12", TraditionalForm]}, {14, 
+       FormBox["14", TraditionalForm]}, {16, 
+       FormBox["16", TraditionalForm]}, {18, 
+       FormBox["18", TraditionalForm]}, {20, 
+       FormBox["20", TraditionalForm]}, {22, 
+       FormBox["22", TraditionalForm]}, {24, 
+       FormBox["24", TraditionalForm]}, {26, 
+       FormBox["26", TraditionalForm]}, {28, 
+       FormBox["28", TraditionalForm]}, {30, 
+       FormBox["30", TraditionalForm]}, {32, 
+       FormBox["32", TraditionalForm]}, {34, 
+       FormBox["34", TraditionalForm]}, {36, 
+       FormBox["36", TraditionalForm]}, {38, 
+       FormBox["38", TraditionalForm]}, {40, 
+       FormBox["40", TraditionalForm]}, {42, 
+       FormBox["42", TraditionalForm]}, {44, 
+       FormBox["44", TraditionalForm]}, {46, 
+       FormBox["46", TraditionalForm]}, {48, 
+       FormBox["48", TraditionalForm]}, {50, 
+       FormBox["50", TraditionalForm]}, {52, 
+       FormBox["52", TraditionalForm]}, {54, 
+       FormBox["54", TraditionalForm]}, {56, 
+       FormBox["56", TraditionalForm]}, {58, 
+       FormBox["58", TraditionalForm]}, {60, 
+       FormBox["60", TraditionalForm]}, {62, 
+       FormBox["62", TraditionalForm]}, {64, 
+       FormBox["64", TraditionalForm]}, {66, 
+       FormBox["66", TraditionalForm]}, {68, 
+       FormBox["68", TraditionalForm]}, {70, 
+       FormBox["70", TraditionalForm]}, {72, 
+       FormBox["72", TraditionalForm]}, {74, 
+       FormBox["74", TraditionalForm]}, {76, 
+       FormBox["76", TraditionalForm]}, {78, 
+       FormBox["78", TraditionalForm]}, {80, 
+       FormBox["80", TraditionalForm]}, {82, 
+       FormBox["82", TraditionalForm]}, {84, 
+       FormBox["84", TraditionalForm]}, {86, 
+       FormBox["86", TraditionalForm]}, {88, 
+       FormBox["88", TraditionalForm]}, {90, 
+       FormBox["90", TraditionalForm]}, {92, 
+       FormBox["92", TraditionalForm]}, {94, 
+       FormBox["94", TraditionalForm]}, {96, 
+       FormBox["96", TraditionalForm]}, {98, 
+       FormBox["98", TraditionalForm]}, {100, 
+       FormBox["100", TraditionalForm]}, {102, 
+       FormBox["102", TraditionalForm]}, {104, 
+       FormBox["104", TraditionalForm]}, {106, 
+       FormBox["106", TraditionalForm]}, {108, 
+       FormBox["108", TraditionalForm]}, {110, 
+       FormBox["110", TraditionalForm]}, {112, 
+       FormBox["112", TraditionalForm]}, {114, 
+       FormBox["114", TraditionalForm]}, {116, 
+       FormBox["116", TraditionalForm]}, {118, 
+       FormBox["118", TraditionalForm]}, {120, 
+       FormBox["120", TraditionalForm]}, {122, 
+       FormBox["122", TraditionalForm]}, {124, 
+       FormBox["124", TraditionalForm]}, {126, 
+       FormBox["126", TraditionalForm]}, {128, 
+       FormBox["128", TraditionalForm]}, {130, 
+       FormBox["130", TraditionalForm]}, {132, 
+       FormBox["132", TraditionalForm]}, {134, 
+       FormBox["134", TraditionalForm]}, {136, 
+       FormBox["136", TraditionalForm]}, {138, 
+       FormBox["138", TraditionalForm]}, {140, 
+       FormBox["140", TraditionalForm]}, {142, 
+       FormBox["142", TraditionalForm]}, {144, 
+       FormBox["144", TraditionalForm]}, {146, 
+       FormBox["146", TraditionalForm]}, {148, 
+       FormBox["148", TraditionalForm]}, {150, 
+       FormBox["150", TraditionalForm]}, {152, 
+       FormBox["152", TraditionalForm]}, {154, 
+       FormBox["154", TraditionalForm]}, {156, 
+       FormBox["156", TraditionalForm]}, {158, 
+       FormBox["158", TraditionalForm]}, {160, 
+       FormBox["160", TraditionalForm]}, {162, 
+       FormBox["162", TraditionalForm]}, {164, 
+       FormBox["164", TraditionalForm]}, {166, 
+       FormBox["166", TraditionalForm]}, {168, 
+       FormBox["168", TraditionalForm]}, {170, 
+       FormBox["170", TraditionalForm]}, {172, 
+       FormBox["172", TraditionalForm]}, {174, 
+       FormBox["174", TraditionalForm]}, {176, 
+       FormBox["176", TraditionalForm]}, {178, 
+       FormBox["178", TraditionalForm]}, {180, 
+       FormBox["180", TraditionalForm]}, {182, 
+       FormBox["182", TraditionalForm]}, {184, 
+       FormBox["184", TraditionalForm]}, {186, 
+       FormBox["186", TraditionalForm]}, {188, 
+       FormBox["188", TraditionalForm]}, {190, 
+       FormBox["190", TraditionalForm]}, {192, 
+       FormBox["192", TraditionalForm]}, {194, 
+       FormBox["194", TraditionalForm]}, {196, 
+       FormBox["196", TraditionalForm]}, {198, 
+       FormBox["198", TraditionalForm]}, {200, 
+       FormBox["200", TraditionalForm]}, {202, 
+       FormBox["202", TraditionalForm]}, {204, 
+       FormBox["204", TraditionalForm]}, {206, 
+       FormBox["206", TraditionalForm]}, {208, 
+       FormBox["208", TraditionalForm]}, {210, 
+       FormBox["210", TraditionalForm]}, {212, 
+       FormBox["212", TraditionalForm]}, {214, 
+       FormBox["214", TraditionalForm]}, {216, 
+       FormBox["216", TraditionalForm]}, {218, 
+       FormBox["218", TraditionalForm]}, {220, 
+       FormBox["220", TraditionalForm]}, {222, 
+       FormBox["222", TraditionalForm]}, {224, 
+       FormBox["224", TraditionalForm]}, {226, 
+       FormBox["226", TraditionalForm]}, {228, 
+       FormBox["228", TraditionalForm]}, {230, 
+       FormBox["230", TraditionalForm]}, {232, 
+       FormBox["232", TraditionalForm]}, {234, 
+       FormBox["234", TraditionalForm]}, {236, 
+       FormBox["236", TraditionalForm]}, {238, 
+       FormBox["238", TraditionalForm]}, {240, 
+       FormBox["240", TraditionalForm]}, {242, 
+       FormBox["242", TraditionalForm]}, {244, 
+       FormBox["244", TraditionalForm]}, {246, 
+       FormBox["246", TraditionalForm]}, {248, 
+       FormBox["248", TraditionalForm]}, {250, 
+       FormBox["250", TraditionalForm]}, {252, 
+       FormBox["252", TraditionalForm]}, {254, 
+       FormBox["254", TraditionalForm]}, {256, 
+       FormBox["256", TraditionalForm]}, {258, 
+       FormBox["258", TraditionalForm]}, {260, 
+       FormBox["260", TraditionalForm]}, {262, 
+       FormBox["262", TraditionalForm]}, {264, 
+       FormBox["264", TraditionalForm]}, {266, 
+       FormBox["266", TraditionalForm]}, {268, 
+       FormBox["268", TraditionalForm]}, {270, 
+       FormBox["270", TraditionalForm]}, {272, 
+       FormBox["272", TraditionalForm]}, {274, 
+       FormBox["274", TraditionalForm]}, {276, 
+       FormBox["276", TraditionalForm]}, {278, 
+       FormBox["278", TraditionalForm]}, {280, 
+       FormBox["280", TraditionalForm]}, {282, 
+       FormBox["282", TraditionalForm]}, {284, 
+       FormBox["284", TraditionalForm]}, {286, 
+       FormBox["286", TraditionalForm]}, {288, 
+       FormBox["288", TraditionalForm]}, {290, 
+       FormBox["290", TraditionalForm]}, {292, 
+       FormBox["292", TraditionalForm]}, {294, 
+       FormBox["294", TraditionalForm]}, {296, 
+       FormBox["296", TraditionalForm]}, {298, 
+       FormBox["298", TraditionalForm]}, {300, 
+       FormBox["300", TraditionalForm]}}}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->{452., Automatic},
+  Method->{},
+  PlotLabel->FormBox["\"Timings for fib[n]\"", TraditionalForm],
+  PlotRange->{{0., 300.}, {0, 0.004}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.7033683200044928`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 614},
+WindowMargins->{{Automatic, 291}, {-28, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"->{
+  Cell[37673, 1048, 139, 2, 42, "Print",
+   CellTags->"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"],
+  Cell[37815, 1052, 1235, 37, 88, "Print",
+   CellTags->"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"]},
+ "Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"->{
+  Cell[39467, 1111, 139, 2, 42, "Print",
+   CellTags->"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"],
+  Cell[39609, 1115, 1421, 45, 152, "Print",
+   CellTags->"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"]},
+ "Info-f102ac93-fe53-40bf-a351-80142162ef3e"->{
+  Cell[41874, 1198, 141, 2, 42, "Print",
+   CellTags->"Info-f102ac93-fe53-40bf-a351-80142162ef3e"],
+  Cell[42018, 1202, 11622, 433, 3256, "Print",
+   CellTags->"Info-f102ac93-fe53-40bf-a351-80142162ef3e"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b", 70989, 2026},
+ {"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb", 71240, 2031},
+ {"Info-f102ac93-fe53-40bf-a351-80142162ef3e", 71492, 2036}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 604, 17, 77, "Input"],
+Cell[CellGroupData[{
+Cell[1187, 41, 150, 3, 50, "Input"],
+Cell[1340, 46, 185, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1562, 56, 141, 3, 50, "Input"],
+Cell[1706, 61, 112, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1855, 67, 463, 12, 50, "Input"],
+Cell[2321, 81, 569, 10, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2927, 96, 622, 15, 91, "Input"],
+Cell[3552, 113, 2737, 65, 280, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6326, 183, 209, 5, 50, "Input"],
+Cell[6538, 190, 1045, 41, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7620, 236, 189, 4, 50, "Input"],
+Cell[7812, 242, 9142, 312, 242, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16991, 559, 512, 14, 74, "Input"],
+Cell[17506, 575, 329, 6, 32, "Output"]
+}, Open  ]],
+Cell[17850, 584, 251, 3, 67, "Text"],
+Cell[18104, 589, 697, 20, 74, "Input"],
+Cell[CellGroupData[{
+Cell[18826, 613, 242, 6, 50, "Input"],
+Cell[19071, 621, 229, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19337, 631, 951, 26, 132, "Input"],
+Cell[20291, 659, 16116, 345, 726, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36444, 1009, 229, 4, 63, "Subsubsection"],
+Cell[36676, 1015, 835, 23, 118, "Input"],
+Cell[CellGroupData[{
+Cell[37536, 1042, 112, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[37673, 1048, 139, 2, 42, "Print",
+ CellTags->"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"],
+Cell[37815, 1052, 1235, 37, 88, "Print",
+ CellTags->"Info-4c19d04a-18c9-408c-bc63-d5c918ae488b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39099, 1095, 124, 2, 32, "Input"],
+Cell[39226, 1099, 68, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39331, 1105, 111, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[39467, 1111, 139, 2, 42, "Print",
+ CellTags->"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"],
+Cell[39609, 1115, 1421, 45, 152, "Print",
+ CellTags->"Info-d47991b3-2dcc-45f5-b8b6-32d4e2f101cb"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41079, 1166, 160, 3, 50, "Input"],
+Cell[41242, 1171, 122, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41401, 1179, 157, 3, 50, "Input"],
+Cell[41561, 1184, 139, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41737, 1192, 112, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[41874, 1198, 141, 2, 42, "Print",
+ CellTags->"Info-f102ac93-fe53-40bf-a351-80142162ef3e"],
+Cell[42018, 1202, 11622, 433, 3256, "Print",
+ CellTags->"Info-f102ac93-fe53-40bf-a351-80142162ef3e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53689, 1641, 898, 25, 132, "Input"],
+Cell[54590, 1668, 16040, 344, 333, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

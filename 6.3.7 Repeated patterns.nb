@@ -1,0 +1,120 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3366,        111]
+NotebookOptionsPosition[      2938,         92]
+NotebookOutlinePosition[      3287,        107]
+CellTagsIndexPosition[      3244,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "runEncode", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"runEncode", "[", 
+    RowBox[{"{", 
+     RowBox[{"rest___Integer", ",", 
+      RowBox[{"same", ":", 
+       RowBox[{
+        RowBox[{"(", "x_Integer", ")"}], ".."}]}]}], "}"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Append", "[", 
+    RowBox[{
+     RowBox[{"runEncode", "[", 
+      RowBox[{"{", "rest", "}"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"Length", "[", 
+        RowBox[{"{", "same", "}"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"runEncode", "[", 
+    RowBox[{"{", "}"}], "]"}], "=", 
+   RowBox[{"{", "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703306048308516*^9, 3.703306216693624*^9}}],
+
+Cell["test the function of runEncode;", "Text",
+ CellChangeTimes->{{3.703306222078452*^9, 3.703306234590043*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"runEncode", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "2", ",", "2", 
+    ",", "1"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.703306237721726*^9, 3.7033062568257236`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7033062587425623`*^9}]
+}, Open  ]],
+
+Cell["\<\
+1. What is the difference between the patterns \
+\[OpenCurlyDoubleQuote](x_Integer)...\[CloseCurlyDoubleQuote] and \
+\[OpenCurlyDoubleQuote]x__Integer\[CloseCurlyDoubleQuote]?Is there any \
+difference between \
+\[OpenCurlyDoubleQuote](_Integer)..\[CloseCurlyDoubleQuote] and \
+\[OpenCurlyDoubleQuote]__Integer\[CloseCurlyDoubleQuote]
+\[OpenCurlyDoubleQuote](_Integer)..\[CloseCurlyDoubleQuote] means one or more \
+same Integer; \[OpenCurlyDoubleQuote]__Integer\[CloseCurlyDoubleQuote] means \
+one or more Integer, but not necessarily the same.\
+\>", "Text",
+ CellChangeTimes->{{3.703306387482024*^9, 3.703306520021604*^9}, {
+  3.703306679351632*^9, 3.703306744685851*^9}, {3.703306790724485*^9, 
+  3.703306803609996*^9}}]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 312}, {-317, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 838, 26, 156, "Input"],
+Cell[1399, 48, 113, 1, 33, "Text"],
+Cell[CellGroupData[{
+Cell[1537, 53, 256, 6, 32, "Input"],
+Cell[1796, 61, 392, 13, 32, "Output"]
+}, Open  ]],
+Cell[2203, 77, 731, 13, 99, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
