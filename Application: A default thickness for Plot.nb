@@ -1,0 +1,1509 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     55078,       1500]
+NotebookOptionsPosition[     54221,       1467]
+NotebookOutlinePosition[     54566,       1482]
+CellTagsIndexPosition[     54523,       1479]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$DefaultThickness", "=", ".004"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Unprotect", "[", "Plot", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{"heads___", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Automatic"}], ",", "tails___"}], "]"}], 
+   ":=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"heads", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Thickness", "[", "$DefaultThickness", "]"}]}], ",", "tails"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{"heads___", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"style_", "/;", 
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"ListQ", "[", "style", "]"}]}], "&&", 
+        RowBox[{"FreeQ", "[", 
+         RowBox[{"style", ",", "Thickness"}], "]"}]}]}]}], ",", "tails___"}], 
+    "]"}], ":=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"heads", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"style", ",", 
+         RowBox[{"Thickness", "[", "$DefaultThickness", "]"}]}], "}"}], 
+       "}"}]}], ",", "tails"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{"heads___", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"h___", ",", "style_", ",", "t___"}], "}"}], "/;", 
+       RowBox[{"FreeQ", "[", 
+        RowBox[{"style", ",", "Thickness"}], "]"}]}]}], ",", "tails___"}], 
+    "]"}], ":=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"heads", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"h", ",", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"{", 
+          RowBox[{"style", ",", 
+           RowBox[{"Thickness", "[", "$DefaultThickness", "]"}]}], "}"}], 
+         "]"}], ",", "t"}], "}"}]}], ",", "tails"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{"args_", "/;", 
+     RowBox[{"FreeQ", "[", 
+      RowBox[{
+       RowBox[{"{", "args", "}"}], ",", "PlotStyle"}], "]"}]}], "]"}], ":=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"args", ",", 
+     RowBox[{"Evaluate", "[", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"(", 
+        RowBox[{"PlotStyle", "/.", 
+         RowBox[{"Options", "[", "Plot", "]"}]}], ")"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "Plot", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703884425555171*^9, 3.703884527938912*^9}, {
+   3.70388461372123*^9, 3.703884669314707*^9}, {3.703884731952215*^9, 
+   3.7038847331841173`*^9}, {3.703884980026409*^9, 3.703884994697722*^9}, {
+   3.703885254979598*^9, 3.703885400690445*^9}, 3.703887931686104*^9, {
+   3.703888622702509*^9, 3.703888623590232*^9}, {3.703889277752364*^9, 
+   3.703889278440365*^9}, {3.703970622685581*^9, 3.7039707979789267`*^9}, {
+   3.703970832147518*^9, 3.703970835108489*^9}, {3.7039708708193493`*^9, 
+   3.703970873667584*^9}, {3.70397099994493*^9, 3.7039710062095118`*^9}, {
+   3.7039713646046143`*^9, 3.703971384301077*^9}, {3.703971882647566*^9, 
+   3.703971912222835*^9}, {3.703971972493428*^9, 3.703971973229521*^9}, {
+   3.703973866055427*^9, 3.703973874422591*^9}}],
+
+Cell["1. Add a default PointSize to the ListPlot function.", "Text",
+ CellChangeTimes->{
+  3.703971360939702*^9, {3.703974964531933*^9, 3.703974979700583*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$PointSize", "=", ".1"}], ";"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Unprotect", "[", "ListPlot", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"heads___", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Automatic"}], ",", "tails___"}], "]"}], 
+   ":=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"heads", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"PointSize", "[", "$PointSize", "]"}], "}"}]}], ",", "tails"}],
+     "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"heads___", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"style_", "/;", 
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"ListQ", "[", "style", "]"}]}], "&&", 
+        RowBox[{"FreeQ", "[", 
+         RowBox[{"style", ",", "PointSize"}], "]"}]}]}]}], ",", "tails___"}], 
+    "]"}], ":=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"heads", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"PointSize", "[", "$PointSize", "]"}]}], "}"}]}], ",", 
+     "tails"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"heads___", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"h___", ",", 
+        RowBox[{"style_", "/;", 
+         RowBox[{"FreeQ", "[", 
+          RowBox[{"style", ",", "PointSize"}], "]"}]}], ",", "t___"}], 
+       "}"}]}], ",", "tails___"}], "]"}], ":=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"heads", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"h", ",", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"{", 
+          RowBox[{"style", ",", 
+           RowBox[{"PointSize", "[", "$PointSize", "]"}]}], "}"}], "]"}], ",",
+         "t"}], "}"}]}], ",", "tails"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"args_", "/;", 
+     RowBox[{"FreeQ", "[", 
+      RowBox[{"args", ",", "PointSize"}], "]"}]}], "]"}], ":=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"args", ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"PlotStyle", "/.", 
+        RowBox[{"Options", "[", "Plot", "]"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "ListPlot", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703975012191868*^9, 3.7039752763773947`*^9}, {
+  3.703975315114109*^9, 3.7039754474566717`*^9}, {3.703975478240967*^9, 
+  3.7039756077599173`*^9}, {3.703975648439027*^9, 3.7039757717819653`*^9}, {
+  3.703975842637919*^9, 3.703975855605689*^9}, {3.7039760624048243`*^9, 
+  3.703976097292644*^9}, {3.703976362204071*^9, 3.7039763747521753`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$PointSize", "=", "0.05"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1"}], "}"}]}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.703975865799507*^9, 3.7039759165189047`*^9}, {
+  3.703976117151533*^9, 3.703976119290475*^9}, {3.703976394943125*^9, 
+  3.703976418052486*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[1, 0, 0], PointSize[0.05], AbsoluteThickness[1.6], 
+     PointBox[{{1., 2.}, {2., 1.}}]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.984375, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{1., 2.}, {0, 2.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.703975917959567*^9, {3.703976120343808*^9, 3.703976134071406*^9}, 
+   3.703976330427257*^9, {3.703976390515946*^9, 3.7039764187274847`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Unprotect", "[", "ListPlot", "]"}], ";", 
+  RowBox[{
+   RowBox[{"DownValues", "[", "ListPlot", "]"}], "=", 
+   RowBox[{"RotateLeft", "[", 
+    RowBox[{"DownValues", "[", "ListPlot", "]"}], "]"}]}], ";", 
+  RowBox[{"Protect", "[", "Plot", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.703976154130827*^9, 3.703976221118347*^9}, {
+  3.703976262634239*^9, 3.7039763176602697`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "/@", 
+  RowBox[{"DownValues", "[", "ListPlot", "]"}]}]], "Input",
+ CellChangeTimes->{{3.7039759413991537`*^9, 3.703975958585167*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"HoldPattern", "[", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"heads___", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", "Automatic"}], ",", "tails___"}], "]"}],
+     "]"}], ",", 
+   RowBox[{"HoldPattern", "[", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"heads___", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"style_", "/;", 
+        RowBox[{
+         RowBox[{"!", 
+          RowBox[{"ListQ", "[", "style", "]"}]}], "&&", 
+         RowBox[{"FreeQ", "[", 
+          RowBox[{"style", ",", "PointSize"}], "]"}]}]}]}], ",", "tails___"}],
+      "]"}], "]"}], ",", 
+   RowBox[{"HoldPattern", "[", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"heads___", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"h___", ",", 
+         RowBox[{"style_", "/;", 
+          RowBox[{"FreeQ", "[", 
+           RowBox[{"style", ",", "PointSize"}], "]"}]}], ",", "t___"}], 
+        "}"}]}], ",", "tails___"}], "]"}], "]"}], ",", 
+   RowBox[{"HoldPattern", "[", 
+    RowBox[{"ListPlot", "[", 
+     RowBox[{"args_", "/;", 
+      RowBox[{"FreeQ", "[", 
+       RowBox[{"args", ",", "PointSize"}], "]"}]}], "]"}], "]"}], ",", 
+   RowBox[{"HoldPattern", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{"System`ProtoPlotDump`a__", ",", 
+        RowBox[{"System`ProtoPlotDump`o", ":", 
+         RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ")"}], "?", 
+     RowBox[{"(", 
+      RowBox[{"Function", "[", 
+       RowBox[{"System`ProtoPlotDump`arg", ",", 
+        RowBox[{"Charting`ChartArgCheck", "[", 
+         RowBox[{
+         "System`ProtoPlotDump`arg", ",", "System`ProtoPlotDump`iListPlot", 
+          ",", "1"}], "]"}], ",", "HoldFirst"}], "]"}], ")"}]}], "]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.703975949929028*^9, 3.703975959039187*^9}, 
+   3.703976225145833*^9, {3.7039763077906313`*^9, 3.7039763254615602`*^9}, 
+   3.7039763853630342`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"DownValues", "[", "ListPlot", "]"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "//", "TreeForm"}]], "Input",
+ CellChangeTimes->{{3.703975992110363*^9, 3.7039760115616493`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGBQA2IQXRphcMAnUcBhb6XwStcWYYe5opMcU+WZHOo2Ctxq
+2SUA59dckhbreMjtUAsW/2D/11Gsgs2PzeEPmL5mD1HP4MAABf/A4t/sIfLP
+7GH8arA5v+Hq/0DFYfK1UHFU9dwOqPaxOcD0w+RRzWPD0I9qvgAGH6ZfZtn0
++882icP9DzFPDO5/Gy5J9+PiknD+3btTBNReisDdB+PDzIOFK2p4iMH5kPAV
+cmBwgoQTzD2wcITph/Fh7oOph5kHk4e5D8aPyZu1bnmNFFz9bLO5tRlusnD3
+QsJHGu7e3bPknnqsloPzYeph7oXx0c2D2Zf733+ZCIcCXD0AYhzdKA==
+    "], {
+     {RGBColor[0.55, 0.45, 0.45], 
+      LineBox[{{1, 2}, {1, 18}, {2, 3}, {3, 4}, {3, 11}, {4, 5}, {4, 8}, {5, 
+       6}, {5, 7}, {8, 9}, {8, 10}, {11, 12}, {11, 13}, {11, 17}, {13, 14}, {
+       13, 15}, {13, 16}, {18, 19}, {18, 20}, {20, 21}, {20, 32}, {21, 22}, {
+       22, 23}, {22, 24}, {24, 25}, {24, 28}, {24, 31}, {25, 26}, {25, 27}, {
+       28, 29}, {28, 30}, {32, 33}, {32, 34}, {34, 35}, {34, 38}, {35, 36}, {
+       36, 37}}]}, {
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["RuleDelayed", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 1],
+        TagBox[
+         RowBox[{
+           RowBox[{"HoldPattern", "[", 
+             RowBox[{
+               RowBox[{"(", 
+                 RowBox[{"ListPlot", "[", 
+                   RowBox[{"System`ProtoPlotDump`a__", ",", 
+                    RowBox[{"System`ProtoPlotDump`o", ":", 
+                    RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ")"}], 
+               "?", 
+               RowBox[{"(", 
+                 RowBox[{"Function", "[", 
+                   RowBox[{"System`ProtoPlotDump`arg", ",", 
+                    RowBox[{"Charting`ChartArgCheck", "[", 
+                    RowBox[{
+                    "System`ProtoPlotDump`arg", ",", 
+                    "System`ProtoPlotDump`iListPlot", ",", "1"}], "]"}], ",", 
+                    "HoldFirst"}], "]"}], ")"}]}], "]"}], "\[RuleDelayed]", 
+           RowBox[{"Module", "[", 
+             RowBox[{
+               RowBox[{"{", "}"}], ",", 
+               RowBox[{"With", "[", 
+                 RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"System`ProtoPlotDump`res", "=", 
+                    RowBox[{"Catch", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"System`ProtoPlotDump`iListPlot", "[", "ListPlot",
+                     "]"}], "[", 
+                    
+                    RowBox[{"System`ProtoPlotDump`a", ",", 
+                    "System`ProtoPlotDump`o"}], "]"}], ",", 
+                    RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], 
+                    ",", "$Failed"}], "]"}]}], "}"}], ",", 
+                   RowBox[{"System`ProtoPlotDump`res", "/;", 
+                    RowBox[{
+                    RowBox[{"Head", "[", 
+                    
+                    RowBox[{
+                    "Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+                    "]"}], "=!=", "$Failed"}]}]}], "]"}]}], "]"}]}], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[HoldPattern[
+           PatternTest[
+            ListPlot[
+             Pattern[System`ProtoPlotDump`a, 
+              BlankSequence[]], 
+             Pattern[System`ProtoPlotDump`o, 
+              OptionsPattern[]]], 
+            Function[System`ProtoPlotDump`arg, 
+             Charting`ChartArgCheck[
+             System`ProtoPlotDump`arg, System`ProtoPlotDump`iListPlot, 1], 
+             HoldFirst]]] :> Module[{}, 
+           With[{System`ProtoPlotDump`res = Catch[
+               System`ProtoPlotDump`iListPlot[ListPlot][
+               System`ProtoPlotDump`a, System`ProtoPlotDump`o], 
+               Alternatives["ParseNoData", "ChartingError"], $Failed]}, 
+            Condition[System`ProtoPlotDump`res, Head[
+               Unevaluated[System`ProtoPlotDump`res]] =!= $Failed]]]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["HoldPattern", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 2],
+        TagBox[
+         RowBox[{"HoldPattern", "[", 
+           RowBox[{
+             RowBox[{"(", 
+               RowBox[{"ListPlot", "[", 
+                 RowBox[{"System`ProtoPlotDump`a__", ",", 
+                   RowBox[{"System`ProtoPlotDump`o", ":", 
+                    RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ")"}], 
+             "?", 
+             RowBox[{"(", 
+               RowBox[{"Function", "[", 
+                 RowBox[{"System`ProtoPlotDump`arg", ",", 
+                   RowBox[{"Charting`ChartArgCheck", "[", 
+                    
+                    RowBox[{
+                    "System`ProtoPlotDump`arg", ",", 
+                    "System`ProtoPlotDump`iListPlot", ",", "1"}], "]"}], ",", 
+                   "HoldFirst"}], "]"}], ")"}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         HoldPattern[
+          PatternTest[
+           ListPlot[
+            Pattern[System`ProtoPlotDump`a, 
+             BlankSequence[]], 
+            Pattern[System`ProtoPlotDump`o, 
+             OptionsPattern[]]], 
+           Function[System`ProtoPlotDump`arg, 
+            Charting`ChartArgCheck[
+            System`ProtoPlotDump`arg, System`ProtoPlotDump`iListPlot, 1], 
+            HoldFirst]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["PatternTest", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 3],
+        TagBox[
+         RowBox[{
+           RowBox[{"(", 
+             RowBox[{"ListPlot", "[", 
+               RowBox[{"System`ProtoPlotDump`a__", ",", 
+                 RowBox[{"System`ProtoPlotDump`o", ":", 
+                   RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ")"}], 
+           "?", 
+           RowBox[{"(", 
+             RowBox[{"Function", "[", 
+               RowBox[{"System`ProtoPlotDump`arg", ",", 
+                 RowBox[{"Charting`ChartArgCheck", "[", 
+                   
+                   RowBox[{
+                    "System`ProtoPlotDump`arg", ",", 
+                    "System`ProtoPlotDump`iListPlot", ",", "1"}], "]"}], ",", 
+                 "HoldFirst"}], "]"}], ")"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         PatternTest[
+          ListPlot[
+           Pattern[System`ProtoPlotDump`a, 
+            BlankSequence[]], 
+           Pattern[System`ProtoPlotDump`o, 
+            OptionsPattern[]]], 
+          Function[System`ProtoPlotDump`arg, 
+           Charting`ChartArgCheck[
+           System`ProtoPlotDump`arg, System`ProtoPlotDump`iListPlot, 1], 
+           HoldFirst]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["ListPlot", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 4],
+        TagBox[
+         RowBox[{"ListPlot", "[", 
+           RowBox[{"System`ProtoPlotDump`a__", ",", 
+             RowBox[{"System`ProtoPlotDump`o", ":", 
+               RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         ListPlot[
+          Pattern[System`ProtoPlotDump`a, 
+           BlankSequence[]], 
+          Pattern[System`ProtoPlotDump`o, 
+           OptionsPattern[]]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Pattern", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 5],
+        TagBox["System`ProtoPlotDump`a__", HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Pattern[System`ProtoPlotDump`a, 
+          BlankSequence[]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`a",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 6],
+        TagBox["System`ProtoPlotDump`a", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`a], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["__",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 7],
+        TagBox["__", HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         BlankSequence[]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Pattern", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 8],
+        TagBox[
+         RowBox[{"System`ProtoPlotDump`o", ":", 
+           RowBox[{"OptionsPattern", "[", "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Pattern[System`ProtoPlotDump`o, 
+          OptionsPattern[]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`o",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 9],
+        TagBox["System`ProtoPlotDump`o", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`o], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"OptionsPattern", "[", "]"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 10],
+        TagBox[
+         RowBox[{"OptionsPattern", "[", "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         OptionsPattern[]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Function", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 11],
+        TagBox[
+         RowBox[{"Function", "[", 
+           RowBox[{"System`ProtoPlotDump`arg", ",", 
+             RowBox[{"Charting`ChartArgCheck", "[", 
+               
+               RowBox[{
+                "System`ProtoPlotDump`arg", ",", 
+                 "System`ProtoPlotDump`iListPlot", ",", "1"}], "]"}], ",", 
+             "HoldFirst"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Function[System`ProtoPlotDump`arg, 
+          Charting`ChartArgCheck[
+          System`ProtoPlotDump`arg, System`ProtoPlotDump`iListPlot, 1], 
+          HoldFirst]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`arg",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 12],
+        TagBox["System`ProtoPlotDump`arg", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`arg], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Charting`ChartArgCheck", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 13],
+        TagBox[
+         RowBox[{"Charting`ChartArgCheck", "[", 
+           
+           RowBox[{"System`ProtoPlotDump`arg", ",", 
+             "System`ProtoPlotDump`iListPlot", ",", "1"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Charting`ChartArgCheck[
+         System`ProtoPlotDump`arg, System`ProtoPlotDump`iListPlot, 1]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`arg",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 14],
+        TagBox["System`ProtoPlotDump`arg", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`arg], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`iListPlot",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 15],
+        TagBox["System`ProtoPlotDump`iListPlot", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`iListPlot], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["1",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 16],
+        TagBox["1", HoldForm]],
+       Annotation[#, 
+        HoldForm[1], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["HoldFirst",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 17],
+        TagBox["HoldFirst", HoldForm]],
+       Annotation[#, 
+        HoldForm[HoldFirst], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Module", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 18],
+        TagBox[
+         RowBox[{"Module", "[", 
+           RowBox[{
+             RowBox[{"{", "}"}], ",", 
+             RowBox[{"With", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"System`ProtoPlotDump`res", "=", 
+                    RowBox[{"Catch", "[", 
+                    RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{"System`ProtoPlotDump`iListPlot", "[", "ListPlot",
+                     "]"}], "[", 
+                    
+                    RowBox[{"System`ProtoPlotDump`a", ",", 
+                    "System`ProtoPlotDump`o"}], "]"}], ",", 
+                    RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], 
+                    ",", "$Failed"}], "]"}]}], "}"}], ",", 
+                 RowBox[{"System`ProtoPlotDump`res", "/;", 
+                   RowBox[{
+                    RowBox[{"Head", "[", 
+                    
+                    RowBox[{
+                    "Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+                    "]"}], "=!=", "$Failed"}]}]}], "]"}]}], "]"}], HoldForm]],
+       
+       Annotation[#, 
+        HoldForm[
+         Module[{}, 
+          With[{System`ProtoPlotDump`res = Catch[
+              System`ProtoPlotDump`iListPlot[ListPlot][
+              System`ProtoPlotDump`a, System`ProtoPlotDump`o], 
+              Alternatives["ParseNoData", "ChartingError"], $Failed]}, 
+           Condition[System`ProtoPlotDump`res, Head[
+              Unevaluated[System`ProtoPlotDump`res]] =!= $Failed]]]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox[
+            RowBox[{"{", "}"}],
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 19],
+        TagBox[
+         RowBox[{"{", "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{}], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["With", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 20],
+        TagBox[
+         RowBox[{"With", "[", 
+           RowBox[{
+             RowBox[{"{", 
+               RowBox[{"System`ProtoPlotDump`res", "=", 
+                 RowBox[{"Catch", "[", 
+                   RowBox[{
+                    RowBox[{
+                    
+                    RowBox[{
+                    "System`ProtoPlotDump`iListPlot", "[", "ListPlot", "]"}], 
+                    "[", 
+                    
+                    RowBox[{
+                    "System`ProtoPlotDump`a", ",", "System`ProtoPlotDump`o"}],
+                     "]"}], ",", 
+                    RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], 
+                    ",", "$Failed"}], "]"}]}], "}"}], ",", 
+             RowBox[{"System`ProtoPlotDump`res", "/;", 
+               RowBox[{
+                 RowBox[{"Head", "[", 
+                   
+                   RowBox[{
+                    "Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+                   "]"}], "=!=", "$Failed"}]}]}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         With[{System`ProtoPlotDump`res = Catch[
+             System`ProtoPlotDump`iListPlot[ListPlot][
+             System`ProtoPlotDump`a, System`ProtoPlotDump`o], 
+             Alternatives["ParseNoData", "ChartingError"], $Failed]}, 
+          Condition[System`ProtoPlotDump`res, Head[
+             Unevaluated[System`ProtoPlotDump`res]] =!= $Failed]]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["List", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 21],
+        TagBox[
+         RowBox[{"{", 
+           RowBox[{"System`ProtoPlotDump`res", "=", 
+             RowBox[{"Catch", "[", 
+               RowBox[{
+                 RowBox[{
+                   
+                   RowBox[{
+                    "System`ProtoPlotDump`iListPlot", "[", "ListPlot", "]"}], 
+                   "[", 
+                   
+                   RowBox[{
+                    "System`ProtoPlotDump`a", ",", "System`ProtoPlotDump`o"}],
+                    "]"}], ",", 
+                 RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], ",", 
+                 "$Failed"}], "]"}]}], "}"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[{System`ProtoPlotDump`res = Catch[
+            System`ProtoPlotDump`iListPlot[ListPlot][
+            System`ProtoPlotDump`a, System`ProtoPlotDump`o], 
+            Alternatives["ParseNoData", "ChartingError"], $Failed]}], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Set", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 22],
+        TagBox[
+         RowBox[{"System`ProtoPlotDump`res", "=", 
+           RowBox[{"Catch", "[", 
+             RowBox[{
+               RowBox[{
+                 
+                 RowBox[{
+                  "System`ProtoPlotDump`iListPlot", "[", "ListPlot", "]"}], 
+                 "[", 
+                 
+                 RowBox[{
+                  "System`ProtoPlotDump`a", ",", "System`ProtoPlotDump`o"}], 
+                 "]"}], ",", 
+               RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], ",", 
+               "$Failed"}], "]"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`res = Catch[
+           System`ProtoPlotDump`iListPlot[ListPlot][
+           System`ProtoPlotDump`a, System`ProtoPlotDump`o], 
+           Alternatives["ParseNoData", "ChartingError"], $Failed]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`res",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 23],
+        TagBox["System`ProtoPlotDump`res", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`res], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Catch", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 24],
+        TagBox[
+         RowBox[{"Catch", "[", 
+           RowBox[{
+             RowBox[{
+               
+               RowBox[{
+                "System`ProtoPlotDump`iListPlot", "[", "ListPlot", "]"}], "[", 
+               
+               RowBox[{
+                "System`ProtoPlotDump`a", ",", "System`ProtoPlotDump`o"}], 
+               "]"}], ",", 
+             RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], ",", 
+             "$Failed"}], "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Catch[
+          System`ProtoPlotDump`iListPlot[ListPlot][
+          System`ProtoPlotDump`a, System`ProtoPlotDump`o], 
+          Alternatives["ParseNoData", "ChartingError"], $Failed]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           RowBox[{"System`ProtoPlotDump`iListPlot", "[", "ListPlot", "]"}], 
+           "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 25],
+        TagBox[
+         RowBox[{
+           RowBox[{"System`ProtoPlotDump`iListPlot", "[", "ListPlot", "]"}], 
+           "[", 
+           RowBox[{"System`ProtoPlotDump`a", ",", "System`ProtoPlotDump`o"}], 
+           "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         System`ProtoPlotDump`iListPlot[ListPlot][
+         System`ProtoPlotDump`a, System`ProtoPlotDump`o]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`a",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 26],
+        TagBox["System`ProtoPlotDump`a", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`a], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`o",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 27],
+        TagBox["System`ProtoPlotDump`o", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`o], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Alternatives", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 28],
+        TagBox[
+         RowBox[{"\"ParseNoData\"", "|", "\"ChartingError\""}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Alternatives["ParseNoData", "ChartingError"]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["\<\"ParseNoData\"\>",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 29],
+        TagBox["\"ParseNoData\"", HoldForm]],
+       Annotation[#, 
+        HoldForm["ParseNoData"], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["\<\"ChartingError\"\>",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 30],
+        TagBox["\"ChartingError\"", HoldForm]],
+       Annotation[#, 
+        HoldForm["ChartingError"], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["$Failed",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 31],
+        TagBox["$Failed", HoldForm]],
+       Annotation[#, 
+        HoldForm[$Failed], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Condition", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 32],
+        TagBox[
+         RowBox[{"System`ProtoPlotDump`res", "/;", 
+           RowBox[{
+             RowBox[{"Head", "[", 
+               RowBox[{"Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+               "]"}], "=!=", "$Failed"}]}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Condition[System`ProtoPlotDump`res, Head[
+            Unevaluated[System`ProtoPlotDump`res]] =!= $Failed]], 
+        "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`res",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 33],
+        TagBox["System`ProtoPlotDump`res", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`res], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["UnsameQ", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 34],
+        TagBox[
+         RowBox[{
+           RowBox[{"Head", "[", 
+             RowBox[{"Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+             "]"}], "=!=", "$Failed"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[Head[
+           Unevaluated[System`ProtoPlotDump`res]] =!= $Failed], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Head", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 35],
+        TagBox[
+         RowBox[{"Head", "[", 
+           RowBox[{"Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+           "]"}], HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Head[
+          Unevaluated[System`ProtoPlotDump`res]]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox["Unevaluated", "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 36],
+        TagBox[
+         RowBox[{"Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+         HoldForm]],
+       Annotation[#, 
+        HoldForm[
+         Unevaluated[System`ProtoPlotDump`res]], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["System`ProtoPlotDump`res",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 37],
+        TagBox["System`ProtoPlotDump`res", HoldForm]],
+       Annotation[#, 
+        HoldForm[System`ProtoPlotDump`res], "Tooltip"]& ], 
+      TagBox[
+       TooltipBox[InsetBox[
+         FrameBox[
+          StyleBox[
+           TagBox["$Failed",
+            HoldForm], "StandardForm", "Output",
+           StripOnInput->False,
+           LineColor->GrayLevel[0],
+           FrontFaceColor->GrayLevel[0],
+           BackFaceColor->GrayLevel[0],
+           GraphicsColor->GrayLevel[0],
+           FontSize->Scaled[0.01],
+           FontColor->GrayLevel[0]],
+          Background->RGBColor[1., 1., 0.871],
+          FrameStyle->GrayLevel[0.5],
+          StripOnInput->False], 38],
+        TagBox["$Failed", HoldForm]],
+       Annotation[#, 
+        HoldForm[$Failed], "Tooltip"]& ]}}],
+   Annotation[#, VertexCoordinateRules -> CompressedData["
+1:eJxTTMoPSmViYGBQA2IQXRphcMAnUcBhb6XwStcWYYe5opMcU+WZHOo2Ctxq
+2SUA59dckhbreMjtUAsW/2D/11Gsgs2PzeEPmL5mD1HP4MAABf/A4t/sIfLP
+7GH8arA5v+Hq/0DFYfK1UHFU9dwOqPaxOcD0w+RRzWPD0I9qvgAGH6ZfZtn0
++882icP9DzFPDO5/Gy5J9+PiknD+3btTBNReisDdB+PDzIOFK2p4iMH5kPAV
+cmBwgoQTzD2wcITph/Fh7oOph5kHk4e5D8aPyZu1bnmNFFz9bLO5tRlusnD3
+QsJHGu7e3bPknnqsloPzYeph7oXx0c2D2Zf733+ZCIcCXD0AYhzdKA==
+     "]]& ],
+  AspectRatio->NCache[4 157^Rational[-1, 2], 0.31923475378704885`],
+  FormatType:>StandardForm,
+  FrameTicks->Automatic,
+  ImageSize->{1474., Automatic},
+  PlotRange->All,
+  PlotRangePadding->Scaled[0.1]]], "Output",
+ CellChangeTimes->{{3.703976003559935*^9, 3.703976012087954*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "Plot", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"Plot", "[", 
+      RowBox[{"heads___", ",", 
+       RowBox[{"PlotStyle", "\[Rule]", "Automatic"}], ",", "tails___"}], 
+      "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{"heads", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"Thickness", "[", "$DefaultThickness", "]"}]}], ",", "tails"}],
+      "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"Plot", "[", 
+      RowBox[{"heads___", ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"style_", "/;", 
+         RowBox[{
+          RowBox[{"!", 
+           RowBox[{"ListQ", "[", "style", "]"}]}], "&&", 
+          RowBox[{"FreeQ", "[", 
+           RowBox[{"style", ",", "Thickness"}], "]"}]}]}]}], ",", 
+       "tails___"}], "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{"heads", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"style", ",", 
+          RowBox[{"Thickness", "[", "$DefaultThickness", "]"}]}], "}"}], 
+        "}"}]}], ",", "tails"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"Plot", "[", 
+      RowBox[{"heads___", ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"h___", ",", "style_", ",", "t___"}], "}"}], "/;", 
+         RowBox[{"FreeQ", "[", 
+          RowBox[{"style", ",", "Thickness"}], "]"}]}]}], ",", "tails___"}], 
+      "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{"heads", ",", 
+      RowBox[{"PlotStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"h", ",", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"{", 
+           RowBox[{"style", ",", 
+            RowBox[{"Thickness", "[", "$DefaultThickness", "]"}]}], "}"}], 
+          "]"}], ",", "t"}], "}"}]}], ",", "tails"}], "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"Plot", "[", 
+      RowBox[{"args_", "/;", 
+       RowBox[{"FreeQ", "[", 
+        RowBox[{
+         RowBox[{"{", "args", "}"}], ",", "PlotStyle"}], "]"}]}], "]"}], 
+     "]"}], "\[RuleDelayed]", 
+    RowBox[{"Plot", "[", 
+     RowBox[{"args", ",", 
+      RowBox[{"Evaluate", "[", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"(", 
+         RowBox[{"PlotStyle", "/.", "\[VeryThinSpace]", 
+          RowBox[{"Options", "[", "Plot", "]"}]}], ")"}]}], "]"}]}], "]"}]}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"System`ProtoPlotDump`a", ":", 
+          RowBox[{
+           RowBox[{"PatternSequence", "[", 
+            RowBox[{"___", ",", 
+             RowBox[{"Except", "[", 
+              RowBox[{"_", "?", "System`Dump`HeldOptionQ"}], "]"}]}], "]"}], 
+           "|", 
+           RowBox[{"PatternSequence", "[", "]"}]}]}], ",", 
+         RowBox[{"System`ProtoPlotDump`o", ":", 
+          RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], ")"}], "?", 
+      RowBox[{"(", 
+       RowBox[{"Function", "[", 
+        RowBox[{"System`ProtoPlotDump`arg", ",", 
+         RowBox[{"Charting`PlotArgCheck", "[", 
+          RowBox[{
+          "System`ProtoPlotDump`arg", ",", "System`ProtoPlotDump`iPlot", ",", 
+           "2"}], "]"}], ",", "HoldFirst"}], "]"}], ")"}]}], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"System`ProtoPlotDump`res", "=", 
+          RowBox[{"Catch", "[", 
+           RowBox[{
+            RowBox[{"System`ProtoPlotDump`iPlot", "[", 
+             RowBox[{
+             "System`ProtoPlotDump`a", ",", "System`ProtoPlotDump`o"}], "]"}],
+             ",", 
+            RowBox[{"\<\"ParseNoData\"\>", "|", "\<\"ChartingError\"\>"}], 
+            ",", "$Failed"}], "]"}]}], "}"}], ",", 
+        RowBox[{"System`ProtoPlotDump`res", "/;", 
+         RowBox[{
+          RowBox[{"Head", "[", 
+           RowBox[{"Unevaluated", "[", "System`ProtoPlotDump`res", "]"}], 
+           "]"}], "=!=", "$Failed"}]}]}], "]"}]}], "]"}]}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.703976248371718*^9, 3.7039762716504717`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1596, 698},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3308, 85, 318, "Input"],
+Cell[3869, 107, 159, 2, 33, "Text"],
+Cell[4031, 111, 77, 2, 32, "Input"],
+Cell[4111, 115, 2758, 75, 296, "Input"],
+Cell[CellGroupData[{
+Cell[6894, 194, 527, 14, 72, "Input"],
+Cell[7424, 210, 943, 26, 274, "Output"]
+}, Open  ]],
+Cell[8382, 239, 413, 9, 50, "Input"],
+Cell[CellGroupData[{
+Cell[8820, 252, 166, 3, 50, "Input"],
+Cell[8989, 257, 1970, 51, 121, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10996, 313, 222, 5, 50, "Input"],
+Cell[11221, 320, 38583, 1020, 500, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49841, 1345, 66, 1, 50, "Input"],
+Cell[49910, 1348, 4295, 116, 266, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

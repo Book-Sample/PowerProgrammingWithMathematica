@@ -1,0 +1,301 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9701,        292]
+NotebookOptionsPosition[      8156,        238]
+NotebookOutlinePosition[      8808,        261]
+CellTagsIndexPosition[      8705,        256]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+1. Define upvalues or downvalues to effect the following behaviors:\
+\>", "Text",
+ CellChangeTimes->{{3.703881393835565*^9, 3.703881414746644*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "log", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"log", "/:", 
+   RowBox[{"Factor", "[", 
+    RowBox[{"log", "[", 
+     RowBox[{"a_", "^", "n_"}], "]"}], "]"}], ":=", 
+   RowBox[{"n", " ", 
+    RowBox[{"log", "[", "a", "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.703881417412184*^9, 3.703881673622929*^9}, {
+  3.703881725877479*^9, 3.7038817308702507`*^9}, {3.703881804911216*^9, 
+  3.703881806340564*^9}, {3.703881885165477*^9, 3.703881895703635*^9}, {
+  3.70388208394331*^9, 3.703882097278289*^9}, {3.70388219950375*^9, 
+  3.703882207276237*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "log"}]], "Input",
+ CellChangeTimes->{{3.703881832260375*^9, 3.703881832920167*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`log", "Print", "PrintUsage",
+ CellChangeTimes->{3.703882235906608*^9},
+ CellTags->"Info-27bf6ed0-10db-48e9-abf4-6932f914389b"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Factor", "[", 
+          RowBox[{"log", "[", 
+           SuperscriptBox["a_", "n_"], "]"}], "]"}], "^:=", 
+         RowBox[{"n", " ", 
+          RowBox[{"log", "[", "a", "]"}]}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"log", "[", "a_", "]"}], " ", "n_"}], "^:=", 
+         RowBox[{"log", "[", 
+          SuperscriptBox["a", "n"], "]"}]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{
+          RowBox[{"log", "[", "x_", "]"}], "+", 
+          RowBox[{"log", "[", "y_", "]"}]}], "^:=", 
+         RowBox[{"log", "[", 
+          RowBox[{"x", " ", "y"}], "]"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`log],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7038822359360857`*^9},
+ CellTags->"Info-27bf6ed0-10db-48e9-abf4-6932f914389b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Factor", "[", 
+  RowBox[{"log", "[", 
+   RowBox[{"a", "^", "n"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7038821273608093`*^9, 3.703882162556323*^9}}],
+
+Cell[BoxData[
+ RowBox[{"n", " ", 
+  RowBox[{"log", "[", "a", "]"}]}]], "Output",
+ CellChangeTimes->{{3.703882139521994*^9, 3.703882163155367*^9}, 
+   3.703882211145515*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"log", "/:", 
+   RowBox[{"n_", " ", 
+    RowBox[{"log", "[", "a_", "]"}]}], ":=", 
+   RowBox[{"log", "[", 
+    RowBox[{"a", "^", "n"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"log", "/:", 
+   RowBox[{
+    RowBox[{"log", "[", "x_", "]"}], "+", 
+    RowBox[{"log", "[", "y_", "]"}]}], ":=", 
+   RowBox[{"log", "[", 
+    RowBox[{"x", " ", "y"}], "]"}]}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{"n", " ", 
+   RowBox[{"log", "[", "a", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.703882239835884*^9, 3.703882286090996*^9}}],
+
+Cell[BoxData[
+ RowBox[{"log", "[", 
+  SuperscriptBox["a", "n"], "]"}]], "Output",
+ CellChangeTimes->{{3.703882255886991*^9, 3.70388228790736*^9}}]
+}, Open  ]],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{3.703882283678899*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{
+   RowBox[{"log", "[", "x", "]"}], "+", 
+   RowBox[{"log", "[", "y", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.703882356502954*^9, 3.703882365640164*^9}}],
+
+Cell[BoxData[
+ RowBox[{"log", "[", 
+  RowBox[{"x", " ", "y"}], "]"}]], "Output",
+ CellChangeTimes->{3.70388236613435*^9}]
+}, Open  ]],
+
+Cell["2. Find all systems symbols that are Locked.", "Text",
+ CellChangeTimes->{{3.70388247265178*^9, 3.7038824881486673`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"Names", "[", "\"\<System`*\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"MemberQ", "[", 
+     RowBox[{
+      RowBox[{"Attributes", "[", "#", "]"}], ",", "Locked"}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.70388251518812*^9, 3.703882526164364*^9}, {
+  3.703882556436462*^9, 3.703882608131263*^9}, {3.70388264950986*^9, 
+  3.7038826545139523`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"False\"\>", ",", "\<\"I\"\>", ",", "\<\"List\"\>", 
+   ",", "\<\"Locked\"\>", ",", "\<\"Remove\"\>", ",", "\<\"Removed\"\>", 
+   ",", "\<\"Symbol\"\>", ",", "\<\"TooBig\"\>", ",", "\<\"True\"\>", 
+   ",", "\<\"$Aborted\"\>", ",", "\<\"$BatchOutput\"\>", 
+   ",", "\<\"$CommandLine\"\>", ",", "\<\"$CreationDate\"\>", 
+   ",", "\<\"$InitialDirectory\"\>", ",", "\<\"$Input\"\>", 
+   ",", "\<\"$InputStreamMethods\"\>", ",", "\<\"$LinkSupported\"\>", 
+   ",", "\<\"$MachineType\"\>", ",", "\<\"$MinorReleaseNumber\"\>", 
+   ",", "\<\"$Off\"\>", ",", "\<\"$OperatingSystem\"\>", 
+   ",", "\<\"$OutputStreamMethods\"\>", ",", "\<\"$PipeSupported\"\>", 
+   ",", "\<\"$PrintForms\"\>", ",", "\<\"$PrintLiteral\"\>", 
+   ",", "\<\"$ProcessorType\"\>", ",", "\<\"$ProductInformation\"\>", 
+   ",", "\<\"$ReleaseNumber\"\>", ",", "\<\"$ScriptCommandLine\"\>", 
+   ",", "\<\"$System\"\>", ",", "\<\"$SystemID\"\>", 
+   ",", "\<\"$SystemMemory\"\>", ",", "\<\"$SystemWordLength\"\>", 
+   ",", "\<\"$TimeUnit\"\>", ",", "\<\"$Version\"\>", 
+   ",", "\<\"$VersionNumber\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7038825269075527`*^9, 3.7038826091395617`*^9, 
+  3.70388265525381*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"Names", "[", "\"\<System`*\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"MemberQ", "[", 
+     RowBox[{
+      RowBox[{"Attributes", "[", "#", "]"}], ",", "Locked"}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7038835898442097`*^9, 3.703883642766363*^9}, {
+  3.7038837201908484`*^9, 3.7038837341460247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"False\"\>", ",", "\<\"I\"\>", ",", "\<\"List\"\>", 
+   ",", "\<\"Locked\"\>", ",", "\<\"Remove\"\>", ",", "\<\"Removed\"\>", 
+   ",", "\<\"Symbol\"\>", ",", "\<\"TooBig\"\>", ",", "\<\"True\"\>", 
+   ",", "\<\"$Aborted\"\>", ",", "\<\"$BatchOutput\"\>", 
+   ",", "\<\"$CommandLine\"\>", ",", "\<\"$CreationDate\"\>", 
+   ",", "\<\"$InitialDirectory\"\>", ",", "\<\"$Input\"\>", 
+   ",", "\<\"$InputStreamMethods\"\>", ",", "\<\"$LinkSupported\"\>", 
+   ",", "\<\"$MachineType\"\>", ",", "\<\"$MinorReleaseNumber\"\>", 
+   ",", "\<\"$Off\"\>", ",", "\<\"$OperatingSystem\"\>", 
+   ",", "\<\"$OutputStreamMethods\"\>", ",", "\<\"$PipeSupported\"\>", 
+   ",", "\<\"$PrintForms\"\>", ",", "\<\"$PrintLiteral\"\>", 
+   ",", "\<\"$ProcessorType\"\>", ",", "\<\"$ProductInformation\"\>", 
+   ",", "\<\"$ReleaseNumber\"\>", ",", "\<\"$ScriptCommandLine\"\>", 
+   ",", "\<\"$System\"\>", ",", "\<\"$SystemID\"\>", 
+   ",", "\<\"$SystemMemory\"\>", ",", "\<\"$SystemWordLength\"\>", 
+   ",", "\<\"$TimeUnit\"\>", ",", "\<\"$Version\"\>", 
+   ",", "\<\"$VersionNumber\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.703883635375799*^9, 3.7038836434157343`*^9}, {
+  3.703883730569306*^9, 3.703883735003552*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 318}, {0, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-27bf6ed0-10db-48e9-abf4-6932f914389b"->{
+  Cell[1500, 49, 139, 2, 42, "Print",
+   CellTags->"Info-27bf6ed0-10db-48e9-abf4-6932f914389b"],
+  Cell[1642, 53, 1381, 41, 88, "Print",
+   CellTags->"Info-27bf6ed0-10db-48e9-abf4-6932f914389b"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-27bf6ed0-10db-48e9-abf4-6932f914389b", 8485, 248}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 157, 3, 33, "Text"],
+Cell[718, 25, 620, 14, 91, "Input"],
+Cell[CellGroupData[{
+Cell[1363, 43, 112, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1500, 49, 139, 2, 42, "Print",
+ CellTags->"Info-27bf6ed0-10db-48e9-abf4-6932f914389b"],
+Cell[1642, 53, 1381, 41, 88, "Print",
+ CellTags->"Info-27bf6ed0-10db-48e9-abf4-6932f914389b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3072, 100, 181, 4, 50, "Input"],
+Cell[3256, 106, 172, 4, 32, "Output"]
+}, Open  ]],
+Cell[3443, 113, 425, 13, 55, "Input"],
+Cell[CellGroupData[{
+Cell[3893, 130, 179, 4, 50, "Input"],
+Cell[4075, 136, 146, 3, 32, "Output"]
+}, Open  ]],
+Cell[4236, 142, 69, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[4330, 147, 210, 5, 50, "Input"],
+Cell[4543, 154, 121, 3, 32, "Output"]
+}, Open  ]],
+Cell[4679, 160, 127, 1, 33, "Text"],
+Cell[CellGroupData[{
+Cell[4831, 165, 424, 11, 50, "Input"],
+Cell[5258, 178, 1218, 20, 165, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6513, 203, 381, 10, 50, "Input"],
+Cell[6897, 215, 1243, 20, 198, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
