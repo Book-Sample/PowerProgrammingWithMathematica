@@ -1,0 +1,24 @@
+Unevaluated是一种特殊的头部，可以包裹在任何函数的任何参数上，来避免参数传入函数前被执行。Unevaluated的美妙之处在于它对被调用的函数是不可见的——它使得函数暂时地表现得有一个Hold属性。
+x=7;
+Head[x]
+Integer
+Head[Unevaluated[x]]
+Symbol
+Unevaluated可能看起来和Hold类似，但是一个重要的不同是：Hold(或HoldForm)对被调用的函数是可见的。
+Head[Hold[x]]
+Hold
+从主执行循环（7.1.3）的步骤7和步骤16可以看出，Unevaluated的特殊之处是Unevaluated所包围的表达式在被应用之前会移除表达式的头部Unevaluated，并且在查找之后，没有可应用的规则时，恢复表达式的Unevaluated头部。
+ClearAll[f];
+f[y_Integer]:=y
+Trace[f[x]]
+{{x,7},f[7],7}
+Trace[f[Unevaluated[x]]]
+{f[x],f[Unevaluated[x]]}
+Unevaluated一种特殊情况的处理格外复杂：
+FullForm[Unevaluated[x]]
+Unevaluated[x]
+这种情况的原因是FullForm并没有对参数做任何处理，上面的输出并不能被看作是它的返回值。FullForm仅仅是个包装器提示里面的表达应该用一种特殊的方式格式化。因为输出格式化发生在执行过程结束之后，此时Unevaluated头部已经被恢复。
+事实上，FullForm头部依然包装着输出，只是没有打印出来。可以通过下面代码验证：
+Head[FullForm[Unevaluated[x]]]
+FullForm
+更多关于输出格式化将在9.4 "自定义输出格式"
