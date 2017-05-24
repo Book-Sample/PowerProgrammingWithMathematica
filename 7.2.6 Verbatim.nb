@@ -1,0 +1,187 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5046,        178]
+NotebookOptionsPosition[      4149,        141]
+NotebookOutlinePosition[      4498,        156]
+CellTagsIndexPosition[      4455,        153]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "y"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
+  RowBox[{
+   RowBox[{"Verbatim", "[", "x_", "]"}], "\[Rule]", "matched"}]}]}], "Input",
+ CellChangeTimes->{{3.704488060075433*^9, 3.704488092693943*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"x", ",", "matched", ",", "y", ",", "y_"}], "}"}]], "Output",
+ CellChangeTimes->{3.7044880969961348`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
+  RowBox[{"x_", "\[Rule]", "matched"}]}]], "Input",
+ CellChangeTimes->{{3.704488114988948*^9, 3.7044881418535137`*^9}}],
+
+Cell[BoxData["matched"], "Output",
+ CellChangeTimes->{{3.7044881200199003`*^9, 3.704488144118*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Replace", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], ",", 
+   RowBox[{"x_", "\[Rule]", "matched"}], ",", 
+   RowBox[{"{", "1", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.704488153545301*^9, 3.704488236132719*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"matched", ",", "matched", ",", "matched", ",", "matched"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.704488218718974*^9, 3.70448823662901*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
+  RowBox[{"p_Pattern", "\[RuleDelayed]", 
+   RowBox[{"q", "[", 
+    RowBox[{"p", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.704488358537612*^9, 3.7044883827376823`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"x", ",", 
+   RowBox[{"q", "[", "x", "]"}], ",", "y", ",", 
+   RowBox[{"q", "[", "y", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.704488384229927*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
+  RowBox[{
+   RowBox[{"Pattern", "[", 
+    RowBox[{"var_", ",", "_"}], "]"}], "\[Rule]", 
+   RowBox[{"q", "[", "var", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.704488448830689*^9, 3.7044884757853117`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Pattern", "::", "patvar"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"First element in pattern \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"Pattern\\\", \\\"[\\\", RowBox[{\\\"var_\\\", \
+\\\",\\\", \\\"_\\\"}], \\\"]\\\"}]\\)\[NoBreak] is not a valid pattern name. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Pattern/patvar\\\", \
+ButtonNote -> \\\"Pattern::patvar\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.704488476402299*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}]], "Output",
+ CellChangeTimes->{3.704488476405163*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Verbatim", "[", "Pattern", "]"}], "[", 
+    RowBox[{"var_", ",", "_"}], "]"}], "\[Rule]", 
+   RowBox[{"q", "[", "var", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.704488491967585*^9, 3.70448851993239*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"x", ",", 
+   RowBox[{"q", "[", "x", "]"}], ",", "y", ",", 
+   RowBox[{"q", "[", "y", "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7044885239311123`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 302}, {-230, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 341, 8, 91, "Input"],
+Cell[924, 32, 144, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1105, 40, 223, 5, 32, "Input"],
+Cell[1331, 47, 99, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1467, 53, 291, 7, 50, "Input"],
+Cell[1761, 62, 185, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1983, 71, 316, 8, 32, "Input"],
+Cell[2302, 81, 193, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2532, 91, 310, 8, 50, "Input"],
+Cell[2845, 101, 569, 11, 23, "Message"],
+Cell[3417, 114, 137, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3591, 122, 344, 9, 50, "Input"],
+Cell[3938, 133, 195, 5, 65, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
