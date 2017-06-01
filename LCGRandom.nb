@@ -1,0 +1,96 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2616,         87]
+NotebookOptionsPosition[      2372,         74]
+NotebookOutlinePosition[      2718,         89]
+CellTagsIndexPosition[      2675,         86]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<LCGRandom`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGSetSeed", "::", "usage"}], "=", 
+   "\"\<LCGSetSeed[x] sets the LCG random number generator's seed to the \
+integer x.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "::", "usage"}], "=", 
+   "\"\<LCGRandom[] generates a uniformly distributed random number in the \
+range {0.,1.} using a linear congruential generator.\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"modulus", "=", 
+   RowBox[{
+    RowBox[{"2", "^", "31"}], "-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"seed", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGSetSeed", "[", 
+    RowBox[{"x_Integer", "/;", 
+     RowBox[{"1", "\[LessEqual]", "seed", "<", "modulus"}]}], "]"}], ":=", 
+   RowBox[{"seed", "=", "x"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "[", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"seed", "=", 
+      RowBox[{"Mod", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"7", "^", "5"}], "*", "seed"}], ",", "modulus"}], "]"}]}], 
+     ";", 
+     RowBox[{"N", "[", 
+      RowBox[{"seed", "/", "modulus"}], "]"}]}], ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", 
+   RowBox[{"LCGSetSeed", ",", "LCGRandom"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"EndPackage", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.705181730357711*^9, 3.7051819162881603`*^9}, {
+  3.7051819573537903`*^9, 3.705181985445677*^9}}]
+},
+WindowSize->{810, 694},
+WindowMargins->{{Automatic, 246}, {Automatic, 0}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1810, 52, 529, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

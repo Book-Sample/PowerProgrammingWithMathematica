@@ -1,0 +1,58 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1437,         49]
+NotebookOptionsPosition[      1160,         35]
+NotebookOutlinePosition[      1508,         50]
+CellTagsIndexPosition[      1465,         47]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+BeginPackage[\[OpenCurlyDoubleQuote]MyPackage`\[CloseCurlyDoubleQuote], \
+\[OpenCurlyDoubleQuote]NeededPackage`\[CloseCurlyDoubleQuote]] method \
+\[OpenCurlyDoubleQuote]pollutes\[CloseCurlyDoubleQuote] the context path with \
+extra contexts.\
+\>", "Text",
+ CellChangeTimes->{{3.705199853243112*^9, 3.7051999104145737`*^9}}],
+
+Cell["\<\
+using Needs, after the call to BeginPackage can avoid this problem. After the \
+EndPackage statement is executed, the other packages will not appear on the \
+context path.\
+\>", "Text",
+ CellChangeTimes->{{3.7051999264465437`*^9, 3.70520000062712*^9}}]
+},
+WindowSize->{808, 678},
+WindowMargins->{{Automatic, 29}, {-465, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 333, 6, 55, "Text"],
+Cell[894, 28, 262, 5, 55, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)

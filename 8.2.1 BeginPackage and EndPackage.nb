@@ -1,0 +1,247 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6893,        238]
+NotebookOptionsPosition[      5115,        174]
+NotebookOutlinePosition[      5770,        197]
+CellTagsIndexPosition[      5667,        192]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"BeginPackage", "[", "\"\<example`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705179028859768*^9, 3.7051790385612717`*^9}}],
+
+Cell[BoxData["\<\"example`\"\>"], "Output",
+ CellChangeTimes->{3.70517904000173*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input",
+ CellChangeTimes->{{3.705179042363543*^9, 3.7051790456939697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"example`\"\>", ",", "\<\"System`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.70517904613958*^9}]
+}, Open  ]],
+
+Cell["temporarilly removes but System", "Text",
+ CellChangeTimes->{{3.705179079509965*^9, 3.7051791408546267`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "=", "\"\<a package symbol\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"g", "=", "\"\<another package symbol\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{{3.705179161534973*^9, 3.70517918670397*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705179212866261*^9, 3.705179221942379*^9}}],
+
+Cell[BoxData["\<\"example`Private`\"\>"], "Output",
+ CellChangeTimes->{3.70517922905295*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "\"\<a very shy symbol\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"End", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.705179241701923*^9, 3.70517925430322*^9}}],
+
+Cell[BoxData["\<\"example`Private`\"\>"], "Output",
+ CellChangeTimes->{3.7051792557487392`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"EndPackage", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.705179481621458*^9, 3.70517948397183*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellChangeTimes->{{3.705179494448511*^9, 3.705179496324717*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.7051794968579693`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input",
+ CellChangeTimes->{{3.7051795004881687`*^9, 3.705179503794772*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"example`\"\>", ",", "\<\"CloudObjectLoader`\"\>", 
+   ",", "\<\"StreamingLoader`\"\>", ",", "\<\"IconizeLoader`\"\>", 
+   ",", "\<\"PacletManager`\"\>", ",", "\<\"System`\"\>", 
+   ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.705179504145362*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "f"}]], "Input",
+ CellChangeTimes->{{3.705179526830718*^9, 3.70517952728267*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["example`f", "Print", "PrintUsage",
+ CellChangeTimes->{3.705179527753592*^9},
+ CellTags->"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"f", "=", "\<\"a package symbol\"\>"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[example`f],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.705179527771525*^9},
+ CellTags->"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "a"}]], "Input",
+ CellChangeTimes->{{3.70517958186134*^9, 3.705179582090314*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Information", "::", "notfound"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"a\\\\\\\"\\\"}]\\)\[NoBreak] not \
+found. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/notfound\\\", ButtonNote -> \
+\\\"Information::notfound\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705179582651393*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"example`Private`a", 
+  RowBox[{"(*", 
+   RowBox[{
+   "we", " ", "can", " ", "refer", " ", "to", " ", "the", " ", "private", " ",
+     "variable", " ", "in", " ", "a", " ", "explict", " ", "way"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.705179807053081*^9, 3.7051798409730873`*^9}}],
+
+Cell[BoxData["\<\"a very shy symbol\"\>"], "Output",
+ CellChangeTimes->{3.7051798136044493`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 343}, {-34, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"->{
+  Cell[3081, 110, 138, 2, 42, "Print",
+   CellTags->"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"],
+  Cell[3222, 114, 779, 21, 23, "Print",
+   CellTags->"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c", 5446, 184}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 148, 2, 50, "Input"],
+Cell[731, 26, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[852, 32, 106, 1, 50, "Input"],
+Cell[961, 35, 143, 3, 32, "Output"]
+}, Open  ]],
+Cell[1119, 41, 115, 1, 33, "Text"],
+Cell[1237, 44, 257, 6, 55, "Input"],
+Cell[CellGroupData[{
+Cell[1519, 54, 140, 2, 50, "Input"],
+Cell[1662, 58, 92, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1791, 64, 213, 5, 72, "Input"],
+Cell[2007, 71, 95, 1, 32, "Output"]
+}, Open  ]],
+Cell[2117, 75, 123, 2, 50, "Input"],
+Cell[CellGroupData[{
+Cell[2265, 81, 100, 1, 50, "Input"],
+Cell[2368, 84, 86, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2491, 90, 106, 1, 50, "Input"],
+Cell[2600, 93, 310, 6, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2947, 104, 109, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[3081, 110, 138, 2, 42, "Print",
+ CellTags->"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"],
+Cell[3222, 114, 779, 21, 23, "Print",
+ CellTags->"Info-44e8c65d-bdde-4dbc-8ed4-c0b624b5dc8c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4050, 141, 109, 2, 32, "Input"],
+Cell[4162, 145, 489, 11, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4688, 161, 312, 7, 55, "Input"],
+Cell[5003, 170, 96, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
