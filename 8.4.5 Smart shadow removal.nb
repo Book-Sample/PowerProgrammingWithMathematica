@@ -1,0 +1,339 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9657,        330]
+NotebookOptionsPosition[      7533,        254]
+NotebookOutlinePosition[      8189,        277]
+CellTagsIndexPosition[      8086,        272]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"test", ":=", 
+  RowBox[{"1", "/", "0"}]}]], "Input",
+ CellChangeTimes->{{3.705278076271579*^9, 3.7052780797890463`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OwnValues", "[", "test", "]"}]], "Input",
+ CellChangeTimes->{{3.705278082383297*^9, 3.70527808750679*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"HoldPattern", "[", "test", "]"}], "\[RuleDelayed]", 
+   FractionBox["1", "0"]}], "}"}]], "Output",
+ CellChangeTimes->{3.705278088467012*^9, 3.705350600349015*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{"hasvalues", ",", "HoldFirst"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"hasvalues", "[", "s_Symbol", "]"}], ":=", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Attributes", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"OwnValues", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"UpValues", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"DownValues", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"SubValues", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"NValues", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"FormatValues", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Options", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}], "||", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Messages", "[", "s", "]"}], "=!=", 
+     RowBox[{"{", "}"}]}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.705278179963908*^9, 3.705278365731606*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"hasvalues", "[", "test", "]"}]], "Input",
+ CellChangeTimes->{{3.705282137598714*^9, 3.705282141668841*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.705282142019492*^9, 3.705350605955138*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToExpression", "[", "\"\<test\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705350616049922*^9, 3.7053506257172117`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \[NoBreak]\\!\\(\\*FractionBox[\\\"1\\\
+\", \\\"0\\\"]\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/infy\\\", ButtonNote -> \
+\\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705350626328498*^9}],
+
+Cell[BoxData["ComplexInfinity"], "Output",
+ CellChangeTimes->{3.705350626329569*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ToHeldExpression", "[", "\"\<test\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7053506405192432`*^9, 3.705350655228251*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", "test", "]"}]], "Output",
+ CellChangeTimes->{3.70535065605063*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OwnValues", "@@", "%7"}]], "Input",
+ CellChangeTimes->{{3.705350674791772*^9, 3.705350685796357*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"HoldPattern", "[", "test", "]"}], "\[RuleDelayed]", 
+   FractionBox["1", "0"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.705350680958476*^9, 3.7053506859427633`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"hasvalues", "@@", 
+  RowBox[{"ToHeldExpression", "[", "\"\<test\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.70535072986413*^9, 3.705350741831861*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.7053507423152437`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g", "=", 
+  RowBox[{
+   RowBox[{"Removed", "[", "Polyhedron", "]"}], "[", 
+   RowBox[{"Removed", "[", "Dodecahedron", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.705351031378693*^9, 3.7053510726066227`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Removed", "[", "Polyhedron", "]"}], "[", 
+  RowBox[{"Removed", "[", "Dodecahedron", "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.7053510761598997`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullForm", "[", "g", "]"}]], "Input",
+ CellChangeTimes->{{3.705351079247142*^9, 3.705351084512508*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{
+    RowBox[{"Removed", "[", "Polyhedron", "]"}], "[", 
+    RowBox[{"Removed", "[", "Dodecahedron", "]"}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.705351084929018*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g", "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705351090230412*^9, 3.7053511401470423`*^9}}],
+
+Cell[BoxData["Dodecahedron"], "Output",
+ CellChangeTimes->{{3.705351103451952*^9, 3.705351140701366*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Cases", "[", 
+  RowBox[{"g", ",", "_Symbol", ",", "Infinity", ",", 
+   RowBox[{"Heads", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705350796241242*^9, 3.7053508032247047`*^9}, {
+  3.705351201539178*^9, 3.705351218214926*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Removed", ",", "Polyhedron", ",", "Removed", ",", "Dodecahedron"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.705351218737371*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Head", "[", 
+  RowBox[{"g", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7053512286337147`*^9, 3.7053512393031387`*^9}}],
+
+Cell[BoxData["Removed"], "Output",
+ CellChangeTimes->{{3.705351233877675*^9, 3.705351240237781*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Information", "[", "Removed", "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Removed\\\", \\\"[\\\", \
+StyleBox[\\\"string\\\", \\\"TI\\\"], \\\"]\\\"}]\\) is printed to indicate a \
+symbol that has been removed.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7053512464705687`*^9},
+ CellTags->"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "Removed", "]"}], "=", 
+      RowBox[{"{", 
+       RowBox[{"Locked", ",", "Protected"}], "}"}]}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Removed],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7053512465094223`*^9},
+ CellTags->"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 221}, {-101, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"->{
+  Cell[6659, 228, 323, 5, 42, "Print",
+   CellTags->"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"],
+  Cell[6985, 235, 520, 15, 23, "Print",
+   CellTags->"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6", 7865, 264}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 144, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[727, 27, 130, 2, 50, "Input"],
+Cell[860, 31, 214, 5, 54, "Output"]
+}, Open  ]],
+Cell[1089, 39, 1399, 36, 384, "Input"],
+Cell[CellGroupData[{
+Cell[2513, 79, 131, 2, 32, "Input"],
+Cell[2647, 83, 95, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2779, 89, 144, 2, 50, "Input"],
+Cell[2926, 93, 476, 10, 51, "Message"],
+Cell[3405, 105, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3526, 111, 148, 2, 32, "Input"],
+Cell[3677, 115, 102, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3816, 122, 125, 2, 50, "Input"],
+Cell[3944, 126, 218, 5, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4199, 136, 177, 3, 32, "Input"],
+Cell[4379, 141, 75, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4491, 147, 235, 5, 32, "Input"],
+Cell[4729, 154, 187, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4953, 163, 127, 2, 50, "Input"],
+Cell[5083, 167, 312, 10, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5432, 182, 169, 4, 32, "Input"],
+Cell[5604, 188, 105, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5746, 194, 268, 5, 50, "Input"],
+Cell[6017, 201, 170, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6224, 210, 179, 4, 50, "Input"],
+Cell[6406, 216, 100, 1, 65, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6543, 222, 91, 2, 50, "Input"],
+Cell[CellGroupData[{
+Cell[6659, 228, 323, 5, 42, "Print",
+ CellTags->"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"],
+Cell[6985, 235, 520, 15, 23, "Print",
+ CellTags->"Info-36b18c8c-37f6-4cf3-a8ff-c735bf9627b6"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
