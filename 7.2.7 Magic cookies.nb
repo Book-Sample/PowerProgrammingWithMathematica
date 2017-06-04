@@ -10,22 +10,14 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-<<<<<<< HEAD
 NotebookDataLength[      6290,        241]
 NotebookOptionsPosition[      4814,        183]
 NotebookOutlinePosition[      5163,        198]
 CellTagsIndexPosition[      5120,        195]
-=======
-NotebookDataLength[      4320,        155]
-NotebookOptionsPosition[      3466,        120]
-NotebookOutlinePosition[      3814,        135]
-CellTagsIndexPosition[      3771,        132]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-<<<<<<< HEAD
 Cell[BoxData[
  RowBox[{
   RowBox[{"z", "=", "Evaluate"}], ";"}]], "Input",
@@ -38,38 +30,12 @@ Cell[BoxData[
   RowBox[{"z", "[", 
    RowBox[{"2", "+", "2"}], "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.70431800327334*^9, 3.704318010116166*^9}}],
-=======
-Cell["\<\
-This implies that these behaviors simply can\[CloseCurlyQuote]t be altered, \
-nor can they be duplicated.\
-\>", "Text",
- CellChangeTimes->{{3.7044885804518633`*^9, 3.7044885847071037`*^9}, {
-  3.704488631881062*^9, 3.7044886776909227`*^9}, {3.704488709938313*^9, 
-  3.7044887499014883`*^9}}],
-
-Cell["1. can\[CloseCurlyQuote]t be duplicated", "Text",
- CellChangeTimes->{{3.704488763084537*^9, 3.70448877768687*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"z", "=", "Evaluate"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"Hold", "[", 
-  RowBox[{"z", "[", 
-   RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "Input",
- CellChangeTimes->{{3.7044887812148037`*^9, 3.704488793536625*^9}}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{"Hold", "[", 
   RowBox[{"z", "[", 
    RowBox[{"2", "+", "2"}], "]"}], "]"}]], "Output",
-<<<<<<< HEAD
  CellChangeTimes->{3.7043180106182756`*^9}]
-=======
- CellChangeTimes->{3.704488796856655*^9}]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -80,7 +46,6 @@ Cell[BoxData[{
  RowBox[{"Head", "[", 
   RowBox[{"z", "[", 
    RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "Input",
-<<<<<<< HEAD
  CellChangeTimes->{{3.704318021424509*^9, 3.704318033323783*^9}}],
 
 Cell[BoxData["Unevaluated"], "Output",
@@ -100,31 +65,12 @@ Cell[BoxData[
    RowBox[{"z", "[", 
     RowBox[{"b", ",", "c"}], "]"}], ",", "d"}], "]"}]], "Input",
  CellChangeTimes->{{3.704318076493507*^9, 3.704318086372148*^9}}],
-=======
- CellChangeTimes->{{3.704488808193059*^9, 3.704488817917646*^9}}],
-
-Cell[BoxData["Unevaluated"], "Output",
- CellChangeTimes->{3.704488818527936*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"z", "=", "Sequence"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"Hold", "[", 
-  RowBox[{"a", ",", 
-   RowBox[{"z", "[", 
-    RowBox[{"b", ",", "c"}], "]"}], ",", "d"}], "]"}]}], "Input",
- CellChangeTimes->{{3.704488823555994*^9, 3.704488837398026*^9}}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{"Hold", "[", 
   RowBox[{"a", ",", 
    RowBox[{"z", "[", 
     RowBox[{"b", ",", "c"}], "]"}], ",", "d"}], "]"}]], "Output",
-<<<<<<< HEAD
  CellChangeTimes->{3.704318086890255*^9}]
 }, Open  ]],
 
@@ -150,40 +96,16 @@ Cell[BoxData[
  RowBox[{"Hold", "[", "4", "]"}]], "Output",
  CellChangeTimes->{3.7043181338618717`*^9}]
 }, Open  ]],
-=======
- CellChangeTimes->{3.70448883907207*^9}]
-}, Open  ]],
-
-Cell["There is no way to take away their special properties:", "Text",
- CellChangeTimes->{{3.70448885718853*^9, 3.704488878595887*^9}}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
-<<<<<<< HEAD
  RowBox[{"Attributes", "[", "Evaluate", "]"}]], "Input",
  CellChangeTimes->{{3.70431815134291*^9, 3.704318158748303*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", "Protected", "}"}]], "Output",
  CellChangeTimes->{3.704318158978096*^9}]
-=======
- RowBox[{"Block", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"Evaluate", "=", 
-     RowBox[{"this", " ", "is", " ", "futile"}]}], "}"}], ",", 
-   RowBox[{"Hold", "[", 
-    RowBox[{"Evaluate", "[", 
-     RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.704488910105412*^9, 3.704488927299931*^9}, {
-  3.7044892670103292`*^9, 3.7044892773940477`*^9}}],
-
-Cell[BoxData[
- RowBox[{"Hold", "[", "4", "]"}]], "Output",
- CellChangeTimes->{3.704489277828491*^9}]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -197,7 +119,6 @@ Cell[BoxData[
    RowBox[{"Head", "[", 
     RowBox[{"Unevaluated", "[", 
      RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "]"}]], "Input",
-<<<<<<< HEAD
  CellChangeTimes->{{3.7043182119631643`*^9, 3.70431825999656*^9}}],
 
 Cell[BoxData["Plus"], "Output",
@@ -262,16 +183,6 @@ Cell[BoxData[
 },
 WindowSize->{808, 807},
 WindowMargins->{{Automatic, 306}, {-235, Automatic}},
-=======
- CellChangeTimes->{{3.704489295257914*^9, 3.7044893280196533`*^9}}],
-
-Cell[BoxData["Plus"], "Output",
- CellChangeTimes->{3.704489329478427*^9}]
-}, Open  ]]
-},
-WindowSize->{842, 720},
-WindowMargins->{{288, Automatic}, {Automatic, 355}},
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -286,7 +197,6 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-<<<<<<< HEAD
 Cell[558, 20, 140, 3, 50, "Input"],
 Cell[CellGroupData[{
 Cell[723, 27, 174, 4, 50, "Input"],
@@ -332,30 +242,6 @@ Cell[4447, 167, 86, 2, 32, "Output"]
 Cell[CellGroupData[{
 Cell[4570, 174, 138, 2, 50, "Input"],
 Cell[4711, 178, 87, 2, 65, "Output"]
-=======
-Cell[558, 20, 301, 6, 33, "Text"],
-Cell[862, 28, 120, 1, 33, "Text"],
-Cell[CellGroupData[{
-Cell[1007, 33, 254, 6, 91, "Input"],
-Cell[1264, 41, 152, 4, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1453, 50, 255, 6, 91, "Input"],
-Cell[1711, 58, 80, 1, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1828, 64, 287, 7, 91, "Input"],
-Cell[2118, 73, 186, 5, 32, "Output"]
-}, Open  ]],
-Cell[2319, 81, 135, 1, 33, "Text"],
-Cell[CellGroupData[{
-Cell[2479, 86, 396, 10, 50, "Input"],
-Cell[2878, 98, 100, 2, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3015, 105, 359, 9, 50, "Input"],
-Cell[3377, 116, 73, 1, 65, "Output"]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]]
 }
 ]

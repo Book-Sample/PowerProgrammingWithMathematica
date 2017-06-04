@@ -10,22 +10,14 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-<<<<<<< HEAD
-NotebookDataLength[      5716,        203]
-NotebookOptionsPosition[      4779,        165]
-NotebookOutlinePosition[      5127,        180]
-CellTagsIndexPosition[      5084,        177]
-=======
-NotebookDataLength[      5046,        178]
-NotebookOptionsPosition[      4149,        141]
-NotebookOutlinePosition[      4498,        156]
-CellTagsIndexPosition[      4455,        153]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
+NotebookDataLength[      5700,        202]
+NotebookOptionsPosition[      4766,        164]
+NotebookOutlinePosition[      5111,        179]
+CellTagsIndexPosition[      5068,        176]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-<<<<<<< HEAD
 Cell["\<\
 It specifies that the expression it contains must be matched exactly, without \
 any special interpretation by the pattern matcher.\
@@ -39,38 +31,22 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"Clear", "[", 
    RowBox[{"x", ",", "y"}], "]"}], ";"}], "\[IndentingNewLine]", 
-=======
-
-Cell[CellGroupData[{
-Cell[BoxData[{
- RowBox[{"Clear", "[", 
-  RowBox[{"x", ",", "y"}], "]"}], "\[IndentingNewLine]", 
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
  RowBox[{
   RowBox[{"{", 
    RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
   RowBox[{
    RowBox[{"Verbatim", "[", "x_", "]"}], "\[Rule]", "matched"}]}]}], "Input",
-<<<<<<< HEAD
  CellChangeTimes->{{3.704316683045568*^9, 3.7043167173451147`*^9}}],
-=======
- CellChangeTimes->{{3.704488060075433*^9, 3.704488092693943*^9}}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"x", ",", "matched", ",", "y", ",", "y_"}], "}"}]], "Output",
-<<<<<<< HEAD
  CellChangeTimes->{3.704316717782731*^9}]
-=======
- CellChangeTimes->{3.7044880969961348`*^9}]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
-<<<<<<< HEAD
  RowBox[{"FullForm", "[", "x_", "]"}]], "Input",
  CellChangeTimes->{{3.704316775050482*^9, 3.704316781001648*^9}}],
 
@@ -85,54 +61,6 @@ Cell[BoxData[
    NumberMarks->True],
   FullForm]], "Output",
  CellChangeTimes->{3.704316781288166*^9}]
-=======
- RowBox[{
-  RowBox[{"{", 
-   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
-  RowBox[{"x_", "\[Rule]", "matched"}]}]], "Input",
- CellChangeTimes->{{3.704488114988948*^9, 3.7044881418535137`*^9}}],
-
-Cell[BoxData["matched"], "Output",
- CellChangeTimes->{{3.7044881200199003`*^9, 3.704488144118*^9}}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Replace", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], ",", 
-   RowBox[{"x_", "\[Rule]", "matched"}], ",", 
-   RowBox[{"{", "1", "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.704488153545301*^9, 3.704488236132719*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"matched", ",", "matched", ",", "matched", ",", "matched"}], 
-  "}"}]], "Output",
- CellChangeTimes->{{3.704488218718974*^9, 3.70448823662901*^9}}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"{", 
-   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}], "/.", 
-  RowBox[{"p_Pattern", "\[RuleDelayed]", 
-   RowBox[{"q", "[", 
-    RowBox[{"p", "[", 
-     RowBox[{"[", "1", "]"}], "]"}], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.704488358537612*^9, 3.7044883827376823`*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"x", ",", 
-   RowBox[{"q", "[", "x", "]"}], ",", "y", ",", 
-   RowBox[{"q", "[", "y", "]"}]}], "}"}]], "Output",
- CellChangeTimes->{3.704488384229927*^9}]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -145,37 +73,24 @@ Cell[BoxData[
    RowBox[{"Pattern", "[", 
     RowBox[{"var_", ",", "_"}], "]"}], "\[Rule]", 
    RowBox[{"q", "[", "var", "]"}]}]}]], "Input",
-<<<<<<< HEAD
  CellChangeTimes->{{3.704317149420414*^9, 3.704317174170084*^9}}],
-=======
- CellChangeTimes->{{3.704488448830689*^9, 3.7044884757853117`*^9}}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{
   StyleBox[
-   RowBox[{"Pattern", "::", "patvar"}], "MessageName"], 
-  RowBox[{
-  ":", " "}], "\<\"First element in pattern \
-\[NoBreak]\\!\\(\\*RowBox[{\\\"Pattern\\\", \\\"[\\\", RowBox[{\\\"var_\\\", \
-\\\",\\\", \\\"_\\\"}], \\\"]\\\"}]\\)\[NoBreak] is not a valid pattern name. \
-\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
-ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Pattern/patvar\\\", \
-ButtonNote -> \\\"Pattern::patvar\\\"]\\)\"\>"}]], "Message", "MSG",
-<<<<<<< HEAD
+   RowBox[{"Pattern", "::", "patvar"}], "MessageName"], ":", 
+  " ", "\<\"First element in pattern \[NoBreak]\\!\\(\\*RowBox[{\\\"Pattern\\\
+\", \\\"[\\\", RowBox[{\\\"var_\\\", \\\",\\\", \\\"_\\\"}], \\\"]\\\"}]\\)\
+\[NoBreak] is not a valid pattern name. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Pattern/patvar\\\", ButtonNote -> \
+\\\"Pattern::patvar\\\"]\\)\"\>"}]], "Message", "MSG",
  CellChangeTimes->{3.704317187946563*^9}],
-=======
- CellChangeTimes->{3.704488476402299*^9}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"x", ",", "x_", ",", "y", ",", "y_"}], "}"}]], "Output",
-<<<<<<< HEAD
  CellChangeTimes->{3.704317187958008*^9}]
-=======
- CellChangeTimes->{3.704488476405163*^9}]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -187,25 +102,18 @@ Cell[BoxData[
   RowBox[{
    RowBox[{
     RowBox[{"Verbatim", "[", "Pattern", "]"}], "[", 
-<<<<<<< HEAD
     RowBox[{"var_", 
      RowBox[{"(*", 
       RowBox[{"any", " ", "expression", " ", "variable"}], "*)"}], ",", "_"}],
      "]"}], "\[Rule]", 
    RowBox[{"q", "[", "var", "]"}]}]}]], "Input",
  CellChangeTimes->{{3.7043173425837507`*^9, 3.70431739973223*^9}}],
-=======
-    RowBox[{"var_", ",", "_"}], "]"}], "\[Rule]", 
-   RowBox[{"q", "[", "var", "]"}]}]}]], "Input",
- CellChangeTimes->{{3.704488491967585*^9, 3.70448851993239*^9}}],
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"x", ",", 
    RowBox[{"q", "[", "x", "]"}], ",", "y", ",", 
    RowBox[{"q", "[", "y", "]"}]}], "}"}]], "Output",
-<<<<<<< HEAD
  CellChangeTimes->{3.704317369767503*^9, 3.704317400713995*^9}]
 }, Open  ]],
 
@@ -255,14 +163,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{808, 876},
-WindowMargins->{{Automatic, 88}, {-517, Automatic}},
-=======
- CellChangeTimes->{3.7044885239311123`*^9}]
-}, Open  ]]
-},
-WindowSize->{808, 653},
-WindowMargins->{{Automatic, 302}, {-230, Automatic}},
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
+WindowMargins->{{Automatic, 87}, {0, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -277,7 +178,6 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-<<<<<<< HEAD
 Cell[558, 20, 271, 5, 55, "Text"],
 Cell[CellGroupData[{
 Cell[854, 29, 362, 9, 91, "Input"],
@@ -285,53 +185,28 @@ Cell[1219, 40, 142, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1398, 48, 128, 2, 50, "Input"],
-Cell[1529, 52, 281, 10, 46, "Output"]
+Cell[1529, 52, 281, 10, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1847, 67, 308, 8, 50, "Input"],
-Cell[2158, 77, 569, 11, 23, "Message"],
-Cell[2730, 90, 137, 3, 32, "Output"]
+Cell[2158, 77, 556, 10, 23, "Message"],
+Cell[2717, 89, 137, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2904, 98, 439, 12, 74, "Input"],
-Cell[3346, 112, 215, 5, 32, "Output"]
+Cell[2891, 97, 439, 12, 74, "Input"],
+Cell[3333, 111, 215, 5, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3598, 122, 310, 8, 50, "Input"],
-Cell[3911, 132, 440, 14, 46, "Output"]
+Cell[3585, 121, 310, 8, 50, "Input"],
+Cell[3898, 131, 440, 14, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4388, 151, 241, 6, 50, "Input"],
-Cell[4632, 159, 131, 3, 65, "Output"]
-=======
-Cell[CellGroupData[{
-Cell[580, 22, 341, 8, 91, "Input"],
-Cell[924, 32, 144, 3, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1105, 40, 223, 5, 32, "Input"],
-Cell[1331, 47, 99, 1, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1467, 53, 291, 7, 50, "Input"],
-Cell[1761, 62, 185, 4, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1983, 71, 316, 8, 32, "Input"],
-Cell[2302, 81, 193, 5, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2532, 91, 310, 8, 50, "Input"],
-Cell[2845, 101, 569, 11, 23, "Message"],
-Cell[3417, 114, 137, 3, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[3591, 122, 344, 9, 50, "Input"],
-Cell[3938, 133, 195, 5, 65, "Output"]
->>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
+Cell[4375, 150, 241, 6, 50, "Input"],
+Cell[4619, 158, 131, 3, 32, "Output"]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
+
