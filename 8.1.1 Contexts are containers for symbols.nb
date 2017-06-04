@@ -1,0 +1,1162 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     43733,       1153]
+NotebookOptionsPosition[     37949,        959]
+NotebookOutlinePosition[     39120,        992]
+CellTagsIndexPosition[     38896,        985]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Context", "[", "Plus", "]"}]], "Input",
+ CellChangeTimes->{{3.704756443308385*^9, 3.704756450899783*^9}}],
+
+Cell[BoxData["\<\"System`\"\>"], "Output",
+ CellChangeTimes->{3.704756451282608*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DictionaryLookup", "[", "\"\<backquote\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.704756460244164*^9, 3.704756484371622*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"backquote\"\>", "}"}]], "Output",
+ CellChangeTimes->{{3.704756474439674*^9, 3.704756485559271*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellChangeTimes->{{3.704756542135406*^9, 3.704756547011037*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.7047580609153233`*^9, 3.705177016406739*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", "5"}], ";"}]], "Input",
+ CellChangeTimes->{3.704758079188895*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "y", "]"}]], "Input",
+ CellChangeTimes->{{3.7047567328987837`*^9, 3.704756735548671*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.7047567363186207`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"temp`x", "=", "6"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7047568833469763`*^9, 3.7047568878091803`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"x", ",", "temp`x"}], "}"}]], "Input",
+ CellChangeTimes->{{3.7047568937425737`*^9, 3.704756898208843*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "6"}], "}"}]], "Output",
+ CellChangeTimes->{3.704756898969583*^9, 3.7051770382221203`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Begin", "[", "\"\<temp`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"{", 
+  RowBox[{"x", ",", "Global`x"}], "}"}], "\[IndentingNewLine]", 
+ RowBox[{"End", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.704756901817881*^9, 3.704756909865478*^9}, {
+  3.704756946146377*^9, 3.704756959000011*^9}}],
+
+Cell[BoxData["\<\"temp`\"\>"], "Output",
+ CellChangeTimes->{3.7047569772676983`*^9, 3.705177044049663*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{3.7047569772676983`*^9, 3.7051770440515842`*^9}],
+
+Cell[BoxData["\<\"temp`\"\>"], "Output",
+ CellChangeTimes->{3.7047569772676983`*^9, 3.7051770440534363`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "x"}]], "Input",
+ CellChangeTimes->{{3.704757297548176*^9, 3.704757297764145*^9}}],
+
+Cell["Global`x", "Print", "PrintUsage",
+ CellChangeTimes->{3.7047572989002457`*^9},
+ CellTags->"Info-872429e9-d927-4e15-946f-02f8d2c1626f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "temp`x"}]], "Input",
+ CellChangeTimes->{{3.704757307315506*^9, 3.704757310411359*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["temp`x", "Print", "PrintUsage",
+ CellChangeTimes->{3.704757311240291*^9},
+ CellTags->"Info-e0eb4048-1c12-459a-a175-85075f981e29"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"temp`x", "=", "6"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[temp`x],
+  Editable->False]], "Print",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{3.7047573112677402`*^9, 3.704759099510912*^9},
+ CellTags->"Info-e0eb4048-1c12-459a-a175-85075f981e29"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<temp`\>\"", "]"}], ";", 
+  RowBox[{"Print", "[", "$Context", "]"}], ";", 
+  RowBox[{"Print", "[", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "Global`x", ",", "temp`x"}], "}"}], "]"}], ";", 
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.704757697657336*^9, 3.704757747900813*^9}, 
+   3.7047581768769407`*^9, {3.705177062883844*^9, 3.705177095928959*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"temp`\"\>"], "Print",
+ CellChangeTimes->{
+  3.7047577482836027`*^9, {3.704758073579608*^9, 3.704758083950006*^9}, 
+   3.7047581819253073`*^9, {3.705177077868392*^9, 3.705177096538859*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "5", ",", "6"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.7047577482836027`*^9, {3.704758073579608*^9, 3.704758083950006*^9}, 
+   3.7047581819253073`*^9, {3.705177077868392*^9, 3.705177096539558*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<temp`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Context", "[", "x", "]"}], ",", 
+     RowBox[{"Context", "[", "Global`x", "]"}], ",", 
+     RowBox[{"Context", "[", "temp`x", "]"}]}], "}"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.70475789113857*^9, 3.704757923576971*^9}, {
+  3.7047591546198597`*^9, 3.704759175235012*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Global`\"\>", ",", "\<\"Global`\"\>", ",", "\<\"temp`\"\>"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{{3.704757913590973*^9, 3.704757924192387*^9}, 
+   3.704758086413973*^9, 3.704759102331915*^9, 3.704759176009713*^9, 
+   3.70475930234105*^9}]
+}, Open  ]],
+
+Cell["\<\
+Placing the Begin[\[OpenCurlyDoubleQuote]temp`\[CloseCurlyDoubleQuote]] \
+command on a separate input line gives the behavior one might expect.\
+\>", "Text",
+ CellChangeTimes->{{3.704758705820046*^9, 3.7047587113005943`*^9}, {
+  3.704758869175819*^9, 3.704758909567258*^9}, {3.704758971485827*^9, 
+  3.7047589760692873`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<temp`\>\"", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7047592075027323`*^9, 3.704759214952723*^9}, 
+   3.704759308857628*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellChangeTimes->{{3.704759223073618*^9, 3.704759224842545*^9}}],
+
+Cell[BoxData["\<\"temp`\"\>"], "Output",
+ CellChangeTimes->{3.7047592254645653`*^9, 3.704759311274138*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["x"], "Input",
+ CellChangeTimes->{3.7047593353935127`*^9}],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.704759335572242*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "x", "]"}]], "Input",
+ CellChangeTimes->{{3.704759346120022*^9, 3.704759349237748*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.704759349797024*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Contexts", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.705177146236843*^9, 3.705177149789752*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Algebra`\"\>", ",", "\<\"Algebraics`Private`\"\>", 
+   ",", "\<\"Algebra`Polynomial`\"\>", 
+   ",", "\<\"Algebra`PolynomialPowerMod`\"\>", 
+   ",", "\<\"AlphaIntegration`\"\>", ",", "\<\"AlphaIntegration`Dump`\"\>", 
+   ",", "\<\"Assumptions`\"\>", ",", "\<\"AssumptionsDump`\"\>", 
+   ",", "\<\"AugmentedData`\"\>", ",", "\<\"BinningUtilities`\"\>", 
+   ",", "\<\"BooleanAlgebra`Private`\"\>", ",", "\<\"BoxForm`\"\>", 
+   ",", "\<\"BoxFormat`\"\>", ",", "\<\"BrowserCategoryLoad`\"\>", 
+   ",", "\<\"CalculateScan`Packages`Get1DPolarPlotRange`\"\>", 
+   ",", "\<\"CalculateScan`Packages`Get2DRange`\"\>", 
+   ",", "\<\"CalculateUtilities`SuggestPlotRanges`Private`\"\>", 
+   ",", "\<\"Calendar`\"\>", ",", "\<\"Calendar`Legacy`\"\>", 
+   ",", "\<\"CCodeGenerator`\"\>", ",", "\<\"CCompilerDriver`\"\>", 
+   ",", "\<\"Charting`\"\>", ",", "\<\"CloudObject`\"\>", 
+   ",", "\<\"CloudObject`Internal`\"\>", ",", "\<\"CloudObject`Private`\"\>", 
+   ",", "\<\"CloudObject`Utilities`\"\>", ",", "\<\"CloudSystem`\"\>", 
+   ",", "\<\"CloudSystem`Private`\"\>", 
+   ",", "\<\"ClusterAnalysis`FindClusters`\"\>", ",", "\<\"Compile`\"\>", 
+   ",", "\<\"CompileDefinition`Private`\"\>", ",", "\<\"Compiler`\"\>", 
+   ",", "\<\"ComplexAnalysis`\"\>", 
+   ",", "\<\"ComputationalGeometry`Dump`\"\>", 
+   ",", "\<\"ComputationalGeometry`Methods`\"\>", 
+   ",", "\<\"ComputationalGeometry`Surface`\"\>", ",", "\<\"Conditional`\"\>",
+    ",", "\<\"Control`\"\>", ",", "\<\"Control`Conxns`\"\>", 
+   ",", "\<\"Control`Delay`\"\>", ",", "\<\"Control`DEqns`\"\>", 
+   ",", "\<\"Control`DiffGeom`\"\>", ",", "\<\"Control`Misc`\"\>", 
+   ",", "\<\"Control`NCS`\"\>", ",", "\<\"Control`Patterns`\"\>", 
+   ",", "\<\"Control`PCS`\"\>", ",", "\<\"Control`PID`\"\>", 
+   ",", "\<\"Control`PlotUtilities`\"\>", ",", "\<\"Control`PolePlace`\"\>", 
+   ",", "\<\"Control`Sim`\"\>", ",", "\<\"ControlSystems`\"\>", 
+   ",", "\<\"Control`Typesetting`\"\>", ",", "\<\"Control`Utilities`\"\>", 
+   ",", "\<\"Conversion`\"\>", ",", "\<\"Convert`TeX`\"\>", 
+   ",", "\<\"CUDAInformation`\"\>", ",", "\<\"Data`\"\>", 
+   ",", "\<\"Database`\"\>", ",", "\<\"DatabaseLink`\"\>", 
+   ",", "\<\"DatabaseLink`Information`\"\>", ",", "\<\"DataPaclets`\"\>", 
+   ",", "\<\"DataPaclets`CalendarDataDump`\"\>", 
+   ",", "\<\"DataPaclets`ColorData`\"\>", 
+   ",", "\<\"DataPaclets`CommonDump`\"\>", 
+   ",", "\<\"DataPaclets`Dictionary`\"\>", 
+   ",", "\<\"DataPaclets`WordConvenienceFunctionsDump`\"\>", 
+   ",", "\<\"Dataset`\"\>", ",", "\<\"DateAndTime`\"\>", 
+   ",", "\<\"Debug`\"\>", ",", "\<\"Debugger`\"\>", 
+   ",", "\<\"Deconvolve`\"\>", ",", "\<\"Developer`\"\>", 
+   ",", "\<\"DeviceFramework`\"\>", ",", "\<\"Devices`\"\>", 
+   ",", "\<\"Devices`Audio`\"\>", ",", "\<\"Devices`Developer`\"\>", 
+   ",", "\<\"Devices`DeviceAPI`DeviceDump`\"\>", ",", "\<\"Discrete`\"\>", 
+   ",", "\<\"Discrete`DivisorSumDump`\"\>", 
+   ",", "\<\"DiscreteMath`DecisionDiagram`\"\>", 
+   ",", "\<\"Documentation`\"\>", ",", "\<\"DragAndDrop`\"\>", 
+   ",", "\<\"DrawPolarAxes`\"\>", ",", "\<\"DSolve`\"\>", 
+   ",", "\<\"DynamicDump`\"\>", ",", "\<\"DynamicGeoGraphics`\"\>", 
+   ",", "\<\"Embedded`\"\>", ",", "\<\"EntityFramework`\"\>", 
+   ",", "\<\"EntityFramework`Private`\"\>", ",", "\<\"EquationalLogic`\"\>", 
+   ",", "\<\"EquationalLogic`Private`\"\>", ",", "\<\"Experimental`\"\>", 
+   ",", "\<\"Experimental`NumericalFunction`\"\>", ",", "\<\"Explore`\"\>", 
+   ",", "\<\"Explore`ExploreDump`\"\>", ",", "\<\"ExternalService`\"\>", 
+   ",", "\<\"ExternalService`MailSettings`\"\>", 
+   ",", "\<\"ExternalService`Security`\"\>", 
+   ",", "\<\"ExternalService`URIToolsDump`\"\>", 
+   ",", "\<\"ExternalService`Utilities`\"\>", ",", "\<\"Extras`\"\>", 
+   ",", "\<\"Factor`\"\>", ",", "\<\"FE`\"\>", 
+   ",", "\<\"FE`PredictiveInterfaceDump`\"\>", ",", "\<\"FE`Private`\"\>", 
+   ",", "\<\"FEPrivate`\"\>", ",", "\<\"FileFormatDump`\"\>", 
+   ",", "\<\"Finance`Solvers`\"\>", ",", "\<\"FindMinimum`\"\>", 
+   ",", "\<\"FindRoot`\"\>", ",", "\<\"FittedModels`\"\>", 
+   ",", "\<\"FittedModels`FittedModelDump`\"\>", 
+   ",", "\<\"FittedModels`FittedModelDump`Private`\"\>", 
+   ",", "\<\"FittedModels`GLMDump`\"\>", 
+   ",", "\<\"FittedModels`LinearFitDump`\"\>", 
+   ",", "\<\"FittedModels`NonlinearFitDump`\"\>", ",", "\<\"Format`\"\>", 
+   ",", "\<\"FormulaData`Private`\"\>", ",", "\<\"FrontEnd`\"\>", 
+   ",", "\<\"FrontEnd`Private`\"\>", ",", "\<\"FrontEnd`WolframCloud`\"\>", 
+   ",", "\<\"GenerateConditions`\"\>", ",", "\<\"GeoGraphics`\"\>", 
+   ",", "\<\"GeometricFunctions`\"\>", 
+   ",", "\<\"GeometricFunctions`BernsteinBasis`\"\>", 
+   ",", "\<\"GeometricFunctions`BSplineBasis`\"\>", 
+   ",", "\<\"GeometricFunctions`CardinalBSplineBasis`\"\>", 
+   ",", "\<\"Geometry`\"\>", ",", "\<\"Geometry`BSPTree`\"\>", 
+   ",", "\<\"Geometry`Developer`\"\>", ",", "\<\"Geometry`Mesh`\"\>", 
+   ",", "\<\"Geometry`Spatial`\"\>", ",", "\<\"GIS`\"\>", 
+   ",", "\<\"GIS`Debug`\"\>", ",", "\<\"GIS`DMSDump`\"\>", 
+   ",", "\<\"GIS`GeoServerDump`\"\>", ",", "\<\"Global`\"\>", 
+   ",", "\<\"GraphComputation`\"\>", ",", "\<\"Graphics`\"\>", 
+   ",", "\<\"GraphicsArray`\"\>", ",", "\<\"Graphics`Glyphs`\"\>", 
+   ",", "\<\"Graphics`Glyphs`GlyphsDump`\"\>", 
+   ",", "\<\"Graphics`Legacy`\"\>", ",", "\<\"Graphics`ListParserDump`\"\>", 
+   ",", "\<\"Graphics`MapPlotDump`\"\>", ",", "\<\"Graphics`Mesh`\"\>", 
+   ",", "\<\"Graphics`Mesh`Developer`\"\>", ",", "\<\"Graphics`Mesh`FEM`\"\>",
+    ",", "\<\"Graphics`Mesh`SoS`\"\>", 
+   ",", "\<\"Graphics`PerformanceTuningDump`\"\>", 
+   ",", "\<\"Graphics`PolygonUtils`\"\>", 
+   ",", "\<\"Graphics`PolygonUtils`Developer`\"\>", 
+   ",", "\<\"Graphics`Region`\"\>", ",", "\<\"Graphics`Units`\"\>", 
+   ",", "\<\"GridDump`\"\>", ",", "\<\"GroebnerBasis`\"\>", 
+   ",", "\<\"GroebnerBasis`GroebnerWalk`\"\>", ",", "\<\"GroebnerGCD`\"\>", 
+   ",", "\<\"GroupTheory`GroupCountFunctionsDump`\"\>", 
+   ",", "\<\"GroupTheory`PermutationGroups`\"\>", 
+   ",", "\<\"GroupTheory`PermutationGroupsDump`\"\>", 
+   ",", "\<\"GroupTheory`PermutationGroups`Private`\"\>", 
+   ",", "\<\"GroupTheory`Symmetries`\"\>", ",", "\<\"GroupTheory`Tools`\"\>", 
+   ",", "\<\"HierarchicalClustering`\"\>", ",", "\<\"Histogram`\"\>", 
+   ",", "\<\"Holonomic`\"\>", ",", "\<\"Holonomic`Developer`\"\>", 
+   ",", "\<\"Holonomic`Private`\"\>", ",", "\<\"HTTPClient`\"\>", 
+   ",", "\<\"HTTPClient`CURLInfo`\"\>", 
+   ",", "\<\"HTTPClient`CURLInfo`Private`\"\>", 
+   ",", "\<\"HTTPClient`CURLLink`\"\>", 
+   ",", "\<\"HTTPClient`CURLLink`Private`\"\>", 
+   ",", "\<\"HTTPClient`OAuth`Private`\"\>", 
+   ",", "\<\"HTTPClient`Private`\"\>", ",", "\<\"HypergeometricLogDump`\"\>", 
+   ",", "\<\"Iconize`\"\>", ",", "\<\"Image`\"\>", 
+   ",", "\<\"Image`ArithmeticOperationsDump`\"\>", 
+   ",", "\<\"Image`ColorOperationsDump`\"\>", 
+   ",", "\<\"Image`CompositionOperationsDump`\"\>", 
+   ",", "\<\"Image`ExternalOCRDump`\"\>", ",", "\<\"Image`FilteringDump`\"\>",
+    ",", "\<\"Image`ImageDump`\"\>", ",", "\<\"Image`ImportExportDump`\"\>", 
+   ",", "\<\"Image`InteractiveImageDump`\"\>", ",", "\<\"Image`ITK`\"\>", 
+   ",", "\<\"Image`LocalProcessingDump`\"\>", 
+   ",", "\<\"Image`MatricesDump`\"\>", ",", "\<\"Image`MeasurementsDump`\"\>",
+    ",", "\<\"Image`MorphologicalOperationsDump`\"\>", 
+   ",", "\<\"Image`PatternRecognitionDump`\"\>", 
+   ",", "\<\"Image`RegistrationDump`\"\>", 
+   ",", "\<\"Image`SegmentationDump`\"\>", 
+   ",", "\<\"Image`SpatialOperationsDump`\"\>", 
+   ",", "\<\"Image`StatisticalDescriptionsDump`\"\>", 
+   ",", "\<\"ImageTransformation`\"\>", ",", "\<\"Image`TransformsDump`\"\>", 
+   ",", "\<\"Image`Utilities`\"\>", ",", "\<\"IMAQ`\"\>", 
+   ",", "\<\"IMAQ`Driver`\"\>", ",", "\<\"IMAQ`Utilities`\"\>", 
+   ",", "\<\"ImportExport`\"\>", ",", "\<\"ImportExport`Encodings`\"\>", 
+   ",", "\<\"ImportExport`FileUtilities`\"\>", 
+   ",", "\<\"ImportExport`Private`\"\>", ",", "\<\"Inpaint`\"\>", 
+   ",", "\<\"Integrate`\"\>", ",", "\<\"Integrate`Elliptic`\"\>", 
+   ",", "\<\"Integrate`ImproperDump`\"\>", 
+   ",", "\<\"Integrate`NLtheoremDump`\"\>", ",", "\<\"Internal`\"\>", 
+   ",", "\<\"Internal`MWASymbols`\"\>", 
+   ",", "\<\"Internal`ProcessEquations`\"\>", 
+   ",", "\<\"java`util`GregorianCalendar`\"\>", ",", "\<\"JLink`\"\>", 
+   ",", "\<\"JLink`Information`\"\>", ",", "\<\"JSONTools`\"\>", 
+   ",", "\<\"Language`\"\>", ",", "\<\"Legending`\"\>", 
+   ",", "\<\"LibraryLink`\"\>", ",", "\<\"Limit`\"\>", 
+   ",", "\<\"LinearAlgebra`\"\>", ",", "\<\"LinearAlgebra`BLAS`\"\>", 
+   ",", "\<\"LinearAlgebra`DeconvolveDump`\"\>", 
+   ",", "\<\"LinearAlgebra`Fourier`\"\>", 
+   ",", "\<\"LinearAlgebra`Implementations`\"\>", 
+   ",", "\<\"LinearAlgebra`Internal`\"\>", 
+   ",", "\<\"LinearAlgebra`LAPACK`\"\>", 
+   ",", "\<\"LinearAlgebra`LinearSolve`\"\>", 
+   ",", "\<\"LinearAlgebra`MatrixExp`\"\>", 
+   ",", "\<\"LinearAlgebra`Private`\"\>", ",", "\<\"LocalObjects`\"\>", 
+   ",", "\<\"Manipulate`\"\>", ",", "\<\"Manipulate`Dump`\"\>", 
+   ",", "\<\"MarkovProcesses`\"\>", ",", "\<\"MathLink`\"\>", 
+   ",", "\<\"MathLink`Information`\"\>", ",", "\<\"MatrixFunction`\"\>", 
+   ",", "\<\"MatrixLog`\"\>", ",", "\<\"MatrixPower`\"\>", 
+   ",", "\<\"MatrixSqrt`\"\>", ",", "\<\"Method`\"\>", ",", "\<\"MLFS`\"\>", 
+   ",", "\<\"MultivariateResultant`\"\>", ",", "\<\"MUnit`\"\>", 
+   ",", "\<\"MUnit`Package`\"\>", ",", "\<\"NDSolve`\"\>", 
+   ",", "\<\"NDSolve`Chasing`\"\>", 
+   ",", "\<\"NDSolve`Chasing`Implementation`\"\>", 
+   ",", "\<\"NDSolve`EventLocator`\"\>", ",", "\<\"NDSolve`FEM`\"\>", 
+   ",", "\<\"NDSolve`FEM`FEMErrorCheckingDump`\"\>", 
+   ",", "\<\"NDSolve`FEM`ShapeFunctionsDump`\"\>", 
+   ",", "\<\"NDSolve`FiniteDifferenceDerivativeFunction`\"\>", 
+   ",", "\<\"NDSolve`MethodOfLines`\"\>", 
+   ",", "\<\"NDSolve`MultistepDump`\"\>", ",", "\<\"NDSolve`Newton`\"\>", 
+   ",", "\<\"NDSolve`ProcessEquations`\"\>", 
+   ",", "\<\"NDSolve`Shooting`Implementation`\"\>", 
+   ",", "\<\"NDSolve`StateData`\"\>", ",", "\<\"NETLink`\"\>", 
+   ",", "\<\"NETLink`Information`\"\>", ",", "\<\"Network`GraphPlot`\"\>", 
+   ",", "\<\"NeuralNetwork`\"\>", ",", "\<\"NIntegrate`\"\>", 
+   ",", "\<\"NIntegrate`OscNInt`\"\>", ",", "\<\"NMinimize`\"\>", 
+   ",", "\<\"NotebookCompatibility`\"\>", ",", "\<\"NotebookTemplating`\"\>", 
+   ",", "\<\"NotebookTools`\"\>", ",", "\<\"NotebookTools`ControlsDump`\"\>", 
+   ",", "\<\"NotebookTools`UtilitiesDump`\"\>", ",", "\<\"NProduct`\"\>", 
+   ",", "\<\"NRoots`\"\>", ",", "\<\"NRoots`Private`\"\>", 
+   ",", "\<\"NSolve`\"\>", ",", "\<\"NSum`\"\>", ",", "\<\"NumberTheory`\"\>",
+    ",", "\<\"NumberTheory`AESDump`\"\>", 
+   ",", "\<\"NumberTheory`RandomPrimeDump`\"\>", 
+   ",", "\<\"NumericalMath`\"\>", ",", "\<\"OpenCLInformation`\"\>", 
+   ",", "\<\"Optimization`\"\>", ",", "\<\"Optimization`FindFit`\"\>", 
+   ",", "\<\"Optimization`LinearProgramming`\"\>", 
+   ",", "\<\"Optimization`LinearProgramming`Private`\"\>", 
+   ",", "\<\"Optimization`LineSearch`\"\>", 
+   ",", "\<\"Optimization`MPSData`\"\>", ",", "\<\"OutputSizeLimit`\"\>", 
+   ",", "\<\"OutputSizeLimit`Dump`\"\>", ",", "\<\"Package`\"\>", 
+   ",", "\<\"PacletManager`\"\>", 
+   ",", "\<\"PacletManager`Collection`Private`\"\>", 
+   ",", "\<\"PacletManager`Documentation`Private`\"\>", 
+   ",", "\<\"PacletManager`Extension`Private`\"\>", 
+   ",", "\<\"PacletManager`Information`\"\>", 
+   ",", "\<\"PacletManager`LayoutDocsCollection`Private`\"\>", 
+   ",", "\<\"PacletManager`Manager`Private`\"\>", 
+   ",", "\<\"PacletManager`MemoryCollection`Private`\"\>", 
+   ",", "\<\"PacletManager`Package`\"\>", 
+   ",", "\<\"PacletManager`Packer`Private`\"\>", 
+   ",", "\<\"PacletManager`Paclet`Private`\"\>", 
+   ",", "\<\"PacletManager`Private`\"\>", 
+   ",", "\<\"PacletManager`Services`Private`\"\>", 
+   ",", "\<\"PacletManager`Utils`Private`\"\>", 
+   ",", "\<\"PacletManager`Zip`Private`\"\>", ",", "\<\"PacletTools`\"\>", 
+   ",", "\<\"Parallel`Debug`\"\>", ",", "\<\"Parallel`Developer`\"\>", 
+   ",", "\<\"Parallel`Information`\"\>", ",", "\<\"Parallel`Palette`\"\>", 
+   ",", "\<\"Parallel`Palette`Private`\"\>", ",", "\<\"Parallel`Private`\"\>",
+    ",", "\<\"Parallel`Protected`\"\>", ",", "\<\"Parallel`Settings`\"\>", 
+   ",", "\<\"Parallel`Static`\"\>", ",", "\<\"Periodic`\"\>", 
+   ",", "\<\"Periodic`Private`\"\>", ",", "\<\"PlanetaryAstronomy`\"\>", 
+   ",", "\<\"PlanetaryAstronomy`Private`\"\>", ",", "\<\"Predictions`\"\>", 
+   ",", "\<\"Predictions`Private`\"\>", ",", "\<\"PredictionStartupDump`\"\>",
+    ",", "\<\"PredictiveInterface`\"\>", 
+   ",", "\<\"PredictiveInterfaceDump`\"\>", 
+   ",", "\<\"PredictiveInterfaceLoader`Private`\"\>", ",", "\<\"Product`\"\>",
+    ",", "\<\"Quantifier`\"\>", ",", "\<\"QuantityArray`\"\>", 
+   ",", "\<\"QuantityUnits`\"\>", ",", "\<\"QuantityUnits`Private`\"\>", 
+   ",", "\<\"Random`\"\>", ",", "\<\"Random`Private`\"\>", 
+   ",", "\<\"RandomProcesses`\"\>", ",", "\<\"RandomProcesses`Library`\"\>", 
+   ",", "\<\"RandomProcesses`Library`Dump`\"\>", 
+   ",", "\<\"RandomProcesses`MarkovProcessUtilities`\"\>", 
+   ",", "\<\"RandomProcesses`Simulation`\"\>", 
+   ",", "\<\"RandomProcesses`TimeSeriesCommon`\"\>", 
+   ",", "\<\"RandomProcesses`Utilities`\"\>", 
+   ",", "\<\"RandomProcesses`Utilities`BuildTimeUtilitiesDump`\"\>", 
+   ",", "\<\"RawArray`\"\>", ",", "\<\"Reduce`\"\>", ",", "\<\"Region`\"\>", 
+   ",", "\<\"Region`Mesh`\"\>", ",", "\<\"Region`Mesh`MarchingTables`\"\>", 
+   ",", "\<\"Region`Mesh`Utilities`\"\>", ",", "\<\"Region`Private`\"\>", 
+   ",", "\<\"RegularChains`Private`\"\>", ",", "\<\"Reliability`Library`\"\>",
+    ",", "\<\"ResourceLocator`\"\>", ",", "\<\"ResourceLocator`Private`\"\>", 
+   ",", "\<\"RomanNumerals`\"\>", ",", "\<\"RootReduce`Private`\"\>", 
+   ",", "\<\"RootsDump`\"\>", ",", "\<\"RSolve`\"\>", 
+   ",", "\<\"RuntimeTools`\"\>", ",", "\<\"RuntimeTools`Dump`\"\>", 
+   ",", "\<\"Semantic`AmbiguityDump`\"\>", ",", "\<\"Semantic`PLIDump`\"\>", 
+   ",", "\<\"SequenceLimit`\"\>", ",", "\<\"Series`Private`\"\>", 
+   ",", "\<\"Signal`\"\>", ",", "\<\"Signal`FilterDesignDump`\"\>", 
+   ",", "\<\"Signal`FilteringDump`\"\>", ",", "\<\"Signal`FiltersDump`\"\>", 
+   ",", "\<\"Signal`Resampling`\"\>", ",", "\<\"SimilarityScoreMatrices`\"\>",
+    ",", "\<\"Simplify`\"\>", ",", "\<\"Simplify`Private`\"\>", 
+   ",", "\<\"Socket`\"\>", ",", "\<\"Solve`\"\>", ",", "\<\"Sound`\"\>", 
+   ",", "\<\"Sound`SoundDump`\"\>", ",", "\<\"SparseArray`\"\>", 
+   ",", "\<\"SparseArray`Private`\"\>", 
+   ",", "\<\"SparseArray`SparseBlockArray`\"\>", 
+   ",", "\<\"SpecialFunctions`\"\>", ",", "\<\"SpecialFunctions`Private`\"\>",
+    ",", "\<\"Statistics`\"\>", ",", "\<\"Statistics`Compatibility`\"\>", 
+   ",", "\<\"Statistics`DataDistributionUtilities`\"\>", 
+   ",", "\<\"Statistics`Library`\"\>", 
+   ",", "\<\"Statistics`QuantityUtilities`\"\>", 
+   ",", "\<\"Statistics`RandomMatrices`\"\>", 
+   ",", "\<\"Statistics`SurvivalAnalysisTools`\"\>", 
+   ",", "\<\"Statistics`SurvivalDistributionDump`\"\>", 
+   ",", "\<\"Statistics`SurvivalModelFitDump`\"\>", 
+   ",", "\<\"Statistics`SurvivalModelFitDump`Private`\"\>", 
+   ",", "\<\"Statistics`SurvivalModelFitDump`Private`$ExportedSymbolse`\"\>", 
+   ",", "\<\"Statistics`Utilities`\"\>", ",", "\<\"StochasticCalculus`\"\>", 
+   ",", "\<\"Stream`\"\>", ",", "\<\"Streaming`\"\>", 
+   ",", "\<\"StringPattern`\"\>", ",", "\<\"StringPattern`Dump`\"\>", 
+   ",", "\<\"StringPattern`Lexer`\"\>", ",", "\<\"StructuredArray`\"\>", 
+   ",", "\<\"StructureDetection`\"\>", ",", "\<\"StyleManager`\"\>", 
+   ",", "\<\"Sum`\"\>", ",", "\<\"SurfaceGraphics`\"\>", 
+   ",", "\<\"SurfaceGraphics`Methods`\"\>", ",", "\<\"SymbolicTensors`\"\>", 
+   ",", "\<\"System`\"\>", ",", "\<\"System`BesselParamDerivativesDump`\"\>", 
+   ",", "\<\"System`BinaryReadDump`\"\>", 
+   ",", "\<\"System`CharacterFunctionsDump`\"\>", 
+   ",", "\<\"System`CompileDump`\"\>", 
+   ",", "\<\"System`ComplexDynamicsDump`\"\>", 
+   ",", "\<\"System`ComplexExpand`\"\>", 
+   ",", "\<\"System`Convert`BitmapDump`\"\>", 
+   ",", "\<\"System`Convert`CommonDump`\"\>", 
+   ",", "\<\"System`Convert`CSSDump`\"\>", 
+   ",", "\<\"System`ConvertersDump`\"\>", 
+   ",", "\<\"System`ConvertersDump`Utilities`\"\>", 
+   ",", "\<\"System`ConvertersDump`Utilities`Private`\"\>", 
+   ",", "\<\"System`Convert`HTMLDump`\"\>", 
+   ",", "\<\"System`Convert`MathMLDump`\"\>", 
+   ",", "\<\"System`Convert`MovieDump`\"\>", 
+   ",", "\<\"System`Convert`NewickDump`\"\>", 
+   ",", "\<\"System`Convert`TableDump`\"\>", 
+   ",", "\<\"System`Convert`TeXDump`\"\>", 
+   ",", "\<\"System`Convert`TeXImportDump`\"\>", 
+   ",", "\<\"System`Convert`TextDump`\"\>", ",", "\<\"System`CrossDump`\"\>", 
+   ",", "\<\"System`DateObjectDump`\"\>", 
+   ",", "\<\"System`DateStringDump`\"\>", ",", "\<\"System`Dump`\"\>", 
+   ",", "\<\"System`Dump`CommonPatterns`\"\>", 
+   ",", "\<\"System`Dump`GeoLocationDump`\"\>", 
+   ",", "\<\"System`Dump`IMAQDump`\"\>", 
+   ",", "\<\"System`Dump`ParameterValidation`\"\>", 
+   ",", "\<\"System`Environment`\"\>", ",", "\<\"System`FEDump`\"\>", 
+   ",", "\<\"System`FileExportListDump`\"\>", 
+   ",", "\<\"System`GeoGraphicsDump`\"\>", ",", "\<\"System`InfoDump`\"\>", 
+   ",", "\<\"System`InputOutput`\"\>", 
+   ",", "\<\"System`IntegerPartitionsDump`\"\>", 
+   ",", "\<\"System`InterpolatingFunction`\"\>", 
+   ",", "\<\"System`LanguageEnhancements`\"\>", 
+   ",", "\<\"System`Parallel`\"\>", ",", "\<\"System`PowerReduceDump`\"\>", 
+   ",", "\<\"System`Private`\"\>", ",", "\<\"System`SeriesDump`\"\>", 
+   ",", "\<\"System`Utilities`\"\>", ",", "\<\"TableView`\"\>", 
+   ",", "\<\"temp`\"\>", ",", "\<\"Templating`\"\>", 
+   ",", "\<\"TemporalData`\"\>", ",", "\<\"TemporalData`Utilities`\"\>", 
+   ",", "\<\"Themes`\"\>", ",", "\<\"TreeBrowse`\"\>", 
+   ",", "\<\"Typeset`\"\>", ",", "\<\"Utilities`URLTools`\"\>", 
+   ",", "\<\"ValueTrack`\"\>", ",", "\<\"Visualization`\"\>", 
+   ",", "\<\"Visualization`Core`\"\>", 
+   ",", "\<\"Visualization`Interpolation`\"\>", 
+   ",", "\<\"Visualization`LegendsDump`\"\>", 
+   ",", "\<\"Visualization`Utilities`\"\>", 
+   ",", "\<\"Visualization`VectorFields`\"\>", 
+   ",", "\<\"Visualization`VectorFields`VectorFieldsDump`\"\>", 
+   ",", "\<\"Wavelets`\"\>", ",", "\<\"Wavelets`LiftingFilter`\"\>", 
+   ",", "\<\"Wavelets`WaveletData`\"\>", 
+   ",", "\<\"Wavelets`WaveletListPlot`\"\>", 
+   ",", "\<\"Wavelets`WaveletPlot2D`\"\>", 
+   ",", "\<\"Wavelets`WaveletScalogram`\"\>", 
+   ",", "\<\"Wavelets`WaveletUtilities`\"\>", ",", "\<\"WebPredictions`\"\>", 
+   ",", "\<\"WebPredictions`Private`\"\>", ",", "\<\"WebServices`\"\>", 
+   ",", "\<\"WebServices`Information`\"\>", 
+   ",", "\<\"WolframAlphaClient`Private`\"\>", ",", "\<\"WrappersDump`\"\>", 
+   ",", "\<\"WSMLink`\"\>", ",", "\<\"WSTP`ServiceDiscovery`\"\>", 
+   ",", "\<\"XML`\"\>", ",", "\<\"XML`MathML`\"\>", 
+   ",", "\<\"XML`MathML`Symbols`\"\>", ",", "\<\"XML`NotebookML`\"\>", 
+   ",", "\<\"XML`Parser`\"\>", ",", "\<\"XML`RSS`\"\>", 
+   ",", "\<\"XML`SVG`\"\>", ",", "\<\"$CellContext`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7051771501914177`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"End", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.705177196734663*^9, 3.7051771984367447`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"End", "::", "noctx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"No previous context defined. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/End/noctx\\\", ButtonNote -> \
+\\\"End::noctx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705177199112629*^9}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.7051771991141777`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Begin", "[", "\"\<apple`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7051772155504103`*^9, 3.70517723073997*^9}}],
+
+Cell[BoxData["\<\"apple`\"\>"], "Output",
+ CellChangeTimes->{3.7051772316918907`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"End", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7051772334819*^9, 3.70517723469508*^9}}],
+
+Cell[BoxData["\<\"apple`\"\>"], "Output",
+ CellChangeTimes->{3.705177235012908*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ContextPath"], "Input",
+ CellChangeTimes->{{3.705177737276189*^9, 3.705177741910708*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CloudObjectLoader`\"\>", ",", "\<\"StreamingLoader`\"\>", 
+   ",", "\<\"IconizeLoader`\"\>", ",", "\<\"PacletManager`\"\>", 
+   ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.705177742423849*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Global`I", "=", "2"}]], "Input",
+ CellChangeTimes->{{3.705178125571206*^9, 3.705178142551095*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Global`I", "::", "shdw"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"I\\\\\\\"\\\"}]\\)\[NoBreak] appears \
+in multiple contexts \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\
+\"Global`\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\"System`\\\\\\\"\\\"}], \
+\\\"}\\\"}]\\)\[NoBreak]; definitions in context \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"Global`\\\\\\\"\\\"}]\\)\[NoBreak] may \
+shadow or be shadowed by other definitions. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/shdw\\\", ButtonNote -> \
+\\\"Global`I::shdw\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705178143148242*^9}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.705178143149481*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "*`I"}]], "Input",
+ CellChangeTimes->{{3.70517814738278*^9, 3.705178150567127*^9}}],
+
+Cell[BoxData[{
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["System`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["System`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["I",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info-9339baa5-86e2-4c59-9bad-eec1b4ae1827", {"I", "System`"}},
+          ButtonNote->"System`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.95]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]], "\n", 
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["Global`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["Global`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["I",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info-9339baa5-86e2-4c59-9bad-eec1b4ae1827", {"I", "Global`"}},
+          ButtonNote->"Global`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.95]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]}], "Print", "InfoCell",
+ CellChangeTimes->{3.705178151260206*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"I", "^", "2"}]], "Input",
+ CellChangeTimes->{{3.7051781666244707`*^9, 3.705178168269775*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellChangeTimes->{3.705178170598673*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"System`I", "^", "2"}]], "Input",
+ CellChangeTimes->{{3.705178175989965*^9, 3.705178184871338*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellChangeTimes->{3.7051781855720673`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Global`I", "^", "2"}]], "Input",
+ CellChangeTimes->{{3.705178187288493*^9, 3.705178192839182*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.7051781935880833`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<Global`\>\"", "]"}], ";", 
+  RowBox[{"i", "=", "2"}], ";", 
+  RowBox[{"Print", "[", 
+   RowBox[{"i", "^", "2"}], "]"}], ";", 
+  RowBox[{"End", "[", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7051782037026577`*^9, 3.7051783008706417`*^9}, {
+  3.7051784149975157`*^9, 3.705178424578158*^9}}],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->{{3.705178293358177*^9, 3.705178301952829*^9}, {
+  3.705178417800387*^9, 3.705178426444579*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Global`"}]], "Input",
+ CellChangeTimes->{{3.705178432879698*^9, 3.705178438858906*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Information", "::", "notfound"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"Global`\\\\\\\"\\\"}]\\)\[NoBreak] not \
+found. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/notfound\\\", ButtonNote -> \
+\\\"Information::notfound\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705178439593462*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "Global`"}]], "Input",
+ CellChangeTimes->{{3.7051784433688507`*^9, 3.705178456947068*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Information", "::", "notfound"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"Global`\\\\\\\"\\\"}]\\)\[NoBreak] not \
+found. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/notfound\\\", ButtonNote -> \
+\\\"Information::notfound\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.7051784473719*^9, 3.7051784577305727`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Global`i(*it happened*)"}]], "Input",
+ CellChangeTimes->{{3.705178479486236*^9, 3.705178495473927*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`i", "Print", "PrintUsage",
+ CellChangeTimes->{3.705178484258852*^9},
+ CellTags->"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{"i", "=", "2"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`i],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.705178484282508*^9},
+ CellTags->"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "I", "]"}]], "Input",
+ CellChangeTimes->{{3.705178573243726*^9, 3.7051785761933737`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Clear", "::", "wrsym"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\[ImaginaryI]\\\"}]\\)\[NoBreak] is Protected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/wrsym\\\", \
+ButtonNote -> \\\"Clear::wrsym\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705178578145505*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "I", "]"}]], "Input",
+ CellChangeTimes->{{3.7051785787598677`*^9, 3.705178585649262*^9}}],
+
+Cell[BoxData["\<\"System`\"\>"], "Output",
+ CellChangeTimes->{3.705178585977386*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "Global`I", "]"}]], "Input",
+ CellChangeTimes->{{3.7051785918343897`*^9, 3.7051786041361094`*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.705178604827441*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Remove", "[", "I", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Context", "[", "I", "]"}]}], "Input",
+ CellChangeTimes->{{3.7051786148201733`*^9, 3.705178622489229*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Remove", "::", "rmlck"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\[ImaginaryI]\\\"}]\\)\[NoBreak] is Locked and \
+cannot be removed. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\
+\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Remove/rmlck\\\", ButtonNote -> \
+\\\"Remove::rmlck\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705178623577335*^9}],
+
+Cell[BoxData["\<\"System`\"\>"], "Output",
+ CellChangeTimes->{3.705178623579487*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "I", "]"}]], "Input",
+ CellChangeTimes->{{3.705178628846664*^9, 3.705178633863098*^9}}],
+
+Cell[BoxData["\<\"System`\"\>"], "Output",
+ CellChangeTimes->{3.7051786346167088`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "\"\<Global`I\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705178635331422*^9, 3.7051786528807087`*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.7051786533877897`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "Global`I", "]"}]], "Input",
+ CellChangeTimes->{{3.705178657444206*^9, 3.7051786669471493`*^9}}],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellChangeTimes->{3.705178667517481*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Remove", "[", "Global`I", "]"}]], "Input",
+ CellChangeTimes->{{3.7051786709445133`*^9, 3.705178677936324*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Context", "[", "I", "]"}]], "Input",
+ CellChangeTimes->{{3.7051786813584948`*^9, 3.70517868767878*^9}}],
+
+Cell[BoxData["\<\"System`\"\>"], "Output",
+ CellChangeTimes->{3.705178687993952*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 537},
+WindowMargins->{{Automatic, -19}, {-19, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-872429e9-d927-4e15-946f-02f8d2c1626f"->{
+  Cell[3072, 111, 139, 2, 42, "Print",
+   CellTags->"Info-872429e9-d927-4e15-946f-02f8d2c1626f"]},
+ "Info-e0eb4048-1c12-459a-a175-85075f981e29"->{
+  Cell[3388, 124, 135, 2, 42, "Print",
+   CellTags->"Info-e0eb4048-1c12-459a-a175-85075f981e29"],
+  Cell[3526, 128, 832, 23, 23, "Print",
+   CellTags->"Info-e0eb4048-1c12-459a-a175-85075f981e29"]},
+ "Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"->{
+  Cell[33904, 823, 137, 2, 42, "Print",
+   CellTags->"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"],
+  Cell[34044, 827, 761, 21, 23, "Print",
+   CellTags->"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-872429e9-d927-4e15-946f-02f8d2c1626f", 38280, 969},
+ {"Info-e0eb4048-1c12-459a-a175-85075f981e29", 38427, 972},
+ {"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a", 38673, 977}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 129, 2, 50, "Input"],
+Cell[712, 26, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[833, 32, 151, 2, 50, "Input"],
+Cell[987, 36, 132, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1156, 43, 100, 1, 50, "Input"],
+Cell[1259, 46, 108, 1, 32, "Output"]
+}, Open  ]],
+Cell[1382, 50, 109, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1516, 57, 128, 2, 50, "Input"],
+Cell[1647, 61, 86, 1, 32, "Output"]
+}, Open  ]],
+Cell[1748, 65, 142, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[1915, 72, 145, 3, 32, "Input"],
+Cell[2063, 77, 139, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2239, 85, 319, 6, 113, "Input"],
+Cell[2561, 93, 106, 1, 32, "Output"],
+Cell[2670, 96, 141, 3, 32, "Output"],
+Cell[2814, 101, 108, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2959, 107, 110, 2, 32, "Input"],
+Cell[3072, 111, 139, 2, 42, "Print",
+ CellTags->"Info-872429e9-d927-4e15-946f-02f8d2c1626f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3248, 118, 115, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[3388, 124, 135, 2, 42, "Print",
+ CellTags->"Info-e0eb4048-1c12-459a-a175-85075f981e29"],
+Cell[3526, 128, 832, 23, 23, "Print",
+ CellTags->"Info-e0eb4048-1c12-459a-a175-85075f981e29"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4407, 157, 425, 9, 91, "Input"],
+Cell[CellGroupData[{
+Cell[4857, 170, 206, 3, 23, "Print"],
+Cell[5066, 175, 249, 5, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5364, 186, 541, 15, 132, "Input"],
+Cell[5908, 203, 286, 6, 23, "Print"]
+}, Open  ]],
+Cell[6209, 212, 335, 6, 33, "Text"],
+Cell[6547, 220, 182, 4, 50, "Input"],
+Cell[CellGroupData[{
+Cell[6754, 228, 100, 1, 50, "Input"],
+Cell[6857, 231, 106, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7000, 237, 71, 1, 32, "Input"],
+Cell[7074, 240, 70, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7181, 246, 126, 2, 50, "Input"],
+Cell[7310, 250, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7431, 256, 122, 2, 50, "Input"],
+Cell[7556, 260, 19070, 318, 3553, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26663, 583, 119, 2, 50, "Input"],
+Cell[26785, 587, 399, 9, 23, "Message"],
+Cell[27187, 598, 86, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27310, 604, 138, 2, 50, "Input"],
+Cell[27451, 608, 85, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27573, 614, 114, 2, 50, "Input"],
+Cell[27690, 618, 83, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27810, 624, 104, 1, 50, "Input"],
+Cell[27917, 627, 281, 5, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28235, 637, 122, 2, 32, "Input"],
+Cell[28360, 641, 793, 15, 41, "Message"],
+Cell[29156, 658, 70, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29263, 664, 111, 2, 32, "Input"],
+Cell[29377, 668, 1748, 55, 109, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31162, 728, 117, 2, 50, "Input"],
+Cell[31282, 732, 87, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31406, 739, 122, 2, 32, "Input"],
+Cell[31531, 743, 89, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31657, 750, 122, 2, 32, "Input"],
+Cell[31782, 754, 72, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31891, 760, 345, 8, 50, "Input"],
+Cell[32239, 770, 142, 2, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32418, 777, 116, 2, 32, "Input"],
+Cell[32537, 781, 495, 11, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33069, 797, 119, 2, 32, "Input"],
+Cell[33191, 801, 519, 11, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33747, 817, 132, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[33904, 823, 137, 2, 42, "Print",
+ CellTags->"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"],
+Cell[34044, 827, 761, 21, 23, "Print",
+ CellTags->"Info-5e06fbed-6f4c-4324-976c-9b3dedadd35a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34854, 854, 126, 2, 50, "Input"],
+Cell[34983, 858, 465, 10, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35485, 873, 128, 2, 50, "Input"],
+Cell[35616, 877, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35737, 883, 137, 2, 50, "Input"],
+Cell[35877, 887, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35998, 893, 190, 3, 91, "Input"],
+Cell[36191, 898, 487, 11, 23, "Message"],
+Cell[36681, 911, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36802, 917, 126, 2, 50, "Input"],
+Cell[36931, 921, 86, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37054, 927, 143, 2, 50, "Input"],
+Cell[37200, 931, 86, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37323, 937, 135, 2, 50, "Input"],
+Cell[37461, 941, 84, 1, 32, "Output"]
+}, Open  ]],
+Cell[37560, 945, 134, 2, 50, "Input"],
+Cell[CellGroupData[{
+Cell[37719, 951, 127, 2, 50, "Input"],
+Cell[37849, 955, 84, 1, 89, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

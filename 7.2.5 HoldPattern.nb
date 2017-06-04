@@ -10,14 +10,22 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
+<<<<<<< HEAD
 NotebookDataLength[      4367,        127]
 NotebookOptionsPosition[      3938,        108]
 NotebookOutlinePosition[      4287,        123]
 CellTagsIndexPosition[      4244,        120]
+=======
+NotebookDataLength[      4596,        176]
+NotebookOptionsPosition[      3845,        144]
+NotebookOutlinePosition[      4194,        159]
+CellTagsIndexPosition[      4151,        156]
+>>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+<<<<<<< HEAD
 Cell["\<\
 HoldPattern\:662f\:53e6\:4e00\:4e2a\:6709HoldAll\:5c5e\:6027\:7684\:7b26\:53f7\
 \:ff0c\:4f46\:5b83\:4e0d\:50cfHold\:6216HoldAll\:ff0c\:800c\:50cfEvaluate\
@@ -68,20 +76,100 @@ Cell[BoxData[{
  CellChangeTimes->{{3.704239736464796*^9, 3.7042397420272512`*^9}, {
   3.7042399793316383`*^9, 3.704240002619688*^9}, {3.704241723767901*^9, 
   3.704241747247487*^9}}],
+=======
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "f", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{"x", "^", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DownValues", "[", "f", "]"}]}], "Input",
+ CellChangeTimes->{{3.704487590174138*^9, 3.704487610833879*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"HoldPattern", "[", 
+    RowBox[{"f", "[", "x_", "]"}], "]"}], "\[RuleDelayed]", 
+   SuperscriptBox["x", "2"]}], "}"}]], "Output",
+ CellChangeTimes->{3.704487611396456*^9}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{"Hold", "[", 
+   RowBox[{"3", "*", "3"}], "]"}], "/.", 
+  RowBox[{
+   RowBox[{"p_", "*", "p_"}], "\[Rule]", 
+   RowBox[{"p", "^", "2"}]}]}]], "Input",
+ CellChangeTimes->{{3.704487663545928*^9, 3.704487675894059*^9}, {
+  3.704487744710951*^9, 3.704487748967575*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"3", " ", "3"}], "]"}]], "Output",
+ CellChangeTimes->{3.704487677291683*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullForm", "[", 
+  RowBox[{
+   RowBox[{"p_", "*", "p_"}], "\[Rule]", 
+   RowBox[{"p", "^", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.704487683676653*^9, 3.704487698325193*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"Rule", "[", 
+    RowBox[{
+     RowBox[{"Power", "[", 
+      RowBox[{
+       RowBox[{"Pattern", "[", 
+        RowBox[{"p", ",", 
+         RowBox[{"Blank", "[", "]"}]}], "]"}], ",", "2"}], "]"}], ",", 
+     RowBox[{"Power", "[", 
+      RowBox[{"p", ",", "2"}], "]"}]}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.7044877006138763`*^9}]
+}, Open  ]],
+>>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+<<<<<<< HEAD
   RowBox[{"f", "[", 
    RowBox[{"a", ",", "b"}], "]"}], "//", "Trace"}]], "Input",
  CellChangeTimes->{{3.704240130044565*^9, 3.704240138476026*^9}}],
+=======
+  RowBox[{
+   RowBox[{"Hold", "[", 
+    RowBox[{"3", "*", "3"}], "]"}], "/.", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"p_", "*", "p_"}], "]"}], "\[Rule]", 
+    RowBox[{"p", "^", "2"}]}]}], "//", "Trace"}]], "Input",
+ CellChangeTimes->{{3.704487776120522*^9, 3.7044878215108023`*^9}}],
+>>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
     RowBox[{
+<<<<<<< HEAD
      TagBox["f",
       HoldForm], ",", 
      TagBox["g",
@@ -108,6 +196,49 @@ Cell[BoxData[
 },
 WindowSize->{808, 758},
 WindowMargins->{{Automatic, 436}, {-117, Automatic}},
+=======
+     TagBox[
+      RowBox[{
+       RowBox[{"HoldPattern", "[", 
+        RowBox[{"p_", " ", "p_"}], "]"}], "\[Rule]", 
+       SuperscriptBox["p", "2"]}],
+      HoldForm], ",", 
+     TagBox[
+      RowBox[{
+       RowBox[{"HoldPattern", "[", 
+        RowBox[{"p_", " ", "p_"}], "]"}], "\[Rule]", 
+       SuperscriptBox["p", "2"]}],
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{
+     RowBox[{"Hold", "[", 
+      RowBox[{"3", " ", "3"}], "]"}], "/.", "\[VeryThinSpace]", 
+     RowBox[{
+      RowBox[{"HoldPattern", "[", 
+       RowBox[{"p_", " ", "p_"}], "]"}], "\[Rule]", 
+      SuperscriptBox["p", "2"]}]}],
+    HoldForm], ",", 
+   TagBox[
+    RowBox[{"Hold", "[", 
+     SuperscriptBox["3", "2"], "]"}],
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{{3.704487800027326*^9, 3.704487821977434*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "g", "]"}]], "Input",
+ CellChangeTimes->{{3.704487988654614*^9, 3.7044879919890537`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.704487992984604*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 262}, {-314, Automatic}},
+>>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -122,12 +253,34 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+<<<<<<< HEAD
 Cell[558, 20, 481, 8, 55, "Text"],
 Cell[1042, 30, 1480, 20, 121, "Text"],
 Cell[2525, 52, 603, 17, 96, "Input"],
 Cell[CellGroupData[{
 Cell[3153, 73, 172, 4, 50, "Input"],
 Cell[3328, 79, 594, 26, 32, "Output"]
+=======
+Cell[CellGroupData[{
+Cell[580, 22, 334, 8, 113, "Input"],
+Cell[917, 32, 223, 6, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1177, 43, 299, 8, 50, "Input"],
+Cell[1479, 53, 123, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1639, 61, 206, 5, 50, "Input"],
+Cell[1848, 68, 476, 16, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2361, 89, 326, 9, 50, "Input"],
+Cell[2690, 100, 881, 30, 59, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3608, 135, 131, 2, 50, "Input"],
+Cell[3742, 139, 87, 2, 65, "Output"]
+>>>>>>> e1a58ed988ba9b464bc67c901e60f0359e94ba8a
 }, Open  ]]
 }
 ]

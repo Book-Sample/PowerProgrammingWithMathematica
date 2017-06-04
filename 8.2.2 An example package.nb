@@ -1,0 +1,797 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28867,        788]
+NotebookOptionsPosition[     24563,        654]
+NotebookOutlinePosition[     26149,        695]
+CellTagsIndexPosition[     25805,        686]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"BeginPackage", "[", "\"\<LCGRandom`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705179953869956*^9, 3.7051799680687447`*^9}}],
+
+Cell[BoxData["\<\"LCGRandom`\"\>"], "Output",
+ CellChangeTimes->{3.7051799726515017`*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGSetSeed", "::", "usage"}], "=", 
+   "\"\<LCGSetSeed[x] sets the LCG random number generator's seed to the \
+integer x.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "::", "usage"}], "=", 
+   "\"\<LCGRandom[] generates a uniformly distributed random number in the \
+range {0.,1.} using a linear congruential generator.\>\""}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.7051800842599*^9, 3.705180208703792*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LCGRandom"}]], "Input",
+ CellChangeTimes->{{3.705180219228994*^9, 3.705180223287017*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"LCGRandom[] generates a uniformly distributed random number in \
+the range {0.,1.} using a linear congruential generator.\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.705180223972327*^9},
+ CellTags->"Info-44ec7f57-96c6-4f5e-9bef-07302f5cce54"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705180248876925*^9, 3.705180259998378*^9}}],
+
+Cell[BoxData["\<\"LCGRandom`Private`\"\>"], "Output",
+ CellChangeTimes->{3.705180263072843*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"modulus", "=", 
+   RowBox[{
+    RowBox[{"2", "^", "31"}], "-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"seed", "=", "1"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.705180287650694*^9, 3.705180297919615*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGSetSeed", "[", 
+    RowBox[{"x_Integer", "/;", 
+     RowBox[{"1", "\[LessEqual]", "seed", "<", "modulus"}]}], "]"}], ":=", 
+   RowBox[{"seed", "=", "x"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "[", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"seed", "=", 
+      RowBox[{"Mod", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"7", "^", "5"}], "*", "seed"}], ",", "modulus"}], "]"}]}], 
+     ";", 
+     RowBox[{"N", "[", 
+      RowBox[{"seed", "/", "modulus"}], "]"}]}], ")"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7051803811820517`*^9, 3.705180417316154*^9}, {
+  3.7051805184194403`*^9, 3.705180571659903*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"End", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.705180582835774*^9, 3.705180584227509*^9}}],
+
+Cell[BoxData["\<\"LCGRandom`Private`\"\>"], "Output",
+ CellChangeTimes->{3.7051805893752537`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellChangeTimes->{{3.705180596576498*^9, 3.705180598651927*^9}}],
+
+Cell[BoxData["\<\"LCGRandom`\"\>"], "Output",
+ CellChangeTimes->{3.705180599184349*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Protect", "[", 
+  RowBox[{"LCGSetSeed", ",", "LCGRandom"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705180607081415*^9, 3.705180623273045*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"LCGSetSeed\"\>", ",", "\<\"LCGRandom\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.705180624988414*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"EndPackage", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7051806278385963`*^9, 3.705180629994343*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"$Context", ",", "$ContextPath"}], "}"}]], "Input",
+ CellChangeTimes->{{3.7051806644265823`*^9, 3.7051806760330343`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Global`\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LCGRandom`\"\>", ",", "\<\"example`\"\>", 
+     ",", "\<\"CloudObjectLoader`\"\>", ",", "\<\"StreamingLoader`\"\>", 
+     ",", "\<\"IconizeLoader`\"\>", ",", "\<\"PacletManager`\"\>", 
+     ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7051806765847054`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LCGRandom`*"}]], "Input",
+ CellChangeTimes->{{3.7051806853437233`*^9, 3.7051806914317293`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["LCGRandom`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["LCGRandom`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["LCGRandom",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info-28076f7f-57ac-4cd2-8074-06f01c2e853a", {
+            "LCGRandom", "LCGRandom`"}},
+          ButtonNote->"LCGRandom`"], 
+         ButtonBox["LCGSetSeed",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info-28076f7f-57ac-4cd2-8074-06f01c2e853a", {
+            "LCGSetSeed", "LCGRandom`"}},
+          ButtonNote->"LCGRandom`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.475]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell",
+ CellChangeTimes->{3.7051806919415417`*^9}],
+
+Cell[BoxData[
+ StyleBox["\<\"LCGSetSeed[x] sets the LCG random number generator's seed to \
+the integer x.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellTags->"Info-28076f7f-57ac-4cd2-8074-06f01c2e853a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"LCGSetSeed", "[", "4445290", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"test", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"LCGRandom", "[", "]"}], ",", 
+     RowBox[{"{", "1000", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Short", "[", "test", "]"}]}], "Input",
+ CellChangeTimes->{{3.7051807142437553`*^9, 3.705180765711217*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{"0.7904810052320739`", ",", "0.6142549354649405`", ",", 
+    RowBox[{"\[LeftSkeleton]", "997", "\[RightSkeleton]"}], ",", 
+    "0.22655991521969435`"}], "}"}],
+  Short]], "Output",
+ CellChangeTimes->{3.705180766103798*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Plus", "@@", "test"}], "/", 
+  RowBox[{"Length", "[", "test", "]"}]}]], "Input",
+ CellChangeTimes->{{3.705180780424316*^9, 3.7051807951996393`*^9}}],
+
+Cell[BoxData["0.5070279663223904`"], "Output",
+ CellChangeTimes->{3.7051807999758244`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "LCGRandom"}]], "Input",
+ CellChangeTimes->{{3.70518080634105*^9, 3.705180808996799*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"LCGRandom[] generates a uniformly distributed random number in \
+the range {0.,1.} using a linear congruential generator.\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.705180809614931*^9},
+ CellTags->"Info-aba7ef18-ca28-42af-a86f-cb863e285da4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "LCGRandom", "]"}]], "Input",
+ CellChangeTimes->{{3.705180838140492*^9, 3.7051808450618153`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Clear", "::", "wrsym"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \[NoBreak]\\!\\(\\*RowBox[{\\\"LCGRandom\\\"}]\\)\
+\[NoBreak] is Protected. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/wrsym\\\", ButtonNote -> \
+\\\"Clear::wrsym\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705180845494*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "modulus"}]], "Input",
+ CellChangeTimes->{{3.705180848797512*^9, 3.7051808507583027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Information", "::", "notfound"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Symbol \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"modulus\\\\\\\"\\\"}]\\)\[NoBreak] not \
+found. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/notfound\\\", ButtonNote -> \
+\\\"Information::notfound\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705180851300226*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["LCGRandom`Private`modulus"], "Input",
+ CellChangeTimes->{{3.7051808565519247`*^9, 3.7051808691815557`*^9}}],
+
+Cell[BoxData["2147483647"], "Output",
+ CellChangeTimes->{3.705180869864826*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "LCGSetSeed"}]], "Input",
+ CellChangeTimes->{{3.705180948700629*^9, 3.705180952549746*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ StyleBox["\<\"LCGSetSeed[x] sets the LCG random number generator's seed to \
+the integer x.\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.70518095318924*^9},
+ CellTags->"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "LCGSetSeed", "]"}], "=", 
+      RowBox[{"{", "Protected", "}"}]}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"LCGSetSeed", "[", 
+          RowBox[{"LCGRandom`Private`x_Integer", "/;", 
+           RowBox[{
+           "1", "\[LessEqual]", "LCGRandom`Private`seed", "<", 
+            "LCGRandom`Private`modulus"}]}], "]"}], ":=", 
+         RowBox[{"LCGRandom`Private`seed", "=", "LCGRandom`Private`x"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[LCGRandom`LCGSetSeed],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7051809532028933`*^9},
+ CellTags->"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "Plus"}]], "Input",
+ CellChangeTimes->{{3.705180983515641*^9, 3.705180985601368*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"+\\\", \
+StyleBox[\\\"y\\\", \\\"TI\\\"], \\\"+\\\", StyleBox[\\\"z\\\", \\\"TI\\\"]}]\
+\\) represents a sum of terms. \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Plus"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.705180986239377*^9},
+ CellTags->"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "Plus", "]"}], "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "Flat", ",", "Listable", ",", "NumericFunction", ",", "OneIdentity", 
+        ",", "Orderless", ",", "Protected"}], "}"}]}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Default", "[", "Plus", "]"}], ":=", "0"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Plus],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.705180986278825*^9},
+ CellTags->"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Path"], "Input",
+ CellChangeTimes->{{3.7051810974329977`*^9, 3.7051810988516617`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Kernel\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Autoload\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Applications\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Kernel\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Autoload\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Applications\"\>", ",", "\<\".\"\>", 
+   ",", "\<\"/home/zlb\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Autoload\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Autoload\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/ExtraPackages\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Kernel/Packages\"\
+\>", ",", \
+"\<\"/usr/local/Wolfram/Mathematica/10.3/Documentation/English/System\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Data/ICC\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7051810994038057`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Packages"], "Input",
+ CellChangeTimes->{{3.705181208318791*^9, 3.705181213056602*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"LCGRandom`\"\>", ",", "\<\"example`\"\>", 
+   ",", "\<\"GeneralUtilities`\"\>", ",", "\<\"Macros`\"\>", 
+   ",", "\<\"CloudObject`\"\>", ",", "\<\"URLUtilities`\"\>", 
+   ",", "\<\"MailReceiver`\"\>", ",", "\<\"JLink`\"\>", 
+   ",", "\<\"Iconize`\"\>", ",", "\<\"UUID`\"\>", ",", "\<\"Security`\"\>", 
+   ",", "\<\"HTTPClient`OAuth`\"\>", ",", "\<\"HTTPClient`CURLInfo`\"\>", 
+   ",", "\<\"HTTPClient`CURLLink`\"\>", ",", "\<\"HTTPClient`\"\>", 
+   ",", "\<\"GetFEKernelInit`\"\>", ",", "\<\"CloudObjectLoader`\"\>", 
+   ",", "\<\"StreamingLoader`\"\>", ",", "\<\"IconizeLoader`\"\>", 
+   ",", "\<\"ResourceLocator`\"\>", ",", "\<\"PacletManager`\"\>", 
+   ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.705181213541623*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNames", "[", 
+  RowBox[{
+  "\"\<init.m\>\"", ",", "\"\</usr/local/Wolfram/Mathematica/10.3/\>\"", ",", 
+   "Infinity"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7051815446151114`*^9, 3.705181562868037*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+AuthorTools/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+ClusterIntegration/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+CompiledFunctionTools/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+DemonstrationsTools/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+DocumentationSearch/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+LightweightGridClient/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+NotebookTemplating/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/Parallel/\
+Debug/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/Parallel/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+ResourceLocator/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/Security/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+SubKernels/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications/\
+SymbolicC/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/ANOVA/Kernel/\
+init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Audio/Kernel/\
+init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/BarCharts/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Benchmarking/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+BlackBodyRadiation/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Calendar/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+Combinatorica/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+ComputationalGeometry/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+ComputerArithmetic/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+EquationTrekker/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+ErrorBarPlots/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/FiniteFields/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+FourierSeries/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+FunctionApproximations/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Geodesy/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+GraphUtilities/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/GUIKit/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/GUIKit/src/\
+mathematica/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+HierarchicalClustering/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Histograms/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+HypothesisTesting/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+LinearRegression/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+MultivariateStatistics/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Music/Kernel/\
+init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+NonlinearRegression/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Notation/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+NumericalCalculus/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+NumericalDifferentialEquationAnalysis/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+PhysicalConstants/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/PieCharts/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/PlotLegends/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+PolyhedronOperations/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Polytopes/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+PrimalityProving/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Quaternions/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+RegressionCommon/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+ResonanceAbsorptionLines/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Splines/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+StandardAtmosphere/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+StatisticalPlots/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/Units/Kernel/\
+init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+VariationalMethods/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+VectorAnalysis/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/\
+VectorFieldPlots/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/WorldPlot/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages/XML/Kernel/\
+init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Autoload/\
+PacletManager/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Components/\
+CacheManager/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Components/\
+CCodeGenerator/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Components/\
+CCompilerDriver/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Components/\
+FEMDocumentation/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Kernel/Packages/\
+Version5/Graphics/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Kernel/Packages/\
+Version6/Graphics/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/CUDALink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+DatabaseLink/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+GeometryTools/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/GPUTools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/HTTPClient/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/JSONTools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+LibraryLink/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/MIDITools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/MP3Tools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/OGGTools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/OpenCLLink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+ProcessLink/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/RAWTools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/RLink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/SerialLink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/SocketLink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/StreamLink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/TetGenLink/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+TinkerForgeWeatherStationTools/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+TriangleLink/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/UUID/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/WebpTools/\
+Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/\
+WebServices/Kernel/init.m\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links/XMLSchema/\
+Kernel/init.m\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7051815699165154`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 877},
+WindowMargins->{{265, Automatic}, {Automatic, 56}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info-44ec7f57-96c6-4f5e-9bef-07302f5cce54"->{
+  Cell[1481, 50, 289, 5, 60, "Print",
+   CellTags->"Info-44ec7f57-96c6-4f5e-9bef-07302f5cce54"]},
+ "Info-28076f7f-57ac-4cd2-8074-06f01c2e853a"->{
+  Cell[6001, 201, 200, 3, 42, "Print",
+   CellTags->"Info-28076f7f-57ac-4cd2-8074-06f01c2e853a"]},
+ "Info-aba7ef18-ca28-42af-a86f-cb863e285da4"->{
+  Cell[7406, 250, 289, 5, 60, "Print",
+   CellTags->"Info-aba7ef18-ca28-42af-a86f-cb863e285da4"]},
+ "Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"->{
+  Cell[9402, 314, 241, 4, 42, "Print",
+   CellTags->"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"],
+  Cell[9646, 320, 1197, 32, 97, "Print",
+   CellTags->"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"]},
+ "Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"->{
+  Cell[11031, 364, 501, 11, 44, "Print",
+   CellTags->"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"],
+  Cell[11535, 377, 1050, 30, 56, "Print",
+   CellTags->"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info-44ec7f57-96c6-4f5e-9bef-07302f5cce54", 24893, 664},
+ {"Info-28076f7f-57ac-4cd2-8074-06f01c2e853a", 25039, 667},
+ {"Info-aba7ef18-ca28-42af-a86f-cb863e285da4", 25186, 670},
+ {"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43", 25333, 673},
+ {"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74", 25580, 678}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 150, 2, 50, "Input"],
+Cell[733, 26, 89, 1, 32, "Output"]
+}, Open  ]],
+Cell[837, 30, 498, 12, 143, "Input"],
+Cell[CellGroupData[{
+Cell[1360, 46, 118, 2, 32, "Input"],
+Cell[1481, 50, 289, 5, 60, "Print",
+ CellTags->"Info-44ec7f57-96c6-4f5e-9bef-07302f5cce54"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1807, 60, 140, 2, 50, "Input"],
+Cell[1950, 64, 95, 1, 32, "Output"]
+}, Open  ]],
+Cell[2060, 68, 262, 7, 55, "Input"],
+Cell[2325, 77, 726, 21, 132, "Input"],
+Cell[CellGroupData[{
+Cell[3076, 102, 117, 2, 50, "Input"],
+Cell[3196, 106, 97, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3330, 112, 100, 1, 50, "Input"],
+Cell[3433, 115, 87, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3557, 121, 166, 3, 50, "Input"],
+Cell[3726, 126, 148, 3, 32, "Output"]
+}, Open  ]],
+Cell[3889, 132, 126, 2, 50, "Input"],
+Cell[CellGroupData[{
+Cell[4040, 138, 160, 3, 50, "Input"],
+Cell[4203, 143, 411, 9, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4651, 157, 124, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[4800, 163, 1198, 36, 54, "Print"],
+Cell[6001, 201, 200, 3, 42, "Print",
+ CellTags->"Info-28076f7f-57ac-4cd2-8074-06f01c2e853a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6250, 210, 411, 10, 113, "Input"],
+Cell[6664, 222, 272, 7, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6973, 234, 183, 4, 50, "Input"],
+Cell[7159, 240, 90, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7286, 246, 117, 2, 32, "Input"],
+Cell[7406, 250, 289, 5, 60, "Print",
+ CellTags->"Info-aba7ef18-ca28-42af-a86f-cb863e285da4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7732, 260, 134, 2, 50, "Input"],
+Cell[7869, 264, 458, 10, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8364, 279, 118, 2, 32, "Input"],
+Cell[8485, 283, 495, 11, 23, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9017, 299, 121, 1, 32, "Input"],
+Cell[9141, 302, 79, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9257, 308, 120, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[9402, 314, 241, 4, 42, "Print",
+ CellTags->"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"],
+Cell[9646, 320, 1197, 32, 97, "Print",
+ CellTags->"Info-5c5d7f43-ba66-4c8a-a148-770582d35b43"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10892, 358, 114, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[11031, 364, 501, 11, 44, "Print",
+ CellTags->"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"],
+Cell[11535, 377, 1050, 30, 56, "Print",
+ CellTags->"Info-122b55d6-8bce-4f9d-aaa7-c78cebee0f74"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12634, 413, 101, 1, 50, "Input"],
+Cell[12738, 416, 1154, 20, 143, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13929, 441, 101, 1, 50, "Input"],
+Cell[14033, 444, 810, 13, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14880, 462, 233, 5, 50, "Input"],
+Cell[15116, 469, 9431, 182, 3718, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

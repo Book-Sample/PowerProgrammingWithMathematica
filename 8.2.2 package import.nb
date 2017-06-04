@@ -1,0 +1,201 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6906,        192]
+NotebookOptionsPosition[      6071,        158]
+NotebookOutlinePosition[      6417,        173]
+CellTagsIndexPosition[      6374,        170]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData["$Path"], "Input",
+ CellChangeTimes->{{3.705182067166154*^9, 3.705182068279318*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Kernel\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Autoload\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Applications\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Kernel\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Autoload\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Applications\"\>", ",", "\<\".\"\>", 
+   ",", "\<\"/home/zlb\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Autoload\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Autoload\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/ExtraPackages\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Kernel/Packages\"\
+\>", ",", \
+"\<\"/usr/local/Wolfram/Mathematica/10.3/Documentation/English/System\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Data/ICC\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.705182068815673*^9, 3.705182278574428*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AppendTo", "[", 
+  RowBox[{
+  "$Path", ",", 
+   "\"\</home/zlb/MathematicaProjects/Power \
+Programming/PowerProgrammingWithMathematica/\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.7051820743946753`*^9, 3.705182099761923*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Links\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Kernel\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Autoload\"\>", 
+   ",", "\<\"/home/zlb/.Mathematica/Applications\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Kernel\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Autoload\"\>", 
+   ",", "\<\"/usr/share/Mathematica/Applications\"\>", ",", "\<\".\"\>", 
+   ",", "\<\"/home/zlb\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Packages\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Autoload\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Autoload\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/Applications\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/AddOns/ExtraPackages\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Kernel/Packages\"\
+\>", ",", \
+"\<\"/usr/local/Wolfram/Mathematica/10.3/Documentation/English/System\"\>", 
+   ",", "\<\"/usr/local/Wolfram/Mathematica/10.3/SystemFiles/Data/ICC\"\>", 
+   ",", "\<\"/home/zlb/MathematicaProjects/Power \
+Programming/PowerProgrammingWithMathematica/\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.705182102339793*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<LCGRandom`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705182105644518*^9, 3.705182120106612*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Get", "::", "noopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot open \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"LCGRandom`\\\\\\\"\\\"}]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/noopen\\\", \
+ButtonNote -> \\\"Get::noopen\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705182282548603*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Context \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"LCGRandom`\\\\\\\"\\\"}]\\)\[NoBreak] \
+was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.70518228256215*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.7051822825630693`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"LCGSetSeed", "[", "4446290", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"test", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"LCGRandom", "[", "]"}], ",", 
+     RowBox[{"{", "1000", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Short", "[", "test", "]"}]}], "Input",
+ CellChangeTimes->{{3.705182125800887*^9, 3.705182209561987*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{"0.7983073744914995`", ",", "0.15204307863118272`", ",", 
+    RowBox[{"\[LeftSkeleton]", "997", "\[RightSkeleton]"}], ",", 
+    "0.45506166874201115`"}], "}"}],
+  Short]], "Output",
+ CellChangeTimes->{{3.705182140377019*^9, 3.7051821466686687`*^9}, 
+   3.7051822100526447`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Packages"], "Input",
+ CellChangeTimes->{{3.705182310428097*^9, 3.705182320294383*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"HTTPClient`OAuth`\"\>", ",", "\<\"HTTPClient`CURLInfo`\"\>", 
+   ",", "\<\"HTTPClient`CURLLink`\"\>", ",", "\<\"HTTPClient`\"\>", 
+   ",", "\<\"GetFEKernelInit`\"\>", ",", "\<\"CloudObjectLoader`\"\>", 
+   ",", "\<\"StreamingLoader`\"\>", ",", "\<\"IconizeLoader`\"\>", 
+   ",", "\<\"ResourceLocator`\"\>", ",", "\<\"PacletManager`\"\>", 
+   ",", "\<\"System`\"\>", ",", "\<\"Global`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7051823207655163`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 369}, {0, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 97, 1, 50, "Input"],
+Cell[680, 25, 1174, 20, 275, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1891, 50, 252, 6, 96, "Input"],
+Cell[2146, 58, 1252, 21, 319, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3435, 84, 141, 2, 50, "Input"],
+Cell[3579, 88, 469, 10, 23, "Message"],
+Cell[4051, 100, 509, 11, 23, "Message"],
+Cell[4563, 113, 78, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4678, 119, 409, 10, 113, "Input"],
+Cell[5090, 131, 327, 8, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5454, 144, 101, 1, 50, "Input"],
+Cell[5558, 147, 497, 8, 77, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

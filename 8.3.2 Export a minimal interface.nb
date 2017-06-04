@@ -1,0 +1,106 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2882,         97]
+NotebookOptionsPosition[      2346,         74]
+NotebookOutlinePosition[      2695,         89]
+CellTagsIndexPosition[      2652,         86]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+symbols that has usage messages should be visible outside of the package.\
+\>", "Text",
+ CellChangeTimes->{{3.705200630607739*^9, 3.705200649795046*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<EscapingSymbols`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7052007360793657`*^9, 3.7052007474468517`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Get", "::", "noopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot open \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"EscapingSymbols`\\\\\\\"\\\"}]\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/noopen\\\", ButtonNote -> \
+\\\"Get::noopen\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7052007497130136`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Context \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"EscapingSymbols`\\\\\\\"\\\"}]\\)\
+\[NoBreak] was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705200749907567*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.705200749931347*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"!!", 
+  RowBox[{"URLTools", ".", "m"}]}]], "Input",
+ CellChangeTimes->{{3.705200904075407*^9, 3.705200909519478*^9}, {
+  3.705200972556765*^9, 3.7052009775143948`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"URLTools", ".", "m"}]], "Output",
+ CellChangeTimes->{3.705200914887775*^9, 3.705200978226067*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 205}, {-295, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 163, 3, 33, "Text"],
+Cell[CellGroupData[{
+Cell[746, 27, 151, 2, 50, "Input"],
+Cell[900, 31, 479, 11, 23, "Message"],
+Cell[1382, 44, 516, 11, 23, "Message"],
+Cell[1901, 57, 76, 1, 65, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2014, 63, 192, 4, 32, "Input"],
+Cell[2209, 69, 121, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

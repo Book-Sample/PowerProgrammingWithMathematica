@@ -1,0 +1,93 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2306,         84]
+NotebookOptionsPosition[      1881,         65]
+NotebookOutlinePosition[      2231,         80]
+CellTagsIndexPosition[      2188,         77]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"a", "+", "b"}], "/.", 
+    RowBox[{"b", "\[Rule]", 
+     RowBox[{"Sqrt", "[", "b", "]"}]}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7047475483870783`*^9, 3.7047475653898706`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"a", "+", 
+  SqrtBox["b"]}]], "Output",
+ CellChangeTimes->{3.704747566335257*^9}]
+}, Open  ]],
+
+Cell["\:80fd\:591f\:5c4f\:853d\:7cfb\:7edf\:7b26\:53f7\:7684\:5404\:79cd\:503c\
+\:3002", "Text",
+ CellChangeTimes->{{3.7047476250025263`*^9, 3.704747637289514*^9}, {
+  3.704747715952145*^9, 3.704747722303363*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "Dot", "}"}], ",", 
+    RowBox[{"multorder", "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"List", "\[Rule]", "Dot"}], ",", 
+       RowBox[{"i_Integer", "\[RuleDelayed]", 
+        RowBox[{"A", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}]}], "}"}]}]}], "]"}], ";", 
+  RowBox[{"(*", 
+   RowBox[{
+   "the", " ", "Dot", " ", "is", " ", "just", " ", "a", " ", "symbol"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.704747734352738*^9, 3.7047477896164207`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.704747730209426*^9, 3.704747731080076*^9}}]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, -116}, {-325, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 315, 9, 50, "Input"],
+Cell[898, 33, 104, 3, 38, "Output"]
+}, Open  ]],
+Cell[1017, 39, 213, 3, 33, "Text"],
+Cell[1233, 44, 549, 16, 74, "Input"],
+Cell[1785, 62, 92, 1, 32, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
