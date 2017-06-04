@@ -1,0 +1,250 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6290,        241]
+NotebookOptionsPosition[      4814,        183]
+NotebookOutlinePosition[      5163,        198]
+CellTagsIndexPosition[      5120,        195]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"z", "=", "Evaluate"}], ";"}]], "Input",
+ CellChangeTimes->{{3.704317995213524*^9, 3.704318000395885*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"z", "[", 
+   RowBox[{"2", "+", "2"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.70431800327334*^9, 3.704318010116166*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"z", "[", 
+   RowBox[{"2", "+", "2"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.7043180106182756`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"z", "=", "Unevaluated"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Head", "[", 
+  RowBox[{"z", "[", 
+   RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.704318021424509*^9, 3.704318033323783*^9}}],
+
+Cell[BoxData["Unevaluated"], "Output",
+ CellChangeTimes->{3.704318033795938*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"z", "=", "Sequence"}], ";"}]], "Input",
+ CellChangeTimes->{{3.70431806777385*^9, 3.704318073203938*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"a", ",", 
+   RowBox[{"z", "[", 
+    RowBox[{"b", ",", "c"}], "]"}], ",", "d"}], "]"}]], "Input",
+ CellChangeTimes->{{3.704318076493507*^9, 3.704318086372148*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"a", ",", 
+   RowBox[{"z", "[", 
+    RowBox[{"b", ",", "c"}], "]"}], ",", "d"}], "]"}]], "Output",
+ CellChangeTimes->{3.704318086890255*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Evaluate", "=", 
+      RowBox[{"this", " ", "is", " ", "futile"}]}], "}"}], ",", " ", 
+    RowBox[{"Hold", "[", 
+     RowBox[{"Evaluate", "[", 
+      RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "]"}], 
+  RowBox[{"(*", 
+   RowBox[{"special", " ", "properties", " ", "still", " ", "exist"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.704318103192144*^9, 3.704318133284218*^9}, {
+  3.704318178917411*^9, 3.7043182039007683`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", "4", "]"}]], "Output",
+ CellChangeTimes->{3.7043181338618717`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Attributes", "[", "Evaluate", "]"}]], "Input",
+ CellChangeTimes->{{3.70431815134291*^9, 3.704318158748303*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "Protected", "}"}]], "Output",
+ CellChangeTimes->{3.704318158978096*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Block", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Unevaluated", "=", 
+     RowBox[{"another", " ", "futile", " ", "gesture"}]}], "}"}], ",", 
+   RowBox[{"Head", "[", 
+    RowBox[{"Unevaluated", "[", 
+     RowBox[{"2", "+", "2"}], "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7043182119631643`*^9, 3.70431825999656*^9}}],
+
+Cell[BoxData["Plus"], "Output",
+ CellChangeTimes->{3.704318260949977*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Attributes", "[", "Unevaluated", "]"}]], "Input",
+ CellChangeTimes->{{3.7043182697640533`*^9, 3.7043182730009003`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"HoldAllComplete", ",", "Protected"}], "}"}]], "Output",
+ CellChangeTimes->{3.704318273403607*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OwnValues", "[", "Evaluate", "]"}]], "Input",
+ CellChangeTimes->{{3.7043183018292103`*^9, 3.7043183055135117`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.704318305886133*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"OwnValues", "[", "Unevaluated", "]"}]], "Input",
+ CellChangeTimes->{{3.704318307671398*^9, 3.7043183151123667`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.704318315444092*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "Evaluate", "]"}]], "Input",
+ CellChangeTimes->{{3.704318317990343*^9, 3.7043183263608437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.70431832671603*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "Unevaluated", "]"}]], "Input",
+ CellChangeTimes->{{3.70431832880529*^9, 3.704318335024156*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.704318335356089*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 807},
+WindowMargins->{{Automatic, 306}, {-235, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 140, 3, 50, "Input"],
+Cell[CellGroupData[{
+Cell[723, 27, 174, 4, 50, "Input"],
+Cell[900, 33, 154, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1091, 42, 255, 6, 91, "Input"],
+Cell[1349, 50, 80, 1, 32, "Output"]
+}, Open  ]],
+Cell[1444, 54, 139, 3, 50, "Input"],
+Cell[CellGroupData[{
+Cell[1608, 61, 210, 5, 50, "Input"],
+Cell[1821, 68, 187, 5, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2045, 78, 520, 14, 74, "Input"],
+Cell[2568, 94, 102, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2707, 101, 135, 2, 50, "Input"],
+Cell[2845, 105, 100, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2982, 112, 358, 9, 50, "Input"],
+Cell[3343, 123, 73, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3453, 129, 143, 2, 50, "Input"],
+Cell[3599, 133, 137, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3773, 141, 139, 2, 50, "Input"],
+Cell[3915, 145, 87, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4039, 152, 140, 2, 50, "Input"],
+Cell[4182, 156, 87, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4306, 163, 138, 2, 50, "Input"],
+Cell[4447, 167, 86, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4570, 174, 138, 2, 50, "Input"],
+Cell[4711, 178, 87, 2, 65, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

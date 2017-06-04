@@ -1,0 +1,136 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4367,        127]
+NotebookOptionsPosition[      3938,        108]
+NotebookOutlinePosition[      4287,        123]
+CellTagsIndexPosition[      4244,        120]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+HoldPattern\:662f\:53e6\:4e00\:4e2a\:6709HoldAll\:5c5e\:6027\:7684\:7b26\:53f7\
+\:ff0c\:4f46\:5b83\:4e0d\:50cfHold\:6216HoldAll\:ff0c\:800c\:50cfEvaluate\
+\:6216Unevaluate\:ff0c\:88ab\:5185\:6838\:7279\:522b\:5904\:7406\:3002\:4f60\
+\:53ef\:80fd\:6ce8\:610f\:5230\:ff0cHoldPattern\:5e76\:6ca1\:6709\:51fa\:73b0\
+\:57287.1.3\:7684\:4e3b\:6267\:884c\:5faa\:73af\:7684\:63cf\:8ff0\:91cc\:3002\
+\
+\>", "Text",
+ CellChangeTimes->{{3.704230917085477*^9, 3.704231169426423*^9}}],
+
+Cell["\<\
+HoldPattern\:4e00\:4e2a\:975e\:5e38\:5c11\:89c1\:7684\:7528\:6cd5\:662f\:9632\
+\:6b62\:5de6\:8fb9\:8868\:8fbe\:5f0f\:7684\:4e2a\:522b\:90e8\:5206\:88ab\:8ba1\
+\:7b97\:3002\:56de\:60f37.2.1\:5c0f\:8282\:ff0c\:8ba8\:8bba\:4e86\:51fd\:6570\
+\:50cfSet\:ff0cSetDelayed\:ff0cRule\:ff0cRuleDelayed\:7684\:5c5e\:6027\:7684\
+\:9009\:62e9\:7684\:5408\:7406\:6027\:3002\:603b\:7684\:6765\:8bf4\:ff0cRule\
+\:76f8\:5173\:51fd\:6570\:5e94\:7528\:4e8e\:5df2\:7ecf\:8ba1\:7b97\:7684\:8868\
+\:8fbe\:5f0f\:ff0c\:56e0\:6b64\:8868\:8fbe\:5f0f\:7684\:5de6\:8fb9\:88ab\:8ba1\
+\:7b97; \:76f8\:53cd\:7684\:ff0cSet\:76f8\:5173\:51fd\:6570\:7528\:6765\:4e3a\
+\:90a3\:4e9b\:8fd8\:6ca1\:6709\:88ab\:8ba1\:7b97\:7684\:8868\:8fbe\:5f0f\:521b\
+\:5efa\:89c4\:5219\:ff0c\:56e0\:4e3a\:5b83\:4eec\:7684\:5de6\:8fb9\:662f\:4fdd\
+\:6301\:7684\:3002\:7136\:800c\:ff0c\:8fd9\:6709\:70b9\:8fc7\:4e8e\:7b80\:5355\
+\:5316\:3002\:4e8b\:5b9e\:662f\:ff0cSet\:51fd\:6570\:5de6\:8fb9\:7684\:8868\
+\:8fbe\:5f0f\:88ab\:8ba1\:7b97\:ff0c\:56e0\:4e3a\:6a21\:5f0f\:8bc6\:522b\:5728\
+\:8868\:8fbe\:5f0f\:8ba1\:7b97\:4e4b\:540e\:624d\:5b8c\:6210\:3002\
+\>", "Text",
+ CellChangeTimes->{{3.704231233258697*^9, 3.704231244866456*^9}, {
+  3.704231550069175*^9, 3.704231647723168*^9}, {3.7042318383808403`*^9, 
+  3.7042320257803383`*^9}, {3.704232067445175*^9, 3.7042322458283157`*^9}, {
+  3.704232276764495*^9, 3.704232326244979*^9}, {3.704232528790257*^9, 
+  3.704232572831044*^9}, {3.704240809565331*^9, 3.704240899150772*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"a", ",", "b", ",", "f", ",", "g"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "f"}], "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "g"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"a", ",", "b"}], "]"}], ":>", "\"\<strange\>\""}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.704239736464796*^9, 3.7042397420272512`*^9}, {
+  3.7042399793316383`*^9, 3.704240002619688*^9}, {3.704241723767901*^9, 
+  3.704241747247487*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"a", ",", "b"}], "]"}], "//", "Trace"}]], "Input",
+ CellChangeTimes->{{3.704240130044565*^9, 3.704240138476026*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TagBox["f",
+      HoldForm], ",", 
+     TagBox["g",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox["a",
+      HoldForm], ",", 
+     TagBox["1",
+      HoldForm]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TagBox["b",
+      HoldForm], ",", 
+     TagBox["2",
+      HoldForm]}], "}"}], ",", 
+   TagBox[
+    RowBox[{"g", "[", 
+     RowBox[{"1", ",", "2"}], "]"}],
+    HoldForm]}], "}"}]], "Output",
+ CellChangeTimes->{{3.704240132936256*^9, 3.704240138800213*^9}, 
+   3.704241749272111*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 758},
+WindowMargins->{{Automatic, 436}, {-117, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 481, 8, 55, "Text"],
+Cell[1042, 30, 1480, 20, 121, "Text"],
+Cell[2525, 52, 603, 17, 96, "Input"],
+Cell[CellGroupData[{
+Cell[3153, 73, 172, 4, 50, "Input"],
+Cell[3328, 79, 594, 26, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
