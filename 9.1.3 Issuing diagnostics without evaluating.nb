@@ -1,0 +1,252 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8111,        243]
+NotebookOptionsPosition[      7084,        204]
+NotebookOutlinePosition[      7433,        219]
+CellTagsIndexPosition[      7390,        216]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "LCGRandom", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "[", "]"}], ":=", 
+   "\"\<this is the right definition\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "[", "x__", "]"}], ":=", 
+   RowBox[{"\"\<never happends\>\"", "/;", 
+    RowBox[{"Message", "[", 
+     RowBox[{
+      RowBox[{"LCGRandom", "::", "argrx"}], ",", "\"\<LCGRandom\>\"", ",", 
+      RowBox[{"Length", "[", 
+       RowBox[{"{", "x", "}"}], "]"}], ",", "0"}], "]"}]}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.705618213160198*^9, 3.705618215375443*^9}, {
+  3.705618341844763*^9, 3.7056184202480383`*^9}, {3.7056184507606277`*^9, 
+  3.7056184818368797`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LCGRandom", "[", 
+  RowBox[{"a", ",", "b"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705618424298416*^9, 3.705618428220234*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LCGRandom", "::", "argrx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"LCGRandom\\\\\\\"\\\
+\"}]\\)\[NoBreak] called with \[NoBreak]\\!\\(\\*RowBox[{\\\"2\\\"}]\\)\
+\[NoBreak] arguments; \[NoBreak]\\!\\(\\*RowBox[{\\\"0\\\"}]\\)\[NoBreak] \
+arguments are expected.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7056184291994553`*^9, 3.7056184909283047`*^9}],
+
+Cell[BoxData[
+ RowBox[{"LCGRandom", "[", 
+  RowBox[{"a", ",", "b"}], "]"}]], "Output",
+ CellChangeTimes->{3.705618490932392*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "LCGRandom", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGRandom", "[", "x___", "]"}], ":=", 
+   RowBox[{"\"\<a random number\>\"", "/;", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Length", "[", 
+       RowBox[{"{", "x", "}"}], "]"}], "\[Equal]", "0"}], "||", 
+     RowBox[{"Message", "[", 
+      RowBox[{
+       RowBox[{"LCGRandom", "::", "argrx"}], ",", "\"\<LCGRandom\>\"", ",", 
+       RowBox[{"Length", "[", 
+        RowBox[{"{", "x", "}"}], "]"}], ",", "0"}], "]"}]}]}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{3.7056190451843567`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LCGRandom", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7056190514317923`*^9, 3.705619054103722*^9}}],
+
+Cell[BoxData["\<\"a random number\"\>"], "Output",
+ CellChangeTimes->{3.7056190551867237`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LCGRandom", "[", 
+  RowBox[{"a", ",", "b"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7056190564400377`*^9, 3.705619060391325*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LCGRandom", "::", "argrx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"LCGRandom\\\\\\\"\\\
+\"}]\\)\[NoBreak] called with \[NoBreak]\\!\\(\\*RowBox[{\\\"2\\\"}]\\)\
+\[NoBreak] arguments; \[NoBreak]\\!\\(\\*RowBox[{\\\"0\\\"}]\\)\[NoBreak] \
+arguments are expected.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705619061018865*^9}],
+
+Cell[BoxData[
+ RowBox[{"LCGRandom", "[", 
+  RowBox[{"a", ",", "b"}], "]"}]], "Output",
+ CellChangeTimes->{3.705619061019616*^9}]
+}, Open  ]],
+
+Cell["\<\
+1. Create difinitions for the LCGSetSeed function of Section that check not \
+only for the correct number of arguments, but also for the following error \
+condition:\
+\>", "Text",
+ CellChangeTimes->{3.7056194036038303`*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGSetSeed", "::", "badvalue"}], "=", 
+   "\"\<`1` is not a valid seed value: integer between `2` and `3` \
+expected.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"modulus", "=", 
+   RowBox[{
+    RowBox[{"2", "^", "31"}], "-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"seed", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Clear", "[", "LCGSetSeed", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LCGSetSeed", "[", 
+    RowBox[{"x_Integer", "/;", 
+     RowBox[{
+      RowBox[{"seed", "\[LessEqual]", "x", "\[LessEqual]", 
+       RowBox[{"modulus", "-", "1"}]}], "||", 
+      RowBox[{"Message", "[", 
+       RowBox[{
+        RowBox[{"LCGSetSeed", "::", "badvalue"}], ",", "x", ",", "seed", ",", 
+        "modulus"}], "]"}]}]}], "]"}], ":=", 
+   RowBox[{"seed", "=", "x"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.705619426092433*^9, 3.70561942647786*^9}, {
+   3.705619484063575*^9, 3.705619570578883*^9}, {3.705619676435852*^9, 
+   3.705619679080552*^9}, {3.705619761607524*^9, 3.7056197926871977`*^9}, {
+   3.705619895970298*^9, 3.705619928725873*^9}, {3.705619962522703*^9, 
+   3.705619967616173*^9}, 3.705620081291092*^9, {3.7056201240965433`*^9, 
+   3.705620127007374*^9}, {3.70562017857003*^9, 3.705620205771887*^9}, {
+   3.7056202383996058`*^9, 3.705620281387542*^9}, {3.705620316499962*^9, 
+   3.705620317486418*^9}, {3.705620558943659*^9, 3.705620586219695*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LCGSetSeed", "[", 
+  RowBox[{"-", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705619580088743*^9, 3.705619587274411*^9}, {
+  3.705619621152763*^9, 3.7056196523554792`*^9}, {3.705619732823555*^9, 
+  3.705619745091209*^9}, {3.7056198161748533`*^9, 3.7056198168072233`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LCGSetSeed", "::", "badvalue"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(\\*RowBox[{\\\"-\\\", \\\"1\\\"}]\\)\
+\[NoBreak] is not a valid seed value: integer between \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1\\\"}]\\)\[NoBreak] and \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"2147483647\\\"}]\\)\[NoBreak] \
+expected.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.705620322816462*^9, 3.7056206075417767`*^9}],
+
+Cell[BoxData[
+ RowBox[{"LCGSetSeed", "[", 
+  RowBox[{"-", "1"}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.705619587963744*^9, {3.705619621739417*^9, 3.705619681592071*^9}, {
+   3.705619733908346*^9, 3.705619745701507*^9}, {3.705619778631022*^9, 
+   3.705619844389028*^9}, {3.705619917455418*^9, 3.705619933542961*^9}, {
+   3.7056199989953403`*^9, 3.705620031459468*^9}, {3.705620091292171*^9, 
+   3.705620100504052*^9}, {3.705620141164225*^9, 3.705620146038088*^9}, {
+   3.70562022113715*^9, 3.7056202604272957`*^9}, {3.705620308014552*^9, 
+   3.705620322820507*^9}, 3.705620607545327*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LCGSetSeed", "[", "2", "]"}]], "Input",
+ CellChangeTimes->{{3.705620629639193*^9, 3.705620636416635*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.705620637131229*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 368}, {-228, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 755, 19, 135, "Input"],
+Cell[CellGroupData[{
+Cell[1338, 43, 151, 3, 32, "Input"],
+Cell[1492, 48, 451, 9, 23, "Message"],
+Cell[1946, 59, 128, 3, 32, "Output"]
+}, Open  ]],
+Cell[2089, 65, 621, 17, 135, "Input"],
+Cell[CellGroupData[{
+Cell[2735, 86, 125, 2, 32, "Input"],
+Cell[2863, 90, 94, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2994, 96, 153, 3, 32, "Input"],
+Cell[3150, 101, 425, 9, 23, "Message"],
+Cell[3578, 112, 128, 3, 32, "Output"]
+}, Open  ]],
+Cell[3721, 118, 233, 5, 55, "Text"],
+Cell[3957, 125, 1493, 33, 242, "Input"],
+Cell[CellGroupData[{
+Cell[5475, 162, 297, 5, 32, "Input"],
+Cell[5775, 169, 461, 10, 23, "Message"],
+Cell[6239, 181, 590, 10, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6866, 196, 129, 2, 32, "Input"],
+Cell[6998, 200, 70, 1, 65, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
