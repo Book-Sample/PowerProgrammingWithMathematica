@@ -1,0 +1,62 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1576,         53]
+NotebookOptionsPosition[      1227,         37]
+NotebookOutlinePosition[      1576,         52]
+CellTagsIndexPosition[      1533,         49]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+1. the arguments to a function can be tested to see whether they exact or \
+approximate, and different rules can be writtern for each case.\
+\>", "Text",
+ CellChangeTimes->{{3.7056993553751593`*^9, 3.705699412212191*^9}}],
+
+Cell["\<\
+2. The arguments to a function can be shielded from numerial evaluation.\
+\>", "Text",
+ CellChangeTimes->{{3.7056994155498457`*^9, 3.705699451886005*^9}}],
+
+Cell["3. The behavior of N[expr] can be overriden.", "Text",
+ CellChangeTimes->{{3.7056995020032883`*^9, 3.7056995186831408`*^9}}],
+
+Cell["4. Upvalues can be defined for Series[expr, ...].", "Text",
+ CellChangeTimes->{{3.705699521018483*^9, 3.705699548378735*^9}}]
+},
+WindowSize->{808, 653},
+WindowMargins->{{232, Automatic}, {-308, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 231, 4, 55, "Text"],
+Cell[792, 26, 164, 3, 33, "Text"],
+Cell[959, 31, 130, 1, 33, "Text"],
+Cell[1092, 34, 131, 1, 33, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
