@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2408,         92]
-NotebookOptionsPosition[      1947,         71]
-NotebookOutlinePosition[      2295,         86]
-CellTagsIndexPosition[      2252,         83]
+NotebookDataLength[      4622,        166]
+NotebookOptionsPosition[      4047,        141]
+NotebookOutlinePosition[      4396,        156]
+CellTagsIndexPosition[      4353,        153]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -65,12 +65,82 @@ Cell[BoxData[
  CellChangeTimes->{3.705700342022687*^9}]
 }, Open  ]],
 
-Cell[BoxData[""], "Input",
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "erlangB", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{
+     RowBox[{"c_Integer", "?", "Positive"}], ",", 
+     RowBox[{"a_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"NumberQ", "[", "#", "]"}], "&&", 
+         RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], "/", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", "^", "k"}], "/", 
+       RowBox[{"k", "!"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "c"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{
+     RowBox[{"_Integer", "?", "NonNegative"}], ",", "0"}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"_", "?", "Positive"}]}], "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{"Infinity", ",", 
+     RowBox[{"_", "?", "NonNegative"}]}], "]"}], "=", "0"}], ";"}]}], "Input",\
+
  CellChangeTimes->{{3.705700476808666*^9, 3.705700497118888*^9}, 
-   3.7057005481581163`*^9}]
+   3.7057005481581163`*^9, {3.7057242499719067`*^9, 3.70572425297149*^9}, {
+   3.7057245291084642`*^9, 3.705724533405381*^9}, {3.705724627710424*^9, 
+   3.7057248391089783`*^9}, 3.705724888982622*^9, 3.705726204327856*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{"3", ",", "#"}], "]"}], "&"}], "/@", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "2", ",", "2.", ",", 
+    RowBox[{"Sqrt", "[", "2", "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.705726214197216*^9, 3.7057262330769157`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{"3", ",", "a"}], "]"}], ",", 
+   FractionBox["4", "19"], ",", "0.2105263157894737`", ",", 
+   RowBox[{"erlangB", "[", 
+    RowBox[{"3", ",", 
+     SqrtBox["2"]}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.705726233673908*^9}]
+}, Open  ]]
 },
 WindowSize->{808, 653},
-WindowMargins->{{Automatic, 179}, {-88, Automatic}},
+WindowMargins->{{Automatic, 314}, {-228, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -93,7 +163,11 @@ Cell[CellGroupData[{
 Cell[1259, 47, 412, 12, 50, "Input"],
 Cell[1674, 61, 134, 3, 32, "Output"]
 }, Open  ]],
-Cell[1823, 67, 120, 2, 32, "Input"]
+Cell[1823, 67, 1572, 48, 255, "Input"],
+Cell[CellGroupData[{
+Cell[3420, 119, 297, 8, 50, "Input"],
+Cell[3720, 129, 311, 9, 87, "Output"]
+}, Open  ]]
 }
 ]
 *)
