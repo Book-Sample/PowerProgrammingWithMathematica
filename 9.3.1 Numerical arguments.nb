@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      4622,        166]
-NotebookOptionsPosition[      4047,        141]
-NotebookOutlinePosition[      4396,        156]
-CellTagsIndexPosition[      4353,        153]
+NotebookDataLength[     55592,       1616]
+NotebookOptionsPosition[     51119,       1474]
+NotebookOutlinePosition[     52300,       1507]
+CellTagsIndexPosition[     52073,       1500]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -67,18 +67,69 @@ Cell[BoxData[
 
 Cell[BoxData[{
  RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "::", "nserv"}], "=", 
+   "\"\<Number of servers is expected to be a positive integer; found `1` \
+instead.\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"Clear", "[", "erlangB", "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"erlangB", "[", 
-    RowBox[{
-     RowBox[{"c_Integer", "?", "Positive"}], ",", 
-     RowBox[{"a_", "?", 
-      RowBox[{"(", 
+   RowBox[{
+    RowBox[{"erlangB", "[", 
+     RowBox[{"c_", "?", "NumberQ"}], "]"}], "/;", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"IntegerQ", "[", "c", "]"}], ",", 
+      RowBox[{"If", "[", 
        RowBox[{
+        RowBox[{"NonNegative", "[", "c", "]"}], ",", "True", ",", "False"}], 
+       "]"}], ",", 
+      RowBox[{
+       RowBox[{"Message", "[", 
         RowBox[{
-         RowBox[{"NumberQ", "[", "#", "]"}], "&&", 
-         RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], ":=", 
+         RowBox[{"erlangB", "::", "nserv"}], ",", 
+         RowBox[{"InputForm", "[", "c", "]"}]}], "]"}], ";", "False"}]}], 
+     "]"}]}], "=", "0"}], ";", 
+  RowBox[{
+  "(*", "Message\:5b9a\:4e49\:5728\:51fd\:6570\:58f0\:660e\:4e4b\:5916", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{"0", ",", 
+     RowBox[{"_", "?", "Positive"}]}], "]"}], "=", "1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{"Infinity", ",", 
+     RowBox[{"_", "?", "NonNegative"}]}], "]"}], "=", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"erlangB", "[", 
+     RowBox[{
+      RowBox[{"c_", "?", "NumberQ"}], ",", 
+      RowBox[{"a_", "?", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"ExactNumberQ", "[", "#", "]"}], "&&", 
+          RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], "/;", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"IntegerQ", "[", "c", "]"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"Positive", "[", "c", "]"}], ",", "True", ",", "False"}], 
+       "]"}], ",", 
+      RowBox[{
+       RowBox[{"Message", "[", 
+        RowBox[{
+         RowBox[{"erlangB", "::", "nserv"}], ",", 
+         RowBox[{"InputForm", "[", "c", "]"}]}], "]"}], ";", "False"}]}], 
+     "]"}]}], ":=", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"(", 
      RowBox[{
@@ -94,26 +145,118 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"erlangB", "[", 
+   RowBox[{
+    RowBox[{"erlangB", "[", 
+     RowBox[{
+      RowBox[{"c_", "?", "NumberQ"}], ",", 
+      RowBox[{"a_", "?", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"InexactNumberQ", "[", "#", "]"}], "&&", 
+          RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], "/;", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"IntegerQ", "[", "c", "]"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"Positive", "[", "c", "]"}], ",", "True", ",", "False"}], 
+       "]"}], ",", 
+      RowBox[{
+       RowBox[{"Message", "[", 
+        RowBox[{
+         RowBox[{"erlangB", "::", "nserv"}], ",", 
+         RowBox[{"InputForm", "[", "c", "]"}]}], "]"}], ";", "False"}]}], 
+     "]"}]}], ":=", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], 
     RowBox[{
-     RowBox[{"_Integer", "?", "NonNegative"}], ",", "0"}], "]"}], "=", "0"}], 
+     RowBox[{"Gamma", "[", 
+      RowBox[{"2", "+", "c"}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", "c"}], ")"}], 
+       RowBox[{"E", "^", "a"}], " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"1", "+", "c"}], ",", "a"}], "]"}]}], ")"}]}]}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"erlangB", "[", 
-    RowBox[{"0", ",", 
-     RowBox[{"_", "?", "Positive"}]}], "]"}], "=", "1"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"erlangB", "[", 
-    RowBox[{"Infinity", ",", 
-     RowBox[{"_", "?", "NonNegative"}]}], "]"}], "=", "0"}], ";"}]}], "Input",\
+   RowBox[{"Expand", "[", 
+    RowBox[{"erlangB", "[", 
+     RowBox[{"c_", ",", "a_"}], "]"}], "]"}], "^:=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], "/", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", "^", "k"}], "/", 
+       RowBox[{"k", "!"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "c"}], "}"}]}], "]"}]}]}], ";"}]}], "Input",\
 
  CellChangeTimes->{{3.705700476808666*^9, 3.705700497118888*^9}, 
    3.7057005481581163`*^9, {3.7057242499719067`*^9, 3.70572425297149*^9}, {
    3.7057245291084642`*^9, 3.705724533405381*^9}, {3.705724627710424*^9, 
-   3.7057248391089783`*^9}, 3.705724888982622*^9, 3.705726204327856*^9}],
+   3.7057248391089783`*^9}, 3.705724888982622*^9, 3.705726204327856*^9, 
+   3.705783796551298*^9, {3.7057838545576563`*^9, 3.7057839108289957`*^9}, {
+   3.705788245468046*^9, 3.705788268131174*^9}, {3.7057883285204287`*^9, 
+   3.705788359072837*^9}, {3.705788777125046*^9, 3.705788880184257*^9}, {
+   3.7057889147394*^9, 3.705788950756407*^9}, {3.705789010757134*^9, 
+   3.705789105618804*^9}, {3.705789172933526*^9, 3.705789329048544*^9}, {
+   3.705789365561503*^9, 3.70578940645125*^9}, {3.7057895412333717`*^9, 
+   3.705789547024929*^9}, {3.705789964351137*^9, 3.705790012132715*^9}, {
+   3.705790144659947*^9, 3.705790212820999*^9}, {3.7057902870183887`*^9, 
+   3.705790348848909*^9}, {3.7057906120438013`*^9, 3.7057908066398993`*^9}, {
+   3.705790914136384*^9, 3.705790981319848*^9}, {3.7057911515894117`*^9, 
+   3.705791152989378*^9}, {3.705791275319605*^9, 3.705791301428773*^9}, {
+   3.705791409511764*^9, 3.705791442207152*^9}, {3.705791612269196*^9, 
+   3.7057916402834473`*^9}, {3.705791682074379*^9, 3.705791718812907*^9}, {
+   3.705791778554091*^9, 3.705791912940384*^9}, {3.705791971253313*^9, 
+   3.705791973589733*^9}, {3.7057920134904137`*^9, 3.705792176989141*^9}, {
+   3.70579220782653*^9, 3.7057922216228733`*^9}, {3.7057922941916533`*^9, 
+   3.705792296553658*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3.1", ",", 
+   RowBox[{"5", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705791021800213*^9, 3.705791051015724*^9}, 
+   3.7057914241609087`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"erlangB", "::", "nserv"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Number of servers is expected to be a positive integer; \
+found \[NoBreak]\\!\\(\\*FrameBox[\\\"3.1\\\", Rule[BoxFrame, False], \
+Rule[BoxMargins, False]]\\)\[NoBreak] instead.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.705791977465621*^9, {3.705792076152205*^9, 3.705792078948592*^9}, {
+   3.705792127939929*^9, 3.7057921807160482`*^9}, 3.705792228777628*^9}],
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3.1`", ",", 
+   FractionBox["5", "2"]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.705791052275187*^9, 3.705791162709714*^9, 3.705791312232676*^9, {
+   3.705791421832672*^9, 3.705791446321216*^9}, {3.705791652406036*^9, 
+   3.705791659211977*^9}, 3.705791705067347*^9, {3.705791961039646*^9, 
+   3.705791977466908*^9}, {3.705792076155519*^9, 3.705792078949688*^9}, {
+   3.7057921279441853`*^9, 3.7057921807171173`*^9}, 3.7057922287807283`*^9}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -137,10 +280,1200 @@ Cell[BoxData[
     RowBox[{"3", ",", 
      SqrtBox["2"]}], "]"}]}], "}"}]], "Output",
  CellChangeTimes->{3.705726233673908*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{"erlangB", "[", 
+   RowBox[{"3", ",", 
+    RowBox[{"Sqrt", "[", "2", "]"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705783946198436*^9, 3.705783956966257*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SqrtBox["2"], 
+  RowBox[{"3", " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "+", 
+     FractionBox[
+      RowBox[{"4", " ", 
+       SqrtBox["2"]}], "3"]}], ")"}]}]]], "Output",
+ CellChangeTimes->{3.705783959390423*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"a", "^", "k"}], "/", 
+    RowBox[{"k", "!"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "c"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705784395913938*^9, 3.7057844088198633`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", "a"], " ", 
+   RowBox[{"Gamma", "[", 
+    RowBox[{
+     RowBox[{"1", "+", "c"}], ",", "a"}], "]"}]}], 
+  RowBox[{"c", "!"}]]], "Output",
+ CellChangeTimes->{3.705784409837666*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Algebra`SymbolicSum`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.705784605441012*^9, 3.705784655425267*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Get", "::", "noopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot open \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"Algebra`SymbolicSum`\\\\\\\"\\\"}]\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/noopen\\\", ButtonNote -> \
+\\\"Get::noopen\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.705784642504056*^9, 3.7057846561904097`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Context \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"\\\\\\\"Algebra`SymbolicSum`\\\\\\\"\\\"}]\\)\
+\[NoBreak] was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.705784642504056*^9, 3.705784656285324*^9}}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.705784642505262*^9, 3.705784656287002*^9}}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"erlangB", "[", 
+   RowBox[{
+    RowBox[{"c_Integer", "?", "Positive"}], ",", 
+    RowBox[{"a_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"NumberQ", "[", "#", "]"}], "&&", 
+        RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], 
+  "=."}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{
+     RowBox[{"c_Integer", "?", "Positive"}], ",", 
+     RowBox[{"a_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ExactNumberQ", "[", "#", "]"}], "&&", 
+         RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], "/", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", "^", "k"}], "/", 
+       RowBox[{"k", "!"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "c"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{
+     RowBox[{"c_Integer", "?", "Positive"}], ",", 
+     RowBox[{"a_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"InexactNumberQ", "[", "#", "]"}], "&&", 
+         RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], ":=",
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], 
+    RowBox[{
+     RowBox[{"Gamma", "[", 
+      RowBox[{"2", "+", "c"}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", "c"}], ")"}], 
+       RowBox[{"E", "^", "a"}], " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"1", "+", "c"}], ",", "a"}], "]"}]}], ")"}]}]}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.705784825688718*^9, 3.705785075853798*^9}, 
+   3.705788091329277*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "erlangB"}]], "Input",
+ CellChangeTimes->{{3.7057850824049*^9, 3.705785084954583*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`erlangB", "Print", "PrintUsage",
+ CellChangeTimes->{3.7057895702138577`*^9},
+ CellTags->"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Expand", "[", 
+          RowBox[{"erlangB", "[", 
+           RowBox[{"c_", ",", "a_"}], "]"}], "]"}], "^:=", 
+         FractionBox[
+          SuperscriptBox["a", "c"], 
+          RowBox[{
+           RowBox[{"c", "!"}], " ", 
+           RowBox[{
+            UnderoverscriptBox["\[Sum]", 
+             RowBox[{"k", "=", "0"}], "c"], 
+            FractionBox[
+             SuperscriptBox["a", "k"], 
+             RowBox[{"k", "!"}]]}]}]]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{
+           RowBox[{"_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"NonNegative", "[", "#1", "]"}]}], "&"}], ")"}]}], ",",
+            "0"}], "]"}], "=", "0"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"_", "?", "Positive"}]}], "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{"\[Infinity]", ",", 
+           RowBox[{"_", "?", "NonNegative"}]}], "]"}], "=", "0"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{
+           RowBox[{"c_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}], ",", 
+           RowBox[{"a_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ExactNumberQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}]}], 
+          "]"}], ":=", 
+         FractionBox[
+          SuperscriptBox["a", "c"], 
+          RowBox[{
+           RowBox[{"c", "!"}], " ", 
+           RowBox[{
+            UnderoverscriptBox["\[Sum]", 
+             RowBox[{"k", "=", "0"}], "c"], 
+            FractionBox[
+             SuperscriptBox["a", "k"], 
+             RowBox[{"k", "!"}]]}]}]]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{
+           RowBox[{"c_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}], ",", 
+           RowBox[{"a_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"InexactNumberQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}]}], 
+          "]"}], ":=", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox["a", "c"], " ", 
+           RowBox[{"Gamma", "[", 
+            RowBox[{"2", "+", "c"}], "]"}]}], 
+          RowBox[{
+           RowBox[{"c", "!"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "+", "c"}], ")"}], " ", 
+             SuperscriptBox["\[ExponentialE]", "a"], " ", 
+             RowBox[{"Gamma", "[", 
+              RowBox[{
+               RowBox[{"1", "+", "c"}], ",", "a"}], "]"}]}], ")"}]}]]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`erlangB],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7057895702582684`*^9},
+ CellTags->"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3", ",", "2.5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7057852160618687`*^9, 3.705785226750108*^9}}],
+
+Cell[BoxData["0.2821670428893905`"], "Output",
+ CellChangeTimes->{3.7057852278890047`*^9, 3.705789583893508*^9, 
+  3.705790413679915*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ErlangB", "[", 
+  RowBox[{"3", ",", "2.5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785229716618*^9, 3.7057852370072947`*^9}}],
+
+Cell[BoxData["0.28216704288939054`"], "Output",
+ CellChangeTimes->{3.705785237509152*^9, 3.705789586108574*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"5", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785247997201*^9, 3.7057852592706757`*^9}}],
+
+Cell[BoxData[
+ FractionBox["125", "443"]], "Output",
+ CellChangeTimes->{3.705785259707265*^9, 3.705785342657433*^9, 
+  3.705789588099473*^9, 3.705790411516814*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ErlangB", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"5", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785344608633*^9, 3.7057853518839397`*^9}}],
+
+Cell[BoxData[
+ FractionBox["125", "443"]], "Output",
+ CellChangeTimes->{3.705785352446602*^9, 3.705789590366542*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ExactNumberQ", "[", 
+  RowBox[{"5", "/", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785270440983*^9, 3.705785295236326*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.7057852958730907`*^9, 3.705789592624914*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"erlangB", "[", 
+   RowBox[{
+    RowBox[{"c_Interger", "?", "Positive"}], ",", 
+    RowBox[{"a_", "?", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ExactNumberQ", "[", "#", "]"}], "&&", 
+        RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], 
+  "=."}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{
+     RowBox[{"c_Integer", "?", "Positive"}], ",", 
+     RowBox[{"a_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"ExactNumberQ", "[", "#", "]"}], "&&", 
+         RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], "/", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"a", "^", "k"}], "/", 
+       RowBox[{"k", "!"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"k", ",", "0", ",", "c"}], "}"}]}], "]"}]}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.705785404096292*^9, 3.705785427452485*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "erlangB"}]], "Input",
+ CellChangeTimes->{{3.705785429811673*^9, 3.705785432035479*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Global`erlangB", "Print", "PrintUsage",
+ CellChangeTimes->{3.705789608811597*^9},
+ CellTags->"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Expand", "[", 
+          RowBox[{"erlangB", "[", 
+           RowBox[{"c_", ",", "a_"}], "]"}], "]"}], "^:=", 
+         FractionBox[
+          SuperscriptBox["a", "c"], 
+          RowBox[{
+           RowBox[{"c", "!"}], " ", 
+           RowBox[{
+            UnderoverscriptBox["\[Sum]", 
+             RowBox[{"k", "=", "0"}], "c"], 
+            FractionBox[
+             SuperscriptBox["a", "k"], 
+             RowBox[{"k", "!"}]]}]}]]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{
+           RowBox[{"_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"NonNegative", "[", "#1", "]"}]}], "&"}], ")"}]}], ",",
+            "0"}], "]"}], "=", "0"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{"0", ",", 
+           RowBox[{"_", "?", "Positive"}]}], "]"}], "=", "1"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{"\[Infinity]", ",", 
+           RowBox[{"_", "?", "NonNegative"}]}], "]"}], "=", "0"}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{
+           RowBox[{"c_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}], ",", 
+           RowBox[{"a_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ExactNumberQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}]}], 
+          "]"}], ":=", 
+         FractionBox[
+          SuperscriptBox["a", "c"], 
+          RowBox[{
+           RowBox[{"c", "!"}], " ", 
+           RowBox[{
+            UnderoverscriptBox["\[Sum]", 
+             RowBox[{"k", "=", "0"}], "c"], 
+            FractionBox[
+             SuperscriptBox["a", "k"], 
+             RowBox[{"k", "!"}]]}]}]]}]},
+       {" "},
+       {
+        RowBox[{
+         RowBox[{"erlangB", "[", 
+          RowBox[{
+           RowBox[{"c_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"IntegerQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}], ",", 
+           RowBox[{"a_", "?", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"InexactNumberQ", "[", "#1", "]"}], "&&", 
+               RowBox[{"Positive", "[", "#1", "]"}]}], "&"}], ")"}]}]}], 
+          "]"}], ":=", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox["a", "c"], " ", 
+           RowBox[{"Gamma", "[", 
+            RowBox[{"2", "+", "c"}], "]"}]}], 
+          RowBox[{
+           RowBox[{"c", "!"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "+", "c"}], ")"}], " ", 
+             SuperscriptBox["\[ExponentialE]", "a"], " ", 
+             RowBox[{"Gamma", "[", 
+              RowBox[{
+               RowBox[{"1", "+", "c"}], ",", "a"}], "]"}]}], ")"}]}]]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`erlangB],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7057896088474693`*^9},
+ CellTags->"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"5", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785446417286*^9, 3.705785455479101*^9}}],
+
+Cell[BoxData[
+ FractionBox["125", "443"]], "Output",
+ CellChangeTimes->{3.705785456334326*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ErlangB", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"5", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785465940028*^9, 3.705785477705308*^9}}],
+
+Cell[BoxData[
+ FractionBox["125", "443"]], "Output",
+ CellChangeTimes->{3.705785479273981*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.705785482874859*^9, 3.7057854893845387`*^9}}],
+
+Cell[BoxData["0.28216704288939054`"], "Output",
+ CellChangeTimes->{3.705785490284113*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Log"}]], "Input",
+ CellChangeTimes->{{3.705785750348303*^9, 3.70578575737031*^9}, {
+  3.70578590993682*^9, 3.705785911199226*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Log\\\", \\\"[\\\", StyleBox[\\\"z\\\", \
+\\\"TI\\\"], \\\"]\\\"}]\\) gives the natural logarithm of \\!\\(\\*StyleBox[\
+\\\"z\\\", \\\"TI\\\"]\\) (logarithm to base \\!\\(\\*StyleBox[\\\"e\\\", \
+\\\"TI\\\"]\\)). \\n\\!\\(\\*RowBox[{\\\"Log\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"b\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"z\\\", \
+\\\"TI\\\"]}], \\\"]\\\"}]\\) gives the logarithm to base \
+\\!\\(\\*StyleBox[\\\"b\\\", \\\"TI\\\"]\\). \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Log"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.705785911824037*^9},
+ CellTags->"Info-c57403ce-6aa8-40ed-8681-94e0e47f7c39"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{
+   RowBox[{"Names", "[", "\"\<System`*\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"MemberQ", "[", 
+     RowBox[{
+      RowBox[{"Attributes", "[", "#", "]"}], ",", "NumericFunction"}], "]"}], 
+    "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705785916251143*^9, 3.705785976586213*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Abs\"\>", ",", "\<\"AbsoluteCorrelationFunction\"\>", 
+   ",", "\<\"AiryAi\"\>", ",", "\<\"AiryAiPrime\"\>", ",", "\<\"AiryBi\"\>", 
+   ",", "\<\"AiryBiPrime\"\>", ",", "\<\"AlternatingFactorial\"\>", 
+   ",", "\<\"AngerJ\"\>", ",", "\<\"ArcCos\"\>", ",", "\<\"ArcCosh\"\>", 
+   ",", "\<\"ArcCot\"\>", ",", "\<\"ArcCoth\"\>", ",", "\<\"ArcCsc\"\>", 
+   ",", "\<\"ArcCsch\"\>", ",", "\<\"ArcSec\"\>", ",", "\<\"ArcSech\"\>", 
+   ",", "\<\"ArcSin\"\>", ",", "\<\"ArcSinh\"\>", ",", "\<\"ArcTan\"\>", 
+   ",", "\<\"ArcTanh\"\>", ",", "\<\"Arg\"\>", 
+   ",", "\<\"ArithmeticGeometricMean\"\>", ",", "\<\"BarnesG\"\>", 
+   ",", "\<\"BesselI\"\>", ",", "\<\"BesselJ\"\>", ",", "\<\"BesselK\"\>", 
+   ",", "\<\"BesselY\"\>", ",", "\<\"Beta\"\>", 
+   ",", "\<\"BetaRegularized\"\>", ",", "\<\"Binomial\"\>", 
+   ",", "\<\"BSplineBasis\"\>", ",", "\<\"CatalanNumber\"\>", 
+   ",", "\<\"Ceiling\"\>", ",", "\<\"ChampernowneNumber\"\>", 
+   ",", "\<\"ChebyshevT\"\>", ",", "\<\"ChebyshevU\"\>", ",", "\<\"Clip\"\>", 
+   ",", "\<\"Conjugate\"\>", ",", "\<\"CorrelationFunction\"\>", 
+   ",", "\<\"Cos\"\>", ",", "\<\"Cosh\"\>", ",", "\<\"Cot\"\>", 
+   ",", "\<\"Coth\"\>", ",", "\<\"CovarianceFunction\"\>", ",", "\<\"Csc\"\>",
+    ",", "\<\"Csch\"\>", ",", "\<\"CubeRoot\"\>", ",", "\<\"DawsonF\"\>", 
+   ",", "\<\"DedekindEta\"\>", ",", "\<\"DiracComb\"\>", 
+   ",", "\<\"DiscreteDelta\"\>", ",", "\<\"Divide\"\>", 
+   ",", "\<\"EllipticE\"\>", ",", "\<\"EllipticF\"\>", 
+   ",", "\<\"EllipticK\"\>", ",", "\<\"EllipticPi\"\>", 
+   ",", "\<\"EllipticTheta\"\>", ",", "\<\"EllipticThetaPrime\"\>", 
+   ",", "\<\"Erf\"\>", ",", "\<\"Erfc\"\>", ",", "\<\"Erfi\"\>", 
+   ",", "\<\"ErlangB\"\>", ",", "\<\"ErlangC\"\>", ",", "\<\"Exp\"\>", 
+   ",", "\<\"ExpIntegralE\"\>", ",", "\<\"ExpIntegralEi\"\>", 
+   ",", "\<\"Factorial\"\>", ",", "\<\"Factorial2\"\>", 
+   ",", "\<\"FactorialPower\"\>", ",", "\<\"Fibonacci\"\>", 
+   ",", "\<\"Floor\"\>", ",", "\<\"FractionalPart\"\>", ",", "\<\"Gamma\"\>", 
+   ",", "\<\"GammaRegularized\"\>", ",", "\<\"GegenbauerC\"\>", 
+   ",", "\<\"Gudermannian\"\>", ",", "\<\"HankelH1\"\>", 
+   ",", "\<\"HankelH2\"\>", ",", "\<\"HarmonicNumber\"\>", 
+   ",", "\<\"Haversine\"\>", ",", "\<\"HeavisideLambda\"\>", 
+   ",", "\<\"HeavisidePi\"\>", ",", "\<\"HermiteH\"\>", 
+   ",", "\<\"HurwitzLerchPhi\"\>", ",", "\<\"HurwitzZeta\"\>", 
+   ",", "\<\"Hyperfactorial\"\>", ",", "\<\"Hypergeometric0F1\"\>", 
+   ",", "\<\"Hypergeometric0F1Regularized\"\>", 
+   ",", "\<\"Hypergeometric1F1\"\>", 
+   ",", "\<\"Hypergeometric1F1Regularized\"\>", 
+   ",", "\<\"Hypergeometric2F1\"\>", 
+   ",", "\<\"Hypergeometric2F1Regularized\"\>", 
+   ",", "\<\"HypergeometricPFQ\"\>", 
+   ",", "\<\"HypergeometricPFQRegularized\"\>", 
+   ",", "\<\"HypergeometricU\"\>", ",", "\<\"Im\"\>", 
+   ",", "\<\"IntegerPart\"\>", ",", "\<\"InverseBetaRegularized\"\>", 
+   ",", "\<\"InverseErf\"\>", ",", "\<\"InverseErfc\"\>", 
+   ",", "\<\"InverseGammaRegularized\"\>", ",", "\<\"InverseGudermannian\"\>",
+    ",", "\<\"InverseHaversine\"\>", ",", "\<\"JacobiP\"\>", 
+   ",", "\<\"JacobiZeta\"\>", ",", "\<\"KelvinBei\"\>", 
+   ",", "\<\"KelvinBer\"\>", ",", "\<\"KelvinKei\"\>", 
+   ",", "\<\"KelvinKer\"\>", ",", "\<\"KroneckerDelta\"\>", 
+   ",", "\<\"LaguerreL\"\>", ",", "\<\"LegendreP\"\>", 
+   ",", "\<\"LegendreQ\"\>", ",", "\<\"LerchPhi\"\>", ",", "\<\"Log\"\>", 
+   ",", "\<\"Log10\"\>", ",", "\<\"Log2\"\>", ",", "\<\"LogBarnesG\"\>", 
+   ",", "\<\"LogGamma\"\>", ",", "\<\"LogIntegral\"\>", 
+   ",", "\<\"LogisticSigmoid\"\>", ",", "\<\"LucasL\"\>", 
+   ",", "\<\"MarcumQ\"\>", ",", "\<\"MathieuC\"\>", 
+   ",", "\<\"MathieuCharacteristicA\"\>", 
+   ",", "\<\"MathieuCharacteristicB\"\>", 
+   ",", "\<\"MathieuCharacteristicExponent\"\>", ",", "\<\"MathieuCPrime\"\>",
+    ",", "\<\"MathieuS\"\>", ",", "\<\"MathieuSPrime\"\>", ",", "\<\"Max\"\>",
+    ",", "\<\"Min\"\>", ",", "\<\"Minus\"\>", ",", "\<\"Mod\"\>", 
+   ",", "\<\"Multinomial\"\>", ",", "\<\"OwenT\"\>", 
+   ",", "\<\"ParabolicCylinderD\"\>", 
+   ",", "\<\"PartialCorrelationFunction\"\>", ",", "\<\"Plus\"\>", 
+   ",", "\<\"Pochhammer\"\>", ",", "\<\"PolyGamma\"\>", 
+   ",", "\<\"PolyLog\"\>", ",", "\<\"Power\"\>", ",", "\<\"QBinomial\"\>", 
+   ",", "\<\"QFactorial\"\>", ",", "\<\"QGamma\"\>", 
+   ",", "\<\"QHypergeometricPFQ\"\>", ",", "\<\"QPochhammer\"\>", 
+   ",", "\<\"QPolyGamma\"\>", ",", "\<\"Quotient\"\>", 
+   ",", "\<\"QuotientRemainder\"\>", ",", "\<\"Re\"\>", 
+   ",", "\<\"Rescale\"\>", ",", "\<\"RiemannSiegelTheta\"\>", 
+   ",", "\<\"RiemannSiegelZ\"\>", ",", "\<\"Round\"\>", ",", "\<\"Sec\"\>", 
+   ",", "\<\"Sech\"\>", ",", "\<\"Sign\"\>", ",", "\<\"Sin\"\>", 
+   ",", "\<\"Sinc\"\>", ",", "\<\"Sinh\"\>", ",", "\<\"SphericalBesselJ\"\>", 
+   ",", "\<\"SphericalBesselY\"\>", ",", "\<\"SphericalHankelH1\"\>", 
+   ",", "\<\"SphericalHankelH2\"\>", ",", "\<\"SphericalHarmonicY\"\>", 
+   ",", "\<\"SpheroidalEigenvalue\"\>", ",", "\<\"SpheroidalPS\"\>", 
+   ",", "\<\"SpheroidalPSPrime\"\>", ",", "\<\"SpheroidalQS\"\>", 
+   ",", "\<\"SpheroidalQSPrime\"\>", ",", "\<\"SpheroidalS1\"\>", 
+   ",", "\<\"SpheroidalS1Prime\"\>", ",", "\<\"SpheroidalS2\"\>", 
+   ",", "\<\"SpheroidalS2Prime\"\>", ",", "\<\"Sqrt\"\>", 
+   ",", "\<\"StruveH\"\>", ",", "\<\"StruveL\"\>", 
+   ",", "\<\"Subfactorial\"\>", ",", "\<\"Subtract\"\>", ",", "\<\"Surd\"\>", 
+   ",", "\<\"Tan\"\>", ",", "\<\"Tanh\"\>", ",", "\<\"Times\"\>", 
+   ",", "\<\"UnitBox\"\>", ",", "\<\"UnitStep\"\>", 
+   ",", "\<\"UnitTriangle\"\>", ",", "\<\"WeberE\"\>", 
+   ",", "\<\"WhittakerM\"\>", ",", "\<\"WhittakerW\"\>", 
+   ",", "\<\"Zeta\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7057859561414347`*^9, 3.705785977651441*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "1. The NumbericQ predicate works by",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ StyleBox["checking",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " a function attribute called NumericFunction, which all of the build-in \
+numeric functions."
+}], "Text",
+ CellChangeTimes->{{3.705786400945958*^9, 3.705786446866696*^9}, {
+  3.7057864854580097`*^9, 3.705786487227778*^9}}],
+
+Cell["\<\
+2. Implement the following diagnostic message for the ErlangB function:\
+\>", "Text",
+ CellChangeTimes->{{3.7057864989372387`*^9, 3.705786525682371*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Messages", "[", "General", "]"}]], "Input",
+ CellChangeTimes->{{3.705786536818182*^9, 3.705786544414452*^9}, {
+  3.705786577470469*^9, 3.70578658003318*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "appname"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The name `1` is not valid for the application. A \
+valid name starts with a letter and is followed by letters and digits.\"\>"}],
+    ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "argrx"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"`1` called with `2` arguments; `3` arguments are \
+expected.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "argtu"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"`1` called with 1 argument; `2` or `3` arguments \
+are expected.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "bktwrn"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"\\\"`1`\\\" represents multiplication; use \\\"`2`\
+\\\" to represent a function`4`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "catname"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The name `1` is not valid for the category. A \
+valid name starts with a letter and is followed by letters and digits.\"\>"}],
+    ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "cbase"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Invalid CloudBase specification `1`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "cloudnf"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"No CloudObject found at the given address\"\>"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "cloudprecondition"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"A precondition check in the cloud service \
+failed.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "cloudunknown"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"An unknown error occurred.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "cxt"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Invalid context specified at position `2` in `1`. \
+A context must consist of valid symbol names separated by and ending with \
+`3`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "file"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The preferences file `1` is not a file.\"\>"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "fsfq"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Unexpected state reached in `1`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "invcloudobj"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"`1` is not a valid cloud object.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "invkey"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The permissions key was not a non-empty string: \
+`1`\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "invopt"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Invalid value `1` for parameter `2`. Using default \
+value `3`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "invperm"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Invalid permissions specification `1`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "invusr"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Invalid user or PermissionsGroup `1`.\"\>"}], ",", 
+   
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "ivar"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"`1` is not a valid variable.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "keynf"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The PermissionsKey `1` was not found.\"\>"}], ",", 
+   
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "maxviewers"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Maximum number of `1` viewer seats \
+exceeded.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "meprec"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Internal precision limit $MaxExtraPrecision = `1` \
+reached while evaluating `2`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "newsym"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "nfunfail"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "noaccess"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Access to user `1` information is denied.\"\>"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "nofirst"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"`1` has zero length and no first element.\"\>"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "noopen"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Cannot open `1`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "nosite"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Site `1` is not an existing Paclet site.\"\>"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "notauth"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Unable to authenticate with Wolfram Cloud server. \
+Please try authenticating again.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "notfound"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Symbol `1` not found.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "notmethod"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The specified method is not allowed.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "notparam"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Invalid parameters were specified.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "notperm"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Unable to perform the requested operation. \
+Permission denied.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "obspkgfn"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "offline"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The Wolfram Language is currently configured not \
+to use the Internet. To allow Internet use, check the \\\"Allow the Wolfram \
+Language to use the Internet\\\" box in the Help \[FilledRightTriangle] \
+Internet Connectivity dialog.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "oldversion"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Connections to kernels older than Version 2.2 are \
+not supported. This kernel is version `1`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pclt"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"`1` does not refer to a known paclet.\"\>"}], ",", 
+   
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pcltn"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"No appropriate paclet with name `1` was \
+found.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pcltni"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"No appropriate paclet with name `1` is \
+installed.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pcltnv"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"No appropriate paclet with name `1` and version \
+`2` was found.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pcltnvi"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"No appropriate paclet with name `1` and version \
+`2` is installed.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "plnr"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pp3tr"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pptr"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "prefdir"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The preferences directory `1` cannot be created.\"\
+\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "pwfailed"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "rejreq"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The specified request was rejected by the \
+server.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "sandbox"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "selfperm"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The currently authenticated user `1` cannot be \
+assigned specific permissions. Owners always have full permissions on their \
+objects.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "shdw"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Symbol `1` appears in multiple contexts `2`; \
+definitions in context `3` may shadow or be shadowed by other \
+definitions.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "spell"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "spell1"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", 
+    RowBox[{"$Off", "[", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "srverr"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Cloud server is not able to complete a \
+request.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "stop"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Further output of `1` will be suppressed during \
+this calculation.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "string"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"String expected at position `1` in `2`.\"\>"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "sym"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Argument `1` at position `2` is expected to be a \
+symbol.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "sysmain"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Error loading the main binary file `1`.\\n\\t Get[\
+\\\"sysmake.m\\\"] must be run before continuing.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "unavailable"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"The cloud service is not available. Please try \
+again shortly.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "userunknown"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"User `1` unknown to the Wolfram Cloud.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "writewarn"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Defining rule for `1`.\"\>"}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     StyleBox[
+      RowBox[{"General", "::", "wrsym"}], "MessageName"], "]"}], 
+    "\[RuleDelayed]", "\<\"Symbol `1` is Protected.\"\>"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.705786545049876*^9, 3.7057865811993427`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{"%38", ",", 
+   RowBox[{
+    RowBox[{"MemberQ", "[", 
+     RowBox[{"#", ",", "\"\<nserv\>\"", ",", "Infinity"}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.705786601077973*^9, 3.705786693772873*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.705786651252202*^9, 3.70578669455376*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.705786734945689*^9, 3.705786743578771*^9}, {
+   3.7057868510300922`*^9, 3.7057868794164667`*^9}, 3.705791141559847*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3.", ",", 
+   RowBox[{"5", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705789905621664*^9, 3.705789916277779*^9}, {
+  3.705791234385038*^9, 3.705791236766971*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"erlangB", "::", "nserv"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Number of servers is expected to be a positive integer; \
+found \[NoBreak]\\!\\(\\*RowBox[{\\\"3.`\\\"}]\\)\[NoBreak] instead.\"\>"}]], \
+"Message", "MSG",
+ CellChangeTimes->{3.705791239663756*^9}],
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", 
+  RowBox[{"3.`", ",", 
+   FractionBox["5", "2"]}], "]"}]], "Output",
+ CellChangeTimes->{{3.705791223414652*^9, 3.705791239664639*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", "3.`", "]"}]], "Input",
+ CellChangeTimes->{3.70579121916138*^9}],
+
+Cell[BoxData[
+ RowBox[{"erlangB", "[", "3.`", "]"}]], "Output",
+ CellChangeTimes->{3.705791219226994*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "erlangB", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"erlangB", "[", 
+    RowBox[{
+     RowBox[{"c_", "/;", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"IntegerQ", "[", "c", "]"}], ",", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"Positive", "[", "c", "]"}], ",", "True", ",", "False"}], 
+         "]"}], ",", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"erlangB", "::", "nserv"}], ",", "c"}], "]"}], ";", 
+         "False"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"a_", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"InexactNumberQ", "[", "#", "]"}], "&&", 
+         RowBox[{"Positive", "[", "#", "]"}]}], "&"}], ")"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"a", "^", "c"}], "/", 
+      RowBox[{"c", "!"}]}], ")"}], 
+    RowBox[{
+     RowBox[{"Gamma", "[", 
+      RowBox[{"2", "+", "c"}], "]"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", "c"}], ")"}], 
+       RowBox[{"E", "^", "a"}], " ", 
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"1", "+", "c"}], ",", "a"}], "]"}]}], ")"}]}]}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.705791203098535*^9, 3.7057912115403*^9}}]
 },
-WindowSize->{808, 653},
-WindowMargins->{{Automatic, 314}, {-228, Automatic}},
+WindowSize->{1596, 698},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -148,10 +1481,28 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"->{
+  Cell[13974, 440, 145, 2, 42, "Print",
+   CellTags->"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"],
+  Cell[14122, 444, 4333, 128, 251, "Print",
+   CellTags->"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"]},
+ "Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"->{
+  Cell[21378, 683, 143, 2, 42, "Print",
+   CellTags->"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"],
+  Cell[21524, 687, 4333, 128, 251, "Print",
+   CellTags->"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"]},
+ "Info-c57403ce-6aa8-40ed-8681-94e0e47f7c39"->{
+  Cell[26933, 862, 790, 16, 63, "Print",
+   CellTags->"Info-c57403ce-6aa8-40ed-8681-94e0e47f7c39"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d", 51447, 1484},
+ {"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1", 51698, 1489},
+ {"Info-c57403ce-6aa8-40ed-8681-94e0e47f7c39", 51949, 1494}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
@@ -163,11 +1514,110 @@ Cell[CellGroupData[{
 Cell[1259, 47, 412, 12, 50, "Input"],
 Cell[1674, 61, 134, 3, 32, "Output"]
 }, Open  ]],
-Cell[1823, 67, 1572, 48, 255, "Input"],
+Cell[1823, 67, 5732, 158, 441, "Input"],
 Cell[CellGroupData[{
-Cell[3420, 119, 297, 8, 50, "Input"],
-Cell[3720, 129, 311, 9, 87, "Output"]
+Cell[7580, 229, 203, 5, 32, "Input"],
+Cell[7786, 236, 490, 10, 24, "Message"],
+Cell[8279, 248, 494, 9, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8810, 262, 297, 8, 50, "Input"],
+Cell[9110, 272, 311, 9, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9458, 286, 216, 5, 50, "Input"],
+Cell[9677, 293, 242, 9, 84, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9956, 307, 275, 8, 50, "Input"],
+Cell[10234, 317, 254, 8, 56, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10525, 330, 151, 2, 50, "Input"],
+Cell[10679, 334, 507, 11, 23, "Message"],
+Cell[11189, 347, 544, 11, 23, "Message"],
+Cell[11736, 360, 100, 1, 32, "Output"]
+}, Open  ]],
+Cell[11851, 364, 1959, 66, 173, "Input"],
+Cell[CellGroupData[{
+Cell[13835, 434, 114, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[13974, 440, 145, 2, 42, "Print",
+ CellTags->"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"],
+Cell[14122, 444, 4333, 128, 251, "Print",
+ CellTags->"Info-51cef0e9-070b-4cbe-869b-d8af1ab2896d"]
 }, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18504, 578, 153, 3, 32, "Input"],
+Cell[18660, 583, 137, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18834, 590, 153, 3, 50, "Input"],
+Cell[18990, 595, 111, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19138, 601, 175, 4, 32, "Input"],
+Cell[19316, 607, 163, 3, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19516, 615, 175, 4, 50, "Input"],
+Cell[19694, 621, 116, 2, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19847, 628, 154, 3, 50, "Input"],
+Cell[20004, 633, 97, 1, 32, "Output"]
+}, Open  ]],
+Cell[20116, 637, 1096, 36, 91, "Input"],
+Cell[CellGroupData[{
+Cell[21237, 677, 116, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[21378, 683, 143, 2, 42, "Print",
+ CellTags->"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"],
+Cell[21524, 687, 4333, 128, 251, "Print",
+ CellTags->"Info-b0679480-aa63-4d82-aad8-ab63c4a678b1"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25906, 821, 173, 4, 32, "Input"],
+Cell[26082, 827, 94, 2, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26213, 834, 173, 4, 50, "Input"],
+Cell[26389, 840, 94, 2, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26520, 847, 122, 2, 50, "Input"],
+Cell[26645, 851, 89, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26771, 857, 159, 3, 32, "Input"],
+Cell[26933, 862, 790, 16, 63, "Print",
+ CellTags->"Info-c57403ce-6aa8-40ed-8681-94e0e47f7c39"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27760, 883, 337, 9, 50, "Input"],
+Cell[28100, 894, 5723, 92, 363, "Output"]
+}, Open  ]],
+Cell[33838, 989, 387, 11, 33, "Text"],
+Cell[34228, 1002, 163, 3, 33, "Text"],
+Cell[CellGroupData[{
+Cell[34416, 1009, 181, 3, 50, "Input"],
+Cell[34600, 1014, 13565, 358, 891, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48202, 1377, 263, 7, 50, "Input"],
+Cell[48468, 1386, 110, 2, 32, "Output"]
+}, Open  ]],
+Cell[48593, 1391, 168, 2, 32, "Input"],
+Cell[CellGroupData[{
+Cell[48786, 1397, 223, 5, 32, "Input"],
+Cell[49012, 1404, 319, 8, 23, "Message"],
+Cell[49334, 1414, 174, 4, 87, "Output"]
+}, Open  ]],
+Cell[49523, 1421, 103, 2, 32, InheritFromParent],
+Cell[49629, 1425, 105, 2, 32, "Output"],
+Cell[49737, 1429, 1378, 43, 132, "Input"]
 }
 ]
 *)
