@@ -1,0 +1,241 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6298,        232]
+NotebookOptionsPosition[      5354,        194]
+NotebookOutlinePosition[      5702,        209]
+CellTagsIndexPosition[      5659,        206]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Unprotect", "[", "BesselJ", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Format", "[", 
+    RowBox[{"BesselJ", "[", 
+     RowBox[{"n_", ",", "x_"}], "]"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Subscripted", "[", 
+     RowBox[{"J", "[", "n", "]"}], "]"}], "[", "x", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Protect", "[", "BesselJ", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.705958047409768*^9, 3.705958103363023*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BesselJ", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"Pi", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705958106936861*^9, 3.7059581184748*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   SubscriptBox["J", "1"],
+   Subscripted[
+    $CellContext`J[1]],
+   Editable->False], "[", 
+  FractionBox["\[Pi]", "2"], "]"}]], "Output",
+ CellChangeTimes->{3.705958119030562*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullForm", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.705958255471055*^9, 3.705958259793427*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   RowBox[{"BesselJ", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{"Times", "[", 
+      RowBox[{
+       RowBox[{"Rational", "[", 
+        RowBox[{"1", ",", "2"}], "]"}], ",", "Pi"}], "]"}]}], "]"}],
+   ShowSpecialCharacters->False,
+   ShowStringCharacters->True,
+   NumberMarks->True],
+  FullForm]], "Output",
+ CellChangeTimes->{3.705958260330553*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FormatValues", "[", "BesselJ", "]"}]], "Input",
+ CellChangeTimes->{{3.705958750292179*^9, 3.705958759563815*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"MakeBoxes", "[", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         SubscriptBox["J", "n_"],
+         Subscripted[
+          $CellContext`J[
+           Pattern[$CellContext`n, 
+            Blank[]]]],
+         Editable->False], "[", "x_", "]"}], ",", "FormatType_"}], "]"}], 
+     "]"}], "\[RuleDelayed]", 
+    RowBox[{"Format", "[", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        SubscriptBox["J", "n"],
+        Subscripted[
+         $CellContext`J[$CellContext`n]],
+        Editable->False], "[", "x", "]"}], ",", "FormatType"}], "]"}]}], ",", 
+   
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     TagBox[
+      FormBox[
+       RowBox[{
+        InterpretationBox[
+         SubscriptBox["J", "n_"],
+         Subscripted[
+          $CellContext`J[
+           Pattern[$CellContext`n, 
+            Blank[]]]],
+         Editable->False], "[", "x_", "]"}],
+       StandardForm],
+      Format], "]"}], "\[RuleDelayed]", 
+    RowBox[{
+     InterpretationBox[
+      SubscriptBox["J", "n"],
+      Subscripted[
+       $CellContext`J[$CellContext`n]],
+      Editable->False], "[", "x", "]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7059587599107122`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FormatValues", "[", "BesselJ", "]"}], "//", "InputForm"}]], "Input",\
+
+ CellChangeTimes->{{3.705958787334968*^9, 3.705958807258451*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FormatType", "::", "ftype"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Value of option FormatType -> \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"FormatType\\\"}]\\)\[NoBreak] is not valid. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/FormatType/ftype\\\", \
+ButtonNote -> \\\"FormatType::ftype\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.70595880789328*^9}],
+
+Cell["\<\
+{HoldPattern[MakeBoxes[BesselJ[n_, x_], FormatType_]] :> J [x]
+ n, 
+
+   HoldPattern[BesselJ[n_, x_]] :> Subscripted[J[n]][x]}\
+\>", "Output",
+ CellChangeTimes->{3.70595880789423*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Overscript", "[", 
+  RowBox[{"x", ",", "\"\<_\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.7059590622198477`*^9, 3.705959070295568*^9}}],
+
+Cell[BoxData[
+ OverscriptBox["x", "\<\"_\"\>"]], "Output",
+ CellChangeTimes->{3.705959070622212*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SequenceForm", "[", 
+  RowBox[{"a", ",", 
+   RowBox[{"Superscript", "[", 
+    RowBox[{"b", ",", "c"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.705959191276119*^9, 3.705959200086996*^9}, {
+  3.7059594684176283`*^9, 3.705959496577475*^9}, {3.705959580144264*^9, 
+  3.705959597224415*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"a", "\[InvisibleSpace]", 
+   TemplateBox[{"b","c"},
+    "Superscript"]}],
+  SequenceForm[$CellContext`a, 
+   Superscript[$CellContext`b, $CellContext`c]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.705959597949143*^9}]
+}, Open  ]]
+},
+WindowSize->{1080, 724},
+WindowMargins->{{Automatic, 46}, {Automatic, 522}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 509, 14, 132, "Input"],
+Cell[CellGroupData[{
+Cell[1092, 38, 172, 4, 50, "Input"],
+Cell[1267, 44, 227, 8, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1531, 57, 127, 2, 50, "Input"],
+Cell[1661, 61, 383, 13, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2081, 79, 137, 2, 50, "Input"],
+Cell[2221, 83, 1282, 45, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3540, 133, 171, 4, 50, "Input"],
+Cell[3714, 139, 497, 10, 23, "Message"],
+Cell[4214, 151, 192, 6, 100, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4443, 162, 162, 3, 50, "Input"],
+Cell[4608, 167, 100, 2, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4745, 174, 318, 7, 50, "Input"],
+Cell[5066, 183, 272, 8, 65, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
