@@ -1,0 +1,230 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6684,        221]
+NotebookOptionsPosition[      5708,        182]
+NotebookOutlinePosition[      6056,        197]
+CellTagsIndexPosition[      6013,        194]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData["$PrePrint"], "Input",
+ CellChangeTimes->{{3.706173660802361*^9, 3.70617366535262*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$RecursionLimit", "::", "reclim2"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Recursion depth of \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"1024\\\"}]\\)\[NoBreak] exceeded during \
+evaluation of \[NoBreak]\\!\\(\\*RowBox[{\\\"Global`Private`oldPrePrint\\\", \
+\\\"[\\\", RowBox[{RowBox[{\\\"Global`Private`oldPrePrint\\\", \\\"[\\\", \
+\\\"#\\\\\\\"1\\\\\\\"\\\", \\\"]\\\"}], \\\"&\\\"}], \
+\\\"]\\\"}]\\)\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/$RecursionLimit\\\", ButtonNote -> \
+\\\"$RecursionLimit::reclim2\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7061736666889563`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  TagBox[
+   RowBox[{"Global`Private`oldPrePrint", "[", 
+    RowBox[{
+     TagBox[
+      RowBox[{"Global`Private`oldPrePrint", "[", 
+       RowBox[{"Slot", "[", 
+        InterpretationBox["\<\"1\"\>",
+         1,
+         Editable->False], "]"}], "]"}],
+      ScientificForm], "&"}], "]"}],
+   ScientificForm], "]"}]], "Output",
+ CellChangeTimes->{3.706173666689538*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PrePrint", "=", "Short"}]], "Input",
+ CellChangeTimes->{{3.706173676385894*^9, 3.7061736812889423`*^9}}],
+
+Cell[BoxData[
+ TagBox["Short",
+  Short]], "Output",
+ CellChangeTimes->{3.706173682738495*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$PrePrint"], "Input",
+ CellChangeTimes->{{3.7061736861559753`*^9, 3.706173689076188*^9}}],
+
+Cell[BoxData[
+ TagBox["Short",
+  Short]], "Output",
+ CellChangeTimes->{3.706173689361041*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Range", "[", 
+  RowBox[{"100", ",", "120", ",", ".1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.70617370502426*^9, 3.706173727321063*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{
+   "100.`", ",", "100.1`", ",", "100.2`", ",", "100.3`", ",", "100.4`", ",", 
+    RowBox[{"\[LeftSkeleton]", "191", "\[RightSkeleton]"}], ",", "119.6`", 
+    ",", "119.7`", ",", "119.8`", ",", "119.9`", ",", "120.`"}], "}"}],
+  Short]], "Output",
+ CellChangeTimes->{3.706173727795724*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"oldPrePrint", "=", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"ValueQ", "[", "$PrePrint", "]"}], ",", "$PrePrint", ",", 
+     "Identity"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$PrePrint", "=", 
+   RowBox[{
+    RowBox[{"ScientificForm", "[", 
+     RowBox[{"oldPrePrint", "[", "#", "]"}], "]"}], "&"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"End", "[", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.706173739208644*^9, 3.706173879361149*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Range", "[", 
+  RowBox[{"100", ",", "120", ",", ".1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.706173884574781*^9, 3.706173892264719*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\<\"1.\"\>", "\[Times]", 
+      SuperscriptBox["10", "\<\"2\"\>"]}], ",", 
+     RowBox[{"\<\"1.001\"\>", "\[Times]", 
+      SuperscriptBox["10", "\<\"2\"\>"]}], ",", 
+     RowBox[{"\<\"1.002\"\>", "\[Times]", 
+      SuperscriptBox["10", "\<\"2\"\>"]}], ",", 
+     RowBox[{"\[LeftSkeleton]", 
+      InterpretationBox["\<\"196\"\>",
+       196,
+       Editable->False], "\[RightSkeleton]"}], ",", 
+     RowBox[{"\<\"1.199\"\>", "\[Times]", 
+      SuperscriptBox["10", "\<\"2\"\>"]}], ",", 
+     RowBox[{"\<\"1.2\"\>", "\[Times]", 
+      SuperscriptBox["10", "\<\"2\"\>"]}]}], "}"}],
+   Short],
+  ScientificForm]], "Output",
+ CellChangeTimes->{3.706173892862719*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$PrePrint", "=", 
+   RowBox[{
+    RowBox[{"Short", "[", 
+     RowBox[{"#", ",", "2"}], "]"}], "&"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7061739436352987`*^9, 3.706173954545023*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Range", "[", 
+  RowBox[{"100", ",", "200", ",", ".1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7061739564908857`*^9, 3.7061739818091784`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"{", 
+   RowBox[{
+   "100.`", ",", "100.1`", ",", "100.2`", ",", "100.3`", ",", "100.4`", ",", 
+    "100.5`", ",", "100.6`", ",", "100.7`", ",", "100.8`", ",", "100.9`", ",",
+     "101.`", ",", "101.1`", ",", "101.2`", ",", "101.3`", ",", "101.4`", ",",
+     "101.5`", ",", "101.6`", ",", "101.7`", ",", 
+    RowBox[{"\[LeftSkeleton]", "965", "\[RightSkeleton]"}], ",", "198.3`", 
+    ",", "198.4`", ",", "198.5`", ",", "198.60000000000002`", ",", "198.7`", 
+    ",", "198.8`", ",", "198.9`", ",", "199.`", ",", "199.10000000000002`", 
+    ",", "199.2`", ",", "199.3`", ",", "199.4`", ",", "199.5`", ",", 
+    "199.60000000000002`", ",", "199.7`", ",", "199.8`", ",", "199.9`", ",", 
+    "200.`"}], "}"}],
+  Short[#, 2]& ]], "Output",
+ CellChangeTimes->{3.7061739836457367`*^9, 3.706174063272441*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 810},
+WindowMargins->{{Automatic, 94}, {-304, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 100, 1, 50, "Input"],
+Cell[683, 25, 729, 14, 41, "Message"],
+Cell[1415, 41, 407, 13, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1859, 59, 129, 2, 50, "Input"],
+Cell[1991, 63, 93, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2121, 71, 103, 1, 50, "Input"],
+Cell[2227, 74, 93, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2357, 82, 161, 3, 50, "Input"],
+Cell[2521, 87, 339, 8, 32, "Output"]
+}, Open  ]],
+Cell[2875, 98, 623, 18, 173, "Input"],
+Cell[CellGroupData[{
+Cell[3523, 120, 162, 3, 50, "Input"],
+Cell[3688, 125, 740, 21, 35, "Output"]
+}, Open  ]],
+Cell[4443, 149, 222, 6, 50, "Input"],
+Cell[CellGroupData[{
+Cell[4690, 159, 166, 3, 50, "Input"],
+Cell[4859, 164, 833, 15, 132, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
