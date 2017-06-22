@@ -1,0 +1,112 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2637,        103]
+NotebookOptionsPosition[      2109,         79]
+NotebookOutlinePosition[      2456,         94]
+CellTagsIndexPosition[      2413,         91]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1000"}], "}"}]}], "]"}], ";"}], "//", 
+  "Timing"}]], "Input",
+ CellChangeTimes->{{3.7070781929575663`*^9, 3.707078203687622*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.707078204451559*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AbsoluteTiming", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1000000"}], "}"}]}], "]"}], ";"}], "]"}]], "Input",
+ CellChangeTimes->{{3.707078357695862*^9, 3.7070783580387506`*^9}},
+ NumberMarks->False],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.055037`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{3.7070782073304157`*^9, 3.70707836111231*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Do", "[", 
+    RowBox[{
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"s", ",", "i"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1000000"}], "}"}]}], "]"}], ";"}], "//", 
+  "Timing"}]}], "Input",
+ CellChangeTimes->{{3.70707821188995*^9, 3.707078234473878*^9}, {
+  3.7070782761283083`*^9, 3.7070782886838617`*^9}, {3.707078363959887*^9, 
+  3.707078365063919*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.7070782894522247`*^9, 3.707078454479979*^9}]
+}, Open  ]]
+},
+WindowSize->{732, 653},
+WindowMargins->{{Automatic, 0}, {-102, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 258, 8, 50, "Input"],
+Cell[841, 32, 120, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[998, 40, 291, 8, 50, "Input"],
+Cell[1292, 50, 149, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1478, 58, 511, 15, 72, "Input"],
+Cell[1992, 75, 101, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
