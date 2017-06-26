@@ -1,0 +1,302 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8485,        293]
+NotebookOptionsPosition[      7567,        257]
+NotebookOutlinePosition[      7915,        272]
+CellTagsIndexPosition[      7872,        269]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rmerge1", "[", 
+   RowBox[{"a_List", ",", "b_List"}], "]"}], ":=", 
+  RowBox[{"Which", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "\[Equal]", 
+      RowBox[{"{", "}"}]}], "||", 
+     RowBox[{"b", "\[Equal]", 
+      RowBox[{"{", "}"}]}]}], ",", 
+    RowBox[{"Join", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"First", "[", "a", "]"}], "\[LessEqual]", 
+     RowBox[{"First", "[", "b", "]"}]}], ",", 
+    RowBox[{"Prepend", "[", 
+     RowBox[{
+      RowBox[{"rmerge1", "[", 
+       RowBox[{
+        RowBox[{"Rest", "[", "a", "]"}], ",", "b"}], "]"}], ",", 
+      RowBox[{"First", "[", "a", "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+    "True", ",", 
+    RowBox[{"Prepend", "[", 
+     RowBox[{
+      RowBox[{"rmerge1", "[", 
+       RowBox[{"a", ",", 
+        RowBox[{"Rest", "[", "b", "]"}]}], "]"}], ",", 
+      RowBox[{"First", "[", "b", "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7074307655374117`*^9, 3.707430874280093*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rmerge1", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "4", ",", "7"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.707430890384803*^9, 3.707430905872218*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "7", ",", "8"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.707430906719976*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rmerge2", "[", 
+   RowBox[{"a_List", ",", "b_List"}], "]"}], ":=", 
+  RowBox[{"Which", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "\[Equal]", 
+      RowBox[{"{", "}"}]}], "||", 
+     RowBox[{"b", "\[Equal]", 
+      RowBox[{"{", "}"}]}]}], ",", 
+    RowBox[{"Join", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"First", "[", "a", "]"}], "\[LessEqual]", 
+     RowBox[{"First", "[", "b", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"First", "[", "a", "]"}], ",", 
+      RowBox[{"rmerge2", "[", 
+       RowBox[{
+        RowBox[{"Rest", "[", "a", "]"}], ",", "b"}], "]"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", "True", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"First", "[", "b", "]"}], ",", 
+      RowBox[{"rmerge2", "[", 
+       RowBox[{"a", ",", 
+        RowBox[{"Rest", "[", "b", "]"}]}], "]"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.707431251136191*^9, 3.707431354151932*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rmerge2", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "4", ",", "7"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.707431374461035*^9, 3.707431391023756*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", 
+           RowBox[{"{", 
+            RowBox[{"7", ",", 
+             RowBox[{"{", "8", "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.707431392019863*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.707431394802246*^9, 3.707431400937549*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "7", ",", "8"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.707431401440853*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rmerge3", "[", 
+   RowBox[{"a_List", ",", "b_List"}], "]"}], ":=", 
+  RowBox[{"Which", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "\[Equal]", 
+      RowBox[{"{", "}"}]}], "||", 
+     RowBox[{"b", "\[Equal]", 
+      RowBox[{"{", "}"}]}]}], ",", 
+    RowBox[{"Join", "[", 
+     RowBox[{"a", ",", "b"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"First", "[", "a", "]"}], "\[LessEqual]", 
+     RowBox[{"First", "[", "b", "]"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"First", "[", "a", "]"}], ",", 
+      RowBox[{"rmerge3", "[", 
+       RowBox[{
+        RowBox[{"a", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], ",", "b"}], "]"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", "True", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"First", "[", "b", "]"}], ",", 
+      RowBox[{"rmerge3", "[", 
+       RowBox[{"a", ",", 
+        RowBox[{"b", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], "]"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.707431591516914*^9, 3.707431604869857*^9}, {
+  3.70743179516689*^9, 3.707431894673908*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rmerge3", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"{", 
+      RowBox[{"5", ",", 
+       RowBox[{"{", 
+        RowBox[{"8", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"7", ",", 
+           RowBox[{"{", "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7074319283387003`*^9, 3.707431976997993*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", 
+           RowBox[{"{", 
+            RowBox[{"7", ",", 
+             RowBox[{"{", 
+              RowBox[{"8", ",", 
+               RowBox[{"{", "}"}]}], "}"}]}], "}"}]}], "}"}]}], "}"}]}], 
+      "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.707431978398987*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"toLinkedList", "[", "s_List", "]"}], ":=", 
+  RowBox[{"Fold", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"#2", ",", "#1"}], "}"}], "&"}], ",", 
+    RowBox[{"{", "}"}], ",", 
+    RowBox[{"Reverse", "[", "s", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.707432016589019*^9, 3.707432044979765*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", 
+  RowBox[{"rmerge3", "[", 
+   RowBox[{
+    RowBox[{"toLinkedList", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "5", ",", "8"}], "}"}], "]"}], ",", 
+    RowBox[{"toLinkedList", "[", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3", ",", "4", ",", "7"}], "}"}], "]"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.707432286128325*^9, 3.70743235362326*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "7", ",", "8"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.707432354586054*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 810},
+WindowMargins->{{Automatic, 295}, {Automatic, 441}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1089, 30, 197, "Input"],
+Cell[CellGroupData[{
+Cell[1672, 54, 277, 7, 32, "Input"],
+Cell[1952, 63, 168, 4, 32, "Output"]
+}, Open  ]],
+Cell[2135, 70, 1065, 30, 197, "Input"],
+Cell[CellGroupData[{
+Cell[3225, 104, 277, 7, 32, "Input"],
+Cell[3505, 113, 439, 15, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3981, 133, 126, 2, 50, "Input"],
+Cell[4110, 137, 168, 4, 32, "Output"]
+}, Open  ]],
+Cell[4293, 144, 1167, 33, 197, "Input"],
+Cell[CellGroupData[{
+Cell[5485, 181, 585, 20, 32, "Input"],
+Cell[6073, 203, 507, 17, 32, "Output"]
+}, Open  ]],
+Cell[6595, 223, 356, 10, 50, "Input"],
+Cell[CellGroupData[{
+Cell[6976, 237, 404, 11, 50, "Input"],
+Cell[7383, 250, 168, 4, 89, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
