@@ -1,0 +1,50 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1025,         41]
+NotebookOptionsPosition[       782,         28]
+NotebookOutlinePosition[      1131,         43]
+CellTagsIndexPosition[      1088,         40]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Journal \nMathSource"
+}], "Text",
+ CellChangeTimes->{{3.7077727755825233`*^9, 3.707772777162507*^9}, {
+  3.707772816201906*^9, 3.7077728394653177`*^9}}]
+},
+WindowSize->{808, 653},
+WindowMargins->{{338, Automatic}, {-381, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 220, 6, 55, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
