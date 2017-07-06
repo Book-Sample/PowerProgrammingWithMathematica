@@ -1,0 +1,368 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11237,        359]
+NotebookOptionsPosition[      9708,        302]
+NotebookOutlinePosition[     10054,        317]
+CellTagsIndexPosition[     10011,        314]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"i", ",", 
+     RowBox[{"RandomReal", "[", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1.", ",", "10."}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7082884458900137`*^9, 3.7082885143407393`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1.`", ",", "0.20868800828020806`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2.`", ",", "0.15168181758091603`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "0.007755890343622784`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4.`", ",", "0.9049452189363865`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5.`", ",", "0.22698414756205176`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6.`", ",", "0.7924558313961323`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "0.13493694995404182`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "0.47713872895386067`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9.`", ",", "0.008454246020072942`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10.`", ",", "0.4916679279303766`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.70828850026455*^9, 3.7082885149736357`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<csv\>\"", ",", "%17", ",", "\"\<CSV\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.7082885191559258`*^9, 3.7082885715583353`*^9}}],
+
+Cell[BoxData["\<\"csv\"\>"], "Output",
+ CellChangeTimes->{3.708288542454731*^9, 3.708288574052739*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"WriteString", "[", 
+  RowBox[{
+  "\"\<multicomma\>\"", ",", 
+   "\"\<1,,24,13,,8\\n2,12,,,,16\\n3,7,17,,20,\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.708289109512109*^9, 3.708289157297113*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Close", "[", "\"\<multicomma\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7082891630177937`*^9, 3.708289170426931*^9}}],
+
+Cell[BoxData["\<\"multicomma\"\>"], "Output",
+ CellChangeTimes->{3.708289170888942*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", "\"\<multicomma\>\"", "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.708288677126782*^9, 3.708288708411837*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<multicomma\>\"", ",", "Word", ",", 
+    RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}], ",", 
+    RowBox[{"RecordLists", "\[Rule]", "True"}]}], "]"}], "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.708289188640691*^9, 3.708289218610537*^9}}],
+
+Cell["\<\
+{{\"1\", \"24\", \"13\", \"8\"}, {\"2\", \"12\", \"16\"}, {\"3\", \"7\", \"17\
+\", \"20\"}}\
+\>", "Output",
+ CellChangeTimes->{3.708289219027789*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<multicomma\>\"", ",", "Word", ",", 
+    RowBox[{"WordSeparators", "\[Rule]", 
+     RowBox[{"{", "\"\<,\>\"", "}"}]}], ",", 
+    RowBox[{"RecordLists", "\[Rule]", "True"}], ",", 
+    RowBox[{"NullWords", "\[Rule]", "True"}]}], "]"}], "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.708289250813404*^9, 3.7082892953083897`*^9}, 
+   3.708291249284663*^9}],
+
+Cell["\<\
+{{\"1\", , \"24\", \"13\", , \"8\"}, {\"2\", \"12\", , , , \"16\"}, 
+ {\"3\", \"7\", \"17\", , \"20\", }}\
+\>", "Output",
+ CellChangeTimes->{3.7082892958519993`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringReplace", "[", 
+  RowBox[{"\"\<\>\"", ",", 
+   RowBox[{"\"\<\>\"", "\[Rule]", "\"\<0\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7082905756215353`*^9, 3.708290585625112*^9}}],
+
+Cell[BoxData["\<\"0\"\>"], "Output",
+ CellChangeTimes->{3.708290587017995*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ToExpression", "[", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"#", "\[Equal]", "\"\<\>\""}], ",", 
+       RowBox[{"StringReplace", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"\"\<\>\"", "\[Rule]", "\"\<0\>\""}]}], "]"}], ",", "#"}], 
+      "]"}], "]"}], "&"}], ",", 
+   RowBox[{"ReadList", "[", 
+    RowBox[{"\"\<multicomma\>\"", ",", "Word", ",", 
+     RowBox[{"WordSeparators", "\[Rule]", 
+      RowBox[{"{", "\"\<,\>\"", "}"}]}], ",", 
+     RowBox[{"RecordLists", "\[Rule]", "True"}], ",", 
+     RowBox[{"NullWords", "\[Rule]", "True"}]}], "]"}], ",", 
+   RowBox[{"{", "2", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.708289314901462*^9, 3.708289325932507*^9}, {
+   3.708290618408383*^9, 3.708290676638723*^9}, {3.708290793186946*^9, 
+   3.708290804724221*^9}, {3.7082909322609653`*^9, 3.7082909380520287`*^9}, 
+   3.708291256880732*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "24", ",", "13", ",", "0", ",", "8"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "12", ",", "0", ",", "0", ",", "0", ",", "16"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "7", ",", "17", ",", "0", ",", "20", ",", "0"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.708289326495614*^9, {3.7082906516050034`*^9, 3.708290679320663*^9}, 
+   3.708290805408237*^9, 3.708291202645364*^9, 3.708291265740485*^9}]
+}, Open  ]],
+
+Cell["\<\
+1. Try reading the csv data using the approach developed in this section. Be \
+sure to look at the internal form of the result. Can you fix this problem?\
+\>", "Text",
+ CellChangeTimes->{{3.7082912883664713`*^9, 3.708291337484095*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"readCsv", "[", "csv_String", "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToExpression", "[", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"#", "\[Equal]", "\"\<\>\""}], ",", 
+        RowBox[{"StringReplace", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"\"\<\>\"", "\[Rule]", "\"\<0\>\""}]}], "]"}], ",", "#"}], 
+       "]"}], "]"}], "&"}], ",", 
+    RowBox[{"ReadList", "[", 
+     RowBox[{"csv", ",", "Word", ",", 
+      RowBox[{"WordSeparators", "\[Rule]", 
+       RowBox[{"{", "\"\<,\>\"", "}"}]}], ",", 
+      RowBox[{"RecordLists", "\[Rule]", "True"}], ",", 
+      RowBox[{"NullWords", "\[Rule]", "True"}]}], "]"}], ",", 
+    RowBox[{"{", "2", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.708291359656837*^9, 3.708291396855446*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"readCsv", "[", "\"\<multicomma\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.7082913999688463`*^9, 3.70829140866807*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "24", ",", "13", ",", "0", ",", "8"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "12", ",", "0", ",", "0", ",", "0", ",", "16"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "7", ",", "17", ",", "0", ",", "20", ",", "0"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.708291409452211*^9}]
+}, Open  ]],
+
+Cell["\<\
+2. Override the definition of ReadList so that ReadList[\
+\[OpenCurlyDoubleQuote]filename\[CloseCurlyDoubleQuote], CSV] calls the \
+funcition you just defined. You should do this using an upvalue for the \
+symbol CSV rather than a downvalue for ReadList.\
+\>", "Text",
+ CellChangeTimes->{{3.708291415988323*^9, 3.7082914908196907`*^9}}],
+
+Cell["use an upvalue.", "Text",
+ CellChangeTimes->{{3.708291546032414*^9, 3.708291550641305*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<~/\:684c\:9762\>\"", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.708291771457568*^9, 3.7082917859508667`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CSV", "/:", 
+  RowBox[{"ReadList", "[", 
+   RowBox[{"path_String", ",", "CSV"}], "]"}], ":=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToExpression", "[", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"#", "\[Equal]", "\"\<\>\""}], ",", 
+        RowBox[{"StringReplace", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"\"\<\>\"", "\[Rule]", "\"\<0\>\""}]}], "]"}], ",", "#"}], 
+       "]"}], "]"}], "&"}], ",", 
+    RowBox[{"ReadList", "[", 
+     RowBox[{"path", ",", "Word", ",", 
+      RowBox[{"WordSeparators", "\[Rule]", 
+       RowBox[{"{", "\"\<,\>\"", "}"}]}], ",", 
+      RowBox[{"RecordLists", "\[Rule]", "True"}], ",", 
+      RowBox[{"NullWords", "\[Rule]", "True"}]}], "]"}], ",", 
+    RowBox[{"{", "2", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.708291496044388*^9, 3.708291559806472*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReadList", "[", 
+  RowBox[{"\"\<multicomma\>\"", ",", "CSV"}], "]"}]], "Input",
+ CellChangeTimes->{{3.708291596806106*^9, 3.708291610567778*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "24", ",", "13", ",", "0", ",", "8"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "12", ",", "0", ",", "0", ",", "0", ",", "16"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "7", ",", "17", ",", "0", ",", "20", ",", "0"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.708291611085782*^9, {3.708291752059525*^9, 3.708291755118412*^9}, 
+   3.70829179124019*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 648},
+WindowMargins->{{Automatic, 188}, {0, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 297, 8, 50, "Input"],
+Cell[880, 32, 920, 23, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1837, 60, 184, 3, 50, "Input"],
+Cell[2024, 65, 102, 1, 32, "Output"]
+}, Open  ]],
+Cell[2141, 69, 222, 5, 50, "Input"],
+Cell[CellGroupData[{
+Cell[2388, 78, 143, 2, 50, "Input"],
+Cell[2534, 82, 87, 1, 32, "Output"]
+}, Open  ]],
+Cell[2636, 86, 101, 2, 50, "Input"],
+Cell[2740, 90, 92, 1, 32, "Input"],
+Cell[CellGroupData[{
+Cell[2857, 95, 322, 7, 91, "Input"],
+Cell[3182, 104, 159, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3378, 113, 428, 10, 91, "Input"],
+Cell[3809, 125, 175, 4, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4021, 134, 209, 4, 50, "Input"],
+Cell[4233, 140, 78, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4348, 146, 937, 22, 132, "Input"],
+Cell[5288, 170, 532, 14, 32, "Output"]
+}, Open  ]],
+Cell[5835, 187, 245, 4, 55, "Text"],
+Cell[6083, 193, 830, 21, 154, "Input"],
+Cell[CellGroupData[{
+Cell[6938, 218, 144, 2, 32, "Input"],
+Cell[7085, 222, 411, 12, 32, "Output"]
+}, Open  ]],
+Cell[7511, 237, 346, 6, 77, "Text"],
+Cell[7860, 245, 97, 1, 33, "Text"],
+Cell[7960, 248, 175, 4, 52, "Input"],
+Cell[8138, 254, 872, 22, 173, "Input"],
+Cell[CellGroupData[{
+Cell[9035, 280, 169, 3, 50, "Input"],
+Cell[9207, 285, 485, 14, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

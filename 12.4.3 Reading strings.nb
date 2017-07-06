@@ -1,0 +1,212 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5719,        203]
+NotebookOptionsPosition[      4537,        155]
+NotebookOutlinePosition[      4886,        170]
+CellTagsIndexPosition[      4843,        167]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", "\"\<~/\:684c\:9762\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.708287707172327*^9, 3.708287722678232*^9}}],
+
+Cell[BoxData["\<\"/home/zlb/\:684c\:9762\"\>"], "Output",
+ CellChangeTimes->{3.7082877234530067`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReadList", "[", 
+  RowBox[{"\"\<string\>\"", ",", "String"}], "]"}]], "Input",
+ CellChangeTimes->{{3.708287684305393*^9, 3.7082876999297523`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"The quick, brown, for jumps\"\>", 
+   ",", "\<\"over the lazy dog.\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7082877014533997`*^9, 3.708287726167611*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputForm", "[", "%3", "]"}]], "Input",
+ CellChangeTimes->{{3.708287741245386*^9, 3.708287751133444*^9}}],
+
+Cell["{\"The quick, brown, for jumps\", \"over the lazy dog.\"}", "Output",
+ CellChangeTimes->{3.7082877515701036`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReadList", "[", 
+  RowBox[{"\"\<string\>\"", ",", "Record", ",", 
+   RowBox[{"RecordSeparators", "\[Rule]", 
+    RowBox[{"{", "\"\<,\>\"", "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7082877793758163`*^9, 3.708287825083934*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"The quick\"\>", ",", "\<\" brown\"\>", 
+   ",", "\<\" for jumps\\nover the lazy dog.\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.708287825876603*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InputForm", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.7082878440399446`*^9, 3.708287848160448*^9}}],
+
+Cell["{\"The quick\", \" brown\", \" for jumps\\nover the lazy dog.\"}", \
+"Output",
+ CellChangeTimes->{3.7082878485533857`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<string\>\"", ",", "Record", ",", 
+    RowBox[{"RecordSeparators", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<fox\>\"", ",", "\"\<the\>\""}], "}"}]}]}], "]"}], "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.708287875000287*^9, 3.708287908104116*^9}}],
+
+Cell["{\"The quick, brown, for jumps\\nover \", \" lazy dog.\"}", "Output",
+ CellChangeTimes->{3.7082879085765543`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<string\>\"", ",", "Word"}], "]"}], "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.708287935003707*^9, 3.7082879873496733`*^9}, {
+  3.70828808224972*^9, 3.708288082674981*^9}}],
+
+Cell["\<\
+{\"The\", \"quick,\", \"brown,\", \"for\", \"jumps\", \"over\", \"the\", \
+\"lazy\", \"dog.\"}\
+\>", "Output",
+ CellChangeTimes->{{3.7082879764637327`*^9, 3.708287987808896*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<string\>\"", ",", "Word", ",", 
+    RowBox[{"WordSeparators", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<,\>\"", ",", "\"\< \>\""}], "}"}]}]}], "]"}], "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.708288085780216*^9, 3.70828813795039*^9}}],
+
+Cell["\<\
+{\"The\", \"quick\", \"brown\", \"for\", \"jumps\", \"over\", \"the\", \"lazy\
+\", \"dog.\"}\
+\>", "Output",
+ CellChangeTimes->{{3.708288113478612*^9, 3.70828813897368*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReadList", "[", 
+   RowBox[{"\"\<string\>\"", ",", "Word", ",", 
+    RowBox[{"RecordSeparators", "\[Rule]", 
+     RowBox[{"{", "\"\<\\n\>\"", "}"}]}]}], "]"}], "//", 
+  "InputForm"}]], "Input",
+ CellChangeTimes->{{3.708288189479103*^9, 3.708288191981621*^9}, {
+  3.708288252053588*^9, 3.708288324647439*^9}, {3.708288363091864*^9, 
+  3.708288365295505*^9}}],
+
+Cell["\<\
+{\"The\", \"quick,\", \"brown,\", \"for\", \"jumps\", \"over\", \"the\", \
+\"lazy\", \"dog.\"}\
+\>", "Output",
+ CellChangeTimes->{
+  3.708288271565851*^9, {3.7082883019609213`*^9, 3.70828833017299*^9}, 
+   3.7082883659110413`*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 222}, {-485, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 152, 2, 52, "Input"],
+Cell[735, 26, 101, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[873, 32, 170, 3, 50, "Input"],
+Cell[1046, 37, 204, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1287, 46, 129, 2, 50, "Input"],
+Cell[1419, 50, 119, 1, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1575, 56, 258, 5, 50, "Input"],
+Cell[1836, 63, 196, 4, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2069, 72, 130, 2, 50, "Input"],
+Cell[2202, 76, 128, 2, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2367, 83, 333, 8, 91, "Input"],
+Cell[2703, 93, 119, 1, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2859, 99, 252, 6, 50, "Input"],
+Cell[3114, 107, 188, 4, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3339, 116, 324, 8, 50, "Input"],
+Cell[3666, 126, 183, 4, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3886, 135, 392, 9, 50, "Input"],
+Cell[4281, 146, 240, 6, 46, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
