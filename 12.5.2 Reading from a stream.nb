@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31647,        893]
-NotebookOptionsPosition[     28287,        769]
-NotebookOutlinePosition[     28636,        784]
-CellTagsIndexPosition[     28593,        781]
+NotebookDataLength[     33129,        921]
+NotebookOptionsPosition[     30132,        811]
+NotebookOutlinePosition[     30478,        826]
+CellTagsIndexPosition[     30435,        823]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -318,6 +318,12 @@ comma-separated values.\
  CellChangeTimes->{{3.7083755328330173`*^9, 3.708375537385642*^9}, {
   3.708375719573188*^9, 3.7083757397845783`*^9}}],
 
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<~/\:684c\:9762\>\"", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7086353629991283`*^9, 3.7086353783974648`*^9}}],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
@@ -329,7 +335,7 @@ Cell["\<\
 2,12,,,,16
 3,7,17,,20,\
 \>", "Print",
- CellChangeTimes->{3.70837597303185*^9}]
+ CellChangeTimes->{3.70837597303185*^9, 3.708635382321438*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -481,7 +487,7 @@ Cell[BoxData[
             RowBox[{
              TagBox["\<\"Unique ID: \"\>",
               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-             TagBox["3",
+             TagBox["4",
               "SummaryItem"]}]}
           },
           AutoDelete->False,
@@ -632,7 +638,7 @@ Cell[BoxData[
             RowBox[{
              TagBox["\<\"Unique ID: \"\>",
               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-             TagBox["3",
+             TagBox["4",
               "SummaryItem"]}]},
            {
             RowBox[{
@@ -646,7 +652,7 @@ Cell[BoxData[
               "SummaryItemAnnotation"], "\[InvisibleSpace]", 
              TagBox[
               DynamicBox[ToBoxes[Options[
-                  InputStream["csv", 3]] =!= {}, StandardForm],
+                  InputStream["csv", 4]] =!= {}, StandardForm],
                UpdateInterval->1],
               "SummaryItem"]}]}
           },
@@ -670,105 +676,141 @@ Cell[BoxData[
       ImageSize->Automatic],
      BaselinePosition->Baseline],
     DynamicModuleValues:>{}], "]"}],
-  InputStream["csv", 3],
+  InputStream["csv", 4],
   Editable->False,
   SelectWithContents->True,
   Selectable->False]], "Output",
- CellChangeTimes->{3.708376004582206*^9, 3.7083775760150347`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"SetStreamPosition", "[", 
-   RowBox[{"s", ",", "0"}], "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"Read", "[", 
-  RowBox[{"s", ",", "String", ",", 
-   RowBox[{"RecordSeparators", "\[Rule]", 
-    RowBox[{"{", "\"\<\\n\>\"", "}"}]}], ",", 
-   RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}]}], "]"}]}], "Input",
- CellChangeTimes->{{3.708377578200453*^9, 3.7083776439958973`*^9}, {
-  3.7083777196497707`*^9, 3.708377730883428*^9}}],
-
-Cell[BoxData["\<\"1,,24,13,,8\"\>"], "Output",
- CellChangeTimes->{3.708377645464629*^9, 3.708377731521777*^9}]
+ CellChangeTimes->{3.708376004582206*^9, 3.7083775760150347`*^9, 
+  3.708635384829262*^9, 3.708635549390854*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"StringSplit", "[", 
+ RowBox[{" ", 
   RowBox[{
-   RowBox[{"Read", "[", 
-    RowBox[{"s", ",", "String", ",", 
-     RowBox[{"RecordSeparators", "\[Rule]", 
-      RowBox[{"{", "\"\<\\n\>\"", "}"}]}], ",", 
-     RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}]}], "]"}], ",", 
-   "\"\<,\>\""}], "]"}]], "Input",
- NumberMarks->False],
+   RowBox[{"SetStreamPosition", "[", 
+    RowBox[{"s", ",", "0"}], "]"}], ";", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"res", "=", 
+        RowBox[{"{", "}"}]}], ",", "line"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"line", "=", 
+           RowBox[{"Read", "[", 
+            RowBox[{"s", ",", "String"}], "]"}]}], ")"}], "=!=", 
+         "EndOfFile"}], ",", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"res", ",", 
+          RowBox[{"ToExpression", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"#", "===", "\"\<\>\""}], ",", "\"\<0\>\"", ",", "#"}],
+               "]"}], "&"}], "/@", 
+            RowBox[{"StringSplit", "[", 
+             RowBox[{"line", ",", "\"\<,\>\""}], "]"}]}], "]"}]}], "]"}]}], 
+       "]"}], ";", "res"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.708635413506205*^9, 3.7086355444593773`*^9}, {
+  3.7086358499364862`*^9, 3.708635853192692*^9}, {3.7086358875812473`*^9, 
+  3.708635891839538*^9}, {3.708635928878565*^9, 3.7086359518337593`*^9}, {
+  3.708635991760947*^9, 3.70863599269293*^9}, {3.7086360526724443`*^9, 
+  3.7086360562861643`*^9}, {3.708636414385062*^9, 3.708636422344906*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"\<\"2\"\>", ",", "\<\"12\"\>", ",", "\<\"\"\>", ",", "\<\"\"\>", 
-   ",", "\<\"\"\>", ",", "\<\"16\"\>"}], "}"}]], "Output",
- CellChangeTimes->{3.7083777349077473`*^9}]
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "24", ",", "13", ",", "0", ",", "8"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "12", ",", "0", ",", "0", ",", "0", ",", "16"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "7", ",", "17", ",", "0", ",", "20"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.708635994195565*^9, 3.708636428481619*^9}]
 }, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"readCSV", "[", "f_String", "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"FileExistsQ", "[", "f", "]"}], "&&", 
+     RowBox[{"!", 
+      RowBox[{"DirectoryQ", "[", "f", "]"}]}]}], ")"}]}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"s", ",", "line", ",", "splitLine", ",", 
+      RowBox[{"res", "=", 
+       RowBox[{"{", "}"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"s", "=", 
+      RowBox[{"OpenRead", "[", "f", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"splitLine", "[", "l_String", "]"}], ":=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ToExpression", "[", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"#", "===", "\"\<\>\""}], ",", "\"\<0\>\"", ",", "#"}], 
+          "]"}], "]"}], "&"}], "/@", 
+       RowBox[{"StringSplit", "[", 
+        RowBox[{"line", ",", "\"\<,\>\""}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"line", "=", 
+          RowBox[{"Read", "[", 
+           RowBox[{"s", ",", "String"}], "]"}]}], ")"}], "=!=", "EndOfFile"}],
+        ",", "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"res", ",", 
+         RowBox[{"splitLine", "[", "line", "]"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "res"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.708636442493432*^9, 3.708636690383728*^9}, {
+  3.7086367370653887`*^9, 3.708636763301074*^9}, {3.708636829011591*^9, 
+  3.708636832798274*^9}, {3.708636889160713*^9, 3.708636974682424*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Read", "[", 
-  RowBox[{"s", ",", "String", ",", 
-   RowBox[{"RecordSeparators", "\[Rule]", 
-    RowBox[{"{", "\"\<\\n\>\"", "}"}]}], ",", 
-   RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}]}], "]"}]], "Input"],
-
-Cell[BoxData["\<\"2,12,,,,16\"\>"], "Output",
- CellChangeTimes->{3.708377650349346*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
+ RowBox[{"readCSV", "[", "\"\<csv\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.708636696449082*^9, 3.7086367015119257`*^9}}],
 
 Cell[BoxData[
- RowBox[{"Read", "[", 
-  RowBox[{"s", ",", "String", ",", 
-   RowBox[{"RecordSeparators", "\[Rule]", 
-    RowBox[{"{", "\"\<\\n\>\"", "}"}]}], ",", 
-   RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}]}], "]"}]], "Input"],
-
-Cell[BoxData["\<\"3,7,17,,20,\"\>"], "Output",
- CellChangeTimes->{3.708377653760829*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Read", "[", 
-  RowBox[{"s", ",", "String", ",", 
-   RowBox[{"RecordSeparators", "\[Rule]", 
-    RowBox[{"{", "\"\<\\n\>\"", "}"}]}], ",", 
-   RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}]}], "]"}]], "Input"],
-
-Cell[BoxData["EndOfFile"], "Output",
- CellChangeTimes->{3.7083776598585863`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Read", "[", 
-  RowBox[{"s", ",", "String", ",", 
-   RowBox[{"RecordSeparators", "\[Rule]", 
-    RowBox[{"{", "\"\<\\n\>\"", "}"}]}], ",", 
-   RowBox[{"WordSeparators", "\[Rule]", "\"\<,\>\""}]}], "]"}]], "Input"],
-
-Cell[BoxData["EndOfFile"], "Output",
- CellChangeTimes->{3.7083776637075644`*^9}]
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "24", ",", "13", ",", "0", ",", "8"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "12", ",", "0", ",", "0", ",", "0", ",", "16"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "7", ",", "17", ",", "0", ",", "20"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.708636702482223*^9, {3.708636744128731*^9, 3.708636772151091*^9}, 
+   3.708636843559362*^9, 3.708636979841435*^9}]
 }, Open  ]]
 },
 WindowSize->{810, 679},
-WindowMargins->{{Automatic, 243}, {-278, Automatic}},
+WindowMargins->{{Automatic, 242}, {0, Automatic}},
 FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
 StyleDefinitions->"Default.nb"
 ]
@@ -786,7 +828,7 @@ Notebook[{
 Cell[558, 20, 181, 4, 50, "Input"],
 Cell[CellGroupData[{
 Cell[764, 28, 241, 7, 50, "Input"],
-Cell[1008, 37, 105, 1, 46, "Output"]
+Cell[1008, 37, 105, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1150, 43, 128, 2, 50, "Input"],
@@ -794,11 +836,11 @@ Cell[1281, 47, 80, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1398, 53, 363, 10, 50, "Input"],
-Cell[1764, 65, 89, 1, 46, "Output"]
+Cell[1764, 65, 89, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1890, 71, 241, 7, 50, "Input"],
-Cell[2134, 80, 89, 1, 46, "Output"]
+Cell[2134, 80, 89, 1, 32, "Output"]
 }, Open  ]],
 Cell[2238, 84, 175, 4, 50, "Input"],
 Cell[CellGroupData[{
@@ -807,36 +849,36 @@ Cell[2534, 95, 71, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2642, 101, 175, 6, 50, "Input"],
-Cell[2820, 109, 91, 1, 46, "Output"]
+Cell[2820, 109, 91, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[2948, 115, 175, 6, 50, "Input"],
-Cell[3126, 123, 89, 1, 46, "Output"]
+Cell[3126, 123, 89, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[3252, 129, 175, 6, 50, "Input"],
-Cell[3430, 137, 89, 1, 46, "Output"]
+Cell[3430, 137, 89, 1, 32, "Output"]
 }, Open  ]],
 Cell[3534, 141, 182, 4, 50, "Input"],
 Cell[CellGroupData[{
 Cell[3741, 149, 241, 7, 50, "Input"],
-Cell[3985, 158, 89, 1, 46, "Output"]
+Cell[3985, 158, 89, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4111, 164, 364, 9, 91, "Input"],
-Cell[4478, 175, 238, 3, 46, "Output"]
+Cell[4478, 175, 238, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4753, 183, 175, 6, 50, "Input"],
-Cell[4931, 191, 89, 1, 46, "Output"]
+Cell[4931, 191, 89, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[5057, 197, 135, 4, 50, "Input"],
-Cell[5195, 203, 116, 1, 46, "Output"]
+Cell[5195, 203, 116, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[5348, 209, 135, 4, 50, "Input"],
-Cell[5486, 215, 114, 1, 46, "Output"]
+Cell[5486, 215, 114, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[5637, 221, 126, 2, 50, "Input"],
@@ -863,37 +905,23 @@ Cell[7675, 291, 288, 12, 167, "Print"]
 }, Open  ]],
 Cell[7978, 306, 214, 5, 50, "Input"],
 Cell[8195, 313, 245, 5, 33, "Text"],
+Cell[8443, 320, 177, 4, 52, "Input"],
 Cell[CellGroupData[{
-Cell[8465, 322, 142, 2, 50, "Input"],
-Cell[8610, 326, 100, 5, 55, "Print"]
+Cell[8645, 328, 142, 2, 50, "Input"],
+Cell[8790, 332, 122, 5, 55, "Print"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8747, 336, 160, 3, 50, "Input"],
-Cell[8910, 341, 16715, 335, 69, "Output"]
+Cell[8949, 342, 160, 3, 50, "Input"],
+Cell[9112, 347, 16762, 336, 69, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25662, 681, 470, 10, 91, "Input"],
-Cell[26135, 693, 110, 1, 32, "Output"]
+Cell[25911, 688, 1389, 36, 197, "Input"],
+Cell[27303, 726, 421, 12, 32, "Output"]
 }, Open  ]],
+Cell[27739, 741, 1715, 45, 364, "Input"],
 Cell[CellGroupData[{
-Cell[26282, 699, 339, 9, 74, "Input"],
-Cell[26624, 710, 208, 4, 65, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[26869, 719, 236, 5, 50, "Input"],
-Cell[27108, 726, 87, 1, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[27232, 732, 236, 5, 50, "Input"],
-Cell[27471, 739, 88, 1, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[27596, 745, 236, 5, 50, "Input"],
-Cell[27835, 752, 80, 1, 32, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[27952, 758, 236, 5, 50, "Input"],
-Cell[28191, 765, 80, 1, 32, "Output"]
+Cell[29479, 790, 138, 2, 32, "Input"],
+Cell[29620, 794, 496, 14, 89, "Output"]
 }, Open  ]]
 }
 ]

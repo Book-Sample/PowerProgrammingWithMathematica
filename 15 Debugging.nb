@@ -1,0 +1,46 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[       950,         37]
+NotebookOptionsPosition[       706,         24]
+NotebookOutlinePosition[      1056,         39]
+CellTagsIndexPosition[      1013,         36]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["debug tool", "Text",
+ CellChangeTimes->{{3.708637180365225*^9, 3.7086371811699247`*^9}, {
+  3.7086372181650677`*^9, 3.70863724801862*^9}}]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, -165}, {-139, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 144, 2, 33, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
