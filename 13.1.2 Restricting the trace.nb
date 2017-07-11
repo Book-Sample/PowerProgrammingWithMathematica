@@ -1,0 +1,52 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1137,         43]
+NotebookOptionsPosition[       859,         29]
+NotebookOutlinePosition[      1208,         44]
+CellTagsIndexPosition[      1165,         41]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Trace will then include only those intermediate expressions that match the \
+pattern in the returned trace.\
+\>", "Text",
+ CellChangeTimes->{{3.708666657715294*^9, 3.708666685592656*^9}}],
+
+Cell[BoxData["Trace"], "Input",
+ CellChangeTimes->{{3.708666748978904*^9, 3.708666750455454*^9}}]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 200}, {-361, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 197, 4, 55, "Text"],
+Cell[758, 26, 97, 1, 50, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

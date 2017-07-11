@@ -1,0 +1,288 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8955,        279]
+NotebookOptionsPosition[      7754,        238]
+NotebookOutlinePosition[      8102,        253]
+CellTagsIndexPosition[      8059,        250]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"TraceDialog", "[", 
+  RowBox[{
+   RowBox[{"iterSqrt", "[", "2", "]"}], ",", 
+   RowBox[{
+    RowBox[{"local_", "/;", 
+     RowBox[{"StringContainsQ", "[", 
+      RowBox[{
+       RowBox[{"ToString", "[", 
+        RowBox[{"HoldForm", "[", "local", "]"}], "]"}], ",", "\"\<xn\>\""}], 
+      "]"}]}], "=", 
+    RowBox[{"y_", "/;", 
+     RowBox[{"NumberQ", "[", 
+      RowBox[{"Unevaluated", "[", "y", "]"}], "]"}]}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7087329053253736`*^9, 3.708732910980147*^9}, 
+   3.70873295135331*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgbgn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Entering Dialog; use Return[] to exit. \\!\\(\\*ButtonBox[\
+\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TraceDialog/dgbgn\\\", ButtonNote -> \
+\\\"TraceDialog::dgbgn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708732960876095*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"xn$160306", "=", "1"}],
+  HoldForm]], "Output",
+ CellChangeTimes->{3.708732911359193*^9, 3.708732960877637*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgend"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Exiting Dialog. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/TraceDialog/dgend\\\", \
+ButtonNote -> \\\"TraceDialog::dgend\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708732973014255*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgbgn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Entering Dialog; use Return[] to exit. \\!\\(\\*ButtonBox[\
+\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TraceDialog/dgbgn\\\", ButtonNote -> \
+\\\"TraceDialog::dgbgn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708732973045693*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"xn$160306", "=", 
+   FractionBox["3", "2"]}],
+  HoldForm]], "Output",
+ CellChangeTimes->{3.708732911359193*^9, 3.7087329730466757`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgend"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Exiting Dialog. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/TraceDialog/dgend\\\", \
+ButtonNote -> \\\"TraceDialog::dgend\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708733006093295*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgbgn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Entering Dialog; use Return[] to exit. \\!\\(\\*ButtonBox[\
+\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TraceDialog/dgbgn\\\", ButtonNote -> \
+\\\"TraceDialog::dgbgn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708733006120137*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"xn$160306", "=", 
+   FractionBox["17", "12"]}],
+  HoldForm]], "Output",
+ CellChangeTimes->{3.708732911359193*^9, 3.708733006120942*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgend"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Exiting Dialog. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/TraceDialog/dgend\\\", \
+ButtonNote -> \\\"TraceDialog::dgend\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708733206691799*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgbgn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Entering Dialog; use Return[] to exit. \\!\\(\\*ButtonBox[\
+\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TraceDialog/dgbgn\\\", ButtonNote -> \
+\\\"TraceDialog::dgbgn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7087332067177477`*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"xn$160306", "=", 
+   FractionBox["577", "408"]}],
+  HoldForm]], "Output",
+ CellChangeTimes->{3.708732911359193*^9, 3.708733206718628*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgend"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Exiting Dialog. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/TraceDialog/dgend\\\", \
+ButtonNote -> \\\"TraceDialog::dgend\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.708733214426435*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgbgn"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Entering Dialog; use Return[] to exit. \\!\\(\\*ButtonBox[\
+\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/TraceDialog/dgbgn\\\", ButtonNote -> \
+\\\"TraceDialog::dgbgn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.70873321445366*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"xn$160306", "=", 
+   FractionBox["665857", "470832"]}],
+  HoldForm]], "Output",
+ CellChangeTimes->{3.708732911359193*^9, 3.7087332144552526`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"TraceDialog", "::", "dgend"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Exiting Dialog. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/TraceDialog/dgend\\\", \
+ButtonNote -> \\\"TraceDialog::dgend\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.70873330406452*^9}],
+
+Cell[BoxData[
+ FractionBox["665857", "470832"]], "Output",
+ CellChangeTimes->{3.708732911359193*^9, 3.708733304065962*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"xn$160306", ":=", 
+  RowBox[{"Abort", "[", "]"}], 
+  RowBox[{
+  "(*", "\:6ce8\:610f\:662f\:5ef6\:8fdf\:8d4b\:503c", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.708733297455234*^9, 3.7087333269184628`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Return", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.7087329677590303`*^9, 3.708732972082452*^9}, {
+  3.708733202648574*^9, 3.708733211905307*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"StackBegin", "[", 
+    RowBox[{"g", "[", 
+     RowBox[{"h", "[", 
+      RowBox[{"Print", "[", 
+       RowBox[{"Stack", "[", "]"}], "]"}], "]"}], "]"}], "]"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.708734078798946*^9, 3.7087340799323378`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"g", ",", "h", ",", "Print"}], "}"}]], "Print",
+ CellChangeTimes->{3.708734083066481*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"StackBegin", "[", 
+    RowBox[{"g", "[", 
+     RowBox[{"StackInhibit", "[", 
+      RowBox[{"h", "[", 
+       RowBox[{"Print", "[", 
+        RowBox[{"Stack", "[", "]"}], "]"}], "]"}], "]"}], "]"}], "]"}], "]"}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.708734008646978*^9, 3.708734041164262*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "g", "}"}]], "Print",
+ CellChangeTimes->{{3.708734035487507*^9, 3.708734041394013*^9}}]
+}, Open  ]]
+},
+WindowSize->{810, 800},
+WindowMargins->{{Automatic, 143}, {Automatic, 391}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 550, 15, 132, "Input"],
+Cell[1133, 39, 433, 9, 23, "Message"],
+Cell[1569, 50, 145, 4, 32, "Output"],
+Cell[1717, 56, 410, 9, 23, "Message"],
+Cell[2130, 67, 433, 9, 23, "Message"],
+Cell[2566, 78, 169, 5, 54, "Output"],
+Cell[2738, 85, 410, 9, 23, "Message"],
+Cell[3151, 96, 433, 9, 23, "Message"],
+Cell[3587, 107, 169, 5, 54, "Output"],
+Cell[3759, 114, 410, 9, 23, "Message"],
+Cell[4172, 125, 435, 9, 23, "Message"],
+Cell[4610, 136, 171, 5, 54, "Output"],
+Cell[4784, 143, 410, 9, 23, "Message"],
+Cell[5197, 154, 432, 9, 23, "Message"],
+Cell[5632, 165, 179, 5, 54, "Output"],
+Cell[5814, 172, 409, 9, 23, "Message"],
+Cell[6226, 183, 122, 2, 54, "Output"]
+}, Open  ]],
+Cell[6363, 188, 227, 5, 50, "Input"],
+Cell[6593, 195, 171, 3, 64, "Input"],
+Cell[CellGroupData[{
+Cell[6789, 202, 310, 9, 107, "Input"],
+Cell[7102, 213, 128, 3, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7267, 221, 353, 10, 50, "Input"],
+Cell[7623, 233, 115, 2, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

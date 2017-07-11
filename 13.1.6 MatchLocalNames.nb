@@ -1,0 +1,145 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3620,        136]
+NotebookOptionsPosition[      2840,        103]
+NotebookOutlinePosition[      3189,        118]
+CellTagsIndexPosition[      3146,        115]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData["$ModuleNumber"], "Input",
+ CellChangeTimes->{{3.708722178185957*^9, 3.708722182639654*^9}}],
+
+Cell[BoxData["1244"], "Output",
+ CellChangeTimes->{3.708722183028157*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"len", "[", 
+   RowBox[{"{", 
+    RowBox[{"a_", ",", "b___"}], "}"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"s", "=", 
+      RowBox[{"{", "b", "}"}]}], "}"}], ",", 
+    RowBox[{"1", "+", 
+     RowBox[{"len", "[", "s", "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"len", "[", 
+    RowBox[{"{", "}"}], "]"}], "=", "0"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.708722222290701*^9, 3.7087222969214478`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"len", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7087222878401823`*^9, 3.7087223038782263`*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.708722304387274*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Trace", "[", 
+  RowBox[{
+   RowBox[{"len", "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}], ",", "s", ",", 
+   RowBox[{"MatchLocalNames", "\[Rule]", "False"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.708722399323762*^9, 3.7087224558345346`*^9}, 
+   3.7087225033593273`*^9, {3.708722534492406*^9, 3.708722535951548*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.70872241570955*^9, 3.708722456552854*^9, {3.7087225042083273`*^9, 
+   3.7087225397419653`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$ModuleNumber"], "Input",
+ CellChangeTimes->{{3.708722690532447*^9, 3.708722697275236*^9}}],
+
+Cell[BoxData["4412"], "Output",
+ CellChangeTimes->{3.7087226986820498`*^9, 3.708722741638432*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Trace", "[", 
+  RowBox[{
+   RowBox[{"len", "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], 
+    "]"}], ",", "4415"}], "]"}]], "Input",
+ CellChangeTimes->{{3.708722700564846*^9, 3.708722752903161*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{{3.7087227171222363`*^9, 3.7087227534192743`*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 653},
+WindowMargins->{{Automatic, 158}, {-419, Automatic}},
+FrontEndVersion->"10.3 for Linux x86 (64-bit) (2015\:5e7410\:67089\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 105, 1, 50, "Input"],
+Cell[688, 25, 73, 1, 32, "Output"]
+}, Open  ]],
+Cell[776, 29, 515, 16, 74, "Input"],
+Cell[CellGroupData[{
+Cell[1316, 49, 183, 4, 32, "Input"],
+Cell[1502, 55, 70, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1609, 61, 373, 8, 50, "Input"],
+Cell[1985, 71, 165, 4, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2187, 80, 105, 1, 50, "Input"],
+Cell[2295, 83, 97, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2429, 89, 277, 7, 50, "Input"],
+Cell[2709, 98, 115, 2, 65, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
